@@ -52,7 +52,18 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
   **Decidido (26/09).**
 - **Formato**: online, ao vivo, e a gravação fica. **Decidido (26/09).**
-  Quantos dias e horários **[a decidir]**
+  **2 dias. Decidido (26/09).** Horário **[a decidir]**. Recomendação:
+  sábado e domingo, das 9h às 17h com pausa para o almoço. Duas noites
+  somam umas 6 horas, e é pouco para alguém sair do zero com uma
+  ferramenta no ar. Proposta de divisão:
+  - **Dia 1**: cortar a ideia até ela caber, e terminar o dia com a
+    **primeira versão no ar**, ainda simples. Quem vai dormir com algo
+    funcionando volta no dia 2.
+  - **Dia 2**: deixar a ferramenta útil de verdade, a aula de segurança,
+    a publicação final, e no fim a oferta da mentoria.
+
+  Com só dois dias, a **pré-imersão deixa de ser opcional**: quem chegar
+  sem a conta e a instalação prontas perde metade do dia 1.
 - **Ensinado pelo computador. Decidido (26/09).**
 - **Preço**: R$ 97. **Decidido (26/09).** Parcelas, Pix, lote de abertura
   **[a decidir]**
