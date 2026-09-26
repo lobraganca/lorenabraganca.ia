@@ -125,6 +125,8 @@ details.fase-caixa > summary::-webkit-details-marker{display:none}
 .fase-titulo{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .fase-titulo h3{font-size:20px;font-weight:700}
 .fase-conta{font-size:14px;color:var(--tinta-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fase-prazo{font-size:13px;font-weight:700;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.fase-prazo.vencido{color:var(--claude)}
 .fase-objetivo{font-size:14px;color:var(--tinta-2);margin:0}
 summary:focus-visible{outline:2px solid var(--trilha);outline-offset:4px;border-radius:6px}
 
@@ -156,7 +158,7 @@ summary:focus-visible{outline:2px solid var(--trilha);outline-offset:4px;border-
   <header class="topo">
     <span class="rotulo">Trilha de aceleração · lorenabraganca.ia</span>
     <h1>Da primeira ideia à primeira turma</h1>
-    <p>Tudo o que precisa existir para lançar a imersão de R$ 97 e vender a mentoria de R$ 2.997, na ordem certa. Marque cada passo quando terminar.</p>
+    <p>Tudo o que precisa existir para a primeira turma, em <strong>29 e 30 de janeiro</strong>, e para vender a mentoria de R$ 2.997. Cada fase tem um prazo. Marque cada passo quando terminar.</p>
   </header>
 
   <section class="geral" aria-label="Progresso geral">
@@ -189,7 +191,7 @@ summary:focus-visible{outline:2px solid var(--trilha);outline-offset:4px;border-
 
 <script>
 const FASES = [
-  {id:"fundacao", nome:"Fundação", objetivo:"As decisões que mandam em todo o resto.", passos:[
+  {id:"fundacao", ate:"2026-10-10", nome:"Fundação", objetivo:"As decisões que mandam em todo o resto.", passos:[
     {id:"fund-repo", t:"Repositório do projeto criado", como:"github.com/lobraganca/lorenabraganca.ia", q:"juntos"},
     {id:"fund-publico", t:"Para quem é a imersão", como:"Quem quer fazer uma ferramenta com o Claude Code.", q:"voce"},
     {id:"fund-promessa", t:"A promessa", como:"A pessoa faz a própria ferramenta, com a ideia dela.", q:"voce"},
@@ -200,10 +202,10 @@ const FASES = [
     {id:"fund-nao-e", t:"Para quem a imersão NÃO é", como:"Duas ou três frases. Evita comprador errado e reembolso.", q:"juntos"},
     {id:"fund-dias", t:"Quantos dias e em que horário", como:"Ex.: 3 noites, das 19h às 22h. Pense em quem trabalha de dia.", q:"voce"},
     {id:"fund-nome", t:"Nome da imersão", como:"Eu proponho opções; você escolhe. Conferir se o @ está livre no Instagram.", q:"juntos"},
-    {id:"fund-data", t:"Data da primeira turma", como:"Tudo é contado de trás para frente a partir dela. Dê pelo menos 6 semanas.", q:"voce"},
+    {id:"fund-data", t:"Data da primeira turma", como:"Sexta 29/1, das 18h às 22h, e sábado 30/1, das 8h às 12h.", q:"voce"},
     {id:"fund-meta", t:"Meta da primeira turma", como:"Quantos alunos e quantas mentorias. Eu faço a conta de quantas pessoas na lista isso exige.", q:"juntos"},
   ]},
-  {id:"empresa", nome:"Empresa e contas", objetivo:"A parte burocrática demora. Comece cedo e deixe correndo em paralelo.", passos:[
+  {id:"empresa", ate:"2026-11-30", nome:"Empresa e contas", objetivo:"A parte burocrática demora. Comece cedo e deixe correndo em paralelo.", passos:[
     {id:"emp-contador", t:"Conversar com um contador", como:"Qual CNPJ serve para vender cursos e mentoria, e quanto de imposto sai de cada venda.", q:"voce"},
     {id:"emp-cnpj", t:"CNPJ aberto", como:"Do jeito que o contador indicar.", q:"voce"},
     {id:"emp-banco", t:"Conta bancária da empresa", como:"Separar o dinheiro da imersão do dinheiro pessoal desde a primeira venda.", q:"voce"},
@@ -214,7 +216,7 @@ const FASES = [
     {id:"emp-termos", t:"Termos de uso e política de privacidade", como:"Eu escrevo o rascunho; o ideal é um advogado revisar.", q:"claude"},
     {id:"emp-contrato", t:"Contrato da mentoria", como:"Escopo, encontros, prazo, ajustes, de quem é o código, o que acontece depois.", q:"juntos"},
   ]},
-  {id:"marca", nome:"Marca", objetivo:"Como você fala e como você aparece, escrito, para todo mundo (e todo agente) seguir igual.", passos:[
+  {id:"marca", ate:"2026-10-31", nome:"Marca", objetivo:"Como você fala e como você aparece, escrito, para todo mundo (e todo agente) seguir igual.", passos:[
     {id:"marca-posicao", t:"Posicionamento em uma frase", como:"Por que aprender isto com você, e não com outra pessoa.", q:"juntos"},
     {id:"marca-historia", t:"Sua história, escrita", como:"O Ei Emprego: um app na Play Store, construído pelo celular. É a sua maior prova.", q:"juntos"},
     {id:"marca-voz", t:"Tom de voz", como:"Palavras que você usa e palavras que você nunca usa. Exemplos de frase certa e errada.", q:"juntos"},
@@ -223,7 +225,7 @@ const FASES = [
     {id:"marca-book", t:"Branding book pronto", como:"Um documento só com tudo acima. Vira a regra da Guardiã da marca.", q:"claude"},
     {id:"marca-ds", t:"Design system pronto", como:"O branding book virado código, usado em todas as páginas.", q:"claude"},
   ]},
-  {id:"instagram", nome:"Instagram do zero", objetivo:"Público leva tempo para se formar. Começar a publicar semanas antes de vender.", passos:[
+  {id:"instagram", ate:"2026-10-31", nome:"Instagram do zero", objetivo:"Público leva tempo para se formar. Começar a publicar semanas antes de vender.", passos:[
     {id:"ig-conta", t:"Conta profissional (criador)", como:"Nova ou a sua, convertida. Com o @ escolhido.", q:"voce"},
     {id:"ig-foto", t:"Foto de perfil", como:"Rosto, fundo limpo, com a cor da marca.", q:"voce"},
     {id:"ig-bio", t:"Bio", como:"Eu escrevo três opções: quem você é, o que a pessoa ganha, o link.", q:"claude"},
@@ -235,7 +237,7 @@ const FASES = [
     {id:"ig-rotina", t:"Rotina de stories", como:"Todo dia, bastidores do que você está construindo. É conteúdo que não precisa de roteiro.", q:"voce"},
     {id:"ig-30dias", t:"30 dias seguidos publicando", como:"Consistência antes de alcance.", q:"voce"},
   ]},
-  {id:"captacao", nome:"Captação", objetivo:"Transformar seguidor em contato seu: nome, e-mail e WhatsApp.", passos:[
+  {id:"captacao", ate:"2026-11-15", nome:"Captação", objetivo:"Transformar seguidor em contato seu: nome, e-mail e WhatsApp.", passos:[
     {id:"cap-isca", t:"Isca gratuita definida", como:"Ex.: aula curta \"sua primeira ferramenta em 1 hora\", ou um guia de ideias de ferramentas.", q:"juntos"},
     {id:"cap-isca-pronta", t:"Isca produzida", como:"Gravada ou escrita.", q:"voce"},
     {id:"cap-pagina", t:"Página de captura no ar", como:"Nome, e-mail, WhatsApp e consentimento. Eu construo.", q:"claude"},
@@ -244,7 +246,7 @@ const FASES = [
     {id:"cap-grupo", t:"Lista de espera da primeira turma", como:"Grupo ou comunidade no WhatsApp, só avisos.", q:"voce"},
     {id:"cap-100", t:"Primeiros 100 contatos", como:"Um marco. Diz se a isca funciona.", q:"voce"},
   ]},
-  {id:"produto", nome:"A imersão em si", objetivo:"O que a pessoa compra. Pronto antes de abrir as vendas.", passos:[
+  {id:"produto", ate:"2027-01-08", nome:"A imersão em si", objetivo:"O que a pessoa compra. Pronto antes de abrir as vendas.", passos:[
     {id:"prod-programa", t:"Programa dia a dia", como:"O que se aprende e o que se constrói em cada dia.", q:"juntos"},
     {id:"prod-tamanho", t:"Regra do \"tamanho certo\"", como:"Uma ferramenta que resolve um problema só e se explica numa frase.", q:"juntos"},
     {id:"prod-cardapio", t:"Cardápio de ideias", como:"De 20 a 30 ideias prontas para quem chega sem nenhuma.", q:"claude"},
@@ -261,7 +263,7 @@ const FASES = [
     {id:"prod-sala", t:"Sala do ao vivo escolhida", como:"Zoom ou Meet, com salas separadas para monitores.", q:"voce"},
     {id:"prod-ensaio", t:"Ensaio técnico", como:"Uma aula de teste inteira, com gravação, antes da turma.", q:"voce"},
   ]},
-  {id:"venda", nome:"Venda", objetivo:"Página, pagamento e as mensagens que fazem a pessoa decidir.", passos:[
+  {id:"venda", ate:"2026-12-06", nome:"Venda", objetivo:"Página, pagamento e as mensagens que fazem a pessoa decidir.", passos:[
     {id:"venda-copy", t:"Texto da página de vendas", como:"O agente de copy escreve; você aprova cada parte.", q:"claude"},
     {id:"venda-pagina", t:"Página de vendas no ar", como:"Com o custo do plano do Claude escrito com clareza.", q:"claude"},
     {id:"venda-checkout", t:"Pagamento funcionando", como:"Pix e cartão parcelado, pelo Mercado Pago.", q:"claude"},
@@ -269,9 +271,11 @@ const FASES = [
     {id:"venda-boasvindas", t:"Mensagem de boas-vindas", como:"Acesso, vídeos de preparação, link do grupo.", q:"claude"},
     {id:"venda-recuperacao", t:"Recuperação de Pix e carrinho", como:"Quem gerou o Pix e não pagou recebe um lembrete.", q:"claude"},
     {id:"venda-aquecimento", t:"Sequência de aquecimento", como:"Mensagens para a lista nos dias antes da abertura.", q:"claude"},
-    {id:"venda-abertura", t:"Carrinho aberto", como:"Aviso para a lista, stories, post.", q:"voce"},
+    {id:"venda-bonus", t:"Bônus da Turma Fundadora", como:"O presente de quem entra na pré-venda. Sugestão: um encontro extra de 1 hora, uma semana depois, para destravar quem não terminou.", q:"juntos"},
+    {id:"venda-prevenda", t:"Pré-venda para a lista: 8 a 15/12", como:"Só para quem está na lista, R$ 97 com o bônus. É a semana do 13º salário.", q:"voce"},
+    {id:"venda-abertura", t:"Vendas abertas para todos: 5/1", como:"Aviso para a lista, stories, post. Vendas até 27/1.", q:"voce"},
   ]},
-  {id:"entrega", nome:"Entrega", objetivo:"O que o aluno vive depois de pagar.", passos:[
+  {id:"entrega", ate:"2027-01-22", nome:"Entrega", objetivo:"O que o aluno vive depois de pagar.", passos:[
     {id:"ent-area", t:"Área de membros mínima", como:"Entrada, aulas, materiais. O resto pode vir durante a turma.", q:"claude"},
     {id:"ent-grupo", t:"Grupo da turma", como:"Com regras fixadas e horários dos monitores.", q:"voce"},
     {id:"ent-lembretes", t:"Lembretes automáticos do ao vivo", como:"1 dia antes, 1 hora antes, \"estamos ao vivo\".", q:"claude"},
@@ -279,7 +283,7 @@ const FASES = [
     {id:"ent-monitores", t:"Monitores combinados", como:"Quem, em que horários, quanto recebem.", q:"voce"},
     {id:"ent-gravacoes", t:"Gravações publicadas no mesmo dia", como:"Rotina definida: quem sobe e onde.", q:"juntos"},
   ]},
-  {id:"mentoria", nome:"Mentoria", objetivo:"O produto que sustenta o negócio. Pronta antes do último dia da turma.", passos:[
+  {id:"mentoria", ate:"2027-01-22", nome:"Mentoria", objetivo:"O produto que sustenta o negócio. Pronta antes do último dia da turma.", passos:[
     {id:"ment-escopo", t:"Escopo escrito", como:"Quantos encontros, de quanto tempo, em quanto tempo, quantos ajustes.", q:"juntos"},
     {id:"ment-vagas", t:"Vagas por mês definidas", como:"Quantas você aguenta atender bem.", q:"voce"},
     {id:"ment-depois", t:"O que acontece depois", como:"Quem mantém a ferramenta do cliente no ar, e quem paga hospedagem.", q:"juntos"},
@@ -289,7 +293,7 @@ const FASES = [
     {id:"ment-oferta", t:"Oferta no último dia da imersão", como:"Sem fazer a imersão parecer incompleta.", q:"juntos"},
     {id:"ment-sequencia", t:"Mensagens para quem aplicou e não fechou", como:"Três a cinco mensagens, espaçadas.", q:"claude"},
   ]},
-  {id:"depois", nome:"Depois da primeira turma", objetivo:"O que a primeira turma ensina vira a próxima turma melhor.", passos:[
+  {id:"depois", ate:"2027-02-28", nome:"Depois da primeira turma", objetivo:"O que a primeira turma ensina vira a próxima turma melhor.", passos:[
     {id:"dep-pesquisa", t:"Pesquisa com os alunos", como:"O que funcionou, onde travaram.", q:"claude"},
     {id:"dep-depoimentos", t:"Depoimentos coletados", como:"Em vídeo, com autorização de uso de imagem.", q:"voce"},
     {id:"dep-vitrine", t:"Vitrine das ferramentas dos alunos", como:"A prova mais forte para a próxima página de vendas.", q:"claude"},
@@ -374,7 +378,15 @@ function render(){
     const conta = document.createElement("span"); conta.className = "fase-conta"; conta.textContent = `${k} de ${n}`;
     tit.append(h3, conta);
     const obj = document.createElement("p"); obj.className = "fase-objetivo"; obj.textContent = f.objetivo;
-    sum.append(tit, obj);
+    sum.append(tit);
+    if (f.ate) {
+      const vencido = k < n && hojeISO() > f.ate;
+      const pz = document.createElement("span");
+      pz.className = "fase-prazo" + (vencido ? " vencido" : "");
+      pz.textContent = (k === n ? "prazo era " : vencido ? "passou do prazo: " : "até ") + dataCurta(f.ate);
+      sum.append(pz);
+    }
+    sum.append(obj);
     det.appendChild(sum);
 
     const ul = document.createElement("ul");
