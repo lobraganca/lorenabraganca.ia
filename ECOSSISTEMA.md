@@ -6,7 +6,7 @@
 
 ## A ideia em uma frase
 
-Uma imersão online, de R$ 97, em que a pessoa sai com a **própria
+A **Ferramentaria**: uma imersão online, de R$ 97, em que a pessoa sai com a **própria
 ferramenta funcionando**, construída com o Claude Code. Quem quiser uma
 ferramenta sob medida para o próprio negócio segue para a **mentoria
 personalizada, de R$ 2.997**.
@@ -75,7 +75,8 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **O que vem depois**: mentoria personalizada de R$ 2.997. **Decidido
   (26/09).** Ver o bloco 1B.
 - **Primeira turma: paga**, a R$ 97. **Decidido (26/09).**
-- **Nome da imersão** **[a decidir]**. Propostas de 26/09:
+- **Nome da imersão: Ferramentaria. Decidido (26/09).** Falta conferir o @,
+  o domínio e o INPI (classe 41, educação). Histórico das propostas:
   - **Do Zero ao Ar** (recomendado): a promessa inteira em quatro
     palavras. "Sexta você começa do zero; sábado sua ferramenta está no ar."
   - **Ferramentaria**: palavra real (oficina de ferramentas), curta e
