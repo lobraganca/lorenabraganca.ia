@@ -39,7 +39,16 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 é contado de trás para frente a partir da data.
 
 - **Para quem é**: quem quer fazer uma ferramenta com o Claude Code.
-  **Decidido (26/09).** Falta dizer para quem **não** é. **[a decidir]**
+  **Decidido (26/09).**
+- **Para quem NÃO é. Decidido (26/09).** Texto para a página de vendas:
+  > A imersão não é para você se:
+  > - quer a ferramenta pronta sem colocar a mão na massa;
+  > - não tem um computador para usar durante a imersão;
+  > - não pode ou não quer assinar o plano pago do Claude.
+
+  A última frase fala de quem **não pode ou não quer assinar**, e não de
+  quem ainda não assina: a maior parte do público assina depois de
+  comprar a imersão, na preparação.
 - **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
   **Decidido (26/09).**
 - **Formato**: online, ao vivo, e a gravação fica. **Decidido (26/09).**
