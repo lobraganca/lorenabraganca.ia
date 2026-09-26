@@ -75,7 +75,18 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **O que vem depois**: mentoria personalizada de R$ 2.997. **Decidido
   (26/09).** Ver o bloco 1B.
 - **Primeira turma: paga**, a R$ 97. **Decidido (26/09).**
-- **Nome da imersão** **[a decidir]**
+- **Nome da imersão** **[a decidir]**. Propostas de 26/09:
+  - **Do Zero ao Ar** (recomendado): a promessa inteira em quatro
+    palavras. "Sexta você começa do zero; sábado sua ferramenta está no ar."
+  - **Ferramentaria**: palavra real (oficina de ferramentas), curta e
+    diferente de tudo no mercado de IA.
+  - **Mão na Massa**: conversa com o "não é para quem não quer colocar a
+    mão na massa".
+  - Outras: No Ar, Primeira Ferramenta, Feito por Mim.
+
+  Evitar "Claude" no nome e no @: é marca de outra empresa. Ele entra na
+  descrição ("com o Claude Code"), não no nome. Antes de fechar: conferir
+  o @ no Instagram, o domínio, e fazer uma busca no INPI.
 - **Data da primeira turma: janeiro de 2027. Decidido (26/09).** Fim de
   datas exatas **[a decidir]**. Recomendação: **sexta 29 e sábado 30 de
   janeiro**. Ver "Calendário até a primeira turma", no fim.
