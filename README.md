@@ -8,3 +8,7 @@ A trilha de aceleração (o passo a passo marcável) está publicada em
 https://claude.ai/artifact/1NhcuyV66r2fBr5yzeGDMq — o código dela fica em
 [trilha/trilha.html](trilha/trilha.html). O progresso marcado mora no banco
 da própria página, não neste arquivo.
+
+O cronômetro da apresentação está publicado em
+https://claude.ai/artifact/8KmbDVpwgENm1vT7R5N36Z — código em
+[cronometro/cronometro.html](cronometro/cronometro.html).

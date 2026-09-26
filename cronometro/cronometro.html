@@ -1,0 +1,487 @@
+<title>Cronômetro da Imersão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<style>
+/* Um visual só, escuro de propósito: é para ficar aberto ao lado da
+   apresentação, muitas vezes numa sala com pouca luz. */
+:root{
+  color-scheme:dark;
+  --fundo:#0E1311;
+  --painel:#161D1A;
+  --linha:#27322D;
+  --tinta:#EEF3F0;
+  --tinta-2:#9DAEA6;
+  --ok:#4FC2A8;
+  --alerta:#F0B53A;
+  --estouro:#F2685A;
+  --botao:#223029;
+  --texto:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --digitos:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--fundo)}
+body{
+  color:var(--tinta);font-family:var(--texto);font-size:16px;line-height:1.45;
+  padding-inline:16px;padding-block:16px 48px;
+}
+.pagina{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ok);outline-offset:2px}
+
+.barra-topo{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.dias{display:flex;gap:6px;background:var(--painel);border:1px solid var(--linha);border-radius:999px;padding:4px}
+.dias button{border:0;background:transparent;border-radius:999px;padding:8px 16px;min-height:40px;color:var(--tinta-2);font-weight:700}
+.dias button[aria-pressed="true"]{background:var(--botao);color:var(--tinta)}
+.relogio{font-family:var(--digitos);font-size:18px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+
+.palco{
+  background:var(--painel);border:1px solid var(--linha);border-radius:18px;
+  padding:20px;display:flex;flex-direction:column;gap:12px;
+}
+.rotulo{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--tinta-2);font-weight:700}
+.bloco-atual{font-size:clamp(20px,4.5vw,30px);font-weight:700;line-height:1.2;text-wrap:balance;margin:0}
+.restante{
+  font-family:var(--digitos);font-weight:700;font-variant-numeric:tabular-nums;
+  font-size:clamp(72px,22vw,168px);line-height:1;letter-spacing:-0.03em;color:var(--ok);
+}
+.palco.alerta .restante{color:var(--alerta)}
+.palco.estouro .restante{color:var(--estouro)}
+.palco.parado .restante{opacity:.55}
+.progresso{height:8px;border-radius:999px;background:var(--linha);overflow:hidden}
+.progresso span{display:block;height:100%;width:0;background:var(--ok)}
+.palco.alerta .progresso span{background:var(--alerta)}
+.palco.estouro .progresso span{background:var(--estouro)}
+.infos{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--tinta-2);font-size:15px}
+.infos strong{color:var(--tinta);font-variant-numeric:tabular-nums}
+.ritmo{
+  display:inline-block;padding:3px 10px;border-radius:999px;font-weight:700;font-size:14px;
+  border:1.5px solid currentColor;
+}
+.ritmo.em-dia{color:var(--ok)}
+.ritmo.atrasada{color:var(--estouro)}
+.ritmo.adiantada{color:var(--alerta)}
+
+.controles{display:grid;grid-template-columns:1fr 2fr 1fr;gap:10px}
+.controles button{
+  min-height:56px;border-radius:14px;border:1px solid var(--linha);background:var(--botao);
+  font-weight:700;font-size:17px;
+}
+.controles .principal{background:var(--ok);color:#06231C;border-color:var(--ok)}
+.controles .principal.pausar{background:var(--alerta);border-color:var(--alerta);color:#2A1D00}
+.controles button:disabled{opacity:.4;cursor:default}
+.dica{font-size:13px;color:var(--tinta-2);margin:0}
+
+.lista-cab{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lista-cab h2{font-size:18px;margin:0}
+.acoes-lista{display:flex;gap:8px;flex-wrap:wrap}
+.leve{border:1px solid var(--linha);background:transparent;border-radius:10px;padding:8px 12px;min-height:40px;font-size:14px;font-weight:700}
+.leve.perigo{color:var(--estouro);border-color:var(--estouro)}
+
+.blocos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.blocos li{
+  display:grid;grid-template-columns:58px 1fr auto;gap:10px;align-items:baseline;
+  padding:10px 4px;border-bottom:1px solid var(--linha);
+}
+.blocos .hora{font-family:var(--digitos);color:var(--tinta-2);font-size:14px;font-variant-numeric:tabular-nums}
+.blocos .nome{min-width:0}
+.blocos .dur{font-family:var(--digitos);font-size:14px;color:var(--tinta-2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.blocos li.feito .nome{color:var(--tinta-2);text-decoration:line-through}
+.blocos li.agora{background:var(--botao);border-radius:10px;border-bottom-color:transparent}
+.blocos li.agora .nome{font-weight:700}
+.dur .real.mais{color:var(--estouro)}
+.dur .real.menos{color:var(--ok)}
+.total{display:flex;justify-content:space-between;padding:10px 4px;color:var(--tinta-2);font-size:14px}
+.total strong{font-family:var(--digitos);color:var(--tinta)}
+.total.errado strong{color:var(--estouro)}
+
+.editor{display:flex;flex-direction:column;gap:8px}
+.editor .linha{display:grid;grid-template-columns:1fr 76px auto;gap:6px;align-items:center}
+.editor input{
+  width:100%;min-height:42px;border-radius:10px;border:1px solid var(--linha);background:var(--fundo);
+  color:var(--tinta);font:inherit;padding:6px 10px;
+}
+.editor input[type=number]{font-family:var(--digitos);text-align:right}
+.editor .mini{display:flex;gap:4px}
+.editor .mini button{width:38px;height:42px;border-radius:10px;border:1px solid var(--linha);background:transparent;font-weight:700}
+.editor .inicio{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--tinta-2);font-size:14px}
+.editor .inicio input{width:120px}
+.aviso{font-size:13px;color:var(--tinta-2);margin:0}
+.aviso.erro{color:var(--estouro);font-weight:700}
+.confirmar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px}
+.selo-proposta{font-size:12px;color:var(--alerta);border:1px solid var(--alerta);border-radius:999px;padding:1px 8px;font-weight:700}
+
+@media (max-width:520px){
+  .controles{grid-template-columns:1fr 1fr}
+  .controles .principal{grid-column:1 / -1;order:-1}
+  .blocos li{grid-template-columns:48px 1fr auto}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<main class="pagina">
+  <div class="barra-topo">
+    <div class="dias" role="group" aria-label="Qual aula">
+      <button type="button" id="dia-sexta" data-dia="sexta">Sexta · noite</button>
+      <button type="button" id="dia-sabado" data-dia="sabado">Sábado · manhã</button>
+    </div>
+    <span class="relogio" id="relogio" aria-label="Hora agora">--:--</span>
+  </div>
+
+  <section class="palco parado" id="palco" aria-live="off">
+    <span class="rotulo" id="rotulo-bloco">Bloco 1 de 1</span>
+    <h1 class="bloco-atual" id="bloco-atual">Carregando</h1>
+    <div class="restante" id="restante" role="timer" aria-label="Tempo restante do bloco">00:00</div>
+    <div class="progresso" aria-hidden="true"><span id="progresso"></span></div>
+    <div class="infos">
+      <span id="ritmo" class="ritmo em-dia">No horário</span>
+      <span>Termina às <strong id="fim-previsto">--:--</strong></span>
+      <span>Próximo: <strong id="proximo">—</strong></span>
+    </div>
+  </section>
+
+  <div class="controles">
+    <button type="button" id="voltar">← Voltar</button>
+    <button type="button" id="iniciar" class="principal">Começar</button>
+    <button type="button" id="avancar">Próximo →</button>
+  </div>
+  <p class="dica">No computador: barra de espaço começa e pausa; setas passam e voltam os blocos. A tela não apaga enquanto o cronômetro corre, onde o aparelho permitir.</p>
+
+  <section>
+    <div class="lista-cab">
+      <h2>Roteiro <span class="selo-proposta" id="selo-proposta" hidden>proposta</span></h2>
+      <div class="acoes-lista">
+        <button type="button" class="leve" id="editar">Editar roteiro</button>
+        <button type="button" class="leve perigo" id="zerar">Zerar</button>
+      </div>
+    </div>
+    <div class="confirmar" id="confirmar-zerar" hidden>
+      <span>Zerar o cronômetro desta aula?</span>
+      <button type="button" class="leve perigo" id="zerar-sim">Sim, zerar</button>
+      <button type="button" class="leve" id="zerar-nao">Cancelar</button>
+    </div>
+    <ul class="blocos" id="blocos"></ul>
+    <div class="total" id="total"></div>
+    <div class="editor" id="editor" hidden></div>
+    <p class="aviso" id="aviso"></p>
+  </section>
+</main>
+
+<script>
+// Proposta inicial, usada só enquanto nenhum roteiro foi salvo.
+const PROPOSTA = {
+  sexta: {inicio:"18:00", fim:"22:00", blocos:[
+    {nome:"Abertura e boas-vindas", min:10},
+    {nome:"Quem sou eu e a história do Ei", min:15},
+    {nome:"Demonstração ao vivo: o que dá para construir", min:20},
+    {nome:"Conferência da preparação: todo mundo com tudo instalado?", min:15},
+    {nome:"Escolher e cortar a ideia (cardápio e tamanho certo)", min:30},
+    {nome:"Pausa", min:10},
+    {nome:"Primeiro pedido ao Claude Code: o formato-base", min:40},
+    {nome:"Construção guiada, com os monitores", min:60},
+    {nome:"Primeira versão no ar", min:25},
+    {nome:"Fechamento e tarefa para amanhã", min:15},
+  ]},
+  sabado: {inicio:"08:00", fim:"12:00", blocos:[
+    {nome:"Abertura: quem colocou no ar? Mostrar ferramentas", min:15},
+    {nome:"Deixar a ferramenta útil de verdade", min:60},
+    {nome:"Aula de segurança: os dados das outras pessoas", min:25},
+    {nome:"Pausa", min:10},
+    {nome:"Construção livre, com os monitores", min:50},
+    {nome:"Publicação final e vitrine ao vivo", min:30},
+    {nome:"Próximos passos e a mentoria", min:35},
+    {nome:"Encerramento e perguntas", min:15},
+  ]},
+};
+const DIAS = ["sexta","sabado"];
+
+let db = null;
+let roteiros = structuredClone(PROPOSTA);
+let salvos = {sexta:false, sabado:false};
+let dia = lerLocal("cronometro-dia", "sexta");
+if (!DIAS.includes(dia)) dia = "sexta";
+let estados = {sexta: lerLocal("cronometro-estado-sexta", null), sabado: lerLocal("cronometro-estado-sabado", null)};
+let editando = false;
+let wakeLock = null;
+
+function lerLocal(chave, padrao){
+  try { const v = localStorage.getItem(chave); return v === null ? padrao : JSON.parse(v); } catch(e) { return padrao; }
+}
+function gravarLocal(chave, valor){
+  try { localStorage.setItem(chave, JSON.stringify(valor)); } catch(e) {}
+}
+function estadoVazio(){ return {idx:0, rodando:false, inicioTrecho:0, acumulado:0, realizados:[], acabou:false}; }
+function est(){ if (!estados[dia]) estados[dia] = estadoVazio(); return estados[dia]; }
+function salvarEstado(){ gravarLocal("cronometro-estado-" + dia, estados[dia]); }
+
+function mmss(ms){
+  const neg = ms < 0; ms = Math.abs(ms);
+  const s = Math.floor(ms/1000), m = Math.floor(s/60), r = s % 60;
+  return (neg ? "+" : "") + String(m).padStart(2,"0") + ":" + String(r).padStart(2,"0");
+}
+function minTexto(ms){ return Math.round(ms/60000) + " min"; }
+function hhmm(totalMin){
+  totalMin = ((Math.round(totalMin) % 1440) + 1440) % 1440;
+  return String(Math.floor(totalMin/60)).padStart(2,"0") + ":" + String(totalMin%60).padStart(2,"0");
+}
+function paraMin(hora){ const [h,m] = (hora||"0:0").split(":").map(Number); return (h||0)*60 + (m||0); }
+function aviso(texto, erro){ const el = document.getElementById("aviso"); el.textContent = texto || ""; el.classList.toggle("erro", !!erro); }
+
+function decorridoBloco(e){ return e.acumulado + (e.rodando ? Date.now() - e.inicioTrecho : 0); }
+function atrasoMs(e, r){
+  let a = 0;
+  e.realizados.forEach((ms, i) => { a += ms - r.blocos[i].min*60000; });
+  if (!e.acabou && r.blocos[e.idx]) a += Math.max(0, decorridoBloco(e) - r.blocos[e.idx].min*60000);
+  return a;
+}
+
+function renderPalco(){
+  const r = roteiros[dia], e = est();
+  const palco = document.getElementById("palco");
+  const bloco = r.blocos[e.idx];
+  const agora = new Date();
+  document.getElementById("relogio").textContent = hhmm(agora.getHours()*60 + agora.getMinutes());
+
+  if (e.acabou || !bloco) {
+    palco.className = "palco parado";
+    document.getElementById("rotulo-bloco").textContent = "Fim";
+    document.getElementById("bloco-atual").textContent = "Aula encerrada";
+    const total = e.realizados.reduce((a,b)=>a+b,0);
+    document.getElementById("restante").textContent = mmss(total).replace("+","");
+    document.getElementById("progresso").style.width = "100%";
+  } else {
+    const plan = bloco.min*60000;
+    const dec = decorridoBloco(e);
+    const resta = plan - dec;
+    palco.className = "palco" + (!e.rodando ? " parado" : "") + (resta < 0 ? " estouro" : resta <= 120000 ? " alerta" : "");
+    document.getElementById("rotulo-bloco").textContent = `Bloco ${e.idx+1} de ${r.blocos.length} · ${bloco.min} min`;
+    document.getElementById("bloco-atual").textContent = bloco.nome;
+    document.getElementById("restante").textContent = mmss(resta);
+    document.getElementById("progresso").style.width = Math.min(100, plan ? dec*100/plan : 100) + "%";
+  }
+
+  const atraso = atrasoMs(e, r);
+  const ritmo = document.getElementById("ritmo");
+  const minutos = Math.round(Math.abs(atraso)/60000);
+  if (minutos === 0) { ritmo.className = "ritmo em-dia"; ritmo.textContent = "No horário"; }
+  else if (atraso > 0) { ritmo.className = "ritmo atrasada"; ritmo.textContent = `${minutos} min atrasada`; }
+  else { ritmo.className = "ritmo adiantada"; ritmo.textContent = `${minutos} min adiantada`; }
+
+  const planejado = r.blocos.reduce((a,b)=>a+b.min,0);
+  document.getElementById("fim-previsto").textContent = hhmm(paraMin(r.inicio) + planejado + atraso/60000);
+  const prox = r.blocos[e.idx+1];
+  document.getElementById("proximo").textContent = e.acabou ? "—" : prox ? `${prox.nome} (${prox.min} min)` : "fim da aula";
+
+  const iniciar = document.getElementById("iniciar");
+  iniciar.textContent = e.acabou ? "Encerrada" : e.rodando ? "Pausar" : (e.idx === 0 && e.acumulado === 0 && !e.realizados.length) ? "Começar" : "Continuar";
+  iniciar.classList.toggle("pausar", e.rodando);
+  iniciar.disabled = e.acabou;
+  document.getElementById("voltar").disabled = e.idx === 0 && !e.acabou;
+  document.getElementById("avancar").disabled = e.acabou;
+}
+
+function renderLista(){
+  const r = roteiros[dia], e = est();
+  document.querySelectorAll(".dias button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.dia === dia)));
+  document.getElementById("selo-proposta").hidden = salvos[dia];
+  const ul = document.getElementById("blocos");
+  ul.replaceChildren();
+  let t = paraMin(r.inicio);
+  r.blocos.forEach((b, i) => {
+    const li = document.createElement("li");
+    if (i < e.realizados.length) li.classList.add("feito");
+    if (i === e.idx && !e.acabou) li.classList.add("agora");
+    const h = document.createElement("span"); h.className = "hora"; h.textContent = hhmm(t);
+    const n = document.createElement("span"); n.className = "nome"; n.textContent = b.nome;
+    const d = document.createElement("span"); d.className = "dur";
+    d.textContent = b.min + " min";
+    if (i < e.realizados.length) {
+      const real = e.realizados[i], dif = real - b.min*60000;
+      const s = document.createElement("span");
+      s.className = "real " + (dif > 30000 ? "mais" : dif < -30000 ? "menos" : "");
+      s.textContent = " · " + minTexto(real);
+      d.appendChild(s);
+    }
+    li.append(h, n, d);
+    ul.appendChild(li);
+    t += b.min;
+  });
+  const soma = r.blocos.reduce((a,b)=>a+b.min,0);
+  const janela = paraMin(r.fim) - paraMin(r.inicio);
+  const total = document.getElementById("total");
+  total.className = "total" + (soma !== janela ? " errado" : "");
+  total.replaceChildren();
+  const a = document.createElement("span");
+  a.textContent = soma === janela ? `De ${r.inicio} às ${r.fim}` : `A janela é de ${janela} min (${r.inicio} às ${r.fim}); o roteiro soma ${soma}`;
+  const b = document.createElement("strong"); b.textContent = soma + " min";
+  total.append(a, b);
+  ul.hidden = editando; total.hidden = editando;
+}
+
+function render(){ renderLista(); renderPalco(); }
+
+async function manterTelaAcesa(ligar){
+  try {
+    if (ligar && !wakeLock && navigator.wakeLock) {
+      wakeLock = await navigator.wakeLock.request("screen");
+      wakeLock.addEventListener("release", () => { wakeLock = null; });
+    } else if (!ligar && wakeLock) { await wakeLock.release(); wakeLock = null; }
+  } catch(e) { wakeLock = null; }
+}
+
+function alternar(){
+  const e = est();
+  if (e.acabou) return;
+  if (e.rodando) { e.acumulado += Date.now() - e.inicioTrecho; e.rodando = false; manterTelaAcesa(false); }
+  else { e.inicioTrecho = Date.now(); e.rodando = true; manterTelaAcesa(true); }
+  salvarEstado(); render();
+}
+function avancar(){
+  const e = est(), r = roteiros[dia];
+  if (e.acabou) return;
+  e.realizados.push(decorridoBloco(e));
+  e.acumulado = 0; e.inicioTrecho = Date.now();
+  if (e.idx + 1 >= r.blocos.length) { e.acabou = true; e.rodando = false; manterTelaAcesa(false); }
+  else e.idx += 1;
+  salvarEstado(); render();
+}
+function voltar(){
+  const e = est();
+  if (e.acabou) { e.acabou = false; e.acumulado = e.realizados.pop() || 0; e.inicioTrecho = Date.now(); salvarEstado(); render(); return; }
+  if (e.idx === 0) return;
+  const anterior = e.realizados.pop() || 0;
+  e.idx -= 1; e.acumulado = anterior; e.inicioTrecho = Date.now();
+  salvarEstado(); render();
+}
+function zerar(){
+  estados[dia] = estadoVazio(); salvarEstado(); manterTelaAcesa(false);
+  document.getElementById("confirmar-zerar").hidden = true;
+  render();
+}
+
+// ---------- edição do roteiro ----------
+let rascunho = null;
+function abrirEditor(){
+  editando = true;
+  rascunho = structuredClone(roteiros[dia]);
+  desenharEditor();
+  document.getElementById("editor").hidden = false;
+  document.getElementById("editar").textContent = "Fechar sem salvar";
+  renderLista();
+}
+function fecharEditor(){
+  editando = false; rascunho = null;
+  document.getElementById("editor").hidden = true;
+  document.getElementById("editar").textContent = "Editar roteiro";
+  renderLista();
+}
+function desenharEditor(){
+  const ed = document.getElementById("editor");
+  ed.replaceChildren();
+  const ini = document.createElement("div"); ini.className = "inicio";
+  const l1 = document.createElement("label"); l1.htmlFor = "ed-inicio"; l1.textContent = "Começa às";
+  const i1 = document.createElement("input"); i1.type = "time"; i1.id = "ed-inicio"; i1.value = rascunho.inicio;
+  i1.addEventListener("change", () => { rascunho.inicio = i1.value || rascunho.inicio; });
+  const l2 = document.createElement("label"); l2.htmlFor = "ed-fim"; l2.textContent = "termina às";
+  const i2 = document.createElement("input"); i2.type = "time"; i2.id = "ed-fim"; i2.value = rascunho.fim;
+  i2.addEventListener("change", () => { rascunho.fim = i2.value || rascunho.fim; somaEditor(); });
+  ini.append(l1, i1, l2, i2);
+  ed.appendChild(ini);
+
+  rascunho.blocos.forEach((b, i) => {
+    const linha = document.createElement("div"); linha.className = "linha";
+    const nome = document.createElement("input"); nome.type = "text"; nome.id = "ed-nome-" + i; nome.value = b.nome;
+    nome.setAttribute("aria-label", "Nome do bloco " + (i+1));
+    nome.addEventListener("input", () => { rascunho.blocos[i].nome = nome.value; });
+    const min = document.createElement("input"); min.type = "number"; min.id = "ed-min-" + i; min.min = "1"; min.max = "240"; min.value = b.min;
+    min.setAttribute("aria-label", "Minutos do bloco " + (i+1));
+    min.addEventListener("input", () => { rascunho.blocos[i].min = Math.max(1, parseInt(min.value,10) || 1); somaEditor(); });
+    const mini = document.createElement("div"); mini.className = "mini";
+    const sobe = document.createElement("button"); sobe.type = "button"; sobe.textContent = "↑"; sobe.setAttribute("aria-label","Subir"); sobe.disabled = i === 0;
+    sobe.addEventListener("click", () => { [rascunho.blocos[i-1], rascunho.blocos[i]] = [rascunho.blocos[i], rascunho.blocos[i-1]]; desenharEditor(); });
+    const desce = document.createElement("button"); desce.type = "button"; desce.textContent = "↓"; desce.setAttribute("aria-label","Descer"); desce.disabled = i === rascunho.blocos.length-1;
+    desce.addEventListener("click", () => { [rascunho.blocos[i+1], rascunho.blocos[i]] = [rascunho.blocos[i], rascunho.blocos[i+1]]; desenharEditor(); });
+    const tira = document.createElement("button"); tira.type = "button"; tira.textContent = "✕"; tira.setAttribute("aria-label","Remover bloco"); tira.disabled = rascunho.blocos.length === 1;
+    tira.addEventListener("click", () => { rascunho.blocos.splice(i,1); desenharEditor(); });
+    mini.append(sobe, desce, tira);
+    linha.append(nome, min, mini);
+    ed.appendChild(linha);
+  });
+
+  const soma = document.createElement("p"); soma.className = "aviso"; soma.id = "ed-soma"; ed.appendChild(soma);
+  const acoes = document.createElement("div"); acoes.className = "acoes-lista";
+  const mais = document.createElement("button"); mais.type = "button"; mais.className = "leve"; mais.textContent = "+ Bloco";
+  mais.addEventListener("click", () => { rascunho.blocos.push({nome:"Novo bloco", min:10}); desenharEditor(); document.getElementById("ed-nome-" + (rascunho.blocos.length-1))?.focus(); });
+  const salvar = document.createElement("button"); salvar.type = "button"; salvar.className = "leve"; salvar.textContent = "Salvar roteiro";
+  salvar.style.borderColor = "var(--ok)"; salvar.style.color = "var(--ok)";
+  salvar.addEventListener("click", salvarRoteiro);
+  acoes.append(mais, salvar);
+  ed.appendChild(acoes);
+  somaEditor();
+}
+function somaEditor(){
+  const el = document.getElementById("ed-soma"); if (!el || !rascunho) return;
+  const soma = rascunho.blocos.reduce((a,b)=>a+b.min,0);
+  const janela = paraMin(rascunho.fim) - paraMin(rascunho.inicio);
+  el.textContent = soma === janela ? `Soma ${soma} min: fecha certinho.` : `Soma ${soma} min; a janela tem ${janela}. ${soma > janela ? "Sobram " + (soma-janela) + " min de conteúdo." : "Faltam " + (janela-soma) + " min."}`;
+  el.classList.toggle("erro", soma !== janela);
+}
+async function salvarRoteiro(){
+  const limpo = {inicio: rascunho.inicio, fim: rascunho.fim, blocos: rascunho.blocos.map(b => ({nome: (b.nome||"").trim() || "Sem nome", min: b.min}))};
+  const e = est();
+  if (e.idx >= limpo.blocos.length) { estados[dia] = estadoVazio(); salvarEstado(); }
+  roteiros[dia] = limpo; salvos[dia] = true;
+  gravarLocal("cronometro-roteiro-" + dia, limpo);
+  fecharEditor(); render();
+  if (!db) { aviso("Roteiro salvo só neste aparelho."); return; }
+  try { await db.doc("roteiros/" + dia).set(limpo); aviso("Roteiro salvo."); }
+  catch(err) { aviso("Não consegui salvar no servidor; ficou salvo só neste aparelho.", true); }
+}
+
+// ---------- ligações ----------
+document.querySelectorAll(".dias button").forEach(b => b.addEventListener("click", () => {
+  if (editando) fecharEditor();
+  dia = b.dataset.dia; gravarLocal("cronometro-dia", dia);
+  document.getElementById("confirmar-zerar").hidden = true;
+  render();
+}));
+document.getElementById("iniciar").addEventListener("click", alternar);
+document.getElementById("avancar").addEventListener("click", avancar);
+document.getElementById("voltar").addEventListener("click", voltar);
+document.getElementById("editar").addEventListener("click", () => editando ? fecharEditor() : abrirEditor());
+document.getElementById("zerar").addEventListener("click", () => { document.getElementById("confirmar-zerar").hidden = false; });
+document.getElementById("zerar-nao").addEventListener("click", () => { document.getElementById("confirmar-zerar").hidden = true; });
+document.getElementById("zerar-sim").addEventListener("click", zerar);
+document.addEventListener("keydown", ev => {
+  if (editando || ev.target.closest("input")) return;
+  if (ev.code === "Space") { ev.preventDefault(); alternar(); }
+  else if (ev.key === "ArrowRight") avancar();
+  else if (ev.key === "ArrowLeft") voltar();
+});
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && est().rodando) manterTelaAcesa(true);
+});
+
+DIAS.forEach(d => { const r = lerLocal("cronometro-roteiro-" + d, null); if (r && r.blocos?.length) { roteiros[d] = r; salvos[d] = true; } });
+render();
+setInterval(renderPalco, 250);
+
+(async () => {
+  let ns = null;
+  try { ns = window.claude ? await window.claude.use("db") : null; } catch(e) { ns = null; }
+  if (!ns) { aviso("O roteiro está sendo salvo só neste aparelho."); return; }
+  db = ns;
+  DIAS.forEach(d => {
+    db.doc("roteiros/" + d).onSnapshot(snap => {
+      if (!snap.exists) return;
+      const r = snap.data();
+      if (!r || !Array.isArray(r.blocos) || !r.blocos.length) return;
+      roteiros[d] = {inicio: r.inicio || PROPOSTA[d].inicio, fim: r.fim || PROPOSTA[d].fim, blocos: r.blocos.map(b => ({nome: String(b.nome||""), min: Math.max(1, Number(b.min)||1)}))};
+      salvos[d] = true;
+      gravarLocal("cronometro-roteiro-" + d, roteiros[d]);
+      if (!editando) render();
+    }, () => aviso("Perdi a conexão com o roteiro salvo. Recarregue a página.", true));
+  });
+})();
+</script>

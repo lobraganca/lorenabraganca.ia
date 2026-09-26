@@ -52,21 +52,23 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
   **Decidido (26/09).**
 - **Formato**: online, ao vivo, e a gravação fica. **Decidido (26/09).**
-  **2 noites, das 18h às 22h. Decidido (26/09).** São 8 horas no total,
-  então cada minuto conta:
-  - **Noite 1**: cortar a ideia até ela caber, e terminar a noite com a
-    **primeira versão no ar**, ainda simples. Quem vai dormir com algo
-    funcionando volta na noite 2.
-  - **Noite 2**: deixar a ferramenta útil de verdade, a aula de
+  **Sexta das 18h às 22h e sábado das 8h às 12h. Decidido (26/09).**
+  São 8 horas no total, então cada minuto conta:
+  - **Sexta à noite**: cortar a ideia até ela caber, e terminar a noite
+    com a **primeira versão no ar**, ainda simples. Quem vai dormir com
+    algo funcionando volta no sábado cedo.
+  - **Sábado de manhã**: deixar a ferramenta útil de verdade, a aula de
     segurança, a publicação final, e no fim a oferta da mentoria.
-  - **Noites seguidas** (ex.: terça e quarta), para ninguém esfriar entre
-    uma e outra.
 
   Com 8 horas, três coisas deixam de ser opcionais: a **pré-imersão**
   (quem chegar sem o plano do Claude e a instalação prontos perde a
-  noite 1), o **cardápio de ideias** e o **formato-base**, para ninguém
+  sexta), o **cardápio de ideias** e o **formato-base**, para ninguém
   gastar a primeira hora decidindo o que construir. A gravação fica,
   então quem não terminar ao vivo termina depois.
+
+  **Cronômetro da apresentação**: pedido em 26/09 e já existe, com o
+  roteiro proposto minuto a minuto das duas aulas, editável:
+  https://claude.ai/artifact/8KmbDVpwgENm1vT7R5N36Z
 - **Ensinado pelo computador. Decidido (26/09).**
 - **Preço**: R$ 97. **Decidido (26/09).** Parcelas, Pix, lote de abertura
   **[a decidir]**
@@ -75,7 +77,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **Primeira turma: paga**, a R$ 97. **Decidido (26/09).**
 - **Nome da imersão** **[a decidir]**
 - **Data da primeira turma: janeiro de 2027. Decidido (26/09).** Fim de
-  noites exatas **[a decidir]**. Recomendação: **terça 26 e quarta 27 de
+  datas exatas **[a decidir]**. Recomendação: **sexta 29 e sábado 30 de
   janeiro**. Ver "Calendário até a primeira turma", no fim.
 
 ### O que o preço de R$ 97 muda
@@ -363,9 +365,10 @@ para frente a partir dela.
 
 ## Calendário até a primeira turma (proposta, contada de trás para frente)
 
-Por que **26 e 27 de janeiro** (terça e quarta, das 18h às 22h): de
-20/12 a 4/1 quase ninguém presta atenção em venda. Com a imersão no fim
-do mês, dá para vender por três semanas **depois** das festas.
+Por que **29 e 30 de janeiro** (sexta das 18h às 22h, sábado das 8h às
+12h): de 20/12 a 4/1 quase ninguém presta atenção em venda. Com a
+imersão no último fim de semana do mês, dá para vender por mais de três
+semanas **depois** das festas.
 
 | Até | O que precisa estar pronto |
 |---|---|
@@ -377,10 +380,10 @@ do mês, dá para vender por três semanas **depois** das festas.
 | **8 a 15/12** | **Pré-venda só para a lista**, com um bônus para quem entrar primeiro. É quando cai o 13º salário. **[a decidir]** |
 | **20/12 a 4/1** | Recesso de vendas: conteúdo leve, programado antes |
 | **5/1** (terça) | Vendas abertas para todo mundo |
-| **19/1** (terça) | Lembrete da preparação: plano do Claude assinado, tudo instalado |
-| **24/1** (domingo) | Fim das vendas; última chamada da preparação |
-| **26 e 27/1** | **Imersão**, das 18h às 22h. Oferta da mentoria no fim da noite 2 |
-| **28/1 a 10/2** | Aplicações e conversas de venda da mentoria |
+| **22/1** (sexta) | Lembrete da preparação: plano do Claude assinado, tudo instalado |
+| **27/1** (quarta) | Fim das vendas; última chamada da preparação |
+| **29 e 30/1** | **Imersão**: sexta das 18h às 22h, sábado das 8h às 12h. Oferta da mentoria no fim do sábado |
+| **31/1 a 13/2** | Aplicações e conversas de venda da mentoria |
 | **fevereiro** | Primeiras mentorias começam |
 
 ---
