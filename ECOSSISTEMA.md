@@ -195,6 +195,15 @@ faturamento da mentoria, e o que deve limitar quantas se vendem.
   azul-piscina (principal #0AAFD0).** Escala completa e regras de contraste
   em `marca/briefing-claude-design.md`. Botão principal: piscina com texto
   marinho; nunca texto branco sobre o piscina (contraste 2,6).
+- **Identidade v0.2, do Claude Design (26/09)**, em `marca/identidade-v0.2.pdf`.
+  Seguiu o briefing nas cores, na escala, no contraste e na voz. Tipografia:
+  Bricolage Grotesque 800 (chamadas), Kalnia 200 (nome, no mínimo 72px),
+  Ms Madi (só a letra inicial, em assinatura), Atkinson Hyperlegible
+  (texto, no mínimo 17px) e JetBrains Mono (comandos). No site e na
+  plataforma, a interface usa só Bricolage, Atkinson e Mono; Kalnia e
+  Ms Madi ficam para peças de marca. Ajustes pedidos: códigos dos tons
+  700 a 900 aparecem embaixo dos tons 50 a 200; vírgula em "Lorena,
+  Bragança"; faltam as fotos reais.
 - Posicionamento: por que você, e não outra pessoa, para ensinar isto
 - Sua história (o Ei Emprego é prova real: um app no ar, na loja, com usuários)
 - Tom de voz: palavras que usamos e palavras que não usamos
