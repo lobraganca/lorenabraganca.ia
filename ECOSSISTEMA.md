@@ -83,13 +83,15 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   - **Mão na Massa**: conversa com o "não é para quem não quer colocar a
     mão na massa".
   - Outras: No Ar, Primeira Ferramenta, Feito por Mim.
+  - Segunda rodada: **Tira do Papel** (a expressão que todo mundo já usa
+    para ideia que vira realidade), **Eu Que Fiz** (o orgulho de mostrar;
+    vira hashtag dos alunos), **Do Papel ao Ar**, **Ideia no Ar**.
 
   Evitar "Claude" no nome e no @: é marca de outra empresa. Ele entra na
   descrição ("com o Claude Code"), não no nome. Antes de fechar: conferir
   o @ no Instagram, o domínio, e fazer uma busca no INPI.
-- **Data da primeira turma: janeiro de 2027. Decidido (26/09).** Fim de
-  datas exatas **[a decidir]**. Recomendação: **sexta 29 e sábado 30 de
-  janeiro**. Ver "Calendário até a primeira turma", no fim.
+- **Data da primeira turma: sexta 29 e sábado 30 de janeiro de 2027.
+  Decidido (26/09).** Ver "Calendário até a primeira turma", no fim.
 
 ### O que o preço de R$ 97 muda
 
@@ -395,8 +397,8 @@ semanas **depois** das festas.
 | **31/10** | Marca (posicionamento, história, voz, visual); Instagram arrumado e publicando todo dia |
 | **15/11** | Isca pronta e página de captura no ar: a lista começa a crescer |
 | **30/11** | CNPJ, conta da empresa e Mercado Pago funcionando; programa da imersão fechado |
-| **13/12** | Página de vendas, pagamento, acesso automático e mensagens, tudo testado com uma compra de verdade |
-| **8 a 15/12** | **Pré-venda só para a lista**, com um bônus para quem entrar primeiro. É quando cai o 13º salário. **[a decidir]** |
+| **6/12** | Página de vendas, pagamento, acesso automático e mensagens, tudo testado com uma compra de verdade. Tem de estar pronto antes da pré-venda. |
+| **8 a 15/12** | **Pré-venda só para a lista: a Turma Fundadora.** R$ 97 com um bônus para quem entrar primeiro. É quando cai o 13º salário. **Decidido (26/09).** Bônus **[a decidir]**; sugestão: um encontro extra de 1 hora, uma semana depois da imersão, para destravar quem não terminou. Custa pouco, aumenta quem termina e é mais uma conversa antes da mentoria. |
 | **20/12 a 4/1** | Recesso de vendas: conteúdo leve, programado antes |
 | **5/1** (terça) | Vendas abertas para todo mundo |
 | **22/1** (sexta) | Lembrete da preparação: plano do Claude assinado, tudo instalado |
