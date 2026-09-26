@@ -86,6 +86,9 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   - Segunda rodada: **Tira do Papel** (a expressão que todo mundo já usa
     para ideia que vira realidade), **Eu Que Fiz** (o orgulho de mostrar;
     vira hashtag dos alunos), **Do Papel ao Ar**, **Ideia no Ar**.
+  - **"Tira do Papel" recusado por Lorena (26/09)**, depois de ver a
+    identidade feita com ele. Terceira rodada, puxando a água da
+    identidade: **Mergulho**, **Primeiro Mergulho**, **Do Raso ao Fundo**.
 
   Evitar "Claude" no nome e no @: é marca de outra empresa. Ele entra na
   descrição ("com o Claude Code"), não no nome. Antes de fechar: conferir
