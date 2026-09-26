@@ -71,7 +71,9 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   (26/09).** Ver o bloco 1B.
 - **Primeira turma: paga**, a R$ 97. **Decidido (26/09).**
 - **Nome da imersão** **[a decidir]**
-- **Data da primeira turma** **[a decidir]**
+- **Data da primeira turma: janeiro de 2027. Decidido (26/09).** Fim de
+  semana exato **[a decidir]**. Recomendação: **23 e 24 de janeiro**
+  (sábado e domingo). Ver "Calendário até a primeira turma", no fim.
 
 ### O que o preço de R$ 97 muda
 
@@ -353,6 +355,31 @@ vir depois, enquanto ela acontece):
 
 **[a decidir: a data]**, porque o cronograma inteiro é contado de trás
 para frente a partir dela.
+
+---
+
+## Calendário até a primeira turma (proposta, contada de trás para frente)
+
+Por que **23 e 24 de janeiro**: de 20/12 a 4/1 quase ninguém presta
+atenção em venda, e o primeiro fim de semana do ano (2 e 3/1) cai colado
+no Réveillon. Com a imersão no fim do mês, dá para vender por quase três
+semanas **depois** das festas.
+
+| Até | O que precisa estar pronto |
+|---|---|
+| **10/10** | Fundação fechada; contador contatado |
+| **31/10** | Marca (posicionamento, história, voz, visual); Instagram arrumado e publicando todo dia |
+| **15/11** | Isca pronta e página de captura no ar: a lista começa a crescer |
+| **30/11** | CNPJ, conta da empresa e Mercado Pago funcionando; programa da imersão fechado |
+| **13/12** | Página de vendas, pagamento, acesso automático e mensagens, tudo testado com uma compra de verdade |
+| **8 a 15/12** | **Pré-venda só para a lista**, com um bônus para quem entrar primeiro. É quando cai o 13º salário. **[a decidir]** |
+| **20/12 a 4/1** | Recesso de vendas: conteúdo leve, programado antes |
+| **5/1** (terça) | Vendas abertas para todo mundo |
+| **18/1** (segunda) | Lembrete da preparação: plano do Claude assinado, tudo instalado |
+| **21/1** | Fim das vendas |
+| **23 e 24/1** | **Imersão.** Oferta da mentoria no fim do dia 24 |
+| **25/1 a 7/2** | Aplicações e conversas de venda da mentoria |
+| **fevereiro** | Primeiras mentorias começam |
 
 ---
 
