@@ -191,6 +191,10 @@ faturamento da mentoria, e o que deve limitar quantas se vendem.
 ## 2. Marca
 
 **Branding book**
+- **Cores decididas por Lorena (26/09): azul-marinho #0B1F3A com escala de
+  azul-piscina (principal #0AAFD0).** Escala completa e regras de contraste
+  em `marca/briefing-claude-design.md`. Botão principal: piscina com texto
+  marinho; nunca texto branco sobre o piscina (contraste 2,6).
 - Posicionamento: por que você, e não outra pessoa, para ensinar isto
 - Sua história (o Ei Emprego é prova real: um app no ar, na loja, com usuários)
 - Tom de voz: palavras que usamos e palavras que não usamos
