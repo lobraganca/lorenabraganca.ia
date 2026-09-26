@@ -16,3 +16,7 @@ https://claude.ai/artifact/8KmbDVpwgENm1vT7R5N36Z — código em
 A Planta da Ferramenta (perguntas que montam o pedido do aluno) está em
 https://claude.ai/artifact/UN5HXRpwqWgQJmDXtConty — código em
 [area-de-membros/planta/planta.html](area-de-membros/planta/planta.html).
+
+As três direções de marca (etapa 1 do branding) estão em
+https://claude.ai/artifact/4dwqu2L1UsMyLF4RDYGXQq — código em
+[marca/direcoes.html](marca/direcoes.html).

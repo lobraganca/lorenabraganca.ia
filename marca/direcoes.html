@@ -1,0 +1,409 @@
+<title>Direções da Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,800;100,500&family=Public+Sans:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --fundo:#F2F3F1;
+  --papel:#FFFFFF;
+  --tinta:#1A1D1B;
+  --tinta-2:#555C58;
+  --linha:#D8DCD9;
+  --acao:#1A1D1B;
+  --acao-texto:#FFFFFF;
+  --ok:#0F6B5C;
+  --erro:#B3261E;
+  --ui:"Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --fundo:#121413;
+    --papel:#1B1E1D;
+    --tinta:#ECEFED;
+    --tinta-2:#A7AFAB;
+    --linha:#2E3331;
+    --acao:#ECEFED;
+    --acao-texto:#121413;
+    --ok:#4FC2A8;
+    --erro:#F2877E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --fundo:#121413;
+  --papel:#1B1E1D;
+  --tinta:#ECEFED;
+  --tinta-2:#A7AFAB;
+  --linha:#2E3331;
+  --acao:#ECEFED;
+  --acao-texto:#121413;
+  --ok:#4FC2A8;
+  --erro:#F2877E;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--fundo);color:var(--tinta);font-family:var(--ui);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:24px 64px}
+.pagina{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,6vw,40px);letter-spacing:-0.02em;line-height:1.1}
+h2{font-size:clamp(22px,4.5vw,28px);letter-spacing:-0.01em}
+.rotulo{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--tinta-2);font-weight:700}
+.sub{margin:0;color:var(--tinta-2);max-width:62ch}
+.topo{display:flex;flex-direction:column;gap:10px}
+.nota{font-size:14px;color:var(--tinta-2);margin:0}
+
+/* ---------- cartão de direção ---------- */
+.direcao{background:var(--papel);border:1px solid var(--linha);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:18px}
+.direcao-cab{display:flex;flex-direction:column;gap:4px}
+.direcao-cab .letra{font-size:13px;font-weight:700;color:var(--tinta-2)}
+.direcao-cab p{margin:0;color:var(--tinta-2);max-width:62ch}
+.paleta{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.cor{display:flex;flex-direction:column;gap:4px;font-size:12px;min-width:0}
+.cor i{display:block;aspect-ratio:1;border-radius:10px;border:1px solid rgba(0,0,0,.12)}
+.cor b{font-weight:700;overflow-wrap:anywhere}
+.cor span{color:var(--tinta-2);font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px}
+.tipos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tipo{border:1px solid var(--linha);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tipo .amostra{font-size:26px;line-height:1.1;overflow-wrap:anywhere}
+.tipo .amostra.corpo{font-size:16px;line-height:1.45}
+.tipo small{color:var(--tinta-2);font-size:12px}
+
+.aplicacoes{display:grid;grid-template-columns:1.1fr .62fr 1.6fr;gap:12px;align-items:start}
+.aplicacoes figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.aplicacoes figcaption{font-size:12px;color:var(--tinta-2)}
+.post,.story,.hero{container-type:inline-size;border-radius:10px;overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.08)}
+.post{aspect-ratio:1/1}
+.story{aspect-ratio:9/16}
+.hero{aspect-ratio:16/11}
+.post > div,.story > div,.hero > div{position:absolute;inset:0;display:flex;flex-direction:column}
+
+.escolher{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{min-height:48px;padding:0 18px;border-radius:12px;border:1.5px solid var(--linha);background:var(--papel);color:var(--tinta);font:inherit;font-weight:700;cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--acao);color:var(--acao-texto);border-color:var(--acao)}
+.btn:focus-visible,textarea:focus-visible{outline:2px solid var(--ok);outline-offset:2px}
+
+@media (max-width:760px){
+  .aplicacoes{grid-template-columns:1fr 1fr}
+  .aplicacoes figure.fig-hero{grid-column:1 / -1}
+  .aplicacoes figure.fig-story{max-width:100%}
+}
+@media (max-width:420px){ .tipos{grid-template-columns:1fr} .paleta{gap:6px} }
+
+/* ================= A · OFICINA ================= */
+.oficina{font-family:"Public Sans",sans-serif}
+.oficina .disp{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:112%;letter-spacing:-0.01em}
+.oficina .planta{
+  background-color:#1B3B8C;color:#FFFFFF;
+  background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);
+  background-size:8cqw 8cqw;
+}
+.of-post{padding:8cqw;justify-content:space-between}
+.of-post .etq{align-self:flex-start;background:#FFC83D;color:#16181D;font-family:"Archivo",sans-serif;font-weight:800;font-stretch:112%;font-size:5cqw;padding:1.5cqw 3cqw;border-radius:1cqw;text-transform:uppercase}
+.of-post h3{font-size:9.4cqw;line-height:1.02;margin:0}
+.of-post h3 em{font-style:normal;color:#FFC83D}
+.of-post .rod{display:flex;justify-content:space-between;font-size:4.2cqw;opacity:.9}
+.of-story{padding:10cqw;gap:6cqw;justify-content:center}
+.of-story .linha-dia{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:112%;font-size:13cqw;line-height:1}
+.of-story .linha-dia span{color:#FFC83D}
+.of-story p{font-size:7cqw;margin:0;line-height:1.2}
+.of-story .btn-s{margin-top:4cqw;background:#FFC83D;color:#16181D;font-weight:700;text-align:center;border-radius:3cqw;padding:4cqw;font-size:6.5cqw}
+.of-hero{background:#EEF1F6;color:#16181D;padding:5cqw;gap:2.4cqw}
+.of-hero .nav{display:flex;justify-content:space-between;font-size:2.4cqw;font-weight:700;color:#1B3B8C}
+.of-hero h3{font-size:7.4cqw;line-height:1;margin:2cqw 0 0;color:#1B3B8C}
+.of-hero p{font-size:2.9cqw;margin:0;max-width:34ch;line-height:1.35}
+.of-hero .cta{align-self:flex-start;background:#FFC83D;color:#16181D;font-weight:700;font-size:2.8cqw;padding:2cqw 3.4cqw;border-radius:1.4cqw;border:0.4cqw solid #16181D}
+.of-hero .faixa{margin-top:auto;display:flex;gap:3cqw;font-size:2.2cqw;color:#1B3B8C;font-weight:700;border-top:0.3cqw solid #1B3B8C;padding-top:2cqw}
+
+/* ================= B · SERRA ================= */
+.serra{font-family:"Figtree",sans-serif}
+.serra .disp{font-family:"Instrument Serif",serif;font-weight:400}
+.se-post{background:#1F4A3B;color:#F1F3EF;padding:8cqw;justify-content:space-between}
+.se-post .topo-s{display:flex;justify-content:space-between;align-items:center;font-size:4cqw}
+.se-post .bolinha{width:6cqw;height:6cqw;border-radius:50%;background:#EC7FA9}
+.se-post h3{font-size:11cqw;line-height:1.02;margin:0;font-weight:400}
+.se-post h3 em{color:#EC7FA9}
+.se-post p{margin:0;font-size:4.4cqw;color:#CFE0D4}
+.se-story{background:#F1F3EF;color:#2E2A30;padding:10cqw;justify-content:space-between}
+.se-story .foto{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#EC7FA9 0 28%,#1F4A3B 29% 100%);width:60%;align-self:center}
+.se-story h3{font-size:14cqw;line-height:1;margin:0;font-weight:400;color:#1F4A3B}
+.se-story p{margin:0;font-size:6.6cqw}
+.se-story .btn-s{background:#1F4A3B;color:#F1F3EF;border-radius:999px;text-align:center;padding:4cqw;font-size:6cqw;font-weight:600}
+.se-hero{background:#F1F3EF;color:#2E2A30;padding:5cqw;gap:2.4cqw}
+.se-hero .nav{display:flex;justify-content:space-between;font-size:2.4cqw;color:#1F4A3B;font-weight:600}
+.se-hero h3{font-size:8.6cqw;line-height:1;margin:2cqw 0 0;color:#1F4A3B;font-weight:400}
+.se-hero h3 em{color:#C9477E}
+.se-hero p{font-size:2.9cqw;margin:0;max-width:36ch;line-height:1.4}
+.se-hero .cta{align-self:flex-start;background:#1F4A3B;color:#F1F3EF;font-weight:600;font-size:2.8cqw;padding:2cqw 3.6cqw;border-radius:999px}
+.se-hero .selo{position:absolute;right:5cqw;bottom:5cqw;width:22cqw;aspect-ratio:1;border-radius:50%;background:#EC7FA9;color:#2E2A30;display:grid;place-items:center;text-align:center;font-size:2.4cqw;font-weight:700;line-height:1.2;padding:3cqw}
+
+/* ================= C · CADERNO ================= */
+.caderno{font-family:"Atkinson Hyperlegible",sans-serif}
+.caderno .disp{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-0.02em}
+.caderno .quadriculado{
+  background-color:#FFFFFF;color:#121417;
+  background-image:linear-gradient(#E3E8F2 1px,transparent 1px),linear-gradient(90deg,#E3E8F2 1px,transparent 1px);
+  background-size:6cqw 6cqw;
+}
+.marca-texto{background:linear-gradient(transparent 55%,#FFE95C 55%);padding:0 .08em}
+.marca-rosa{background:linear-gradient(transparent 55%,#FFA3CF 55%);padding:0 .08em}
+.ca-post{padding:8cqw;justify-content:space-between}
+.ca-post .cmd{font-family:"JetBrains Mono",monospace;font-size:4cqw;color:#2447D9;font-weight:700}
+.ca-post h3{font-size:10cqw;line-height:1.02;margin:0}
+.ca-post .rod{display:flex;justify-content:space-between;align-items:center;font-size:4.2cqw}
+.ca-post .check{width:9cqw;height:9cqw;border:0.8cqw solid #121417;border-radius:2cqw;display:grid;place-items:center;font-weight:700;font-size:6cqw;color:#2447D9}
+.ca-story{padding:10cqw;gap:5cqw;justify-content:center}
+.ca-story .item{display:flex;gap:3cqw;align-items:center;font-size:7cqw;font-weight:700}
+.ca-story .item i{width:8cqw;height:8cqw;border:0.8cqw solid #121417;border-radius:1.6cqw;flex:none;display:grid;place-items:center;font-style:normal;color:#2447D9}
+.ca-story h3{font-size:12cqw;line-height:1;margin:0}
+.ca-story .btn-s{background:#2447D9;color:#fff;border-radius:3cqw;text-align:center;padding:4cqw;font-size:6.4cqw;font-weight:700;box-shadow:1.2cqw 1.2cqw 0 #121417}
+.ca-hero{padding:5cqw;gap:2.4cqw}
+.ca-hero .nav{display:flex;justify-content:space-between;font-size:2.4cqw;font-weight:700}
+.ca-hero .nav .cmd{font-family:"JetBrains Mono",monospace;color:#2447D9}
+.ca-hero h3{font-size:8cqw;line-height:1;margin:2cqw 0 0}
+.ca-hero p{font-size:2.9cqw;margin:0;max-width:34ch;line-height:1.4}
+.ca-hero .cta{align-self:flex-start;background:#2447D9;color:#fff;font-weight:700;font-size:2.8cqw;padding:2cqw 3.4cqw;border-radius:1.4cqw;box-shadow:0.8cqw 0.8cqw 0 #121417}
+.ca-hero .post-it{position:absolute;right:5cqw;bottom:6cqw;width:24cqw;aspect-ratio:1;background:#FFE95C;transform:rotate(4deg);padding:2.4cqw;font-size:2.4cqw;font-weight:700;line-height:1.25;box-shadow:0 1cqw 2cqw rgba(0,0,0,.12)}
+
+/* ---------- voz e escolha ---------- */
+.bloco{background:var(--papel);border:1px solid var(--linha);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.bloco p{margin:0}
+.tabela-voz{overflow-x:auto}
+.tabela-voz table{border-collapse:collapse;width:100%;min-width:420px;font-size:15px}
+.tabela-voz th,.tabela-voz td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--linha);vertical-align:top}
+.tabela-voz th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}
+.tracos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.traco{border:1px solid var(--linha);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.traco b{font-size:17px}
+.traco span{font-size:14px;color:var(--tinta-2)}
+@media (max-width:620px){.tracos{grid-template-columns:1fr}}
+blockquote{margin:0;padding:10px 14px;border-left:3px solid var(--tinta);font-size:17px}
+label.campo{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+textarea{width:100%;min-height:96px;font:inherit;font-weight:400;color:var(--tinta);background:var(--fundo);border:1.5px solid var(--linha);border-radius:12px;padding:10px}
+.salvar{display:flex;flex-direction:column;gap:10px}
+.salvar .btn{background:var(--acao);color:var(--acao-texto);border-color:var(--acao);align-self:flex-start}
+.aviso{font-size:14px;color:var(--tinta-2);margin:0}
+.aviso.ok{color:var(--ok);font-weight:700}
+.aviso.erro{color:var(--erro);font-weight:700}
+.confirme{font-size:13px;color:var(--erro);font-weight:700}
+</style>
+
+<main class="pagina">
+  <header class="topo">
+    <span class="rotulo">Branding · etapa 1 de 3 · @lorenabraganca.ia</span>
+    <h1>Três direções para a sua marca</h1>
+    <p class="sub">Cada direção aplicada no que você mais vai usar: um post, um story e o topo da página de vendas. Escolha a que mais parece você; pode também pedir para misturar, como as cores de uma com as letras de outra. Depois disso eu monto o branding book completo e o design system.</p>
+    <p class="nota">"Tira do Papel" aparece só como nome de exemplo: o nome da imersão ainda não foi escolhido.</p>
+  </header>
+
+  <!-- ========== A ========== -->
+  <section class="direcao oficina" aria-labelledby="t-oficina">
+    <div class="direcao-cab">
+      <span class="letra">Direção A</span>
+      <h2 id="t-oficina">Oficina</h2>
+      <p>Construção, mão na massa, planta de obra. Passa confiança técnica sem ser fria: você é quem sabe construir e mostra como. Combina com a Planta da Ferramenta.</p>
+    </div>
+    <div class="paleta">
+      <div class="cor"><i style="background:#1B3B8C"></i><b>Azul-planta</b><span>#1B3B8C</span></div>
+      <div class="cor"><i style="background:#FFC83D"></i><b>Amarelo-sinal</b><span>#FFC83D</span></div>
+      <div class="cor"><i style="background:#EEF1F6"></i><b>Papel</b><span>#EEF1F6</span></div>
+      <div class="cor"><i style="background:#16181D"></i><b>Grafite</b><span>#16181D</span></div>
+      <div class="cor"><i style="background:#FFFFFF"></i><b>Branco</b><span>#FFFFFF</span></div>
+    </div>
+    <div class="tipos">
+      <div class="tipo"><span class="amostra disp">Sua ferramenta no ar</span><small>Títulos · Archivo Expandida</small></div>
+      <div class="tipo"><span class="amostra corpo">Em dois encontros, você sai do zero e publica a sua primeira ferramenta.</span><small>Texto · Public Sans</small></div>
+    </div>
+    <div class="aplicacoes">
+      <figure><div class="post"><div class="planta of-post">
+        <span class="etq">Bastidores</span>
+        <h3 class="disp">Construí um app que está na Play Store. <em>Pelo celular.</em></h3>
+        <div class="rod"><span>@lorenabraganca.ia</span><span>arraste →</span></div>
+      </div></div><figcaption>Post do feed</figcaption></figure>
+      <figure class="fig-story"><div class="story"><div class="planta of-story">
+        <div class="linha-dia">Sexta <span>18h</span></div>
+        <div class="linha-dia">Sábado <span>8h</span></div>
+        <p>Sua ferramenta no ar até o meio-dia.</p>
+        <div class="btn-s">Quero minha vaga</div>
+      </div></div><figcaption>Story</figcaption></figure>
+      <figure class="fig-hero"><div class="hero"><div class="of-hero">
+        <div class="nav"><span>LORENA BRAGANÇA · IA</span><span>Turma de janeiro</span></div>
+        <h3 class="disp">Tira do Papel</h3>
+        <p>Sua primeira ferramenta no ar, em dois encontros, com o Claude Code. Sem precisar saber programar.</p>
+        <span class="cta">Quero minha vaga · R$ 97</span>
+        <div class="faixa"><span>29 e 30 de janeiro</span><span>Online e ao vivo</span><span>Gravação fica</span></div>
+      </div></div><figcaption>Topo da página de vendas</figcaption></figure>
+    </div>
+    <div class="escolher"><button type="button" class="btn escolha" data-direcao="Oficina" aria-pressed="false">Escolho a Oficina</button></div>
+  </section>
+
+  <!-- ========== B ========== -->
+  <section class="direcao serra" aria-labelledby="t-serra">
+    <div class="direcao-cab">
+      <span class="letra">Direção B</span>
+      <h2 id="t-serra">Serra</h2>
+      <p>Pessoal e acolhedora, com raiz em Minas: o verde da serra e o rosa do ipê. Passa a mentora próxima, que conversa. É a mais "você" das três, e a que mais valoriza a sua história.</p>
+    </div>
+    <div class="paleta">
+      <div class="cor"><i style="background:#1F4A3B"></i><b>Mata</b><span>#1F4A3B</span></div>
+      <div class="cor"><i style="background:#EC7FA9"></i><b>Ipê-rosa</b><span>#EC7FA9</span></div>
+      <div class="cor"><i style="background:#F1F3EF"></i><b>Névoa</b><span>#F1F3EF</span></div>
+      <div class="cor"><i style="background:#2E2A30"></i><b>Hematita</b><span>#2E2A30</span></div>
+      <div class="cor"><i style="background:#CFE0D4"></i><b>Musgo</b><span>#CFE0D4</span></div>
+    </div>
+    <div class="tipos">
+      <div class="tipo"><span class="amostra disp" style="font-size:32px">Sua ferramenta <em style="color:#C9477E">no ar</em></span><small>Títulos · Instrument Serif</small></div>
+      <div class="tipo"><span class="amostra corpo">Em dois encontros, você sai do zero e publica a sua primeira ferramenta.</span><small>Texto · Figtree</small></div>
+    </div>
+    <div class="aplicacoes">
+      <figure><div class="post"><div class="se-post">
+        <div class="topo-s"><span>@lorenabraganca.ia</span><span class="bolinha"></span></div>
+        <h3 class="disp">Construí um app que está na Play Store. <em>Pelo celular.</em></h3>
+        <p>E agora eu te ensino a construir o seu.</p>
+      </div></div><figcaption>Post do feed</figcaption></figure>
+      <figure class="fig-story"><div class="story"><div class="se-story">
+        <div class="foto" aria-hidden="true"></div>
+        <h3 class="disp">Sexta e sábado, comigo.</h3>
+        <p>Você chega com a ideia. Sai com ela no ar.</p>
+        <div class="btn-s">Quero minha vaga</div>
+      </div></div><figcaption>Story</figcaption></figure>
+      <figure class="fig-hero"><div class="hero"><div class="se-hero">
+        <div class="nav"><span>Lorena Bragança</span><span>Turma de janeiro</span></div>
+        <h3 class="disp">Tira do <em>Papel</em></h3>
+        <p>Sua primeira ferramenta no ar, em dois encontros, com o Claude Code. Sem precisar saber programar.</p>
+        <span class="cta">Quero minha vaga · R$ 97</span>
+        <div class="selo">29 e 30 de janeiro · ao vivo</div>
+      </div></div><figcaption>Topo da página de vendas</figcaption></figure>
+    </div>
+    <div class="escolher"><button type="button" class="btn escolha" data-direcao="Serra" aria-pressed="false">Escolho a Serra</button></div>
+  </section>
+
+  <!-- ========== C ========== -->
+  <section class="direcao caderno" aria-labelledby="t-caderno">
+    <div class="direcao-cab">
+      <span class="letra">Direção C</span>
+      <h2 id="t-caderno">Caderno</h2>
+      <p>Leve e didática: papel quadriculado, marca-texto, lista de tarefas marcada. Tira o medo de quem acha que tecnologia não é para si. A mais acessível para quem nunca programou.</p>
+    </div>
+    <div class="paleta">
+      <div class="cor"><i style="background:#FFFFFF"></i><b>Papel</b><span>#FFFFFF</span></div>
+      <div class="cor"><i style="background:#121417"></i><b>Tinta</b><span>#121417</span></div>
+      <div class="cor"><i style="background:#2447D9"></i><b>Caneta azul</b><span>#2447D9</span></div>
+      <div class="cor"><i style="background:#FFE95C"></i><b>Marca-texto</b><span>#FFE95C</span></div>
+      <div class="cor"><i style="background:#FFA3CF"></i><b>Rosa</b><span>#FFA3CF</span></div>
+    </div>
+    <div class="tipos">
+      <div class="tipo"><span class="amostra disp">Sua ferramenta <span class="marca-texto">no ar</span></span><small>Títulos · Bricolage Grotesque</small></div>
+      <div class="tipo"><span class="amostra corpo">Em dois encontros, você sai do zero e publica a sua primeira ferramenta.</span><small>Texto · Atkinson Hyperlegible · detalhes em JetBrains Mono</small></div>
+    </div>
+    <div class="aplicacoes">
+      <figure><div class="post"><div class="quadriculado ca-post">
+        <span class="cmd">&gt; bastidores</span>
+        <h3 class="disp">Construí um app que está na Play Store. <span class="marca-texto">Pelo celular.</span></h3>
+        <div class="rod"><span>@lorenabraganca.ia</span><span class="check">✓</span></div>
+      </div></div><figcaption>Post do feed</figcaption></figure>
+      <figure class="fig-story"><div class="story"><div class="quadriculado ca-story">
+        <h3 class="disp">Checklist da <span class="marca-rosa">sexta</span></h3>
+        <div class="item"><i>✓</i>Ideia cortada</div>
+        <div class="item"><i>✓</i>Primeira versão</div>
+        <div class="item"><i></i>No ar</div>
+        <div class="btn-s">Quero minha vaga</div>
+      </div></div><figcaption>Story</figcaption></figure>
+      <figure class="fig-hero"><div class="hero"><div class="quadriculado ca-hero">
+        <div class="nav"><span>lorenabraganca.ia</span><span class="cmd">turma de janeiro</span></div>
+        <h3 class="disp">Tira do <span class="marca-texto">Papel</span></h3>
+        <p>Sua primeira ferramenta no ar, em dois encontros, com o Claude Code. Sem precisar saber programar.</p>
+        <span class="cta">Quero minha vaga · R$ 97</span>
+        <div class="post-it">29 e 30 de janeiro. Ao vivo, e a gravação fica.</div>
+      </div></div><figcaption>Topo da página de vendas</figcaption></figure>
+    </div>
+    <div class="escolher"><button type="button" class="btn escolha" data-direcao="Caderno" aria-pressed="false">Escolho o Caderno</button></div>
+  </section>
+
+  <!-- ========== VOZ ========== -->
+  <section class="bloco" aria-labelledby="t-voz">
+    <span class="rotulo">Rascunho para você reagir</span>
+    <h2 id="t-voz">Posicionamento e voz</h2>
+    <p><strong>Posicionamento, em uma frase:</strong></p>
+    <blockquote>Eu ensino quem não é programador a construir as próprias ferramentas com IA, porque eu fiz isso: o Ei Emprego está na Play Store, e foi construído pelo celular.</blockquote>
+    <p class="confirme">Confirme: você se apresenta como alguém que não é programadora? A frase inteira depende disso.</p>
+    <div class="tracos">
+      <div class="traco"><b>Direta</b><span>Diz o que é, quanto custa e quanto tempo leva. Sem suspense, sem "o segredo que ninguém conta".</span></div>
+      <div class="traco"><b>Próxima</b><span>Fala como quem senta do lado e ajuda. Conta os próprios erros, porque eles ensinam.</span></div>
+      <div class="traco"><b>Prática</b><span>Todo conteúdo termina com algo que a pessoa consegue fazer hoje.</span></div>
+    </div>
+    <div class="tabela-voz">
+      <table>
+        <thead><tr><th>Falamos</th><th>Evitamos</th><th>Por quê</th></tr></thead>
+        <tbody>
+          <tr><td>construir</td><td>desenvolver, codar</td><td>quem nunca programou se reconhece em "construir"</td></tr>
+          <tr><td>colocar no ar</td><td>fazer deploy, subir</td><td>jargão afasta o público</td></tr>
+          <tr><td>pedido, comando</td><td>prompt engineering</td><td>"prompt" pode, mas sem enfeite técnico</td></tr>
+          <tr><td>sua primeira ferramenta</td><td>seu SaaS, sua startup</td><td>promessa do tamanho certo</td></tr>
+          <tr><td>dá trabalho, e dá para fazer</td><td>fácil demais, em 5 minutos</td><td>promessa exagerada vira reembolso</td></tr>
+          <tr><td>(nunca prometemos renda)</td><td>fature, fique rico, renda extra garantida</td><td>não é o que a imersão entrega</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========== ESCOLHA ========== -->
+  <section class="bloco salvar" aria-labelledby="t-escolha">
+    <h2 id="t-escolha">Sua escolha</h2>
+    <p id="escolha-atual" class="aviso">Nenhuma direção escolhida ainda. Toque em "Escolho…" numa delas.</p>
+    <label class="campo" for="nota-direcao">O que você mudaria na direção escolhida, ou o que quer misturar?
+      <textarea id="nota-direcao" placeholder="Ex.: gosto da Serra, mas com as letras da Oficina. Ou: menos rosa."></textarea>
+    </label>
+    <label class="campo" for="nota-voz">A voz e o posicionamento soam como você? O que mudaria?
+      <textarea id="nota-voz" placeholder="Ex.: sim, mas eu falo mais solto. Ou: eu sei programar um pouco."></textarea>
+    </label>
+    <button type="button" class="btn" id="salvar">Salvar e mandar para o Claude</button>
+    <p class="aviso" id="aviso"></p>
+  </section>
+</main>
+
+<script>
+let db = null;
+let direcao = "";
+
+function marcarBotoes(){
+  document.querySelectorAll(".escolha").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.direcao === direcao)));
+  document.getElementById("escolha-atual").textContent = direcao ? `Direção escolhida: ${direcao}.` : "Nenhuma direção escolhida ainda. Toque em \"Escolho…\" numa delas.";
+}
+function aviso(t, tipo){ const a = document.getElementById("aviso"); a.textContent = t; a.className = "aviso" + (tipo ? " " + tipo : ""); }
+
+document.querySelectorAll(".escolha").forEach(b => b.addEventListener("click", () => {
+  direcao = b.dataset.direcao; marcarBotoes();
+  document.getElementById("t-escolha").scrollIntoView({behavior:"smooth", block:"start"});
+}));
+
+document.getElementById("salvar").addEventListener("click", async () => {
+  const dados = {
+    direcao,
+    nota_direcao: document.getElementById("nota-direcao").value.trim(),
+    nota_voz: document.getElementById("nota-voz").value.trim(),
+    em: new Date().toISOString(),
+  };
+  if (!dados.direcao && !dados.nota_direcao && !dados.nota_voz) { aviso("Escolha uma direção ou escreva um comentário antes de salvar.", "erro"); return; }
+  if (!db) { aviso("Não consegui conectar para salvar. Mande sua escolha pelo chat.", "erro"); return; }
+  try { await db.doc("respostas/marca").set(dados); aviso("Salvo. É só avisar o Claude no chat que você escolheu.", "ok"); }
+  catch(e) { aviso("Não consegui salvar. Confira a internet e tente de novo, ou mande pelo chat.", "erro"); }
+});
+
+(async () => {
+  let ns = null;
+  try { ns = window.claude ? await window.claude.use("db") : null; } catch(e) { ns = null; }
+  if (!ns) return;
+  db = ns;
+  try {
+    const s = await db.doc("respostas/marca").get();
+    if (s.exists) {
+      const d = s.data();
+      direcao = d.direcao || "";
+      if (d.nota_direcao) document.getElementById("nota-direcao").value = d.nota_direcao;
+      if (d.nota_voz) document.getElementById("nota-voz").value = d.nota_voz;
+      marcarBotoes();
+    }
+  } catch(e) {}
+})();
+</script>
