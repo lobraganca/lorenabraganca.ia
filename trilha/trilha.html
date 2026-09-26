@@ -1,0 +1,462 @@
+<title>Trilha lorenabraganca.ia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --fundo:#F4F6F2;
+  --papel:#FFFFFF;
+  --tinta:#17201C;
+  --tinta-2:#4A5751;
+  --linha:#D9E0DA;
+  --trilha:#0F6B5C;
+  --trilha-suave:#DCEDE8;
+  --marco:#C98A0B;
+  --marco-suave:#FBF0D6;
+  --voce:#0F6B5C;
+  --claude:#8A4B2A;
+  --juntos:#3F4F8C;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --texto:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --fundo:#101513;
+    --papel:#18201D;
+    --tinta:#E8EEEA;
+    --tinta-2:#A5B3AC;
+    --linha:#2B3632;
+    --trilha:#4FC2A8;
+    --trilha-suave:#1B3530;
+    --marco:#F0B53A;
+    --marco-suave:#3A2F14;
+    --voce:#4FC2A8;
+    --claude:#E39A73;
+    --juntos:#9AAAF0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --fundo:#101513;
+  --papel:#18201D;
+  --tinta:#E8EEEA;
+  --tinta-2:#A5B3AC;
+  --linha:#2B3632;
+  --trilha:#4FC2A8;
+  --trilha-suave:#1B3530;
+  --marco:#F0B53A;
+  --marco-suave:#3A2F14;
+  --voce:#4FC2A8;
+  --claude:#E39A73;
+  --juntos:#9AAAF0;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--fundo);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:16px;
+  line-height:1.5;
+  padding-inline:16px;
+  padding-block:24px 64px;
+}
+.pagina{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.05}
+.rotulo{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--tinta-2);font-weight:700}
+.topo{display:flex;flex-direction:column;gap:12px}
+.topo p{margin:0;color:var(--tinta-2);max-width:60ch}
+
+.geral{display:flex;flex-direction:column;gap:8px}
+.geral-linha{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-variant-numeric:tabular-nums}
+.geral-linha strong{font-family:var(--display);font-size:22px}
+.barra{height:10px;border-radius:999px;background:var(--trilha-suave);overflow:hidden}
+.barra span{display:block;height:100%;background:var(--trilha);border-radius:999px;transition:width .4s ease}
+
+.proximo{
+  background:var(--marco-suave);
+  border:2px solid var(--marco);
+  border-radius:14px;
+  padding:16px 18px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.proximo h2{font-size:20px;font-weight:700}
+.proximo p{margin:0;color:var(--tinta-2)}
+.proximo .fase-nome{font-size:13px;color:var(--tinta-2)}
+
+.controles{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.alternar{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  font-size:14px;color:var(--tinta-2);min-height:44px;
+}
+.alternar input{width:20px;height:20px;accent-color:var(--trilha)}
+.legenda{display:flex;flex-wrap:wrap;gap:6px;font-size:13px}
+
+.chip{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.03em;
+  padding:2px 8px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap;
+}
+.chip.voce{color:var(--voce)}
+.chip.claude{color:var(--claude)}
+.chip.juntos{color:var(--juntos)}
+
+.fases{display:flex;flex-direction:column;gap:0;position:relative}
+.fase{position:relative;padding-left:34px;padding-bottom:24px}
+.fase::before{
+  content:"";position:absolute;left:11px;top:28px;bottom:0;width:2px;
+  background:var(--linha);
+}
+.fase:last-child::before{display:none}
+.fase.completa::before{background:var(--trilha)}
+.marco{
+  position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;
+  background:var(--papel);border:2.5px solid var(--linha);
+  display:grid;place-items:center;font-family:var(--display);font-size:12px;font-weight:800;color:var(--tinta-2);
+}
+.fase.andando .marco{border-color:var(--marco);color:var(--marco)}
+.fase.completa .marco{background:var(--trilha);border-color:var(--trilha);color:var(--papel)}
+
+details.fase-caixa > summary{
+  list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;
+  padding-block:0 10px;
+}
+details.fase-caixa > summary::-webkit-details-marker{display:none}
+.fase-titulo{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.fase-titulo h3{font-size:20px;font-weight:700}
+.fase-conta{font-size:14px;color:var(--tinta-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fase-objetivo{font-size:14px;color:var(--tinta-2);margin:0}
+summary:focus-visible{outline:2px solid var(--trilha);outline-offset:4px;border-radius:6px}
+
+.passos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.passo{
+  background:var(--papel);border:1px solid var(--linha);border-radius:12px;
+  display:grid;grid-template-columns:44px 1fr;gap:4px 10px;padding:10px 12px 10px 6px;
+}
+.passo label.caixa{display:grid;place-items:center;width:44px;height:44px;cursor:pointer}
+.passo input[type=checkbox]{width:24px;height:24px;accent-color:var(--trilha);cursor:pointer;margin:0}
+.passo input[type=checkbox]:focus-visible{outline:2px solid var(--trilha);outline-offset:3px}
+.passo-corpo{display:flex;flex-direction:column;gap:4px;padding-top:9px;min-width:0}
+.passo-cabeca{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.passo-titulo{font-weight:700;font-size:16px;cursor:pointer}
+.passo-como{margin:0;font-size:14px;color:var(--tinta-2)}
+.passo-data{font-size:13px;color:var(--trilha);font-weight:700;font-variant-numeric:tabular-nums}
+.passo.feito .passo-titulo{text-decoration:line-through;text-decoration-thickness:1.5px;color:var(--tinta-2)}
+.passo.feito{background:transparent}
+.passo.e-o-proximo{border-color:var(--marco);border-width:2px}
+
+.aviso{font-size:13px;color:var(--tinta-2);margin:0}
+.aviso.erro{color:var(--claude);font-weight:700}
+.rodape{font-size:14px;color:var(--tinta-2);border-top:1px solid var(--linha);padding-top:16px}
+.rodape p{margin:0 0 8px}
+@media (prefers-reduced-motion: reduce){.barra span{transition:none}}
+</style>
+
+<main class="pagina">
+  <header class="topo">
+    <span class="rotulo">Trilha de aceleração · lorenabraganca.ia</span>
+    <h1>Da primeira ideia à primeira turma</h1>
+    <p>Tudo o que precisa existir para lançar a imersão de R$ 97 e vender a mentoria de R$ 2.997, na ordem certa. Marque cada passo quando terminar.</p>
+  </header>
+
+  <section class="geral" aria-label="Progresso geral">
+    <div class="geral-linha"><span class="rotulo">Progresso</span><strong id="geral-numero">0 de 0</strong></div>
+    <div class="barra" role="progressbar" id="geral-barra" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span style="width:0%"></span></div>
+  </section>
+
+  <section class="proximo" id="proximo" aria-live="polite">
+    <span class="rotulo">Seu próximo passo</span>
+    <h2 id="proximo-titulo">Carregando…</h2>
+    <span class="fase-nome" id="proximo-fase"></span>
+    <p id="proximo-como"></p>
+  </section>
+
+  <div class="controles">
+    <label class="alternar" for="so-falta"><input type="checkbox" id="so-falta"> Mostrar só o que falta</label>
+    <div class="legenda" aria-label="Quem faz">
+      <span class="chip voce">Você</span><span class="chip claude">Claude</span><span class="chip juntos">Juntos</span>
+    </div>
+  </div>
+  <p class="aviso" id="aviso"></p>
+
+  <div class="fases" id="fases"></div>
+
+  <footer class="rodape">
+    <p><strong>Como usar com o Claude:</strong> nos passos marcados como <span class="chip claude">Claude</span> ou <span class="chip juntos">Juntos</span>, abra a conversa e diga "vamos fazer o passo" com o nome dele.</p>
+    <p>O mapa completo, com o porquê de cada decisão, está no arquivo ECOSSISTEMA.md do repositório.</p>
+  </footer>
+</main>
+
+<script>
+const FASES = [
+  {id:"fundacao", nome:"Fundação", objetivo:"As decisões que mandam em todo o resto.", passos:[
+    {id:"fund-repo", t:"Repositório do projeto criado", como:"github.com/lobraganca/lorenabraganca.ia", q:"juntos"},
+    {id:"fund-publico", t:"Para quem é a imersão", como:"Quem quer fazer uma ferramenta com o Claude Code.", q:"voce"},
+    {id:"fund-promessa", t:"A promessa", como:"A pessoa faz a própria ferramenta, com a ideia dela.", q:"voce"},
+    {id:"fund-formato", t:"Formato", como:"Online, ao vivo, com gravação, ensinado pelo computador.", q:"voce"},
+    {id:"fund-preco", t:"Preço da imersão", como:"R$ 97.", q:"voce"},
+    {id:"fund-mentoria", t:"Produto seguinte", como:"Mentoria personalizada de R$ 2.997, com diagnóstico.", q:"voce"},
+    {id:"fund-primeira-turma", t:"Primeira turma paga", como:"Decidido: a primeira turma já é paga.", q:"voce"},
+    {id:"fund-nao-e", t:"Para quem a imersão NÃO é", como:"Duas ou três frases. Evita comprador errado e reembolso.", q:"juntos"},
+    {id:"fund-dias", t:"Quantos dias e em que horário", como:"Ex.: 3 noites, das 19h às 22h. Pense em quem trabalha de dia.", q:"voce"},
+    {id:"fund-nome", t:"Nome da imersão", como:"Eu proponho opções; você escolhe. Conferir se o @ está livre no Instagram.", q:"juntos"},
+    {id:"fund-data", t:"Data da primeira turma", como:"Tudo é contado de trás para frente a partir dela. Dê pelo menos 6 semanas.", q:"voce"},
+    {id:"fund-meta", t:"Meta da primeira turma", como:"Quantos alunos e quantas mentorias. Eu faço a conta de quantas pessoas na lista isso exige.", q:"juntos"},
+  ]},
+  {id:"empresa", nome:"Empresa e contas", objetivo:"A parte burocrática demora. Comece cedo e deixe correndo em paralelo.", passos:[
+    {id:"emp-contador", t:"Conversar com um contador", como:"Qual CNPJ serve para vender cursos e mentoria, e quanto de imposto sai de cada venda.", q:"voce"},
+    {id:"emp-cnpj", t:"CNPJ aberto", como:"Do jeito que o contador indicar.", q:"voce"},
+    {id:"emp-banco", t:"Conta bancária da empresa", como:"Separar o dinheiro da imersão do dinheiro pessoal desde a primeira venda.", q:"voce"},
+    {id:"emp-mp", t:"Conta de vendedor no Mercado Pago", como:"No CNPJ. Você já conhece o caminho pelo Ei.", q:"voce"},
+    {id:"emp-nota", t:"Emissão de nota fiscal funcionando", como:"Cada venda gera nota. Confirmar com o contador como emitir.", q:"voce"},
+    {id:"emp-dominio", t:"Domínio comprado", como:"Ex.: lorenabraganca.com.br no registro.br. Não existe endereço terminado em .ia.", q:"voce"},
+    {id:"emp-email", t:"E-mail profissional", como:"contato@seudominio. É de onde saem as mensagens automáticas.", q:"juntos"},
+    {id:"emp-termos", t:"Termos de uso e política de privacidade", como:"Eu escrevo o rascunho; o ideal é um advogado revisar.", q:"claude"},
+    {id:"emp-contrato", t:"Contrato da mentoria", como:"Escopo, encontros, prazo, ajustes, de quem é o código, o que acontece depois.", q:"juntos"},
+  ]},
+  {id:"marca", nome:"Marca", objetivo:"Como você fala e como você aparece, escrito, para todo mundo (e todo agente) seguir igual.", passos:[
+    {id:"marca-posicao", t:"Posicionamento em uma frase", como:"Por que aprender isto com você, e não com outra pessoa.", q:"juntos"},
+    {id:"marca-historia", t:"Sua história, escrita", como:"O Ei Emprego: um app na Play Store, construído pelo celular. É a sua maior prova.", q:"juntos"},
+    {id:"marca-voz", t:"Tom de voz", como:"Palavras que você usa e palavras que você nunca usa. Exemplos de frase certa e errada.", q:"juntos"},
+    {id:"marca-fotos", t:"Fotos suas", como:"De 15 a 20 fotos com luz boa: trabalhando, no computador, rosto. Pode ser celular.", q:"voce"},
+    {id:"marca-visual", t:"Cores, fontes e logo", como:"Eu proponho duas direções; você escolhe uma.", q:"claude"},
+    {id:"marca-book", t:"Branding book pronto", como:"Um documento só com tudo acima. Vira a regra da Guardiã da marca.", q:"claude"},
+    {id:"marca-ds", t:"Design system pronto", como:"O branding book virado código, usado em todas as páginas.", q:"claude"},
+  ]},
+  {id:"instagram", nome:"Instagram do zero", objetivo:"Público leva tempo para se formar. Começar a publicar semanas antes de vender.", passos:[
+    {id:"ig-conta", t:"Conta profissional (criador)", como:"Nova ou a sua, convertida. Com o @ escolhido.", q:"voce"},
+    {id:"ig-foto", t:"Foto de perfil", como:"Rosto, fundo limpo, com a cor da marca.", q:"voce"},
+    {id:"ig-bio", t:"Bio", como:"Eu escrevo três opções: quem você é, o que a pessoa ganha, o link.", q:"claude"},
+    {id:"ig-link", t:"Link da bio", como:"Aponta para a página de captura assim que ela existir.", q:"voce"},
+    {id:"ig-pilares", t:"Pilares de conteúdo", como:"Ex.: bastidores, ferramenta em 60 segundos, prova (o que já foi construído), opinião.", q:"juntos"},
+    {id:"ig-fixados", t:"3 posts fixados", como:"Quem é você, sua história com o Ei, o que é o Claude Code.", q:"juntos"},
+    {id:"ig-destaques", t:"Destaques", como:"Quem sou, Imersão, Ferramentas, Depoimentos. Com capas da marca.", q:"juntos"},
+    {id:"ig-calendario", t:"Calendário dos primeiros 30 dias", como:"O agente de conteúdo escreve; você aprova.", q:"claude"},
+    {id:"ig-rotina", t:"Rotina de stories", como:"Todo dia, bastidores do que você está construindo. É conteúdo que não precisa de roteiro.", q:"voce"},
+    {id:"ig-30dias", t:"30 dias seguidos publicando", como:"Consistência antes de alcance.", q:"voce"},
+  ]},
+  {id:"captacao", nome:"Captação", objetivo:"Transformar seguidor em contato seu: nome, e-mail e WhatsApp.", passos:[
+    {id:"cap-isca", t:"Isca gratuita definida", como:"Ex.: aula curta \"sua primeira ferramenta em 1 hora\", ou um guia de ideias de ferramentas.", q:"juntos"},
+    {id:"cap-isca-pronta", t:"Isca produzida", como:"Gravada ou escrita.", q:"voce"},
+    {id:"cap-pagina", t:"Página de captura no ar", como:"Nome, e-mail, WhatsApp e consentimento. Eu construo.", q:"claude"},
+    {id:"cap-entrega", t:"Entrega automática da isca", como:"Quem se cadastra recebe na hora, por e-mail.", q:"claude"},
+    {id:"cap-pixel", t:"Pixel da Meta instalado", como:"Para medir o que vem do Instagram e, depois, anunciar.", q:"juntos"},
+    {id:"cap-grupo", t:"Lista de espera da primeira turma", como:"Grupo ou comunidade no WhatsApp, só avisos.", q:"voce"},
+    {id:"cap-100", t:"Primeiros 100 contatos", como:"Um marco. Diz se a isca funciona.", q:"voce"},
+  ]},
+  {id:"produto", nome:"A imersão em si", objetivo:"O que a pessoa compra. Pronto antes de abrir as vendas.", passos:[
+    {id:"prod-programa", t:"Programa dia a dia", como:"O que se aprende e o que se constrói em cada dia.", q:"juntos"},
+    {id:"prod-tamanho", t:"Regra do \"tamanho certo\"", como:"Uma ferramenta que resolve um problema só e se explica numa frase.", q:"juntos"},
+    {id:"prod-cardapio", t:"Cardápio de ideias", como:"De 20 a 30 ideias prontas para quem chega sem nenhuma.", q:"claude"},
+    {id:"prod-base", t:"Formato-base de ferramenta", como:"Uma página, um formulário, uma lista guardada. Quase toda ideia pequena cabe.", q:"claude"},
+    {id:"prod-custos", t:"Custo do aluno levantado", como:"Valor do dia do plano do Claude e de tudo o que ele vai precisar. Vai para a página de vendas.", q:"juntos"},
+    {id:"prod-pre", t:"Vídeos de preparação", como:"Um para Windows, um para Mac. Contas criadas e tudo instalado antes do primeiro dia.", q:"voce"},
+    {id:"prod-materiais", t:"Materiais", como:"Prompts, checklists, glossário sem jargão.", q:"claude"},
+    {id:"prod-seguranca", t:"Aula de segurança", como:"Como não deixar dados de outras pessoas expostos. A lição do Ei.", q:"juntos"},
+    {id:"prod-slides", t:"Slides das aulas", como:"Com o design system.", q:"juntos"},
+    {id:"prod-sala", t:"Sala do ao vivo escolhida", como:"Zoom ou Meet, com salas separadas para monitores.", q:"voce"},
+    {id:"prod-ensaio", t:"Ensaio técnico", como:"Uma aula de teste inteira, com gravação, antes da turma.", q:"voce"},
+  ]},
+  {id:"venda", nome:"Venda", objetivo:"Página, pagamento e as mensagens que fazem a pessoa decidir.", passos:[
+    {id:"venda-copy", t:"Texto da página de vendas", como:"O agente de copy escreve; você aprova cada parte.", q:"claude"},
+    {id:"venda-pagina", t:"Página de vendas no ar", como:"Com o custo do plano do Claude escrito com clareza.", q:"claude"},
+    {id:"venda-checkout", t:"Pagamento funcionando", como:"Pix e cartão parcelado, pelo Mercado Pago.", q:"claude"},
+    {id:"venda-acesso", t:"Acesso liberado sozinho", como:"Pagou, recebeu o acesso na hora. Testado com uma compra de verdade.", q:"claude"},
+    {id:"venda-boasvindas", t:"Mensagem de boas-vindas", como:"Acesso, vídeos de preparação, link do grupo.", q:"claude"},
+    {id:"venda-recuperacao", t:"Recuperação de Pix e carrinho", como:"Quem gerou o Pix e não pagou recebe um lembrete.", q:"claude"},
+    {id:"venda-aquecimento", t:"Sequência de aquecimento", como:"Mensagens para a lista nos dias antes da abertura.", q:"claude"},
+    {id:"venda-abertura", t:"Carrinho aberto", como:"Aviso para a lista, stories, post.", q:"voce"},
+  ]},
+  {id:"entrega", nome:"Entrega", objetivo:"O que o aluno vive depois de pagar.", passos:[
+    {id:"ent-area", t:"Área de membros mínima", como:"Entrada, aulas, materiais. O resto pode vir durante a turma.", q:"claude"},
+    {id:"ent-grupo", t:"Grupo da turma", como:"Com regras fixadas e horários dos monitores.", q:"voce"},
+    {id:"ent-lembretes", t:"Lembretes automáticos do ao vivo", como:"1 dia antes, 1 hora antes, \"estamos ao vivo\".", q:"claude"},
+    {id:"ent-suporte", t:"Agente de suporte", como:"Responde dúvidas com base no conteúdo da imersão e passa para uma pessoa quando não sabe.", q:"claude"},
+    {id:"ent-monitores", t:"Monitores combinados", como:"Quem, em que horários, quanto recebem.", q:"voce"},
+    {id:"ent-gravacoes", t:"Gravações publicadas no mesmo dia", como:"Rotina definida: quem sobe e onde.", q:"juntos"},
+  ]},
+  {id:"mentoria", nome:"Mentoria", objetivo:"O produto que sustenta o negócio. Pronta antes do último dia da turma.", passos:[
+    {id:"ment-escopo", t:"Escopo escrito", como:"Quantos encontros, de quanto tempo, em quanto tempo, quantos ajustes.", q:"juntos"},
+    {id:"ment-vagas", t:"Vagas por mês definidas", como:"Quantas você aguenta atender bem.", q:"voce"},
+    {id:"ment-depois", t:"O que acontece depois", como:"Quem mantém a ferramenta do cliente no ar, e quem paga hospedagem.", q:"juntos"},
+    {id:"ment-diagnostico", t:"Roteiro do diagnóstico", como:"As mesmas perguntas, para todo cliente.", q:"juntos"},
+    {id:"ment-aplicacao", t:"Formulário de aplicação", como:"Quem é, o negócio, o problema, o orçamento.", q:"claude"},
+    {id:"ment-conversa", t:"Roteiro da conversa de venda", como:"Da abertura ao fechamento, com as objeções mais comuns.", q:"juntos"},
+    {id:"ment-oferta", t:"Oferta no último dia da imersão", como:"Sem fazer a imersão parecer incompleta.", q:"juntos"},
+    {id:"ment-sequencia", t:"Mensagens para quem aplicou e não fechou", como:"Três a cinco mensagens, espaçadas.", q:"claude"},
+  ]},
+  {id:"depois", nome:"Depois da primeira turma", objetivo:"O que a primeira turma ensina vira a próxima turma melhor.", passos:[
+    {id:"dep-pesquisa", t:"Pesquisa com os alunos", como:"O que funcionou, onde travaram.", q:"claude"},
+    {id:"dep-depoimentos", t:"Depoimentos coletados", como:"Em vídeo, com autorização de uso de imagem.", q:"voce"},
+    {id:"dep-vitrine", t:"Vitrine das ferramentas dos alunos", como:"A prova mais forte para a próxima página de vendas.", q:"claude"},
+    {id:"dep-numeros", t:"Números da turma", como:"Vendas, presença, quem terminou a ferramenta, mentorias fechadas.", q:"claude"},
+    {id:"dep-revisao", t:"O que muda na próxima", como:"Uma conversa, com os números na mão.", q:"juntos"},
+    {id:"dep-proxima", t:"Data da próxima turma", como:"E a lista de espera avisada.", q:"voce"},
+  ]},
+];
+const QUEM = {voce:"Você", claude:"Claude", juntos:"Juntos"};
+const CHAVE_LOCAL = "trilha-lorena-progresso";
+
+let progresso = {};           // id -> {feito:boolean, em:string}
+let db = null;
+let soFalta = false;
+try { soFalta = localStorage.getItem("trilha-so-falta") === "1"; } catch(e) {}
+document.getElementById("so-falta").checked = soFalta;
+
+function lerLocal(){
+  try { return JSON.parse(localStorage.getItem(CHAVE_LOCAL) || "{}") || {}; } catch(e) { return {}; }
+}
+function salvarLocal(){
+  try { localStorage.setItem(CHAVE_LOCAL, JSON.stringify(progresso)); } catch(e) {}
+}
+function dataCurta(iso){
+  if(!iso) return "";
+  const [a,m,d] = iso.slice(0,10).split("-");
+  return d && m ? `${d}/${m}` : "";
+}
+function hojeISO(){
+  const h = new Date();
+  const p = n => String(n).padStart(2,"0");
+  return `${h.getFullYear()}-${p(h.getMonth()+1)}-${p(h.getDate())}`;
+}
+function aviso(texto, erro){
+  const el = document.getElementById("aviso");
+  el.textContent = texto || "";
+  el.classList.toggle("erro", !!erro);
+}
+
+function render(){
+  const todos = FASES.flatMap(f => f.passos.map(p => ({...p, fase:f})));
+  const feitos = todos.filter(p => progresso[p.id]?.feito).length;
+  const pct = todos.length ? Math.round(feitos*100/todos.length) : 0;
+  document.getElementById("geral-numero").textContent = `${feitos} de ${todos.length}`;
+  const barra = document.getElementById("geral-barra");
+  barra.setAttribute("aria-valuenow", pct);
+  barra.firstElementChild.style.width = pct + "%";
+
+  const prox = todos.find(p => !progresso[p.id]?.feito);
+  document.getElementById("proximo-titulo").textContent = prox ? prox.t : "Trilha completa. Hora da próxima turma.";
+  document.getElementById("proximo-fase").textContent = prox ? `${prox.fase.nome} · ${QUEM[prox.q]}` : "";
+  document.getElementById("proximo-como").textContent = prox ? prox.como : "";
+
+  const raiz = document.getElementById("fases");
+  const focado = document.activeElement && document.activeElement.id;
+  const abertas = new Set([...raiz.querySelectorAll("details[open]")].map(d => d.dataset.fase));
+  const primeiraRender = !raiz.childElementCount;
+  raiz.replaceChildren();
+
+  FASES.forEach((f, i) => {
+    const n = f.passos.length;
+    const k = f.passos.filter(p => progresso[p.id]?.feito).length;
+    const estado = k === n ? "completa" : (k > 0 || (prox && prox.fase === f)) ? "andando" : "";
+    const wrap = document.createElement("section");
+    wrap.className = "fase " + estado;
+
+    const marco = document.createElement("span");
+    marco.className = "marco";
+    marco.setAttribute("aria-hidden","true");
+    marco.textContent = k === n ? "✓" : String(i+1);
+    wrap.appendChild(marco);
+
+    const det = document.createElement("details");
+    det.className = "fase-caixa";
+    det.dataset.fase = f.id;
+    det.open = primeiraRender ? (prox ? prox.fase === f : false) : abertas.has(f.id);
+
+    const sum = document.createElement("summary");
+    const tit = document.createElement("div");
+    tit.className = "fase-titulo";
+    const h3 = document.createElement("h3"); h3.textContent = f.nome;
+    const conta = document.createElement("span"); conta.className = "fase-conta"; conta.textContent = `${k} de ${n}`;
+    tit.append(h3, conta);
+    const obj = document.createElement("p"); obj.className = "fase-objetivo"; obj.textContent = f.objetivo;
+    sum.append(tit, obj);
+    det.appendChild(sum);
+
+    const ul = document.createElement("ul");
+    ul.className = "passos";
+    f.passos.forEach(p => {
+      const feito = !!progresso[p.id]?.feito;
+      if (soFalta && feito) return;
+      const li = document.createElement("li");
+      li.className = "passo" + (feito ? " feito" : "") + (prox && prox.id === p.id ? " e-o-proximo" : "");
+      const cid = "passo-" + p.id;
+
+      const caixa = document.createElement("label");
+      caixa.className = "caixa"; caixa.htmlFor = cid;
+      const cb = document.createElement("input");
+      cb.type = "checkbox"; cb.id = cid; cb.checked = feito;
+      cb.setAttribute("aria-label", p.t);
+      cb.addEventListener("change", () => marcar(p.id, cb.checked));
+      caixa.appendChild(cb);
+
+      const corpo = document.createElement("div");
+      corpo.className = "passo-corpo";
+      const cab = document.createElement("div"); cab.className = "passo-cabeca";
+      const t = document.createElement("label"); t.className = "passo-titulo"; t.htmlFor = cid; t.textContent = p.t;
+      const chip = document.createElement("span"); chip.className = "chip " + p.q; chip.textContent = QUEM[p.q];
+      cab.append(t, chip);
+      if (feito && progresso[p.id].em) {
+        const d = document.createElement("span"); d.className = "passo-data"; d.textContent = "feito em " + dataCurta(progresso[p.id].em);
+        cab.appendChild(d);
+      }
+      const como = document.createElement("p"); como.className = "passo-como"; como.textContent = p.como;
+      corpo.append(cab, como);
+
+      li.append(caixa, corpo);
+      ul.appendChild(li);
+    });
+    if (!ul.childElementCount) {
+      const vazio = document.createElement("p"); vazio.className = "fase-objetivo"; vazio.textContent = "Tudo feito nesta fase.";
+      det.appendChild(vazio);
+    } else det.appendChild(ul);
+
+    wrap.appendChild(det);
+    raiz.appendChild(wrap);
+  });
+  if (focado && focado.startsWith("passo-")) document.getElementById(focado)?.focus();
+}
+
+async function marcar(id, feito){
+  const antes = progresso[id];
+  const novo = {feito, em: feito ? hojeISO() : ""};
+  progresso = {...progresso, [id]: novo};
+  render();
+  if (!db) { salvarLocal(); return; }
+  try {
+    await db.doc("passos/" + id).set(novo);
+    aviso("");
+  } catch(e) {
+    progresso = {...progresso, [id]: antes};
+    render();
+    aviso("Não consegui salvar esse passo. Confira a internet e marque de novo.", true);
+  }
+}
+
+document.getElementById("so-falta").addEventListener("change", e => {
+  soFalta = e.target.checked;
+  try { localStorage.setItem("trilha-so-falta", soFalta ? "1" : "0"); } catch(err) {}
+  render();
+});
+
+progresso = lerLocal();
+render();
+
+(async () => {
+  let ns = null;
+  try { ns = window.claude ? await window.claude.use("db") : null; } catch(e) { ns = null; }
+  if (!ns) {
+    aviso("O progresso está sendo salvo só neste aparelho.");
+    return;
+  }
+  db = ns;
+  db.collection("passos").onSnapshot(snap => {
+    const novo = {};
+    snap.docs.forEach(d => { if (d.exists) novo[d.id] = d.data(); });
+    progresso = novo;
+    render();
+  }, () => {
+    aviso("Perdi a conexão com o progresso salvo. Recarregue a página.", true);
+  });
+})();
+</script>
