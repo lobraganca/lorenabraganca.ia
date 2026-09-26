@@ -42,7 +42,35 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **Nome da imersão** **[a decidir]**
 - **Data do evento** **[a decidir]**
 
-## 1. Marca
+## 1. O produto: a imersão em si
+
+A peça mais importante, e a que faltava na primeira versão deste mapa.
+Todo o resto é embalagem e entrega; isto é o que a pessoa compra.
+
+- **Método**: o passo a passo que leva alguém do zero à ferramenta no ar
+- **Programa dia a dia**: o que se aprende e o que se constrói em cada dia
+- **Projeto guiado**: todos constroem uma ferramenta-modelo junto com você,
+  ou cada um constrói a própria ideia? **[a decidir]** (o modelo é mais
+  seguro para iniciante; a ideia própria vende mais)
+- **Materiais**: prompts, modelos prontos, checklists, glossário sem jargão
+- **Nivelamento**: turma com gente de níveis diferentes; quem nunca abriu
+  um computador para isso precisa de um caminho, quem já sabe precisa de um
+  desafio
+- **Requisitos, escritos na página de vendas**: computador (celular não
+  basta para construir), internet, e **quanto a pessoa vai gastar com
+  ferramentas de IA** além do ingresso. Surpresa com custo depois da compra
+  vira pedido de reembolso.
+- **Pré-imersão**: contas criadas e tudo instalado ANTES do primeiro dia,
+  com checklist e vídeo curto. Sem isso, o primeiro dia inteiro vai embora
+  em "não consegui entrar".
+- **Segurança na ferramenta do aluno**: iniciante construindo com IA costuma
+  deixar dados de outras pessoas expostos sem perceber. Foi exatamente o
+  que aconteceu no Ei com os telefones dos candidatos. Isto precisa ser
+  aula, não rodapé.
+- **Sucesso medido**: quantos alunos terminam com a ferramenta no ar. É o
+  número que vira prova na próxima turma.
+
+## 2. Marca
 
 **Branding book**
 - Posicionamento: por que você, e não outra pessoa, para ensinar isto
@@ -59,7 +87,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - Lição do Ei: todo arquivo de marca sai de **uma fonte única**, gerado
   por um comando. Nenhuma imagem de marca é editada à mão.
 
-## 2. Funil de vendas
+## 3. Funil de vendas
 
 - **Isca gratuita**: aula, mini-desafio ou uma ferramentinha pronta que a
   pessoa usa na hora (combina com o tema) **[a decidir]**
@@ -74,7 +102,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - **Medição**: pixel (Meta, Google) e links rastreados, para saber de onde
   vem cada venda
 
-## 3. Plataforma dos alunos (área de membros)
+## 4. Plataforma dos alunos (área de membros)
 
 - Entrada por e-mail ou telefone
 - **Acesso liberado sozinho** quando o pagamento aprova
@@ -85,7 +113,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 - Certificado
 - **Painel da administração**: alunos, vendas, reembolsos, presença, números
 
-## 4. Automação de mensagens
+## 5. Automação de mensagens
 
 Canais: e-mail e WhatsApp.
 
@@ -104,7 +132,7 @@ Canais: e-mail e WhatsApp.
 Atenção: WhatsApp automatizado precisa da **API oficial** (da Meta ou de
 um provedor). Automatizar um número comum pode fazer o WhatsApp bloqueá-lo.
 
-## 5. Suporte
+## 6. Suporte
 
 - Perguntas frequentes (na página de vendas e na plataforma)
 - **Assistente de IA** treinado no conteúdo da imersão, respondendo 24h e
@@ -113,7 +141,7 @@ um provedor). Automatizar um número comum pode fazer o WhatsApp bloqueá-lo.
 - **Reembolso**: compra online tem 7 dias de arrependimento por lei
   (CDC, art. 49). Processo claro e fácil, sem esconder.
 
-## 6. Squad: quem faz o quê
+## 7. Squad: quem faz o quê
 
 **Decidido: pessoas e agentes de IA, juntos.**
 
@@ -147,7 +175,7 @@ pasta `agentes/`, que serve tanto aqui quanto num Projeto do Claude):
 Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 é demonstração do que a imersão ensina. **[a decidir: se entra no programa]**
 
-## 7. Base legal e operação
+## 8. Base legal e operação
 
 - Termos de uso e política de privacidade (LGPD)
 - Consentimento para receber mensagens
@@ -155,6 +183,40 @@ Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 - Autorização de imagem, se gravar alunos
 - Painel de números: pessoas na lista, conversão da página, vendas,
   reembolsos, presença no evento, quem concluiu a ferramenta
+
+## 9. O evento ao vivo
+
+- Onde acontece: Zoom, Meet, YouTube fechado, presencial **[a decidir]**
+- Salas separadas para os monitores atenderem quem travou
+- Ensaio técnico antes, com o squad inteiro
+- Plano B: internet reserva, alguém que assume a transmissão se a sua cair
+- Gravação de cada dia, na plataforma no mesmo dia
+
+## 10. Financeiro
+
+- Custos: taxas do Mercado Pago (parcelado custa mais), impostos, anúncios,
+  monitores, ferramentas, o próprio tempo
+- **Ponto de equilíbrio**: quantas vendas pagam a turma
+- Meta de vendas e de pessoas na lista para chegar nela
+- Reserva para reembolsos e contestação de cartão
+
+## 11. Depois da imersão
+
+- A ferramenta do aluno **continua de pé** depois que a imersão acaba? Quem
+  ele chama quando quebrar? **[a decidir: comunidade, plano de continuidade,
+  mentoria]**
+- Lista de espera da próxima turma
+- Indicação e afiliados: aluno que indica ganha algo **[a decidir]**
+- Ex-alunos viram monitores e depoimentos
+
+## 12. Riscos e plano B
+
+| Se acontecer | O que fazemos |
+|---|---|
+| Mercado Pago recusa ou trava | segundo meio de pagamento pronto |
+| WhatsApp bloqueia o número | API oficial desde o início; e-mail como segundo canal |
+| Uma ferramenta de IA muda de preço ou de tela no meio da turma | materiais com data, e aula que ensina o raciocínio, não só o botão |
+| Poucas vendas | turma piloto primeiro (ver abaixo), antes de investir no ecossistema inteiro |
 
 ---
 
@@ -172,18 +234,35 @@ Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 
 ---
 
+## Turma piloto: validar antes de construir tudo (recomendação)
+
+Construir o ecossistema inteiro antes de a primeira pessoa passar pela
+imersão é apostar tudo num programa que ninguém testou. A proposta:
+
+- **Turma piloto** pequena (10 a 20 pessoas), preço de lançamento, com o
+  mínimo: link de pagamento, Zoom, grupo e uma pasta de materiais
+- Enquanto ela acontece, o ecossistema completo vai sendo construído
+- A piloto devolve o que nenhum planejamento dá: onde as pessoas travam,
+  quanto tempo cada parte leva de verdade, **depoimentos reais e
+  ferramentas reais no ar** para a página de vendas da turma grande
+
+**[a decidir]**
+
+---
+
 ## Ordem de construção
 
 1. **Fundação**: conversa, não código
-2. **Branding book**
-3. **Design system**
-4. **Isca e página de captura**: a lista começa a crescer cedo
-5. **Página de vendas e checkout**
-6. **Automações de captação e venda**
-7. **Plataforma dos alunos** com liberação automática do acesso
-8. **Automações de entrega e do evento**
-9. **Suporte e assistente de IA**
-10. **Pós-imersão**: depoimentos, vitrine, continuidade
+2. **O produto**: método, programa, materiais, pré-imersão
+3. **Branding book**
+4. **Design system**
+5. **Isca e página de captura**: a lista começa a crescer cedo
+6. **Página de vendas e checkout**
+7. **Automações de captação e venda**
+8. **Plataforma dos alunos** com liberação automática do acesso
+9. **Automações de entrega e do evento**
+10. **Suporte e assistente de IA**
+11. **Pós-imersão**: depoimentos, vitrine, continuidade
 
 A lista cresce enquanto o resto é construído, e a plataforma só precisa
 estar pronta no dia em que o primeiro aluno entra.
