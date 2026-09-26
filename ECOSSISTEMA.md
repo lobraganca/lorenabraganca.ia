@@ -6,8 +6,8 @@
 
 ## A ideia em uma frase
 
-Uma imersão em que a pessoa sai com a **própria ferramenta funcionando**,
-construída com IA, sem precisar saber programar. **[a confirmar]**
+Uma imersão online, de R$ 97, em que a pessoa sai com a **própria
+ferramenta funcionando**, construída com o Claude Code.
 
 ---
 
@@ -35,12 +35,39 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
 é o público; a página de vendas depende da promessa; o cronograma inteiro
 é contado de trás para frente a partir da data.
 
-- **Para quem é**, e para quem não é **[a decidir]**
-- **A promessa**: o que exatamente a pessoa tem pronto no último dia **[a decidir]**
-- **Formato**: online ao vivo? Quantos dias? Horários? A gravação fica? **[a decidir]**
-- **Preço** e condições (parcelas, Pix, lote de abertura) **[a decidir]**
+- **Para quem é**: quem quer fazer uma ferramenta com o Claude Code.
+  **Decidido (26/09).** Falta dizer para quem **não** é. **[a decidir]**
+- **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
+  **Decidido (26/09).**
+- **Formato**: online. **Decidido (26/09).** Ao vivo ou gravado? Quantos
+  dias? Horários? A gravação fica? **[a decidir]**
+- **Preço**: R$ 97. **Decidido (26/09).** Parcelas, Pix, lote de abertura
+  **[a decidir]**
+- **O que vem depois dos R$ 97**: existe um próximo produto? **[a decidir]**
+  (ver "O que o preço de R$ 97 muda", abaixo)
 - **Nome da imersão** **[a decidir]**
 - **Data do evento** **[a decidir]**
+
+### O que o preço de R$ 97 muda
+
+É preço de entrada, e isso mexe no ecossistema inteiro:
+
+- **Volume, não atenção individual.** Com R$ 97, não há como pagar um
+  monitor para cada 20 ou 30 alunos. O atendimento tem de ser, em sua
+  maior parte, automático: pré-imersão muito bem guiada, agente de suporte
+  com IA, e monitores em horários marcados no grupo, não olhando a tela de
+  cada um.
+- **O funil precisa vender muito**, e barato. Página de vendas direta,
+  checkout rápido, Pix, pouca fricção.
+- **Imersão de R$ 97 costuma ser porta de entrada.** O dinheiro que paga
+  o ecossistema geralmente vem do que se oferece no fim dela (mentoria,
+  turma longa, comunidade paga). Se existir esse próximo passo, ele
+  precisa ser pensado agora, porque a imersão inteira conduz até ele.
+- **O aluno gasta mais com o Claude do que com o ingresso.** O Claude
+  Code exige plano pago do Claude, cobrado todo mês, em dólar. Isso
+  **tem** de estar escrito na página de vendas, com o valor do dia
+  (conferir em claude.com/pricing antes de publicar). Quem descobre
+  depois pede reembolso, com razão.
 
 ## 1. O produto: a imersão em si
 
@@ -49,17 +76,25 @@ Todo o resto é embalagem e entrega; isto é o que a pessoa compra.
 
 - **Método**: o passo a passo que leva alguém do zero à ferramenta no ar
 - **Programa dia a dia**: o que se aprende e o que se constrói em cada dia
-- **Projeto guiado**: todos constroem uma ferramenta-modelo junto com você,
-  ou cada um constrói a própria ideia? **[a decidir]** (o modelo é mais
-  seguro para iniciante; a ideia própria vende mais)
+- **Cada um constrói a própria ideia. Decidido (26/09).** O risco é a
+  ideia grande demais para caber na imersão. Por isso, proposta:
+  - um **"tamanho certo"** escrito: uma ferramenta que resolve um problema
+    só, que se explica numa frase
+  - um **formato-base** que quase toda ideia pequena cabe dentro (uma
+    página, um formulário, uma lista guardada)
+  - um **cardápio de ideias** para quem chega sem nenhuma
+  - uma aula logo no começo que ajuda a **cortar a ideia** até ela caber
 - **Materiais**: prompts, modelos prontos, checklists, glossário sem jargão
 - **Nivelamento**: turma com gente de níveis diferentes; quem nunca abriu
   um computador para isso precisa de um caminho, quem já sabe precisa de um
   desafio
-- **Requisitos, escritos na página de vendas**: computador (celular não
-  basta para construir), internet, e **quanto a pessoa vai gastar com
-  ferramentas de IA** além do ingresso. Surpresa com custo depois da compra
-  vira pedido de reembolso.
+- **Requisitos, escritos na página de vendas**: internet, plano pago do
+  Claude, e **quanto a pessoa vai gastar** além do ingresso. Surpresa com
+  custo depois da compra vira pedido de reembolso.
+- **Dá para fazer pelo celular.** O Claude Code funciona no app e no
+  navegador, e o Ei Emprego (um app que está na Play Store) foi construído
+  assim, pelo celular. Isso é argumento de venda forte, e é a sua história.
+  **[a decidir: ensinar pelo celular, pelo computador, ou pelos dois]**
 - **Pré-imersão**: contas criadas e tudo instalado ANTES do primeiro dia,
   com checklist e vídeo curto. Sem isso, o primeiro dia inteiro vai embora
   em "não consegui entrar".
@@ -166,7 +201,7 @@ pasta `agentes/`, que serve tanto aqui quanto num Projeto do Claude):
 | Papel | Por que pessoa, e não IA |
 |---|---|
 | **Lorena** | visão, conteúdo, aulas ao vivo, aprovação final |
-| **Monitores da imersão** | quem constrói a primeira ferramenta trava em detalhe técnico, e trava ao vivo. Alguém precisa olhar a tela da pessoa. Referência: 1 monitor para cada 20 a 30 alunos. Ex-alunos viram monitores nas próximas turmas. |
+| **Monitores da imersão** | quem constrói a primeira ferramenta trava em detalhe técnico, e trava ao vivo. Com o preço de R$ 97, eles atendem em horários marcados no grupo, e não um por um; o agente de suporte segura o resto. Ex-alunos viram monitores nas próximas turmas. |
 | **Suporte e comunidade** | recebe o que o agente de suporte não resolve, modera a comunidade |
 | **Tráfego pago** | mexe com dinheiro de anúncio todo dia |
 | **Edição de vídeo** | pode usar IA, mas uma pessoa entrega |
