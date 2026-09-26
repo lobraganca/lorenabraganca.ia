@@ -223,6 +223,14 @@ faturamento da mentoria, e o que deve limitar quantas se vendem.
 - Entrada por e-mail ou telefone
 - **Acesso liberado sozinho** quando o pagamento aprova
 - Aulas gravadas, materiais, prompts e modelos prontos
+- **Planta da Ferramenta** (pedida em 26/09): de 24 a 27 perguntas, em seis
+  etapas (o problema, o que ela faz, o tamanho certo, a cara dela, dados e
+  cuidado, você), que montam um pedido estruturado para o aluno colar no
+  Claude Code. O pedido já traz o corte da primeira versão, o que fica para
+  depois e as regras de segurança com dados pessoais. Primeira versão:
+  https://claude.ai/artifact/UN5HXRpwqWgQJmDXtConty (código em
+  `area-de-membros/planta/`, uma página só, sem dependências, pronta para
+  entrar na área de membros quando ela existir)
 - Progresso: um passo a passo da construção da ferramenta, com checklist
 - Comunidade **[a decidir: WhatsApp, Discord ou dentro da plataforma]**
 - Vitrine dos projetos dos alunos (vira prova social para a próxima turma)

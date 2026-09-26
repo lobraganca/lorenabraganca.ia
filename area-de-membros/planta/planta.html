@@ -1,0 +1,534 @@
+<title>Planta da Ferramenta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --fundo:#F3F5F4;
+  --papel:#FFFFFF;
+  --tinta:#18211E;
+  --tinta-2:#4C5A54;
+  --linha:#D6DEDA;
+  --acento:#1F5FAD;
+  --acento-suave:#E2ECF8;
+  --dica:#7A5A00;
+  --dica-fundo:#FBF3DC;
+  --ok:#0F6B5C;
+  --erro:#B3261E;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --texto:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --fundo:#0F1413;
+    --papel:#171E1C;
+    --tinta:#E9EEEC;
+    --tinta-2:#A3B2AC;
+    --linha:#2A3532;
+    --acento:#7FB0EE;
+    --acento-suave:#1A2A3D;
+    --dica:#F0C762;
+    --dica-fundo:#2E2712;
+    --ok:#4FC2A8;
+    --erro:#F2877E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --fundo:#0F1413;
+  --papel:#171E1C;
+  --tinta:#E9EEEC;
+  --tinta-2:#A3B2AC;
+  --linha:#2A3532;
+  --acento:#7FB0EE;
+  --acento-suave:#1A2A3D;
+  --dica:#F0C762;
+  --dica-fundo:#2E2712;
+  --ok:#4FC2A8;
+  --erro:#F2877E;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  background:var(--fundo);color:var(--tinta);font-family:var(--texto);
+  font-size:17px;line-height:1.5;padding-inline:16px;padding-block:20px 56px;
+}
+.pagina{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance}
+h1{font-size:clamp(26px,6.5vw,36px);font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+h2{font-size:clamp(21px,5vw,26px);font-weight:600;line-height:1.2}
+.rotulo{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--tinta-2);font-weight:700}
+.sub{margin:0;color:var(--tinta-2)}
+button{font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,label:focus-within{outline:2px solid var(--acento);outline-offset:2px}
+
+.topo{display:flex;flex-direction:column;gap:8px}
+.avanco{display:flex;flex-direction:column;gap:6px}
+.avanco-linha{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.barra{height:8px;background:var(--linha);border-radius:999px;overflow:hidden}
+.barra span{display:block;height:100%;background:var(--acento);border-radius:999px;transition:width .25s ease}
+.etapas{display:flex;flex-wrap:wrap;gap:4px}
+.etapas span{font-size:12px;padding:2px 8px;border-radius:999px;color:var(--tinta-2);border:1px solid var(--linha)}
+.etapas span.atual{color:var(--acento);border-color:var(--acento);font-weight:700}
+.etapas span.feita{color:var(--ok);border-color:transparent}
+
+.cartao{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.dica{background:var(--dica-fundo);color:var(--dica);border-radius:10px;padding:10px 12px;font-size:15px;margin:0}
+.dica strong{font-weight:700}
+textarea,input[type=text]{
+  width:100%;font:inherit;color:var(--tinta);background:var(--fundo);
+  border:1.5px solid var(--linha);border-radius:12px;padding:12px;
+}
+textarea{min-height:130px;resize:vertical}
+.opcoes{display:flex;flex-direction:column;gap:8px}
+.opcao{
+  display:flex;gap:10px;align-items:flex-start;padding:12px;border:1.5px solid var(--linha);
+  border-radius:12px;cursor:pointer;background:var(--fundo);
+}
+.opcao input{width:20px;height:20px;margin-top:2px;accent-color:var(--acento);flex:none}
+.opcao:has(input:checked){border-color:var(--acento);background:var(--acento-suave)}
+.alerta-tamanho{color:var(--dica);font-size:14px;margin:0}
+.opcional{font-size:13px;color:var(--tinta-2);font-weight:400}
+
+.navega{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.btn{min-height:50px;padding:0 20px;border-radius:12px;font-weight:700;border:1.5px solid var(--linha);background:var(--papel);color:var(--tinta)}
+.btn.primario{background:var(--acento);border-color:var(--acento);color:var(--papel)}
+.btn:disabled{opacity:.45;cursor:default}
+.links{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+.link{background:none;border:0;padding:6px 0;color:var(--acento);text-decoration:underline;text-underline-offset:3px}
+.link.perigo{color:var(--erro)}
+.confirmar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:15px}
+
+.prompt{
+  font-family:var(--mono);font-size:14px;line-height:1.55;white-space:pre-wrap;word-break:break-word;
+  background:var(--fundo);border:1px solid var(--linha);border-radius:12px;padding:14px;margin:0;
+  max-height:60vh;overflow:auto;
+}
+.passos-uso{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.aviso{font-size:14px;color:var(--tinta-2);margin:0}
+.aviso.ok{color:var(--ok);font-weight:700}
+.resumo{display:flex;flex-direction:column;gap:0}
+.resumo button{
+  text-align:left;background:none;border:0;border-bottom:1px solid var(--linha);padding:10px 0;color:var(--tinta);
+  display:grid;grid-template-columns:32px 1fr;gap:8px;
+}
+.resumo .n{font-family:var(--mono);color:var(--tinta-2);font-size:14px}
+.resumo .q{font-size:14px;color:var(--tinta-2)}
+.resumo .r{display:block;font-size:15px}
+.resumo .r.vazia{color:var(--erro)}
+@media (prefers-reduced-motion: reduce){.barra span{transition:none}}
+</style>
+
+<main class="pagina">
+  <header class="topo">
+    <span class="rotulo">Área de membros · ferramenta do aluno</span>
+    <h1>A planta da sua ferramenta</h1>
+    <p class="sub">Responda às perguntas com calma. No fim, sai um pedido completo, pronto para colar no Claude Code, que explica exatamente o que você quer construir.</p>
+  </header>
+
+  <section class="avanco" id="avanco">
+    <div class="avanco-linha"><span id="conta">Pergunta 1 de 25</span><span id="etapa-nome"></span></div>
+    <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+    <div class="etapas" id="etapas" aria-hidden="true"></div>
+  </section>
+
+  <section class="cartao" id="tela-pergunta" aria-live="polite">
+    <h2 id="pergunta"></h2>
+    <p class="dica" id="dica"></p>
+    <div id="campo"></div>
+    <p class="alerta-tamanho" id="alerta-tamanho" hidden></p>
+  </section>
+
+  <section class="cartao" id="tela-revisao" hidden>
+    <h2>Confira suas respostas</h2>
+    <p class="sub">Toque numa resposta para mudar. As marcadas em vermelho estão vazias; o pedido sai melhor com elas preenchidas.</p>
+    <div class="resumo" id="resumo"></div>
+  </section>
+
+  <section class="cartao" id="tela-prompt" hidden>
+    <h2>Seu pedido está pronto</h2>
+    <ol class="passos-uso">
+      <li>Toque em <strong>Copiar pedido</strong>.</li>
+      <li>Abra o Claude Code numa pasta nova, só para esta ferramenta.</li>
+      <li>Cole o pedido e envie. O Claude vai explicar o plano e fazer perguntas antes de começar.</li>
+    </ol>
+    <div class="navega">
+      <button type="button" class="btn primario" id="copiar">Copiar pedido</button>
+      <button type="button" class="btn" id="ir-revisao">Mudar respostas</button>
+    </div>
+    <p class="aviso" id="aviso-copia"></p>
+    <pre class="prompt" id="prompt" tabindex="0"></pre>
+  </section>
+
+  <nav class="navega" id="navega">
+    <button type="button" class="btn" id="voltar">← Voltar</button>
+    <button type="button" class="btn primario" id="seguir">Próxima →</button>
+  </nav>
+
+  <div class="links">
+    <button type="button" class="link" id="exemplo">Ver um exemplo preenchido</button>
+    <button type="button" class="link perigo" id="recomecar">Recomeçar do zero</button>
+  </div>
+  <div class="confirmar" id="confirmar" hidden>
+    <span>Apagar todas as respostas?</span>
+    <button type="button" class="btn" id="confirmar-sim" style="border-color:var(--erro);color:var(--erro)">Sim, apagar</button>
+    <button type="button" class="btn" id="confirmar-nao">Cancelar</button>
+  </div>
+  <p class="aviso">Suas respostas ficam guardadas neste aparelho enquanto você responde.</p>
+</main>
+
+<script>
+const ETAPAS = ["O problema","O que ela faz","O tamanho certo","A cara dela","Dados e cuidado","Você"];
+
+const PERGUNTAS = [
+  // O problema
+  {id:"frase", etapa:0, tipo:"curto", p:"Em uma frase: o que a sua ferramenta faz?",
+   d:"Se a frase precisar de dois \"e\", talvez sejam duas ferramentas. Escolha uma para começar."},
+  {id:"problema", etapa:0, tipo:"longo", p:"Que problema ela resolve? Como isso é feito hoje, sem ela?",
+   d:"Conte como é hoje, com detalhes: caderno, planilha, WhatsApp, de cabeça. É o que mais ajuda a IA a entender."},
+  {id:"quem", etapa:0, tipo:"escolha", p:"Quem vai usar a ferramenta?",
+   op:["Só eu","Eu e minha equipe","Meus clientes","Qualquer pessoa na internet"]},
+  {id:"perfil", etapa:0, tipo:"curto", p:"Descreva essa pessoa em uma frase.",
+   d:"Idade, profissão e se ela se dá bem com tecnologia. Ex.: \"mulheres de 30 a 60 anos, usam WhatsApp, não gostam de nada complicado\"."},
+  {id:"frequencia", etapa:0, tipo:"escolha", p:"Com que frequência ela vai ser usada?",
+   op:["Todo dia","Toda semana","De vez em quando","Uma vez por pessoa"]},
+
+  // O que ela faz
+  {id:"fluxo", etapa:1, tipo:"longo", p:"Passo a passo: o que a pessoa faz, do momento em que abre até terminar?",
+   d:"Numere de 3 a 6 passos. Ex.: 1. Abre o link. 2. Escolhe o serviço. 3. Vê os horários livres…"},
+  {id:"entradas", etapa:1, tipo:"longo", p:"Que informações a pessoa digita, escolhe ou envia?",
+   d:"Liste tudo: nome, data, valor, foto, arquivo, uma opção de uma lista…"},
+  {id:"saidas", etapa:1, tipo:"multi", p:"O que a ferramenta entrega no fim?",
+   op:["Um resultado na tela (um cálculo, uma resposta)","Uma lista ou tabela","Um texto escrito pela IA","Um arquivo (PDF, planilha)","Um agendamento ou reserva","Uma mensagem ou aviso para alguém"]},
+  {id:"saidas_det", etapa:1, tipo:"curto", opcional:true, p:"Descreva melhor o que sai no fim.",
+   d:"Ex.: \"uma tela de confirmação com o dia e o horário marcados\"."},
+  {id:"guarda", etapa:1, tipo:"escolha", p:"A ferramenta precisa guardar informações para consultar depois?",
+   op:["Não, é usar e pronto","Sim, cada pessoa guarda as próprias","Sim, e várias pessoas veem as mesmas informações"]},
+  {id:"guarda_o_que", etapa:1, tipo:"longo", p:"O que exatamente fica guardado?",
+   d:"Ex.: \"os agendamentos: serviço, dia, horário, nome e telefone\".",
+   se: r => r.guarda && !r.guarda.startsWith("Não")},
+  {id:"login", etapa:1, tipo:"escolha", p:"Precisa de login?",
+   op:["Não, qualquer pessoa usa sem conta","Sim, cada pessoa com a sua conta","Só eu entro, para administrar"]},
+
+  // O tamanho certo
+  {id:"essencial", etapa:2, tipo:"longo", p:"Das coisas que você descreveu, qual é a UMA que não pode faltar na primeira versão?",
+   d:"<strong>A pergunta mais importante.</strong> Na imersão, o objetivo é ter a primeira versão no ar. O resto vem depois."},
+  {id:"depois", etapa:2, tipo:"longo", p:"O que pode ficar para uma segunda versão?",
+   d:"Tudo o que é \"seria legal\": lembretes, relatórios, pagamento, integrações… Escrever aqui é o que impede a IA de construir demais."},
+  {id:"referencia", etapa:2, tipo:"curto", opcional:true, p:"Existe algo parecido que você usa como referência?",
+   d:"Um aplicativo, um site, uma planilha. Diga o que gosta nele e o que não gosta."},
+  {id:"pagamento", etapa:2, tipo:"escolha", p:"Vai precisar receber pagamento dentro da ferramenta?",
+   op:["Não","Sim, mas pode ficar para depois","Sim, já na primeira versão"],
+   d:"Pagamento é a parte mais trabalhosa. Se puder, deixe para a segunda versão."},
+
+  // A cara dela
+  {id:"aparelho", etapa:3, tipo:"escolha", p:"Onde a ferramenta vai ser mais usada?",
+   op:["No celular","No computador","Nos dois, igualmente"]},
+  {id:"sensacao", etapa:3, tipo:"escolha", p:"Que sensação ela deve passar?",
+   op:["Séria e profissional","Leve e amigável","Elegante","Divertida","Simples e direta, sem enfeite"]},
+  {id:"cores", etapa:3, tipo:"curto", opcional:true, p:"Cores ou marca que devem aparecer?",
+   d:"Ex.: \"rosa-claro e dourado, como o meu Instagram\". Se tiver logo, você envia depois para o Claude."},
+  {id:"nome", etapa:3, tipo:"curto", opcional:true, p:"Qual o nome da ferramenta?",
+   d:"Se ainda não tiver, deixe em branco: a IA sugere."},
+
+  // Dados e cuidado
+  {id:"pessoais", etapa:4, tipo:"escolha", p:"A ferramenta vai guardar ou mostrar dados pessoais de outras pessoas?",
+   op:["Não","Sim"],
+   d:"Nome, telefone, e-mail, CPF, endereço, saúde, fotos. Isso muda a forma de construir, e é o erro mais comum de quem começa."},
+  {id:"pessoais_quais", etapa:4, tipo:"curto", p:"Quais dados pessoais?",
+   se: r => r.pessoais === "Sim"},
+  {id:"quem_ve", etapa:4, tipo:"longo", p:"Quem pode ver os dados de quem?",
+   d:"Ex.: \"só eu vejo a lista com nomes e telefones; a cliente vê apenas os horários livres, sem saber quem marcou os outros\".",
+   se: r => r.pessoais === "Sim"},
+  {id:"conexoes", etapa:4, tipo:"multi", p:"Ela precisa se conectar com alguma coisa de fora?",
+   op:["Nenhuma, por enquanto","WhatsApp","E-mail","Planilha do Google","Agenda do Google","Instagram","Outra"],
+   d:"Cada conexão é trabalho a mais. Na primeira versão, o ideal é nenhuma."},
+
+  // Você
+  {id:"experiencia", etapa:5, tipo:"escolha", p:"Qual a sua experiência com programação?",
+   op:["Nenhuma","Já mexi um pouco","Sei programar"]},
+  {id:"contas", etapa:5, tipo:"multi", p:"Você já tem conta em algum destes?",
+   op:["GitHub","Vercel","Supabase","Nenhum ainda"],
+   d:"Não se preocupe se não tiver nenhuma. É só para o Claude saber de onde partir."},
+  {id:"sucesso", etapa:5, tipo:"longo", p:"Como você vai saber que a primeira versão deu certo?",
+   d:"Complete: \"deu certo quando…\". Ex.: \"quando uma cliente conseguir marcar sozinha, pelo celular, e o horário aparecer na minha lista\"."},
+];
+
+const EXEMPLO = {
+  frase:"Uma agenda onde minhas clientes marcam horário de manicure sozinhas.",
+  problema:"Hoje as clientes me chamam no WhatsApp, eu confiro o caderno e respondo uma por uma. Perco muito tempo e às vezes marco duas pessoas no mesmo horário.",
+  quem:"Meus clientes",
+  perfil:"Mulheres de 25 a 60 anos, usam WhatsApp e Instagram, não gostam de nada complicado.",
+  frequencia:"Todo dia",
+  fluxo:"1. Abre o link.\n2. Escolhe o serviço.\n3. Vê os horários livres da semana.\n4. Escolhe um horário.\n5. Digita nome e telefone.\n6. Vê a confirmação.",
+  entradas:"Serviço, dia, horário, nome e telefone.",
+  saidas:["Um agendamento ou reserva"],
+  saidas_det:"Uma tela de confirmação com o serviço, o dia e o horário marcados.",
+  guarda:"Sim, e várias pessoas veem as mesmas informações",
+  guarda_o_que:"Os agendamentos: serviço, dia, horário, nome e telefone da cliente.",
+  login:"Só eu entro, para administrar",
+  essencial:"A cliente escolher um horário livre e esse horário sumir da lista para as outras.",
+  depois:"Lembrete automático no WhatsApp, pagamento antecipado, cancelamento pela própria cliente.",
+  referencia:"Aplicativos de agendamento de salão, só que bem mais simples.",
+  pagamento:"Não",
+  aparelho:"No celular",
+  sensacao:"Leve e amigável",
+  cores:"Rosa-claro e dourado, como o meu Instagram.",
+  nome:"Agenda da Bia",
+  pessoais:"Sim",
+  pessoais_quais:"Nome e telefone das clientes.",
+  quem_ve:"Só eu vejo a lista com nomes e telefones. A cliente vê apenas os horários livres, sem saber quem marcou os outros.",
+  conexoes:["Nenhuma, por enquanto"],
+  experiencia:"Nenhuma",
+  contas:["Nenhum ainda"],
+  sucesso:"Quando uma cliente conseguir marcar sozinha, pelo celular, e o horário aparecer na minha lista.",
+};
+
+const CHAVE = "planta-da-ferramenta";
+let r = {};
+let pos = 0;           // índice na lista de perguntas visíveis
+let tela = "pergunta"; // pergunta | revisao | prompt
+try { const s = JSON.parse(localStorage.getItem(CHAVE) || "null"); if (s) { r = s.r || {}; pos = s.pos || 0; tela = s.tela || "pergunta"; } } catch(e) {}
+
+function guardar(){ try { localStorage.setItem(CHAVE, JSON.stringify({r, pos, tela})); } catch(e) {} }
+function visiveis(){ return PERGUNTAS.filter(q => !q.se || q.se(r)); }
+function vazio(v){ return v === undefined || v === null || (Array.isArray(v) ? v.length === 0 : String(v).trim() === ""); }
+function el(tag, props, ...filhos){ const e = document.createElement(tag); if (props) Object.assign(e, props); filhos.forEach(f => e.append(f)); return e; }
+
+function desenharAvanco(){
+  const vs = visiveis();
+  const q = vs[pos];
+  const total = vs.length;
+  const respondidas = vs.filter(x => !vazio(r[x.id])).length;
+  document.getElementById("conta").textContent =
+    tela === "pergunta" ? `Pergunta ${pos+1} de ${total}` : `${respondidas} de ${total} respondidas`;
+  document.getElementById("etapa-nome").textContent = tela === "pergunta" && q ? ETAPAS[q.etapa] : (tela === "revisao" ? "Revisão" : "Pronto");
+  document.getElementById("barra").style.width = (tela === "pergunta" ? (pos/total)*100 : 100) + "%";
+  const et = document.getElementById("etapas");
+  et.replaceChildren(...ETAPAS.map((n, i) => {
+    const s = el("span", {textContent:n});
+    if (tela === "pergunta" && q) { if (i === q.etapa) s.className = "atual"; else if (i < q.etapa) s.className = "feita"; }
+    else s.className = "feita";
+    return s;
+  }));
+}
+
+function desenharPergunta(){
+  const vs = visiveis();
+  if (pos >= vs.length) pos = vs.length - 1;
+  const q = vs[pos];
+  const h = document.getElementById("pergunta");
+  h.replaceChildren(q.p);
+  if (q.opcional) h.append(" ", el("span", {className:"opcional", textContent:"(opcional)"}));
+  const dica = document.getElementById("dica");
+  dica.hidden = !q.d; dica.innerHTML = q.d || "";
+
+  const campo = document.getElementById("campo");
+  campo.replaceChildren();
+  const id = "resp-" + q.id;
+  if (q.tipo === "curto" || q.tipo === "longo") {
+    const c = q.tipo === "curto" ? el("input", {type:"text", id}) : el("textarea", {id});
+    c.value = r[q.id] || "";
+    c.setAttribute("aria-labelledby", "pergunta");
+    c.addEventListener("input", () => { r[q.id] = c.value; guardar(); checarTamanho(q); desenharAvanco(); });
+    campo.append(c);
+    setTimeout(() => c.focus({preventScroll:true}), 0);
+  } else {
+    const multi = q.tipo === "multi";
+    const grupo = el("div", {className:"opcoes"});
+    grupo.setAttribute("role", multi ? "group" : "radiogroup");
+    grupo.setAttribute("aria-labelledby", "pergunta");
+    q.op.forEach((o, i) => {
+      const inp = el("input", {type: multi ? "checkbox" : "radio", name:id, id: id + "-" + i, value:o});
+      inp.checked = multi ? (r[q.id] || []).includes(o) : r[q.id] === o;
+      inp.addEventListener("change", () => {
+        if (multi) {
+          let atual = [...document.querySelectorAll(`input[name="${id}"]:checked`)].map(x => x.value);
+          const exclusivas = ["Nenhuma, por enquanto","Nenhum ainda"];
+          if (inp.checked && exclusivas.includes(o)) atual = [o];
+          else if (inp.checked) atual = atual.filter(x => !exclusivas.includes(x));
+          r[q.id] = atual;
+          document.querySelectorAll(`input[name="${id}"]`).forEach(x => { x.checked = atual.includes(x.value); });
+        } else r[q.id] = o;
+        guardar(); desenharAvanco();
+      });
+      grupo.append(el("label", {className:"opcao", htmlFor: inp.id}, inp, el("span", {textContent:o})));
+    });
+    campo.append(grupo);
+  }
+  checarTamanho(q);
+  document.getElementById("voltar").disabled = pos === 0;
+  document.getElementById("seguir").textContent = pos === vs.length - 1 ? "Revisar respostas →" : (vazio(r[q.id]) && q.opcional ? "Pular →" : "Próxima →");
+}
+
+function checarTamanho(q){
+  const a = document.getElementById("alerta-tamanho");
+  let msg = "";
+  if (q.id === "frase") {
+    const t = (r.frase || "").trim();
+    const es = (t.match(/\be\b/gi) || []).length;
+    if (t.length > 160) msg = "Frase longa. Tente dizer o essencial em menos palavras.";
+    else if (es >= 2) msg = "Tem dois \"e\" na frase. Talvez sejam duas ferramentas: comece por uma.";
+  }
+  if (q.id === "essencial") {
+    const t = (r.essencial || "").trim();
+    if ((t.match(/\n|;|\be\b/gi) || []).length >= 3) msg = "Parece mais de uma coisa. Escolha a UMA sem a qual a ferramenta não serve.";
+  }
+  a.hidden = !msg; a.textContent = msg;
+}
+
+function desenharRevisao(){
+  const box = document.getElementById("resumo");
+  box.replaceChildren(...visiveis().map((q, i) => {
+    const v = r[q.id];
+    const txt = vazio(v) ? (q.opcional ? "(em branco, opcional)" : "Sem resposta") : (Array.isArray(v) ? v.join(", ") : v);
+    const b = el("button", {type:"button"},
+      el("span", {className:"n", textContent:String(i+1).padStart(2,"0")}),
+      el("span", {}, el("span", {className:"q", textContent:q.p}), el("span", {className:"r" + (vazio(v) && !q.opcional ? " vazia" : ""), textContent:txt})));
+    b.addEventListener("click", () => { pos = i; tela = "pergunta"; guardar(); desenhar(); });
+    return b;
+  }));
+  document.getElementById("voltar").disabled = false;
+  document.getElementById("seguir").textContent = "Montar meu pedido →";
+}
+
+// ---------- o pedido ----------
+function v(id){ const x = r[id]; return vazio(x) ? "" : (Array.isArray(x) ? x.join(", ") : String(x).trim()); }
+function montarPrompt(){
+  const L = [];
+  const nome = v("nome");
+  L.push(`# Projeto: ${nome || "minha primeira ferramenta (ainda sem nome; sugira três)"}`);
+  L.push("");
+  L.push("Quero construir uma ferramenta com você. Abaixo está tudo o que já sei sobre ela. Leia até o fim antes de começar.");
+  L.push("");
+  L.push("## Quem sou eu");
+  const exp = v("experiencia");
+  if (exp === "Nenhuma") L.push("Não sei programar. Explique cada passo em português simples, sem jargão, e me diga exatamente o que clicar ou digitar quando eu precisar fazer algo.");
+  else if (exp === "Já mexi um pouco") L.push("Já mexi um pouco com programação, mas não programo no dia a dia. Explique as decisões em português simples.");
+  else if (exp) L.push("Sei programar. Pode usar termos técnicos, mas mantenha as explicações curtas.");
+  if (v("contas")) L.push(`Contas que já tenho: ${v("contas")}.`);
+  L.push("");
+  L.push("## O que a ferramenta faz");
+  if (v("frase")) L.push(v("frase"));
+  L.push("");
+  if (v("problema")) { L.push("## O problema que ela resolve"); L.push(v("problema")); L.push(""); }
+  L.push("## Quem vai usar");
+  if (v("quem")) L.push(`- Público: ${v("quem")}.`);
+  if (v("perfil")) L.push(`- Perfil: ${v("perfil")}`);
+  if (v("frequencia")) L.push(`- Frequência de uso: ${v("frequencia").toLowerCase()}.`);
+  if (v("aparelho")) L.push(`- Aparelho principal: ${v("aparelho").toLowerCase()}.${v("aparelho") === "No celular" ? " Pense primeiro na tela do celular." : ""}`);
+  L.push("");
+  if (v("fluxo")) { L.push("## Como a pessoa usa, passo a passo"); L.push(v("fluxo")); L.push(""); }
+  L.push("## Entradas e saídas");
+  if (v("entradas")) L.push(`- O que a pessoa informa: ${v("entradas")}`);
+  if (v("saidas")) L.push(`- O que a ferramenta entrega: ${v("saidas")}.`);
+  if (v("saidas_det")) L.push(`- Em detalhe: ${v("saidas_det")}`);
+  L.push("");
+  L.push("## Dados guardados e acesso");
+  if (v("guarda")) L.push(`- Guardar informações: ${v("guarda")}.`);
+  if (v("guarda_o_que")) L.push(`- O que fica guardado: ${v("guarda_o_que")}`);
+  if (v("login")) L.push(`- Login: ${v("login")}.`);
+  L.push("");
+  L.push("## Primeira versão: o que construir AGORA");
+  if (v("essencial")) L.push(`- O essencial, que não pode faltar: ${v("essencial")}`);
+  L.push("- Construa a menor versão que entregue isso e funcione de ponta a ponta. Nada além.");
+  L.push("");
+  const depois = [];
+  if (v("depois")) depois.push(v("depois"));
+  if (v("pagamento") === "Sim, mas pode ficar para depois") depois.push("Receber pagamento.");
+  const cx = (r.conexoes || []).filter(x => x !== "Nenhuma, por enquanto");
+  if (cx.length) depois.push(`Conexões com: ${cx.join(", ")}. Construa a primeira versão sem elas e me diga quando fizer sentido ligar.`);
+  if (depois.length) {
+    L.push("## Fica para depois (NÃO construir na primeira versão)");
+    depois.forEach(d => L.push(`- ${d}`));
+    L.push("");
+  }
+  if (v("pagamento") === "Sim, já na primeira versão") {
+    L.push("## Pagamento");
+    L.push("- Preciso receber pagamento já na primeira versão. Antes de construir essa parte, me explique as opções, os custos e o que eu preciso ter (conta, CNPJ, documentos).");
+    L.push("");
+  }
+  L.push("## Aparência");
+  if (v("sensacao")) L.push(`- Sensação: ${v("sensacao").toLowerCase()}.`);
+  if (v("cores")) L.push(`- Cores e marca: ${v("cores")}`);
+  if (v("referencia")) L.push(`- Referência: ${v("referencia")}`);
+  L.push("- Letras legíveis, botões fáceis de tocar e textos da tela em português do Brasil.");
+  L.push("");
+  L.push("## Dados pessoais e segurança");
+  if (v("pessoais") === "Sim") {
+    L.push(`- A ferramenta vai lidar com dados pessoais: ${v("pessoais_quais") || "(não especifiquei quais)"}.`);
+    if (v("quem_ve")) L.push(`- Quem pode ver o quê: ${v("quem_ve")}`);
+    L.push("- Esses dados NUNCA podem ficar acessíveis a quem não deveria vê-los: nem por outra tela, nem por um link, nem escondidos no código da página que vai para o navegador.");
+    L.push("- Antes de publicar, me mostre como você garantiu isso e como eu posso conferir.");
+  } else {
+    L.push("- A ferramenta não deve guardar dados pessoais de outras pessoas. Se em algum momento o que estamos construindo começar a precisar disso, pare e me avise antes.");
+  }
+  L.push("- Nunca coloque senhas ou chaves secretas no código. Se precisar de alguma, me explique onde guardá-la.");
+  L.push("");
+  if (v("sucesso")) { L.push("## Como vou saber que deu certo"); L.push(v("sucesso")); L.push(""); }
+  L.push("## Como quero que você trabalhe");
+  L.push("1. Antes de escrever qualquer código, me explique em até 10 linhas o que vai construir e com quais ferramentas, e me faça as perguntas que faltarem.");
+  L.push("2. Espere a minha confirmação para começar.");
+  L.push("3. Construa um passo de cada vez. Ao fim de cada passo, me diga como testar.");
+  L.push("4. Se algo que pedi for grande demais para a primeira versão, me diga e proponha um corte.");
+  L.push("5. No fim, me ajude a publicar a ferramenta na internet e me dê o endereço.");
+  return L.join("\n");
+}
+
+function desenharPrompt(){
+  document.getElementById("prompt").textContent = montarPrompt();
+  document.getElementById("aviso-copia").textContent = "";
+}
+
+function desenhar(){
+  document.getElementById("tela-pergunta").hidden = tela !== "pergunta";
+  document.getElementById("tela-revisao").hidden = tela !== "revisao";
+  document.getElementById("tela-prompt").hidden = tela !== "prompt";
+  document.getElementById("navega").hidden = tela === "prompt";
+  if (tela === "pergunta") desenharPergunta();
+  if (tela === "revisao") desenharRevisao();
+  if (tela === "prompt") desenharPrompt();
+  desenharAvanco();
+}
+
+document.getElementById("seguir").addEventListener("click", () => {
+  if (tela === "pergunta") {
+    const vs = visiveis();
+    if (pos < vs.length - 1) pos += 1; else tela = "revisao";
+  } else if (tela === "revisao") tela = "prompt";
+  guardar(); desenhar(); window.scrollTo({top:0});
+});
+document.getElementById("voltar").addEventListener("click", () => {
+  if (tela === "revisao") { tela = "pergunta"; pos = visiveis().length - 1; }
+  else if (pos > 0) pos -= 1;
+  guardar(); desenhar();
+});
+document.getElementById("ir-revisao").addEventListener("click", () => { tela = "revisao"; guardar(); desenhar(); });
+document.getElementById("copiar").addEventListener("click", async () => {
+  const texto = montarPrompt();
+  const aviso = document.getElementById("aviso-copia");
+  try {
+    await navigator.clipboard.writeText(texto);
+    aviso.textContent = "Copiado. Agora é só colar no Claude Code."; aviso.className = "aviso ok";
+  } catch(e) {
+    const pre = document.getElementById("prompt");
+    const sel = window.getSelection(), rg = document.createRange();
+    rg.selectNodeContents(pre); sel.removeAllRanges(); sel.addRange(rg);
+    aviso.textContent = "Não consegui copiar. O texto está selecionado: use o copiar do seu aparelho."; aviso.className = "aviso";
+  }
+});
+document.getElementById("exemplo").addEventListener("click", () => {
+  r = structuredClone(EXEMPLO); tela = "prompt"; pos = 0; guardar(); desenhar(); window.scrollTo({top:0});
+});
+document.getElementById("recomecar").addEventListener("click", () => { document.getElementById("confirmar").hidden = false; });
+document.getElementById("confirmar-nao").addEventListener("click", () => { document.getElementById("confirmar").hidden = true; });
+document.getElementById("confirmar-sim").addEventListener("click", () => {
+  r = {}; pos = 0; tela = "pergunta"; guardar();
+  document.getElementById("confirmar").hidden = true;
+  desenhar(); window.scrollTo({top:0});
+});
+
+desenhar();
+</script>
