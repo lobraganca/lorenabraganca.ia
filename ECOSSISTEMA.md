@@ -7,7 +7,9 @@
 ## A ideia em uma frase
 
 Uma imersão online, de R$ 97, em que a pessoa sai com a **própria
-ferramenta funcionando**, construída com o Claude Code.
+ferramenta funcionando**, construída com o Claude Code. Quem quiser uma
+ferramenta sob medida para o próprio negócio segue para a **mentoria
+personalizada, de R$ 2.997**.
 
 ---
 
@@ -25,7 +27,8 @@ passa por uma dessas etapas.
 | **Entra** | recebe o acesso na hora | liberação automática, boas-vindas, primeiros passos |
 | **Participa** | vive a imersão | evento ao vivo, plataforma, materiais, comunidade, suporte |
 | **Conclui** | sai com a ferramenta pronta | certificado, vitrine dos projetos, pedido de depoimento |
-| **Continua** | dá o próximo passo | oferta de continuidade, indicação |
+| **Continua** | dá o próximo passo | oferta da mentoria, aplicação, conversa de venda, indicação |
+| **Mentoria** | diagnóstico e ferramenta sob medida, com você | ver o bloco 1B |
 
 ---
 
@@ -39,14 +42,16 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   **Decidido (26/09).** Falta dizer para quem **não** é. **[a decidir]**
 - **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
   **Decidido (26/09).**
-- **Formato**: online. **Decidido (26/09).** Ao vivo ou gravado? Quantos
-  dias? Horários? A gravação fica? **[a decidir]**
+- **Formato**: online, ao vivo, e a gravação fica. **Decidido (26/09).**
+  Quantos dias e horários **[a decidir]**
+- **Ensinado pelo computador. Decidido (26/09).**
 - **Preço**: R$ 97. **Decidido (26/09).** Parcelas, Pix, lote de abertura
   **[a decidir]**
-- **O que vem depois dos R$ 97**: existe um próximo produto? **[a decidir]**
-  (ver "O que o preço de R$ 97 muda", abaixo)
+- **O que vem depois**: mentoria personalizada de R$ 2.997. **Decidido
+  (26/09).** Ver o bloco 1B.
+- **Primeira turma: paga**, a R$ 97. **Decidido (26/09).**
 - **Nome da imersão** **[a decidir]**
-- **Data do evento** **[a decidir]**
+- **Data da primeira turma** **[a decidir]**
 
 ### O que o preço de R$ 97 muda
 
@@ -59,10 +64,11 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   cada um.
 - **O funil precisa vender muito**, e barato. Página de vendas direta,
   checkout rápido, Pix, pouca fricção.
-- **Imersão de R$ 97 costuma ser porta de entrada.** O dinheiro que paga
-  o ecossistema geralmente vem do que se oferece no fim dela (mentoria,
-  turma longa, comunidade paga). Se existir esse próximo passo, ele
-  precisa ser pensado agora, porque a imersão inteira conduz até ele.
+- **A imersão é a porta de entrada da mentoria.** Uma mentoria de
+  R$ 2.997 vale o mesmo que 31 ingressos. Por isso, o número que mais
+  importa não é quantos compram a imersão, e sim quantos seguem para a
+  mentoria. Exemplo, só para ter ordem de grandeza: 100 alunos são
+  R$ 9.700; se 3 deles fecharem a mentoria, são mais R$ 8.991.
 - **O aluno gasta mais com o Claude do que com o ingresso.** O Claude
   Code exige plano pago do Claude, cobrado todo mês, em dólar. Isso
   **tem** de estar escrito na página de vendas, com o valor do dia
@@ -88,22 +94,59 @@ Todo o resto é embalagem e entrega; isto é o que a pessoa compra.
 - **Nivelamento**: turma com gente de níveis diferentes; quem nunca abriu
   um computador para isso precisa de um caminho, quem já sabe precisa de um
   desafio
-- **Requisitos, escritos na página de vendas**: internet, plano pago do
-  Claude, e **quanto a pessoa vai gastar** além do ingresso. Surpresa com
-  custo depois da compra vira pedido de reembolso.
-- **Dá para fazer pelo celular.** O Claude Code funciona no app e no
-  navegador, e o Ei Emprego (um app que está na Play Store) foi construído
-  assim, pelo celular. Isso é argumento de venda forte, e é a sua história.
-  **[a decidir: ensinar pelo celular, pelo computador, ou pelos dois]**
+- **Requisitos, escritos na página de vendas**: **computador**, internet,
+  plano pago do Claude, e **quanto a pessoa vai gastar** além do ingresso.
+  Surpresa com custo depois da compra vira pedido de reembolso.
 - **Pré-imersão**: contas criadas e tudo instalado ANTES do primeiro dia,
-  com checklist e vídeo curto. Sem isso, o primeiro dia inteiro vai embora
-  em "não consegui entrar".
+  com checklist e vídeo curto, **um para Windows e um para Mac**: a
+  instalação é diferente nos dois, e é onde mais gente trava. Sem isso, o
+  primeiro dia inteiro vai embora em "não consegui entrar".
 - **Segurança na ferramenta do aluno**: iniciante construindo com IA costuma
   deixar dados de outras pessoas expostos sem perceber. Foi exatamente o
   que aconteceu no Ei com os telefones dos candidatos. Isto precisa ser
   aula, não rodapé.
 - **Sucesso medido**: quantos alunos terminam com a ferramenta no ar. É o
   número que vira prova na próxima turma.
+
+## 1B. A mentoria personalizada (R$ 2.997)
+
+**Decidido (26/09):** diagnóstico da pessoa e, juntos, uma ferramenta
+feita para a necessidade dela.
+
+**A linha entre imersão e mentoria** precisa ficar clara, ou uma
+atrapalha a outra. Se a imersão parecer incompleta de propósito, vira
+reclamação e reembolso. Proposta:
+- **Imersão**: você aprende o método e constrói **por conta própria** a primeira
+  ferramenta.
+- **Mentoria**: construímos **juntos** a ferramenta que o **seu negócio**
+  precisa, a partir de um diagnóstico.
+
+**Como se vende** (R$ 2.997 não se vende por página e botão):
+- oferta no último dia da imersão
+- **formulário de aplicação**: quem é, o negócio, o problema, o orçamento
+- conversa de venda (chamada ou WhatsApp), com roteiro
+- pagamento parcelado; decidir quem paga os juros **[a decidir]**
+- sequência de mensagens para quem aplicou e não fechou
+
+**O que precisa estar escrito antes de vender a primeira** (é serviço
+sob medida, e sem limite escrito vira trabalho sem fim):
+- quantos encontros, de quanto tempo, em quanto tempo no total **[a decidir]**
+- o que entra e o que não entra no escopo
+- quantas rodadas de ajuste
+- **depois que a mentoria termina**: quem mantém a ferramenta no ar, e
+  quem paga hospedagem e banco. Lição do Ei: ferramenta no ar dá manutenção.
+- de quem é o código (recomendação: do cliente)
+- contrato assinado
+
+**Quantas vagas por mês você aguenta** **[a decidir]**. É o que limita o
+faturamento da mentoria, e o que deve limitar quantas se vendem.
+
+**Entrega da mentoria**:
+- roteiro do diagnóstico (as perguntas, sempre as mesmas)
+- modelo de proposta: o que vamos construir, em que ordem
+- área própria do mentorado na plataforma: encontros gravados, tarefas,
+  progresso da ferramenta
+- entrega final: a ferramenta no ar, um manual curto de uso
 
 ## 2. Marca
 
@@ -238,8 +281,8 @@ Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 ## 11. Depois da imersão
 
 - A ferramenta do aluno **continua de pé** depois que a imersão acaba? Quem
-  ele chama quando quebrar? **[a decidir: comunidade, plano de continuidade,
-  mentoria]**
+  ele chama quando quebrar? Parte da resposta é a mentoria; para quem não
+  segue para ela, **[a decidir: comunidade, ou nada além da gravação]**
 - Lista de espera da próxima turma
 - Indicação e afiliados: aluno que indica ganha algo **[a decidir]**
 - Ex-alunos viram monitores e depoimentos
@@ -251,7 +294,8 @@ Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 | Mercado Pago recusa ou trava | segundo meio de pagamento pronto |
 | WhatsApp bloqueia o número | API oficial desde o início; e-mail como segundo canal |
 | Uma ferramenta de IA muda de preço ou de tela no meio da turma | materiais com data, e aula que ensina o raciocínio, não só o botão |
-| Poucas vendas | turma piloto primeiro (ver abaixo), antes de investir no ecossistema inteiro |
+| Poucas vendas | a primeira turma abre com o mínimo (ver abaixo), antes de investir no ecossistema inteiro |
+| A mentoria vende mais do que você dá conta | número de vagas por mês definido antes, e lista de espera |
 
 ---
 
@@ -269,19 +313,26 @@ Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
 
 ---
 
-## Turma piloto: validar antes de construir tudo (recomendação)
+## A primeira turma
 
-Construir o ecossistema inteiro antes de a primeira pessoa passar pela
-imersão é apostar tudo num programa que ninguém testou. A proposta:
+**Decidido (26/09): primeira turma paga, a R$ 97.**
 
-- **Turma piloto** pequena (10 a 20 pessoas), preço de lançamento, com o
-  mínimo: link de pagamento, Zoom, grupo e uma pasta de materiais
-- Enquanto ela acontece, o ecossistema completo vai sendo construído
-- A piloto devolve o que nenhum planejamento dá: onde as pessoas travam,
-  quanto tempo cada parte leva de verdade, **depoimentos reais e
-  ferramentas reais no ar** para a página de vendas da turma grande
+Ela é o teste de verdade: mostra onde as pessoas travam, quanto tempo
+cada parte leva, e deixa **depoimentos reais e ferramentas reais no ar**
+para a página de vendas das próximas. E é também a primeira chance de
+vender a mentoria.
 
-**[a decidir]**
+**O mínimo que precisa existir no dia em que ela abre** (o resto pode
+vir depois, enquanto ela acontece):
+- página de vendas e checkout
+- acesso liberado sozinho quando o pagamento aprova
+- mensagem de boas-vindas com a pré-imersão
+- grupo da turma
+- sala do evento ao vivo, e a gravação guardada em algum lugar
+- formulário de aplicação da mentoria
+
+**[a decidir: a data]**, porque o cronograma inteiro é contado de trás
+para frente a partir dela.
 
 ---
 
@@ -289,15 +340,18 @@ imersão é apostar tudo num programa que ninguém testou. A proposta:
 
 1. **Fundação**: conversa, não código
 2. **O produto**: método, programa, materiais, pré-imersão
-3. **Branding book**
-4. **Design system**
-5. **Isca e página de captura**: a lista começa a crescer cedo
-6. **Página de vendas e checkout**
-7. **Automações de captação e venda**
-8. **Plataforma dos alunos** com liberação automática do acesso
-9. **Automações de entrega e do evento**
-10. **Suporte e assistente de IA**
-11. **Pós-imersão**: depoimentos, vitrine, continuidade
+3. **A mentoria no papel**: escopo, vagas, contrato, roteiro do
+   diagnóstico. Antes da primeira turma, porque ela é vendida no fim dela.
+4. **Branding book**
+5. **Design system**
+6. **Isca e página de captura**: a lista começa a crescer cedo
+7. **Página de vendas e checkout**
+8. **Automações de captação e venda**
+9. **Plataforma dos alunos** com liberação automática do acesso
+10. **Automações de entrega e do evento**
+11. **Aplicação e venda da mentoria**
+12. **Suporte e assistente de IA**
+13. **Pós-imersão**: depoimentos, vitrine, área dos mentorados
 
 A lista cresce enquanto o resto é construído, e a plataforma só precisa
 estar pronta no dia em que o primeiro aluno entra.
