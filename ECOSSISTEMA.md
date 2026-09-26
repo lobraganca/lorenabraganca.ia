@@ -115,18 +115,37 @@ um provedor). Automatizar um número comum pode fazer o WhatsApp bloqueá-lo.
 
 ## 6. Squad: quem faz o quê
 
-Para cada papel: é uma pessoa ou um agente de IA, e com quais instruções.
-**[a decidir]**
+**Decidido: pessoas e agentes de IA, juntos.**
 
-| Papel | Pessoa ou IA? |
+A regra que organiza os dois: **a IA produz, uma pessoa aprova tudo o que
+vai a público ou mexe com dinheiro.** Nenhum texto de venda, mensagem em
+massa ou reembolso sai sem alguém olhar.
+
+**Agentes de IA** (proposta; cada um ganha um arquivo de instruções na
+pasta `agentes/`, que serve tanto aqui quanto num Projeto do Claude):
+
+| Agente | O que faz | Quem aprova |
+|---|---|---|
+| Guardiã da marca | revisa tudo contra o branding book: tom, palavras, cores | Lorena |
+| Copy | página de vendas, e-mails, mensagens de WhatsApp | Lorena |
+| Conteúdo | roteiros, legendas, calendário de posts | Lorena ou social media |
+| Suporte | responde alunos 24h e passa para uma pessoa quando não sabe | suporte humano |
+| Técnico | constrói páginas, plataforma e automações (Claude Code) | Lorena |
+| Números | relatório semanal: lista, vendas, conversão, presença | Lorena |
+
+**Pessoas** (proposta):
+
+| Papel | Por que pessoa, e não IA |
 |---|---|
-| Copy (textos de venda e mensagens) | |
-| Design (peças, slides) | |
-| Social media | |
-| Tráfego pago | |
-| Edição de vídeo | |
-| Suporte | |
-| Técnico (páginas, plataforma, automações) | |
+| **Lorena** | visão, conteúdo, aulas ao vivo, aprovação final |
+| **Monitores da imersão** | quem constrói a primeira ferramenta trava em detalhe técnico, e trava ao vivo. Alguém precisa olhar a tela da pessoa. Referência: 1 monitor para cada 20 a 30 alunos. Ex-alunos viram monitores nas próximas turmas. |
+| **Suporte e comunidade** | recebe o que o agente de suporte não resolve, modera a comunidade |
+| **Tráfego pago** | mexe com dinheiro de anúncio todo dia |
+| **Edição de vídeo** | pode usar IA, mas uma pessoa entrega |
+| **Contabilidade e jurídico** | nota fiscal, termos, LGPD |
+
+Os agentes também são conteúdo: mostrar o próprio squad de IA trabalhando
+é demonstração do que a imersão ensina. **[a decidir: se entra no programa]**
 
 ## 7. Base legal e operação
 
