@@ -1,0 +1,151 @@
+<title>Caminhos do Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap">
+<style>
+/* Página de escolha, com as cores e letras decididas. Um visual só, claro. */
+:root{
+  --marinho:#0B1F3A; --marinho-claro:#15305A; --texto-2:#3E5068; --linha:#D5DEE8; --nevoa:#F3F7FA; --branco:#FFFFFF;
+  --p50:#EAFBFE; --p100:#CAF3FA; --p200:#9BE7F4; --p300:#62D7EC; --p500:#0AAFD0; --p600:#078CAB; --p700:#0A6F88; --p800:#0E596D;
+  --titulo:"Fraunces", Georgia, serif; --texto:"Figtree", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:#E7EDF2;color:var(--marinho);font-family:var(--texto);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:24px 56px}
+.pagina{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.topo h1{font-family:var(--titulo);font-weight:600;font-size:clamp(26px,6vw,36px);line-height:1.1;margin:0 0 8px}
+.topo p{margin:0;color:var(--texto-2);max-width:62ch}
+.caminhos{display:grid;gap:28px}
+@media (min-width:1100px){.caminhos{grid-template-columns:repeat(3,1fr);align-items:start}}
+.caminho{display:flex;flex-direction:column;gap:10px}
+.caminho > header b{font-family:var(--titulo);font-weight:600;font-size:22px;display:block}
+.caminho > header span{color:var(--texto-2);font-size:15px}
+/* moldura de celular */
+.tela{background:var(--branco);border-radius:28px;overflow:hidden;box-shadow:0 1px 2px rgba(11,31,58,.08),0 12px 32px rgba(11,31,58,.12);max-width:400px;width:100%;margin-inline:auto;border:6px solid #0B1F3A}
+.tela h2,.tela h3{font-family:var(--titulo);font-weight:600;margin:0;letter-spacing:-0.015em;line-height:1.08;text-wrap:balance}
+.tela p{margin:0}
+.it{font-family:var(--titulo);font-style:italic;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;font-weight:700;font-size:15px}
+.btn-p{background:var(--p500);color:var(--marinho)}
+.btn-s{background:var(--marinho);color:#fff}
+.cab{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;font-family:var(--titulo);font-weight:600;font-size:18px}
+.cab small{font-family:var(--texto);font-weight:600;font-size:13px;border:1.5px solid currentColor;border-radius:999px;padding:4px 12px;opacity:.85}
+.foto{border-radius:20px;display:grid;place-items:center;text-align:center;font-size:13px;padding:16px}
+.celular{width:120px;aspect-ratio:9/19;border-radius:22px;border:5px solid var(--marinho);background:var(--p50);display:grid;place-items:center;text-align:center;font-size:11px;color:var(--p800);padding:10px}
+
+/* ================= A · EDITORIAL ================= */
+.a .heroi{padding:28px 20px 8px;display:flex;flex-direction:column;gap:16px}
+.a .ano{font-size:13px;color:var(--p700);font-weight:700;display:flex;gap:10px;align-items:center}
+.a .ano::before{content:"";width:28px;height:2px;background:var(--p500)}
+.a h2{font-size:40px}
+.a h2 .it{color:var(--p700)}
+.a .foto{aspect-ratio:4/5;background:linear-gradient(180deg,var(--p50),var(--p100));color:var(--p800);position:relative;margin-top:8px}
+.a .selo{position:absolute;left:14px;bottom:14px;background:#fff;border-radius:14px;padding:10px 12px;text-align:left;box-shadow:0 6px 18px rgba(11,31,58,.12);font-size:13px;line-height:1.3}
+.a .selo b{display:block;font-family:var(--titulo);font-size:18px}
+.a .bloco{padding:28px 20px;border-top:1px solid var(--linha);display:flex;flex-direction:column;gap:14px}
+.a .num{font-family:var(--titulo);font-style:italic;font-weight:500;font-size:44px;line-height:1;color:var(--p600)}
+.a .citacao{font-family:var(--titulo);font-style:italic;font-weight:500;font-size:24px;line-height:1.25;border-left:3px solid var(--p500);padding-left:14px}
+
+/* ================= B · PROFUNDIDADE ================= */
+.b .heroi{background:linear-gradient(180deg,var(--p100) 0%,var(--p50) 45%,#fff 100%);padding:24px 20px 28px;display:flex;flex-direction:column;gap:16px;position:relative}
+.b h2{font-size:38px}
+.b h2 .it{color:var(--p700)}
+.b .retrato{display:flex;justify-content:center;margin-top:6px}
+.b .foto{width:210px;aspect-ratio:1;border-radius:50%;background:#fff;color:var(--p800);box-shadow:0 0 0 8px var(--p200),0 0 0 16px var(--p100)}
+.b .chips{display:flex;flex-wrap:wrap;gap:8px}
+.b .chip{background:#fff;border:1px solid var(--p200);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--p800)}
+.b .bloco{padding:26px 20px;display:flex;flex-direction:column;gap:14px}
+.b .cartao{background:var(--p50);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.b .cartao .preco{font-family:var(--titulo);font-weight:600;font-size:24px}
+.b .onda{display:block;width:100%;height:28px}
+
+/* ================= C · MARINHO SÓ NO TOPO ================= */
+.c .cab{background:var(--marinho);color:#fff}
+.c .heroi{background:var(--marinho);color:#fff;padding:20px 20px 0;display:flex;flex-direction:column;gap:16px}
+.c h2{font-size:38px;color:#fff}
+.c h2 .it{color:var(--p300)}
+.c .heroi p{color:var(--p100)}
+.c .dupla{display:flex;gap:12px;align-items:flex-end;margin-top:6px}
+.c .foto{flex:1;aspect-ratio:3/4;background:var(--marinho-claro);color:var(--p100);border:1.5px dashed #24406B}
+.c .onda{display:block;width:100%;height:34px;background:var(--marinho)}
+.c .bloco{padding:26px 20px;display:flex;flex-direction:column;gap:14px}
+.c .linha-cor{height:3px;width:40px;background:var(--p500);border-radius:2px}
+.c .portas{display:grid;gap:12px}
+.c .porta{border:1px solid var(--linha);border-radius:18px;padding:16px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.c .porta b{font-family:var(--titulo);font-size:20px;display:block}
+.c .porta span{font-size:14px;color:var(--texto-2)}
+.c .porta .v{font-family:var(--titulo);font-weight:600;font-size:18px;white-space:nowrap}
+</style>
+
+<main class="pagina">
+  <header class="topo">
+    <h1>Três caminhos para o site</h1>
+    <p>Cada um mostra o começo da página no celular, com as letras e as cores que você escolheu. Me diga a letra do caminho que mais te agradou, ou o que quer misturar. O espaço da foto é onde entra a sua foto de verdade.</p>
+  </header>
+
+  <div class="caminhos">
+    <!-- ========== A ========== -->
+    <section class="caminho a">
+      <header><b>A · Editorial</b><span>Como uma revista: letra grande, sua foto grande, números em itálico. Elegante, com muito ar.</span></header>
+      <div class="tela">
+        <div class="cab">Lorena Bragança <small>Entrar</small></div>
+        <div class="heroi">
+          <span class="ano">Ferramentaria · turma de janeiro</span>
+          <h2>Construí um app de vagas. <span class="it">Pelo celular.</span></h2>
+          <p style="color:var(--texto-2)">Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar.</p>
+          <span class="btn btn-p" style="align-self:flex-start">Conhecer a Ferramentaria</span>
+          <div class="foto">sua foto aqui, grande<span class="selo"><b>29 e 30/01</b>online e ao vivo</span></div>
+        </div>
+        <div class="bloco">
+          <span class="num">01</span>
+          <h3 style="font-size:24px">Sexta você começa. Sábado ela está no ar.</h3>
+          <p style="color:var(--texto-2)">Dois encontros, oito horas, R$ 97.</p>
+          <p class="citacao">"Travou aqui? Me mostra que a gente resolve."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== B ========== -->
+    <section class="caminho b">
+      <header><b>B · Profundidade</b><span>A ideia da água: o topo começa azul-claro e vai clareando. Foto redonda, com anéis. Leve e acolhedor.</span></header>
+      <div class="tela">
+        <div class="cab" style="background:var(--p100)">Lorena Bragança <small>Entrar</small></div>
+        <div class="heroi">
+          <h2>Construí um app de vagas. <span class="it">Pelo celular.</span></h2>
+          <p style="color:var(--texto-2)">Agora eu ensino você a construir a sua própria ferramenta com o Claude Code.</p>
+          <div class="chips"><span class="chip">sex 29/01 · 18h</span><span class="chip">sáb 30/01 · 8h</span><span class="chip">R$ 97</span></div>
+          <div class="retrato"><div class="foto">sua foto aqui</div></div>
+          <span class="btn btn-p" style="align-self:center">Conhecer a Ferramentaria</span>
+        </div>
+        <div class="bloco">
+          <h3 style="font-size:24px">Duas formas de construir comigo</h3>
+          <div class="cartao"><b style="font-family:var(--titulo);font-size:20px">Ferramentaria</b><span style="color:var(--texto-2);font-size:15px">Imersão online e ao vivo. Sua ferramenta no ar em dois encontros.</span><span class="preco">R$ 97</span></div>
+          <div class="cartao" style="background:var(--nevoa)"><b style="font-family:var(--titulo);font-size:20px">Mentoria</b><span style="color:var(--texto-2);font-size:15px">Uma ferramenta feita para o seu negócio, comigo.</span><span class="preco">R$ 2.997</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== C ========== -->
+    <section class="caminho c">
+      <header><b>C · Marinho só no topo</b><span>O topo escuro dá força; o resto da página é claro. Mostra o app do Ei na tela de um celular, ao lado da sua foto.</span></header>
+      <div class="tela">
+        <div class="cab">Lorena Bragança <small>Entrar</small></div>
+        <div class="heroi">
+          <h2>Construí um app de vagas. <span class="it">Pelo celular.</span></h2>
+          <p>Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><span class="btn btn-p">Conhecer a Ferramentaria</span></div>
+          <div class="dupla"><div class="foto">sua foto aqui</div><div class="celular">print do app do Ei aqui</div></div>
+        </div>
+        <svg class="onda" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 90 6 180 8 260 18 S 360 30 400 16 V34 H0 Z" fill="#fff"/></svg>
+        <div class="bloco">
+          <span class="linha-cor"></span>
+          <h3 style="font-size:24px">Duas formas de construir comigo</h3>
+          <div class="portas">
+            <div class="porta"><div><b>Ferramentaria</b><span>Imersão · 29 e 30/01</span></div><span class="v">R$ 97</span></div>
+            <div class="porta"><div><b>Mentoria</b><span>Individual · sob medida</span></div><span class="v">R$ 2.997</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
