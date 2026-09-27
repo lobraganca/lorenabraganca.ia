@@ -285,7 +285,19 @@ escassez da barra ("98% vendido"): a nossa diz só o que é verdade.
 **Método Planta (proposta de 27/09, a confirmar):** "construir como se
 constrói uma casa: primeiro a planta, depois a obra". Cinco passos: Corte,
 Desenhe, Construa, Proteja, Publique. Liga o método à Planta da
-Ferramenta, que é da Ferramentaria e a concorrente não tem. Marca pessoal dura mais que um produto: a mentoria e os
+Ferramenta, que é da Ferramentaria e a concorrente não tem.
+
+**Da quinta leva de referências (27/09), o que NÃO entrou e por quê:**
+- **Depoimentos ("Quem já construiu comigo"):** ainda não existem, e
+  depoimento inventado é propaganda enganosa. A parte entra depois da
+  Turma Fundadora, com alunos de verdade: pedir vídeo curto no fim do
+  sábado.
+- **"Lote 1 esgotado", "98% vendido":** escassez que não existe. Nunca.
+- **Gravação cobrada à parte (VIP):** lá a gravação é vendida separada;
+  aqui ela vem no ingresso, e a página diz isso. É uma diferença a favor.
+- **"A partir de US$ 20 por mês" no plano do Claude:** o valor não foi
+  conferido nesta sessão. Só entra na página depois de ela conferir no
+  site do Claude. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

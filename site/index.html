@@ -246,6 +246,36 @@ body{padding-bottom:88px}
 .requisito p{color:var(--piscina-100);margin-inline:auto}
 .requisito p b{color:var(--branco)}
 
+/* não precisa (etiquetas) */
+.nao-precisa{list-style:none;margin:var(--e-7) 0 0;padding:0;display:flex;flex-direction:column;align-items:center;gap:var(--e-3)}
+.nao-precisa li{border:1px solid var(--linha);background:rgba(255,255,255,.06);border-radius:var(--canto-pilula);padding:var(--e-3) var(--e-5);display:flex;gap:var(--e-3);color:var(--branco);font-size:var(--t-grande)}
+.nao-precisa li::before{content:"✕";color:var(--piscina-300)}
+.nota-centro{max-width:40ch;margin:var(--e-6) auto 0;text-align:center;color:var(--piscina-100);font-size:var(--t-grande)}
+
+/* ---------- garanta sua vaga ---------- */
+.faixa--piscina{background:linear-gradient(180deg,var(--piscina-100) 0%,var(--piscina-50) 60%,var(--branco) 100%)}
+.ancora{max-width:760px;margin:0 auto}
+.ancora .rot{display:flex;align-items:center;gap:var(--e-4);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:var(--t-rotulo);color:var(--marinho);margin-bottom:var(--e-4)}
+.ancora .rot::after{content:"";flex:1;height:1px;background:var(--piscina-600);opacity:.5}
+.ancora p{font-family:var(--letra-chamada);font-weight:600;font-size:clamp(1.4rem,1.1rem + 1.4vw,2rem);line-height:1.3;max-width:none}
+.ancora p .it{color:var(--piscina-700)}
+.ingresso{max-width:760px;margin:var(--e-7) auto 0;background:var(--marinho);color:var(--branco);border-radius:28px;padding:var(--e-6) var(--e-5);display:flex;flex-direction:column;gap:var(--e-4);box-shadow:0 20px 50px rgba(11,31,58,.25)}
+@media (min-width:700px){.ingresso{padding:var(--e-7)}}
+.ingresso .selo-ing{align-self:flex-start;background:var(--nevoa);color:var(--marinho);border-radius:var(--canto-pilula);padding:var(--e-3) var(--e-5);font-weight:700;letter-spacing:.2em;font-size:var(--t-rotulo);text-transform:uppercase}
+.ingresso .quando3{color:var(--piscina-100);font-size:var(--t-grande)}
+.valor{display:flex;align-items:flex-start;gap:var(--e-3);flex-wrap:wrap}
+.valor .rs{font-family:var(--letra-chamada);font-weight:600;font-size:2rem;margin-top:.4em}
+.valor .num{font-family:var(--letra-chamada);font-weight:600;font-size:clamp(5rem,4rem + 5vw,7rem);line-height:.9}
+.valor .forma-pag{color:var(--piscina-100);align-self:center;line-height:1.35}
+.inclui{list-style:none;margin:0;padding:var(--e-4) 0 0;border-top:1px solid var(--marinho-borda);display:flex;flex-direction:column;gap:var(--e-2)}
+.inclui li{display:flex;gap:var(--e-3);color:var(--piscina-100)}
+.inclui li::before{content:"✓";color:var(--piscina-300);font-weight:700}
+.inclui b{color:var(--branco)}
+.ingresso .botao{background:var(--nevoa);color:var(--marinho);min-height:60px;text-transform:uppercase;letter-spacing:.08em}
+.ingresso .botao::after{content:"→";margin-left:var(--e-3);font-size:1.3em;letter-spacing:0}
+@media (max-width:440px){.ingresso .botao,.cta-meio .botao{font-size:var(--t-pequeno);letter-spacing:.04em;padding-inline:var(--e-5)}}
+.ingresso .miudo{color:var(--piscina-100);font-size:var(--t-pequeno);text-align:center;margin-inline:auto}
+
 /* etapas em fundo claro */
 .faixa--clara .etapas .quando{color:var(--piscina-700)}
 .faixa--clara .etapas small{color:var(--piscina-800)}
@@ -576,8 +606,15 @@ body{padding-bottom:88px}
         <div class="requisito"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span><span class="rot">Computador</span><p><b>Mac ou Windows</b>, com internet, durante os dois encontros.</p></div>
         <div class="requisito"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></span><span class="rot">Plano do Claude</span><p><b>A assinatura paga do Claude</b>, que libera o Claude Code. O valor atual está no site do Claude.</p></div>
         <div class="requisito"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2.2h5c.1-1 .5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span><span class="rot">Uma ideia</span><p><b>Pequena, do seu trabalho.</b> Se ainda não tiver, o cardápio de ideias ajuda a escolher.</p></div>
-        <div class="requisito"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="rot">Tempo</span><p><b>Sexta à noite e sábado de manhã</b>, quatro horas em cada, com a câmera ligada se puder.</p></div>
+        <div class="requisito"><span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="rot">Agenda reservada</span><p><b>Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h.</b></p></div>
       </div>
+      <ul class="nao-precisa">
+        <li>Não precisa saber programar</li>
+        <li>Não precisa ter equipe</li>
+        <li>Não precisa já ter uma ferramenta</li>
+      </ul>
+      <p class="nota-centro">O vídeo de preparação vem com o ingresso. Você chega na sexta com tudo instalado.</p>
+      <div class="cta-meio"><a class="botao botao--principal" href="#lista">Quero a minha vaga</a></div>
     </div>
   </section>
 
@@ -619,10 +656,34 @@ body{padding-bottom:88px}
     </div>
   </section>
 
+  <!-- ========== 11 · GARANTA SUA VAGA ========== -->
+  <section class="faixa faixa--piscina" id="ingresso">
+    <div class="conteudo">
+      <h2 class="centro" style="margin-bottom:var(--e-7)">Garanta <span class="it" style="color:var(--piscina-700)">a sua vaga</span></h2>
+      <div class="ancora">
+        <span class="rot">O que isso custa fora da imersão</span>
+        <p>Construir uma ferramenta comigo, na mentoria, é R$ 2.997. Na Ferramentaria eu conduzo ao vivo do mesmo jeito, <span class="it">com uma diferença:</span> quem constrói é você, por R$ 97.</p>
+      </div>
+      <div class="ingresso">
+        <span class="selo-ing">Ingresso</span>
+        <span class="quando3">Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h</span>
+        <div class="valor"><span class="rs">R$</span><span class="num">97</span><span class="forma-pag">à vista no Pix<br>ou no cartão</span></div>
+        <ul class="inclui">
+          <li><span><b>Os dois encontros ao vivo</b></span></li>
+          <li><span><b>A gravação</b>, já inclusa, sem pagar nada a mais</span></li>
+          <li><span><b>A Planta da Ferramenta</b> e os materiais</span></li>
+          <li><span><b>O vídeo de preparação</b>, antes da sexta</span></li>
+        </ul>
+        <a class="botao" href="#lista">Quero a minha vaga</a>
+        <span class="miudo">As vendas abrem de 8 a 15/12, só para a lista. Para construir ao vivo, você precisa do plano pago do Claude.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== LISTA ========== -->
   <section class="faixa faixa--clara lista" id="lista">
     <div class="conteudo centro">
-      <div class="marcador" style="text-align:left"><b>11</b>Turma Fundadora</div>
+      <div class="marcador" style="text-align:left"><b>12</b>Turma Fundadora</div>
       <h2 style="max-width:18ch;margin-inline:auto">As primeiras vagas são de <span class="it">quem está na lista</span></h2>
       <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
