@@ -297,7 +297,18 @@ Ferramenta, que é da Ferramentaria e a concorrente não tem.
   aqui ela vem no ingresso, e a página diz isso. É uma diferença a favor.
 - **"A partir de US$ 20 por mês" no plano do Claude:** o valor não foi
   conferido nesta sessão. Só entra na página depois de ela conferir no
-  site do Claude. Marca pessoal dura mais que um produto: a mentoria e os
+  site do Claude.
+
+**Garantia na página (proposta de 27/09, A CONFIRMAR antes de publicar):**
+além dos 7 dias de arrependimento da lei (contados da compra), "participe
+dos dois encontros; se não sair com a ferramenta publicada, escreva em até
+7 dias depois do evento e recebe 100% de volta". É uma promessa comercial
+dela, e só vai ao ar se ela aprovar.
+
+**"Quem conduz" espera dados reais dela:** formação, profissão, números
+verdadeiros (anos, ferramentas construídas, pessoas atendidas). A
+referência mostra etiquetas de credenciais e números; nada disso entra
+sem ela dizer o que é verdade. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

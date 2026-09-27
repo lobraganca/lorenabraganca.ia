@@ -276,6 +276,30 @@ body{padding-bottom:88px}
 @media (max-width:440px){.ingresso .botao,.cta-meio .botao{font-size:var(--t-pequeno);letter-spacing:.04em;padding-inline:var(--e-5)}}
 .ingresso .miudo{color:var(--piscina-100);font-size:var(--t-pequeno);text-align:center;margin-inline:auto}
 
+/* ---------- quem conduz ---------- */
+.conduz{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:var(--e-5)}
+.conduz .foto-grande{aspect-ratio:4/5;border-radius:var(--canto-g);background:linear-gradient(180deg,var(--piscina-100),var(--piscina-200));display:grid;place-items:center;text-align:center;color:var(--piscina-800);font-size:var(--t-pequeno);padding:var(--e-5)}
+@media (min-width:900px){.conduz .foto-grande{aspect-ratio:16/11}}
+.conduz .nome-grande{font-family:var(--letra-chamada);font-weight:600;font-size:clamp(2.2rem,1.6rem + 3vw,3.4rem);line-height:1}
+.conduz .bio{color:var(--texto-2);font-size:var(--t-grande);line-height:1.65}
+
+/* ---------- garantia ---------- */
+.garantia{text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--e-6)}
+.garantia h2{max-width:20ch}
+.selo-garantia{width:220px;height:220px;color:var(--piscina-300)}
+.garantia p{max-width:44ch;color:var(--piscina-100);font-size:var(--t-grande)}
+
+/* ---------- perguntas numeradas ---------- */
+.perguntas-n details{border-top:1px solid var(--linha);padding-block:var(--e-5)}
+.perguntas-n details:last-child{border-bottom:1px solid var(--linha)}
+.perguntas-n summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:40px 1fr 28px;gap:var(--e-3);align-items:baseline;font-family:var(--letra-chamada);font-weight:600;font-size:clamp(1.25rem,1.1rem + .8vw,1.6rem);line-height:1.25}
+.perguntas-n summary::-webkit-details-marker{display:none}
+.perguntas-n summary .n{font-family:var(--letra-texto);font-weight:700;font-size:var(--t-pequeno);color:var(--piscina-300)}
+.perguntas-n summary::after{content:"+";color:var(--piscina-300);font-family:var(--letra-texto);font-size:1.6rem;line-height:1;text-align:right}
+.perguntas-n details[open] summary::after{content:"–"}
+.perguntas-n details p{margin:var(--e-4) 0 0 calc(40px + var(--e-3));color:var(--piscina-100);font-size:var(--t-grande)}
+@media (max-width:520px){.perguntas-n details p{margin-left:0}}
+
 /* etapas em fundo claro */
 .faixa--clara .etapas .quando{color:var(--piscina-700)}
 .faixa--clara .etapas small{color:var(--piscina-800)}
@@ -618,17 +642,16 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 09 · QUEM VAI TE ENSINAR ========== -->
-  <section class="faixa">
+  <!-- ========== 09 · QUEM CONDUZ ========== -->
+  <section class="faixa faixa--clara">
     <div class="conteudo">
-      <div class="marcador"><b>09</b>Quem vai te ensinar</div>
-      <div class="sobre">
-        <div class="foto-sobre" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador</div>
-        <div class="pilha pilha--g">
-          <h2>Eu sou <span class="it">Lorena Bragança.</span></h2>
-          <p class="texto-2" style="font-size:var(--t-grande)">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
-          <blockquote class="citacao">"Travou aqui? Me mostra que a gente resolve."</blockquote>
-        </div>
+      <div class="marcador"><b>09</b>Quem conduz</div>
+      <div class="conduz">
+        <h2 class="centro">Quem <span class="it">conduz</span></h2>
+        <div class="foto-grande" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena, de corpo inteiro ou sentada, luz natural</div>
+        <span class="nome-grande">Lorena Bragança.</span>
+        <p class="bio">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
+        <blockquote class="citacao">"Travou aqui? Me mostra que a gente resolve."</blockquote>
       </div>
     </div>
   </section>
@@ -659,6 +682,7 @@ body{padding-bottom:88px}
   <!-- ========== 11 · GARANTA SUA VAGA ========== -->
   <section class="faixa faixa--piscina" id="ingresso">
     <div class="conteudo">
+      <div class="marcador"><b>11</b>O ingresso</div>
       <h2 class="centro" style="margin-bottom:var(--e-7)">Garanta <span class="it" style="color:var(--piscina-700)">a sua vaga</span></h2>
       <div class="ancora">
         <span class="rot">O que isso custa fora da imersão</span>
@@ -680,10 +704,28 @@ body{padding-bottom:88px}
     </div>
   </section>
 
+  <!-- ========== 12 · GARANTIA ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo">
+      <div class="marcador"><b>12</b>Garantia</div>
+      <div class="garantia">
+        <h2>Você sai com a ferramenta no ar, <span class="it">ou com o dinheiro de volta</span></h2>
+        <svg class="selo-garantia" viewBox="0 0 220 220" role="img" aria-label="Selo: reembolso de 100%, até 7 dias">
+          <defs><path id="circulo" d="M110 110 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0"/></defs>
+          <circle cx="110" cy="110" r="104" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+          <circle cx="110" cy="110" r="64" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+          <text font-family="Figtree, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="currentColor"><textPath href="#circulo" textLength="528" lengthAdjust="spacingAndGlyphs">REEMBOLSO DE 100% · ATÉ 7 DIAS APÓS O EVENTO ·</textPath></text>
+          <path d="M84 112l18 18 36-40" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>Participe dos dois encontros. Se não sair com a ferramenta publicada, me escreva em até 7 dias depois do evento e eu devolvo 100%. E, como em toda compra pela internet, você também pode desistir em até 7 dias depois de comprar, sem explicar nada.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== LISTA ========== -->
   <section class="faixa faixa--clara lista" id="lista">
     <div class="conteudo centro">
-      <div class="marcador" style="text-align:left"><b>12</b>Turma Fundadora</div>
+      <div class="marcador" style="text-align:left"><b>13</b>Turma Fundadora</div>
       <h2 style="max-width:18ch;margin-inline:auto">As primeiras vagas são de <span class="it">quem está na lista</span></h2>
       <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
@@ -696,16 +738,20 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== PERGUNTAS ========== -->
-  <section class="faixa">
-    <div class="conteudo pilha pilha--g" style="max-width:760px">
-      <h2>Perguntas frequentes</h2>
-      <div class="perguntas">
-        <details><summary>Preciso saber programar?</summary><p>Não. Você vai escrever pedidos em português, e eu mostro cada passo.</p></details>
-        <details><summary>Preciso pagar mais alguma coisa além do ingresso?</summary><p>Sim: o plano pago do Claude, cobrado por mês. O valor atual aparece no site do Claude. É bom saber antes de comprar.</p></details>
-        <details><summary>Dá para fazer pelo celular?</summary><p>A imersão é feita no computador. Você precisa de um computador com internet.</p></details>
-        <details><summary>E se eu não puder ir ao vivo?</summary><p>A gravação fica com você.</p></details>
-        <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o dinheiro de volta, sem precisar explicar.</p></details>
+  <!-- ========== 14 · PERGUNTAS ========== -->
+  <section class="faixa faixa--escura">
+    <div class="conteudo" style="max-width:860px">
+      <div class="marcador"><b>14</b>Perguntas</div>
+      <h2 class="centro" style="margin-bottom:var(--e-7)">Sua dúvida <span class="it">respondida</span></h2>
+      <div class="perguntas-n">
+        <details open><summary><span class="n">01</span><span>R$ 97 por dois encontros. Onde está a pegadinha?</span></summary><p>Não tem. O preço é baixo de propósito: a Ferramentaria é a porta de entrada. Quem quiser ir além, com uma ferramenta feita junto comigo para o próprio negócio, tem a mentoria. Ninguém é obrigado a nada.</p></details>
+        <details><summary><span class="n">02</span><span>Eu não sei programar. Isso me exclui?</span></summary><p>Não. Você vai escrever pedidos em português, e eu mostro cada passo na sua tela.</p></details>
+        <details><summary><span class="n">03</span><span>Não dá para fazer isso sozinho com a IA?</span></summary><p>Dá, e muita gente tenta. O que costuma travar não é a IA: é saber o que pedir, em que ordem, e o que fazer quando aparece um erro. É isso que a Planta e os dois encontros resolvem.</p></details>
+        <details><summary><span class="n">04</span><span>Minha rotina é cheia. Vou dar conta?</span></summary><p>São oito horas no total: sexta à noite e sábado de manhã. E a gravação fica com você, para terminar no seu tempo.</p></details>
+        <details><summary><span class="n">05</span><span>Preciso pagar mais alguma coisa além do ingresso?</span></summary><p>Sim: o plano pago do Claude, cobrado por mês, que é o que libera o Claude Code. O valor atual aparece no site do Claude. É bom saber antes de comprar.</p></details>
+        <details><summary><span class="n">06</span><span>Fica gravado? Posso ver depois?</span></summary><p>Sim. A gravação dos dois encontros já vem no ingresso, sem pagar nada a mais.</p></details>
+        <details><summary><span class="n">07</span><span>Dá para fazer pelo celular?</span></summary><p>A imersão é feita no computador. Você precisa de um computador com internet, Mac ou Windows.</p></details>
+        <details><summary><span class="n">08</span><span>E se eu não gostar?</span></summary><p>Você tem 7 dias depois da compra para pedir o dinheiro de volta, sem explicar. E vale a garantia de sair com a ferramenta no ar.</p></details>
       </div>
     </div>
   </section>
