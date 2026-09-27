@@ -240,6 +240,19 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .inclui b{color:var(--tinta-clara);font-weight:600}
 .ingresso .botao{background:var(--claro);color:var(--escuro)}
 .ingresso .miudo{color:var(--suave-escuro);font-size:15px;text-align:center;margin-inline:auto;max-width:44ch}
+/* Dois ingressos lado a lado (27/09): o normal, só ao vivo, e o VIP, com a
+   gravação por 15 dias. O que o normal NÃO tem aparece escrito nele, com
+   traço em vez de visto: comparação honesta é a que mostra a falta. */
+.ingressos{display:grid;gap:20px;max-width:1000px;margin:56px auto 0}
+@media (min-width:860px){.ingressos{grid-template-columns:1fr 1fr;align-items:stretch}}
+.ingressos .ingresso{margin:0;max-width:none}
+.ingressos .ingresso .botao{margin-top:auto}
+.ingresso--vip{box-shadow:inset 0 0 0 2px var(--acento)}
+.ingresso--vip .selo-ing{background:var(--acento)}
+.valor .num{font-variant-numeric:tabular-nums}
+.inclui li.fora{color:var(--suave-escuro);opacity:.8}
+.inclui li.fora::before{content:"—";color:var(--suave-escuro);font-weight:400}
+.miudo-ingressos{color:var(--suave-claro);font-size:15px;text-align:center;margin:28px auto 0;max-width:52ch}
 
 /* ---------- 12 · garantia ---------- */
 .garantia{text-align:center;display:flex;flex-direction:column;align-items:center;gap:40px}

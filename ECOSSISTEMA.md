@@ -51,7 +51,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   comprar a imersão, na preparação.
 - **A promessa**: a pessoa faz a **própria** ferramenta, a ideia dela.
   **Decidido (26/09).**
-- **Formato**: online, ao vivo, e a gravação fica. **Decidido (26/09).**
+- **Formato**: online e ao vivo. **Decidido (26/09).** A gravação passou a ser só do ingresso VIP, por 15 dias (27/09).
   **Sexta das 18h às 22h e sábado das 8h às 12h. Decidido (26/09).**
   São 8 horas no total, então cada minuto conta:
   - **Sexta à noite**: cortar a ideia até ela caber, e terminar a noite
@@ -70,7 +70,7 @@ Nada dos blocos seguintes começa sem isto. A cor da marca depende de quem
   roteiro proposto minuto a minuto das duas aulas, editável:
   https://claude.ai/artifact/8KmbDVpwgENm1vT7R5N36Z
 - **Ensinado pelo computador. Decidido (26/09).**
-- **Preço**: R$ 97. **Decidido (26/09).** Parcelas, Pix, lote de abertura
+- **Preço**: R$ 97, ou R$ 147 no VIP com a gravação. **Decidido (26/09; VIP em 27/09).** Parcelas, Pix, lote de abertura
   **[a decidir]**
 - **O que vem depois**: mentoria personalizada de R$ 2.997. **Decidido
   (26/09).** Ver o bloco 1B.
@@ -252,6 +252,21 @@ piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
 em diante; as faixas marinho ficam para as peças do Instagram.
 
+**Preços (27/09).** Decisão dela:
+
+| Produto | Ingresso | VIP |
+|---|---|---|
+| **IA sem Complicação** | R$ 57, só ao vivo | R$ 87, com a gravação disponível por 15 dias |
+| **Ferramentaria** | R$ 97, só ao vivo | R$ 147, com a gravação disponível por 15 dias |
+| **Mentoria** | R$ 2.997, três meses de acompanhamento | — |
+
+Isso desfaz "a gravação vem no ingresso": a gravação agora é do VIP. As
+duas páginas mostram os dois ingressos lado a lado, e o normal diz com
+todas as letras "sem a gravação". **A conferir com ela:** os 15 dias
+contam a partir de quando (do fim da imersão, ou de quando a gravação é
+publicada)? Na Assiny serão quatro produtos (normal e VIP de cada
+imersão), e a área de membros precisa tirar a gravação do ar no 16º dia.
+
 **A segunda página: IA sem Complicação (27/09).** O nome é dela, e o
 nome aparece na mesma cursiva da Ferramentaria (Dancing Script 600). Pedido dela: "a mesma
 fonte, mas de cor diferente". Está em `site/ia.html`, prévia em
@@ -260,7 +275,7 @@ index.html para `site/estilos/imersao.css`, e cada página só declara a
 paleta. Três cores em teste (violeta, lima, coral), com o contraste
 calculado; **falta ela escolher**. Também falta, e por isso a página não
 mostra preço nem data e todos os botões levam à lista: o preço, a data e o formato. Coisas que a página
-supõe e ela precisa confirmar: que há gravação, que dá para acompanhar
+supõe e ela precisa confirmar: que dá para acompanhar
 com as versões gratuitas das IAs, e o que o aluno leva (moldes de pedido,
 dicionário, lista do que não colar na IA). Não tem garantia: a da
 Ferramentaria ainda espera aprovação.
@@ -351,7 +366,9 @@ Ferramenta, que é da Ferramentaria e a concorrente não tem.
   primeira turma, com alunos de verdade: pedir vídeo curto no fim do
   sábado.
 - **"Lote 1 esgotado", "98% vendido":** escassez que não existe. Nunca.
-- **Gravação cobrada à parte (VIP):** lá a gravação é vendida separada;
+- **Gravação cobrada à parte (VIP):** ficou de fora na primeira versão, e
+  **entrou em 27/09 por decisão dela** (ver "Preços"). O registro antigo:
+  lá a gravação é vendida separada;
   aqui ela vem no ingresso, e a página diz isso. É uma diferença a favor.
 - **"A partir de US$ 20 por mês" no plano do Claude:** o valor não foi
   conferido nesta sessão. Só entra na página depois de ela conferir no
@@ -394,9 +411,9 @@ para cada produto:
 
 | Área | O que tem |
 |---|---|
-| **Conceitos básicos de IA** | aulas, gravação, moldes de pedido, dicionário da IA |
-| **Ferramentaria** | aulas, gravações, a Planta da Ferramenta, materiais |
-| **Mentoria** | o diagnóstico, os encontros marcados, as gravações de cada encontro e a ferramenta do cliente em construção (sugestão, a confirmar) |
+| **Conceitos básicos de IA** | aulas, gravação (VIP, 15 dias), moldes de pedido, dicionário da IA |
+| **Ferramentaria** | aulas, gravações (VIP, 15 dias), a Planta da Ferramenta, materiais |
+| **Mentoria** | três meses de acompanhamento: o diagnóstico, os encontros marcados, as gravações de cada encontro e a ferramenta do cliente em construção (conteúdo é sugestão, a confirmar) |
 
 Cada pessoa vê só a área do que comprou; quem comprou mais de um vê
 todas as suas. Uma entrada só, uma conta só.
