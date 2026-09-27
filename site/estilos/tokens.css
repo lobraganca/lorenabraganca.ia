@@ -44,10 +44,12 @@
   --foco: var(--piscina-600);
 
   /* ---------- letras ---------- */
-  --letra-chamada: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;  /* 800 · chamadas, títulos, botões */
-  --letra-nome: "Kalnia", Georgia, "Times New Roman", serif;                  /* 200 · nome e destaque, sempre >= 72px */
-  --letra-assinatura: "Ms Madi", "Brush Script MT", cursive;                  /* só a letra inicial */
-  --letra-texto: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;  /* 400/700 · textos, >= 17px */
+  /* Letras escolhidas por Lorena em 27/09 (opção D): Fraunces + Figtree.
+     Substituem Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2,
+     que ela achou carregadas. */
+  --letra-chamada: "Fraunces", Georgia, "Times New Roman", serif;   /* 600 · títulos e preço */
+  --letra-destaque: "Fraunces", Georgia, "Times New Roman", serif;  /* 500 itálico · a palavra em destaque */
+  --letra-texto: "Figtree", "Segoe UI", system-ui, sans-serif;      /* 400/600/700 · textos e botões, >= 17px */
   --letra-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;   /* 400 · rótulos e comandos */
 
   /* Escala: cada passo cresce ~1,25. Os títulos grandes encolhem no celular. */
@@ -58,10 +60,8 @@
   --t-h3: 1.5rem;          /* 24px */
   --t-h2: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem);
   --t-h1: clamp(2.25rem, 1.4rem + 4vw, 4rem);
-  /* Kalnia. A identidade diz "nunca abaixo de 72px", regra pensada para as
-     peças de 1080px do Instagram. Num celular de 360px, "Ferramentaria" a
-     72px não cabe na tela: aqui o nome acompanha a largura (12vw), o que
-     mantém a mesma proporção grande da peça. */
+  /* O nome grande (ex.: "Ferramentaria" numa página própria) acompanha a
+     largura da tela: a 72px fixos ele não cabe num celular de 360px. */
   --t-nome: clamp(2.75rem, 12vw, 7rem);
 
   /* ---------- espaço, cantos, sombras ---------- */

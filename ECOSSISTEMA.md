@@ -250,7 +250,13 @@ em mono e muitos cartões, foi julgada "muito carregada". A versão 2 é
 clara: fundo branco, uma coluna, muito espaço, o marinho só no texto e o
 piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
-em diante; as faixas marinho ficam para as peças do Instagram. Marca pessoal dura mais que um produto: a mentoria e os
+em diante; as faixas marinho ficam para as peças do Instagram.
+
+**Letras (27/09): Fraunces + Figtree**, escolhidas por Lorena entre cinco
+opções (`marca/opcoes-de-letra.html`). Fraunces 600 nos títulos e 500
+itálico na palavra em destaque; Figtree nos textos e botões. Substituem
+Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2, **também nas
+peças do Instagram**, para site e Instagram ficarem iguais. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

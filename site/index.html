@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Kalnia:wght@200&family=Ms+Madi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap">
 <link rel="stylesheet" href="/estilos/tokens.css">
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
@@ -29,7 +29,8 @@
 
 .heroi{padding-block:var(--e-8) var(--e-7);display:flex;flex-direction:column;gap:var(--e-5)}
 .heroi h1{font-size:clamp(2.4rem,1.6rem + 3.6vw,4rem)}
-.heroi h1 .nome{display:block;font-size:1.25em;margin-top:.12em}
+.heroi h1 .italico{display:block;margin-top:.08em}
+.heroi h1 .destaque{color:var(--destaque-claro)}
 .heroi p{font-size:var(--t-grande);color:var(--texto-2)}
 .onda-leve{display:block;width:100%;height:36px}
 .onda-leve path{fill:var(--piscina-50)}
@@ -60,7 +61,7 @@
 
 <header class="cabecalho cabecalho--claro">
   <div class="conteudo">
-    <a class="marca" href="/" aria-label="Lorena Bragança, início"><span class="inicial">L</span>orena Bragança</a>
+    <a class="marca" href="/" aria-label="Lorena Bragança, início">Lorena Bragança</a>
     <nav class="menu" aria-label="Principal">
       <a href="#ferramentaria" class="opcional-p">Ferramentaria</a>
       <a href="#mentoria" class="opcional">Mentoria</a>
@@ -71,7 +72,7 @@
 
 <main>
   <section class="coluna heroi" aria-labelledby="titulo">
-    <h1 id="titulo">Construí um app que está na Play Store. <span class="nome"><span class="destaque"><span class="inicial">P</span>elo celular.</span></span></h1>
+    <h1 id="titulo">Construí um app que está na Play Store. <span class="italico destaque">Pelo celular.</span></h1>
     <p>Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar, mesmo sem saber programar.</p>
     <div class="acoes">
       <a class="botao botao--principal" href="#ferramentaria">Conhecer a Ferramentaria</a>
