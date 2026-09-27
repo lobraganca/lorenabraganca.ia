@@ -262,7 +262,12 @@ peças do Instagram**, para site e Instagram ficarem iguais.
 falar sobre o app". O texto novo da página inicial está em `site/COPY.md`;
 a prova passa a ser o que o aluno constrói e o jeito dela de ensinar. As
 peças do Instagram que usam "Construí um app…" também precisam de texto
-novo. Marca pessoal dura mais que um produto: a mentoria e os
+novo.
+
+**Página inicial, versão 3 (27/09):** caminho **Editorial** (escolhido entre
+três, `marca/caminhos-do-site.html`) com o título **"Você não precisa
+programar para construir a sua ferramenta."** Letra grande, foto grande,
+números em itálico, listas separadas por fios. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

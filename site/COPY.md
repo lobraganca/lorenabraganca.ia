@@ -11,9 +11,9 @@ Voz: direta, próxima e prática. Nunca prometer renda nem dizer que é fácil.
 ## Topo
 
 **Título (escolher um):**
-1. Você tem a ideia. Em dois encontros, ela vira *ferramenta*. ⭐
+1. Você tem a ideia. Em dois encontros, ela vira *ferramenta*.
 2. Sua primeira ferramenta, construída por você e *no ar*.
-3. Você não precisa programar para construir a sua *ferramenta*.
+3. Você não precisa programar para construir a sua *ferramenta*. ← escolhido em 27/09
 
 **Texto de apoio:**
 Na Ferramentaria, você constrói com o Claude Code a ferramenta que

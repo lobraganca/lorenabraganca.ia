@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lorena Bragança · construa sua ferramenta com IA</title>
-<meta name="description" content="Construí um app pelo celular, com o Claude Code. Agora ensino você a construir a sua ferramenta. Ferramentaria: 29 e 30 de janeiro, online e ao vivo.">
-<meta property="og:title" content="Lorena Bragança · construa sua ferramenta com IA">
-<meta property="og:description" content="Ferramentaria: em dois encontros, você constrói a sua ferramenta com o Claude Code e coloca no ar.">
+<meta name="description" content="Você não precisa programar para construir a sua ferramenta. Ferramentaria: dois encontros ao vivo, 29 e 30 de janeiro, para construir com o Claude Code e colocar no ar.">
+<meta property="og:title" content="Você não precisa programar para construir a sua ferramenta">
+<meta property="og:description" content="Ferramentaria, com Lorena Bragança: dois encontros ao vivo para construir a sua ferramenta com o Claude Code e colocar no ar.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta name="theme-color" content="#FFFFFF">
@@ -17,42 +17,49 @@
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
 /*
-  Versão 2 (27/09): a primeira ficou "muito carregada". Esta é clara, com
-  uma coluna, muito espaço e só um ponto de cor forte por tela. O marinho
-  ficou para o texto; o piscina, para o destaque e o botão.
+  Versão 3 (27/09): caminho Editorial, escolhido entre três. Texto em
+  site/COPY.md, sem citar o app do Ei (pedido dela). Letra grande, foto
+  grande, números em itálico, listas separadas por fios em vez de cartões.
 */
-.coluna{max-width:760px;margin-inline:auto;padding-inline:var(--e-4)}
-@media (min-width:700px){.coluna{padding-inline:var(--e-6)}}
 .bloco{padding-block:var(--e-8)}
 @media (min-width:900px){.bloco{padding-block:var(--e-9)}}
-.bloco + .bloco{border-top:1px solid var(--linha)}
+.estreito{max-width:760px}
 
-.heroi{padding-block:var(--e-8) var(--e-7);display:flex;flex-direction:column;gap:var(--e-5)}
-.heroi h1{font-size:clamp(2.4rem,1.6rem + 3.6vw,4rem)}
-.heroi h1 .italico{display:block;margin-top:.08em}
-.heroi h1 .destaque{color:var(--destaque-claro)}
-.heroi p{font-size:var(--t-grande);color:var(--texto-2)}
-.onda-leve{display:block;width:100%;height:36px}
-.onda-leve path{fill:var(--piscina-50)}
-.faixa-leve{background:var(--piscina-50)}
+.heroi{display:grid;gap:var(--e-7);padding-block:var(--e-7) var(--e-8);align-items:center}
+@media (min-width:900px){.heroi{grid-template-columns:1.15fr .85fr;gap:var(--e-8);padding-block:var(--e-8) var(--e-9)}}
+.heroi-texto{display:flex;flex-direction:column;gap:var(--e-5)}
+.heroi h1{font-size:clamp(2.5rem,1.6rem + 3.8vw,4.25rem)}
+.heroi h1 .italico{color:var(--destaque-claro)}
+.heroi-texto > p{font-size:var(--t-grande);color:var(--texto-2)}
+.heroi .foto-editorial{max-width:460px;width:100%;justify-self:center}
 
-.duas{display:grid;gap:var(--e-6)}
-@media (min-width:760px){.duas{grid-template-columns:1fr 1fr;gap:var(--e-7)}}
-.porta{display:flex;flex-direction:column;gap:var(--e-3)}
-.porta .preco{font-size:var(--t-grande)}
-.porta .detalhe{color:var(--texto-2)}
+.grade-exemplos{list-style:none;margin:0;padding:0;display:grid;gap:0}
+@media (min-width:760px){.grade-exemplos{grid-template-columns:1fr 1fr;column-gap:var(--e-7)}}
+.grade-exemplos li{display:grid;grid-template-columns:auto 1fr;gap:var(--e-4);align-items:baseline;padding-block:var(--e-5);border-top:1px solid var(--linha)}
+.grade-exemplos li span:last-child{font-size:var(--t-grande)}
 
-.passos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--e-5);counter-reset:passo}
-.passos li{display:grid;grid-template-columns:40px 1fr;gap:var(--e-3);counter-increment:passo}
-.passos li::before{
-  content:counter(passo);width:32px;height:32px;border-radius:50%;
-  background:var(--piscina-50);color:var(--piscina-800);font-weight:700;
-  display:grid;place-items:center;font-size:var(--t-pequeno);margin-top:2px;
-}
-.passos b{display:block}
-.passos span{color:var(--texto-2)}
+.para-quem li{font-size:var(--t-grande);padding-left:var(--e-6);position:relative}
+.para-quem li::before{content:"";position:absolute;left:0;top:calc(var(--e-5) + .7em);width:18px;height:2px;background:var(--piscina-500)}
 
-.lista form{display:flex;flex-direction:column;gap:var(--e-4);margin-top:var(--e-5)}
+.passos-editorial > li{display:grid;grid-template-columns:1fr;gap:var(--e-2)}
+@media (min-width:700px){.passos-editorial > li{grid-template-columns:180px 1fr;gap:var(--e-5)}}
+.passos-editorial h3{font-size:var(--t-h3)}
+.passos-editorial p{color:var(--texto-2);margin-top:var(--e-2)}
+.passos-editorial small{display:block;font-size:var(--t-pequeno);color:var(--destaque-claro);font-weight:700;margin-top:var(--e-1)}
+
+.sobre{display:grid;gap:var(--e-7);align-items:center}
+@media (min-width:900px){.sobre{grid-template-columns:.8fr 1.2fr;gap:var(--e-8)}}
+.sobre .foto-editorial{max-width:380px;aspect-ratio:1;width:100%}
+
+.formas > li{display:flex;flex-direction:column;gap:var(--e-4)}
+@media (min-width:760px){.formas > li{display:grid;grid-template-columns:1fr auto;column-gap:var(--e-6);align-items:end}}
+.formas h3{font-size:clamp(1.75rem,1.4rem + 1.5vw,2.25rem)}
+.formas p{color:var(--texto-2)}
+.formas .lado{display:flex;flex-direction:column;align-items:flex-start;gap:var(--e-3)}
+@media (min-width:760px){.formas .lado{align-items:flex-end;text-align:right}}
+
+.suave{background:var(--nevoa)}
+.lista form{display:flex;flex-direction:column;gap:var(--e-4);margin-top:var(--e-6);max-width:480px}
 .lista form .botao{align-self:flex-start}
 .aviso-form{font-size:var(--t-pequeno);color:var(--piscina-800);font-weight:700}
 </style>
@@ -71,64 +78,109 @@
 </header>
 
 <main>
-  <section class="coluna heroi" aria-labelledby="titulo">
-    <h1 id="titulo">Construí um app que está na Play Store. <span class="italico destaque">Pelo celular.</span></h1>
-    <p>Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar, mesmo sem saber programar.</p>
-    <div class="acoes">
-      <a class="botao botao--principal" href="#ferramentaria">Conhecer a Ferramentaria</a>
-      <a class="botao botao--texto" href="#lista">Entrar na lista de espera</a>
+  <!-- ========== TOPO ========== -->
+  <section class="conteudo heroi" aria-labelledby="titulo">
+    <div class="heroi-texto">
+      <span class="sobrelinha">Ferramentaria · turma de janeiro</span>
+      <h1 id="titulo">Você não precisa programar para construir a sua <span class="italico">ferramenta.</span></h1>
+      <p>Na Ferramentaria, você constrói com o Claude Code a ferramenta que imaginou, como uma agenda, um orçamento ou um cadastro de clientes, e coloca no ar. Eu fico do seu lado, na mesma tela.</p>
+      <div class="acoes">
+        <a class="botao botao--principal" href="#lista">Quero construir a minha</a>
+        <a class="botao botao--texto" href="#como">Como funciona</a>
+      </div>
+    </div>
+    <div class="foto-editorial" role="img" aria-label="Espaço para a foto da Lorena">
+      Foto da Lorena no computador, luz natural
+      <span class="selo"><b>29 e 30 de janeiro</b>online e ao vivo</span>
     </div>
   </section>
 
-  <svg class="onda-leve" viewBox="0 0 1440 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 300 4 620 6 900 18 S 1300 34 1440 16 V36 H0 Z"/></svg>
-  <div class="faixa-leve">
-    <section class="coluna bloco" aria-labelledby="t-prova">
-      <div class="pilha">
-        <span class="rotulo">A prova</span>
-        <h2 id="t-prova">O Ei Emprego: um app de vagas para Itabirito, feito com o Claude Code.</h2>
-        <p class="texto-2">Quem procura trabalho encontra vagas, e quem contrata encontra gente. Construí uma parte de cada vez, pelo celular, e aprendi com cada erro. É isso que eu ensino.</p>
+  <!-- ========== O QUE DÁ PARA CONSTRUIR ========== -->
+  <section class="bloco" style="padding-top:0" aria-labelledby="t-exemplos">
+    <div class="conteudo pilha pilha--g">
+      <div class="pilha estreito">
+        <span class="sobrelinha">O que dá para construir</span>
+        <h2 id="t-exemplos">Ferramentas pequenas, que resolvem um problema de verdade.</h2>
       </div>
-    </section>
-  </div>
-
-  <section class="coluna bloco" aria-labelledby="t-portas">
-    <div class="pilha pilha--g">
-      <h2 id="t-portas">Duas formas de construir comigo</h2>
-      <div class="duas">
-        <article class="porta" id="ferramentaria">
-          <span class="rotulo">Imersão online e ao vivo</span>
-          <h3>Ferramentaria</h3>
-          <p class="detalhe">Em dois encontros, você constrói a sua primeira ferramenta e coloca no ar. Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h. A gravação fica com você.</p>
-          <span class="preco">R$ 97</span>
-          <a class="botao botao--principal" href="#lista" style="align-self:flex-start">Entrar na lista de espera</a>
-        </article>
-        <article class="porta" id="mentoria">
-          <span class="rotulo">Individual</span>
-          <h3>Mentoria</h3>
-          <p class="detalhe">Para quem quer uma ferramenta feita para o próprio negócio. Começa com um diagnóstico, e construímos juntos.</p>
-          <span class="preco">R$ 2.997</span>
-          <span class="texto-2" style="font-size:var(--t-pequeno)">Aplicações abrem em breve.</span>
-        </article>
-      </div>
+      <ul class="grade-exemplos">
+        <li><span class="numero">01</span><span>Uma agenda onde as clientes marcam horário sozinhas</span></li>
+        <li><span class="numero">02</span><span>Um orçamento que se monta com três perguntas</span></li>
+        <li><span class="numero">03</span><span>Um cadastro de clientes que você abre no celular</span></li>
+        <li><span class="numero">04</span><span>Uma calculadora de preço para o seu serviço</span></li>
+      </ul>
     </div>
   </section>
 
-  <section class="coluna bloco" aria-labelledby="t-como">
-    <div class="pilha pilha--g">
-      <h2 id="t-como">Sexta você começa. Sábado ela está no ar.</h2>
-      <ol class="passos">
-        <li><div><b>Antes</b><span>Um vídeo curto para deixar tudo pronto. Ninguém perde a primeira noite com instalação.</span></div></li>
-        <li><div><b>Sexta à noite</b><span>Você corta a ideia até ela caber e termina com a primeira versão funcionando.</span></div></li>
-        <li><div><b>Sábado de manhã</b><span>A ferramenta fica útil de verdade, segura com os dados das pessoas e publicada.</span></div></li>
+  <!-- ========== PARA QUEM ========== -->
+  <section class="bloco suave" aria-labelledby="t-quem">
+    <div class="conteudo pilha pilha--g estreito">
+      <h2 id="t-quem">É para você se…</h2>
+      <ul class="fios para-quem">
+        <li>tem uma ideia de ferramenta para o seu trabalho e nunca soube por onde começar;</li>
+        <li>já tentou usar IA e travou no meio do caminho;</li>
+        <li>quer aprender fazendo, e não só assistindo.</li>
+      </ul>
+      <p class="texto-2">Não é para você se quer tudo pronto sem colocar a mão na massa.</p>
+    </div>
+  </section>
+
+  <!-- ========== COMO FUNCIONA ========== -->
+  <section class="bloco" id="como" aria-labelledby="t-como">
+    <div class="conteudo pilha pilha--g">
+      <div class="pilha estreito">
+        <span class="sobrelinha">Como funciona</span>
+        <h2 id="t-como">Sexta você começa. Sábado ela está <span class="italico" style="color:var(--destaque-claro)">no ar.</span></h2>
+      </div>
+      <ol class="fios passos-editorial">
+        <li><span class="numero">Antes</span><div><h3>Tudo pronto em casa</h3><p>Você recebe um passo a passo para deixar tudo preparado. Na sexta, a gente já começa construindo.</p></div></li>
+        <li><span class="numero">Sexta</span><div><h3>A primeira versão funcionando</h3><small>29/01, das 18h às 22h</small><p>Você corta a ideia até ela caber e termina a noite com a primeira versão funcionando.</p></div></li>
+        <li><span class="numero">Sábado</span><div><h3>Útil, protegida e publicada</h3><small>30/01, das 8h às 12h</small><p>A ferramenta fica útil de verdade e vai para a internet. Você sai com o link para mandar para quem quiser.</p></div></li>
       </ol>
     </div>
   </section>
 
-  <div class="faixa-leve">
-    <section class="coluna bloco lista" id="lista" aria-labelledby="t-lista">
-      <span class="rotulo">Turma Fundadora</span>
-      <h2 id="t-lista" style="margin-top:var(--e-3)">Entre na lista e garanta sua vaga antes.</h2>
-      <p class="texto-2" style="margin-top:var(--e-3)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
+  <!-- ========== QUEM VAI TE ENSINAR ========== -->
+  <section class="bloco" style="padding-top:0" aria-labelledby="t-sobre">
+    <div class="conteudo sobre">
+      <div class="foto-editorial" role="img" aria-label="Espaço para outra foto da Lorena">Foto da Lorena olhando para a câmera</div>
+      <div class="pilha pilha--g">
+        <span class="sobrelinha">Quem vai te ensinar</span>
+        <h2 id="t-sobre">Eu sou Lorena Bragança.</h2>
+        <p class="texto-2" style="font-size:var(--t-grande)">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
+        <blockquote class="citacao">"Travou aqui? Me mostra que a gente resolve."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DUAS FORMAS ========== -->
+  <section class="bloco" style="padding-top:0" aria-labelledby="t-formas">
+    <div class="conteudo pilha pilha--g">
+      <span class="sobrelinha" id="t-formas">Duas formas de construir comigo</span>
+      <ul class="fios formas">
+        <li id="ferramentaria">
+          <div class="pilha">
+            <h3>Ferramentaria</h3>
+            <p>Dois encontros ao vivo para construir a sua primeira ferramenta. Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h. A gravação fica com você.</p>
+          </div>
+          <div class="lado"><span class="preco">R$ 97</span><a class="botao botao--principal" href="#lista">Entrar na lista</a></div>
+        </li>
+        <li id="mentoria">
+          <div class="pilha">
+            <h3>Mentoria</h3>
+            <p>Para quem quer uma ferramenta feita para o próprio negócio. A gente começa com um diagnóstico e constrói junto.</p>
+          </div>
+          <div class="lado"><span class="preco">R$ 2.997</span><span class="texto-2" style="font-size:var(--t-pequeno)">Aplicações abrem em breve</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== TURMA FUNDADORA ========== -->
+  <section class="bloco suave lista" id="lista" aria-labelledby="t-lista">
+    <div class="conteudo">
+      <span class="sobrelinha">Turma Fundadora</span>
+      <h2 id="t-lista" style="margin-top:var(--e-4);max-width:18ch">As primeiras vagas são de quem está na lista.</h2>
+      <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
         <label class="campo" for="nome">Seu nome<input id="nome" name="nome" type="text" autocomplete="given-name" required></label>
         <label class="campo" for="email">Seu e-mail<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></label>
@@ -136,8 +188,22 @@
         <button class="botao botao--principal" type="submit">Quero entrar na lista</button>
         <p class="aviso-form" id="aviso-form" role="status"></p>
       </form>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- ========== PERGUNTAS ========== -->
+  <section class="bloco" aria-labelledby="t-perguntas">
+    <div class="conteudo pilha pilha--g estreito">
+      <h2 id="t-perguntas">Perguntas frequentes</h2>
+      <div class="perguntas">
+        <details><summary>Preciso saber programar?</summary><p>Não. Você vai escrever pedidos em português, e eu mostro cada passo.</p></details>
+        <details><summary>Preciso pagar mais alguma coisa além do ingresso?</summary><p>Sim: o plano pago do Claude, cobrado por mês. O valor atual aparece no site do Claude. É bom saber antes de comprar.</p></details>
+        <details><summary>Dá para fazer pelo celular?</summary><p>A imersão é feita no computador. Você precisa de um computador com internet.</p></details>
+        <details><summary>E se eu não puder ir ao vivo?</summary><p>A gravação fica com você.</p></details>
+        <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o dinheiro de volta, sem precisar explicar.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="rodape rodape--claro">
