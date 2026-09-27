@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lorena Bragança · construa sua ferramenta com IA</title>
-<meta name="description" content="Você não precisa programar para construir a sua ferramenta. Ferramentaria: dois encontros ao vivo, 29 e 30 de janeiro, para construir com o Claude Code e colocar no ar.">
-<meta property="og:title" content="Você não precisa programar para construir a sua ferramenta">
-<meta property="og:description" content="Ferramentaria, com Lorena Bragança: dois encontros ao vivo para construir a sua ferramenta com o Claude Code e colocar no ar.">
+<title>Ferramentaria · Lorena Bragança</title>
+<meta name="description" content="Você não precisa programar para construir a sua ferramenta. Ferramentaria: imersão ao vivo, 29 e 30 de janeiro, para construir com o Claude Code e colocar no ar.">
+<meta property="og:title" content="Ferramentaria · você não precisa programar para construir a sua ferramenta">
+<meta property="og:description" content="Imersão ao vivo com Lorena Bragança, 29 e 30 de janeiro. Você constrói a sua ferramenta com o Claude Code e coloca no ar.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#0B1F3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap">
@@ -17,169 +17,273 @@
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
 /*
-  Versão 3 (27/09): caminho Editorial, escolhido entre três. Texto em
-  site/COPY.md, sem citar o app do Ei (pedido dela). Letra grande, foto
-  grande, números em itálico, listas separadas por fios em vez de cartões.
+  Versão 4 (27/09): layout a partir da referência que ela mandou (prints de
+  uma página de imersão). Da referência veio a ESTRUTURA: topo centralizado
+  com o nome grande entre fios, palavras do título em "marca-texto",
+  botão largo com o preço, seções que alternam escuro e claro com
+  sobrelinha numerada, número grande no meio do texto, quadro com frase em
+  itálico, telas de exemplo numa moldura de navegador, e a barra fixa
+  embaixo. A cara é a dela: marinho e piscina, Fraunces e Figtree.
+  O que NÃO veio: escassez que não existe ("98% vendido"). A barra fixa
+  diz só o que é verdade.
 */
-.bloco{padding-block:var(--e-8)}
-@media (min-width:900px){.bloco{padding-block:var(--e-9)}}
-.estreito{max-width:760px}
+body{padding-bottom:88px}
+.centro{text-align:center;margin-inline:auto}
+.centro p{margin-inline:auto}
+.faixa{padding-block:var(--e-8)}
+@media (min-width:900px){.faixa{padding-block:var(--e-9)}}
+.faixa--escura{background:var(--marinho);color:var(--branco);--texto-2:var(--piscina-100);--linha:var(--marinho-borda)}
+.faixa--funda{background:linear-gradient(180deg,var(--piscina-900) 0%,#0C2A3F 55%,var(--marinho) 100%);color:var(--branco);--texto-2:var(--piscina-100);--linha:#1F5566}
+.faixa--clara{background:var(--nevoa)}
+.faixa--escura .botao--principal,.faixa--funda .botao--principal{background:var(--piscina-300)}
+.faixa--escura .botao--principal:hover,.faixa--funda .botao--principal:hover{background:var(--piscina-200)}
 
-.heroi{display:grid;gap:var(--e-7);padding-block:var(--e-7) var(--e-8);align-items:center}
-@media (min-width:900px){.heroi{grid-template-columns:1.15fr .85fr;gap:var(--e-8);padding-block:var(--e-8) var(--e-9)}}
-.heroi-texto{display:flex;flex-direction:column;gap:var(--e-5)}
-.heroi h1{font-size:clamp(2.5rem,1.6rem + 3.8vw,4.25rem)}
-.heroi h1 .italico{color:var(--destaque-claro)}
-.heroi-texto > p{font-size:var(--t-grande);color:var(--texto-2)}
-.heroi .foto-editorial{max-width:460px;width:100%;justify-self:center}
+/* sobrelinha numerada: "01  O QUE DÁ PARA CONSTRUIR ————" */
+.marcador{display:flex;align-items:center;gap:var(--e-4);font-weight:700;font-size:var(--t-rotulo);letter-spacing:.2em;text-transform:uppercase;color:var(--texto-2);margin-bottom:var(--e-6)}
+.marcador b{color:var(--destaque-claro);letter-spacing:.05em}
+.faixa--escura .marcador b,.faixa--funda .marcador b{color:var(--piscina-300)}
+.marcador::after{content:"";flex:1;height:1px;background:var(--linha)}
 
-.grade-exemplos{list-style:none;margin:0;padding:0;display:grid;gap:0}
-@media (min-width:760px){.grade-exemplos{grid-template-columns:1fr 1fr;column-gap:var(--e-7)}}
-.grade-exemplos li{display:grid;grid-template-columns:auto 1fr;gap:var(--e-4);align-items:baseline;padding-block:var(--e-5);border-top:1px solid var(--linha)}
-.grade-exemplos li span:last-child{font-size:var(--t-grande)}
+/* marca-texto: a palavra fica dentro de um bloco piscina */
+.marca-texto{background:var(--piscina-300);color:var(--marinho);padding:0 .12em;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.it{font-family:var(--letra-destaque);font-style:italic;font-weight:500}
+.faixa--escura .it,.faixa--funda .it{color:var(--piscina-300)}
+.faixa--clara .it{color:var(--piscina-700)}
 
-.para-quem li{font-size:var(--t-grande);padding-left:var(--e-6);position:relative}
-.para-quem li::before{content:"";position:absolute;left:0;top:calc(var(--e-5) + .7em);width:18px;height:2px;background:var(--piscina-500)}
+/* ---------- topo ---------- */
+.topo{padding-block:var(--e-7) var(--e-7);display:flex;flex-direction:column;align-items:center;gap:var(--e-5)}
+.entre-fios{display:flex;align-items:center;gap:var(--e-4);width:100%;max-width:560px;font-family:var(--letra-chamada);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:var(--t-pequeno);color:var(--piscina-100)}
+.entre-fios::before,.entre-fios::after{content:"";flex:1;height:1px;background:var(--piscina-500);opacity:.7}
+.nome-produto{font-family:var(--letra-chamada);font-weight:600;text-transform:uppercase;letter-spacing:0;line-height:.95;font-size:clamp(1.75rem,8.6vw,6rem);margin:0;max-width:100%}
+.nome-produto span{display:block;color:var(--piscina-300);font-style:italic;font-weight:500;text-transform:none;letter-spacing:-0.01em;font-size:.62em;margin-top:.1em}
+.data{font-family:var(--letra-chamada);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.1rem,.9rem + 1vw,1.5rem);border-top:1px solid var(--piscina-500);padding-top:var(--e-4);width:100%;max-width:560px}
+.topo h1{font-size:clamp(2.2rem,1.3rem + 4vw,4rem);line-height:1.12;max-width:17ch}
+.topo h1 .marca-texto{line-height:1.3}
+.topo .apoio{font-size:var(--t-grande);color:var(--piscina-100);max-width:36ch}
+.cta-largo{width:100%;max-width:560px;min-height:64px;font-size:var(--t-texto);letter-spacing:.06em;text-transform:uppercase;justify-content:space-between;padding-inline:var(--e-6)}
+.cta-largo::after{content:"→";font-size:1.3em;letter-spacing:0}
+@media (max-width:440px){.cta-largo{font-size:var(--t-pequeno);letter-spacing:.03em;padding-inline:var(--e-5)}}
+.nota-cta{font-size:var(--t-pequeno);color:var(--piscina-100)}
+.foto-topo{margin-top:var(--e-6);width:100%;max-width:560px;aspect-ratio:4/5;border-radius:var(--canto-g);position:relative;overflow:hidden;
+  background:
+    radial-gradient(60% 50% at 50% 40%,rgba(46,196,224,.22),transparent 70%),
+    linear-gradient(rgba(202,243,250,.06) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(90deg,rgba(202,243,250,.06) 1px,transparent 1px) 0 0/28px 28px,
+    var(--marinho-claro);
+  display:grid;place-items:center;color:var(--piscina-100);font-size:var(--t-pequeno);text-align:center;padding:var(--e-5)}
 
-.passos-editorial > li{display:grid;grid-template-columns:1fr;gap:var(--e-2)}
-@media (min-width:700px){.passos-editorial > li{grid-template-columns:180px 1fr;gap:var(--e-5)}}
-.passos-editorial h3{font-size:var(--t-h3)}
-.passos-editorial p{color:var(--texto-2);margin-top:var(--e-2)}
-.passos-editorial small{display:block;font-size:var(--t-pequeno);color:var(--destaque-claro);font-weight:700;margin-top:var(--e-1)}
+/* ---------- número grande no meio do texto ---------- */
+.grande-numero{font-size:clamp(1.15rem,1rem + .8vw,1.5rem);line-height:1.6;color:var(--texto-2);max-width:36ch}
+.grande-numero strong{font-family:var(--letra-chamada);font-weight:600;font-size:4.2em;line-height:.9;color:var(--piscina-700);vertical-align:-.12em;margin-inline:.12em}
 
+/* ---------- quadro com frase ---------- */
+.quadro{border:1px solid var(--linha);background:rgba(255,255,255,.55);border-radius:var(--canto-g);padding:var(--e-6) var(--e-5);font-family:var(--letra-chamada);font-weight:600;font-size:clamp(1.25rem,1.05rem + 1vw,1.75rem);line-height:1.35;max-width:680px;margin-inline:auto}
+
+/* ---------- telas de exemplo numa moldura de navegador ---------- */
+.telas{display:flex;gap:var(--e-4);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:var(--e-2)}
+.telas::-webkit-scrollbar{display:none}
+.tela{flex:0 0 100%;scroll-snap-align:start;display:flex;flex-direction:column;gap:var(--e-3)}
+@media (min-width:900px){.tela{flex-basis:calc(50% - var(--e-2))}}
+.navegador{border-radius:var(--canto-g);overflow:hidden;background:#0A1628;border:1px solid #1F3A5C}
+.navegador-barra{display:flex;gap:7px;padding:12px 14px;background:#0E1D33}
+.navegador-barra i{width:11px;height:11px;border-radius:50%;background:#2A4466}
+.app{--texto-2:#3E5068;--linha:#D5DEE8;background:#fff;color:var(--marinho);padding:18px;min-height:280px;font-size:14px;display:flex;flex-direction:column;gap:12px}
+.app h4{margin:0;font-family:var(--letra-chamada);font-weight:600;font-size:20px}
+.app .sub{color:var(--texto-2);font-size:13px}
+.dias{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.dias span{border:1px solid var(--linha);border-radius:10px;padding:6px 0;text-align:center;font-size:12px}
+.dias span.hoje{background:var(--piscina-50);border-color:var(--piscina-300);font-weight:700}
+.horarios{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.horarios span{border-radius:999px;padding:8px 0;text-align:center;font-weight:700;font-size:13px;background:var(--piscina-50);color:var(--piscina-800)}
+.horarios span.ocupado{background:#EEF1F4;color:#8A96A6;text-decoration:line-through;font-weight:400}
+.app .botao-app{background:var(--piscina-500);color:var(--marinho);border-radius:999px;text-align:center;padding:10px;font-weight:700}
+.pergunta-app{border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;gap:8px}
+.pergunta-app b{color:var(--piscina-700)}
+.total-app{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--linha);padding-top:10px}
+.total-app strong{font-family:var(--letra-chamada);font-size:26px}
+.linha-cliente{display:flex;justify-content:space-between;border-bottom:1px solid var(--linha);padding:8px 0}
+.linha-cliente small{color:var(--texto-2)}
+.legenda{color:var(--texto-2);font-size:var(--t-pequeno)}
+.controles-telas{display:flex;align-items:center;gap:var(--e-3);margin-top:var(--e-5)}
+.seta{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--linha);background:none;color:inherit;font-size:20px;cursor:pointer}
+.pontos{display:flex;gap:12px;margin-left:var(--e-3)}
+.pontos i{width:10px;height:10px;border-radius:50%;background:var(--linha)}
+.pontos i.ativo{background:var(--piscina-300)}
+
+.frase-grande{font-family:var(--letra-chamada);font-weight:600;font-size:clamp(1.6rem,1.2rem + 1.8vw,2.4rem);line-height:1.2;max-width:26ch}
+
+/* ---------- como funciona ---------- */
+.etapas{list-style:none;margin:0;padding:0;display:grid;gap:var(--e-4)}
+@media (min-width:900px){.etapas{grid-template-columns:repeat(3,1fr)}}
+.etapas li{border:1px solid var(--linha);border-radius:var(--canto-g);padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-2)}
+.etapas .quando{font-family:var(--letra-destaque);font-style:italic;font-weight:500;font-size:2.2rem;line-height:1;color:var(--piscina-300)}
+.etapas small{color:var(--piscina-200);font-weight:700;font-size:var(--t-pequeno)}
+.etapas p{color:var(--texto-2)}
+
+/* ---------- quem ensina ---------- */
 .sobre{display:grid;gap:var(--e-7);align-items:center}
-@media (min-width:900px){.sobre{grid-template-columns:.8fr 1.2fr;gap:var(--e-8)}}
-.sobre .foto-editorial{max-width:380px;aspect-ratio:1;width:100%}
+@media (min-width:900px){.sobre{grid-template-columns:.9fr 1.1fr;gap:var(--e-8)}}
+.foto-sobre{aspect-ratio:4/5;border-radius:var(--canto-g);background:linear-gradient(180deg,var(--piscina-100),var(--piscina-200));display:grid;place-items:center;text-align:center;color:var(--piscina-800);font-size:var(--t-pequeno);max-width:420px;width:100%;justify-self:center;padding:var(--e-5)}
 
-.formas > li{display:flex;flex-direction:column;gap:var(--e-4)}
-@media (min-width:760px){.formas > li{display:grid;grid-template-columns:1fr auto;column-gap:var(--e-6);align-items:end}}
-.formas h3{font-size:clamp(1.75rem,1.4rem + 1.5vw,2.25rem)}
-.formas p{color:var(--texto-2)}
-.formas .lado{display:flex;flex-direction:column;align-items:flex-start;gap:var(--e-3)}
-@media (min-width:760px){.formas .lado{align-items:flex-end;text-align:right}}
+/* ---------- duas formas ---------- */
+.formas{display:grid;gap:var(--e-4)}
+@media (min-width:900px){.formas{grid-template-columns:1fr 1fr}}
+.forma{border:1px solid var(--linha);border-radius:var(--canto-g);padding:var(--e-6) var(--e-5);display:flex;flex-direction:column;gap:var(--e-3)}
+.forma.destaque{border-color:var(--piscina-300);box-shadow:0 0 0 1px var(--piscina-300) inset}
+.forma h3{font-size:2rem}
+.forma p{color:var(--texto-2)}
+.forma .preco{font-size:2rem;margin-top:auto}
 
-.suave{background:var(--nevoa)}
-.lista form{display:flex;flex-direction:column;gap:var(--e-4);margin-top:var(--e-6);max-width:480px}
-.lista form .botao{align-self:flex-start}
+/* ---------- lista ---------- */
+.lista form{display:flex;flex-direction:column;gap:var(--e-4);margin:var(--e-6) auto 0;max-width:480px;text-align:left}
 .aviso-form{font-size:var(--t-pequeno);color:var(--piscina-800);font-weight:700}
+
+/* ---------- barra fixa embaixo ---------- */
+.barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:var(--e-3) var(--e-4) calc(var(--e-3) + env(safe-area-inset-bottom,0px))}
+.barra-fixa div{max-width:620px;margin:0 auto;background:var(--marinho);color:var(--branco);border:1px solid var(--marinho-borda);border-radius:var(--canto-pilula);display:flex;align-items:center;justify-content:space-between;gap:var(--e-3);padding:8px 8px 8px 22px;box-shadow:0 10px 30px rgba(11,31,58,.35)}
+.barra-fixa span{font-size:var(--t-pequeno);line-height:1.3}
+.barra-fixa span b{color:var(--piscina-300)}
+.barra-fixa .botao{min-height:48px;background:var(--piscina-300);color:var(--marinho);text-transform:uppercase;letter-spacing:.06em;font-size:var(--t-pequeno);white-space:nowrap}
 </style>
 </head>
 <body>
 
-<header class="cabecalho cabecalho--claro">
-  <div class="conteudo">
-    <a class="marca" href="/" aria-label="Lorena Bragança, início">Lorena Bragança</a>
-    <nav class="menu" aria-label="Principal">
-      <a href="#ferramentaria" class="opcional-p">Ferramentaria</a>
-      <a href="#mentoria" class="opcional">Mentoria</a>
-      <a href="#" class="entrar" aria-disabled="true" title="A área de membros abre para a primeira turma">Entrar</a>
-    </nav>
-  </div>
-</header>
-
 <main>
   <!-- ========== TOPO ========== -->
-  <section class="conteudo heroi" aria-labelledby="titulo">
-    <div class="heroi-texto">
-      <span class="sobrelinha">Ferramentaria · turma de janeiro</span>
-      <h1 id="titulo">Você não precisa programar para construir a sua <span class="italico">ferramenta.</span></h1>
-      <p>Na Ferramentaria, você constrói com o Claude Code a ferramenta que imaginou, como uma agenda, um orçamento ou um cadastro de clientes, e coloca no ar. Eu fico do seu lado, na mesma tela.</p>
-      <div class="acoes">
-        <a class="botao botao--principal" href="#lista">Quero construir a minha</a>
-        <a class="botao botao--texto" href="#como">Como funciona</a>
-      </div>
-    </div>
-    <div class="foto-editorial" role="img" aria-label="Espaço para a foto da Lorena">
-      Foto da Lorena no computador, luz natural
-      <span class="selo"><b>29 e 30 de janeiro</b>online e ao vivo</span>
+  <section class="faixa--escura">
+    <div class="conteudo topo centro">
+      <span class="entre-fios">Imersão</span>
+      <p class="nome-produto">Ferramentaria<span>com Lorena Bragança</span></p>
+      <span class="data">29 e 30 de janeiro · ao vivo</span>
+      <h1 id="titulo">Você não precisa <span class="marca-texto">programar</span> para construir a sua <span class="marca-texto">ferramenta</span></h1>
+      <p class="apoio">Em dois encontros, você constrói com o Claude Code a ferramenta que imaginou e coloca no ar. Eu fico do seu lado, na mesma tela.</p>
+      <a class="botao botao--principal cta-largo" href="#lista">Quero a minha vaga · R$ 97</a>
+      <span class="nota-cta">Turma Fundadora: de 8 a 15/12, só quem está na lista pode comprar.</span>
+      <div class="foto-topo" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena sorrindo, olhando para a câmera</div>
     </div>
   </section>
 
-  <!-- ========== O QUE DÁ PARA CONSTRUIR ========== -->
-  <section class="bloco" style="padding-top:0" aria-labelledby="t-exemplos">
-    <div class="conteudo pilha pilha--g">
-      <div class="pilha estreito">
-        <span class="sobrelinha">O que dá para construir</span>
-        <h2 id="t-exemplos">Ferramentas pequenas, que resolvem um problema de verdade.</h2>
+  <!-- ========== 01 · O QUE DÁ PARA CONSTRUIR ========== -->
+  <section class="faixa faixa--clara">
+    <div class="conteudo">
+      <div class="marcador"><b>01</b>O que dá para construir</div>
+      <div class="centro pilha pilha--g" style="align-items:center">
+        <h2 style="max-width:18ch">Ferramentas pequenas que resolvem um problema <span class="it">de verdade</span></h2>
+        <p class="grande-numero">Em <strong>8</strong> horas de encontro, a sua ideia sai da cabeça e vai para a internet, com um link que você manda para quem quiser.</p>
+        <p class="quadro">Na sexta e no sábado eu conduzo a construção da sua, ao vivo: uma agenda onde a cliente <span class="it">marca sozinha</span>, um orçamento que <span class="it">se monta com três perguntas</span>, um cadastro de clientes que você abre no celular. São exemplos: a ideia é sua.</p>
       </div>
-      <ul class="grade-exemplos">
-        <li><span class="numero">01</span><span>Uma agenda onde as clientes marcam horário sozinhas</span></li>
-        <li><span class="numero">02</span><span>Um orçamento que se monta com três perguntas</span></li>
-        <li><span class="numero">03</span><span>Um cadastro de clientes que você abre no celular</span></li>
-        <li><span class="numero">04</span><span>Uma calculadora de preço para o seu serviço</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- ========== PARA QUEM ========== -->
-  <section class="bloco suave" aria-labelledby="t-quem">
-    <div class="conteudo pilha pilha--g estreito">
-      <h2 id="t-quem">É para você se…</h2>
-      <ul class="fios para-quem">
-        <li>tem uma ideia de ferramenta para o seu trabalho e nunca soube por onde começar;</li>
-        <li>já tentou usar IA e travou no meio do caminho;</li>
-        <li>quer aprender fazendo, e não só assistindo.</li>
-      </ul>
-      <p class="texto-2">Não é para você se quer tudo pronto sem colocar a mão na massa.</p>
+  <!-- ========== 02 · COMO FICA NA TELA ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo">
+      <div class="marcador"><b>02</b>Como fica na tela</div>
+      <div class="telas" id="telas" tabindex="0" aria-label="Telas de exemplo">
+        <figure class="tela" style="margin:0">
+          <div class="navegador"><div class="navegador-barra"><i></i><i></i><i></i></div>
+            <div class="app">
+              <h4>Agenda da Bia</h4><span class="sub">Escolha um horário livre</span>
+              <div class="dias"><span>seg<br>12</span><span class="hoje">ter<br>13</span><span>qua<br>14</span><span>qui<br>15</span><span>sex<br>16</span></div>
+              <div class="horarios"><span>9h</span><span class="ocupado">10h</span><span>11h</span><span class="ocupado">14h</span><span>15h</span><span>16h</span></div>
+              <span class="botao-app">Marcar às 11h</span>
+            </div>
+          </div>
+          <figcaption class="legenda">Uma agenda onde a cliente marca sozinha. Exemplo, com dados fictícios.</figcaption>
+        </figure>
+        <figure class="tela" style="margin:0">
+          <div class="navegador"><div class="navegador-barra"><i></i><i></i><i></i></div>
+            <div class="app">
+              <h4>Orçamento de festa</h4><span class="sub">Três perguntas e o valor sai na hora</span>
+              <div class="pergunta-app"><span>Quantos convidados?</span><b>40</b></div>
+              <div class="pergunta-app"><span>Quantas horas?</span><b>4</b></div>
+              <div class="pergunta-app"><span>Com decoração?</span><b>Sim</b></div>
+              <div class="total-app"><span>Total estimado</span><strong>R$ 1.840</strong></div>
+            </div>
+          </div>
+          <figcaption class="legenda">Um orçamento que se monta sozinho. Exemplo, com dados fictícios.</figcaption>
+        </figure>
+        <figure class="tela" style="margin:0">
+          <div class="navegador"><div class="navegador-barra"><i></i><i></i><i></i></div>
+            <div class="app">
+              <h4>Minhas clientes</h4><span class="sub">4 cadastradas</span>
+              <div class="linha-cliente"><span>Ana</span><small>última visita: 02/01</small></div>
+              <div class="linha-cliente"><span>Carla</span><small>última visita: 28/12</small></div>
+              <div class="linha-cliente"><span>Joana</span><small>última visita: 20/12</small></div>
+              <div class="linha-cliente"><span>Marta</span><small>nova</small></div>
+            </div>
+          </div>
+          <figcaption class="legenda">Um cadastro de clientes no celular. Exemplo, com dados fictícios.</figcaption>
+        </figure>
+      </div>
+      <div class="controles-telas">
+        <button class="seta" type="button" id="ant" aria-label="Tela anterior">‹</button>
+        <button class="seta" type="button" id="prox" aria-label="Próxima tela">›</button>
+        <div class="pontos" aria-hidden="true"><i class="ativo"></i><i></i><i></i></div>
+      </div>
+      <div class="pilha pilha--g" style="margin-top:var(--e-8)">
+        <p class="frase-grande">Toda ferramenta começa do mesmo ponto em que você está agora: uma ideia e nenhuma linha de código. O que muda é ter alguém do lado mostrando <span class="it">o próximo passo.</span></p>
+        <p class="texto-2" style="font-size:var(--t-grande)">Até pouco tempo, construir uma ferramenta exigia contratar um programador e esperar meses. Com IA, a primeira versão <b style="color:var(--piscina-200)">cabe em dois encontros</b>, e quem constrói é você.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ========== COMO FUNCIONA ========== -->
-  <section class="bloco" id="como" aria-labelledby="t-como">
-    <div class="conteudo pilha pilha--g">
-      <div class="pilha estreito">
-        <span class="sobrelinha">Como funciona</span>
-        <h2 id="t-como">Sexta você começa. Sábado ela está <span class="italico" style="color:var(--destaque-claro)">no ar.</span></h2>
-      </div>
-      <ol class="fios passos-editorial">
-        <li><span class="numero">Antes</span><div><h3>Tudo pronto em casa</h3><p>Você recebe um passo a passo para deixar tudo preparado. Na sexta, a gente já começa construindo.</p></div></li>
-        <li><span class="numero">Sexta</span><div><h3>A primeira versão funcionando</h3><small>29/01, das 18h às 22h</small><p>Você corta a ideia até ela caber e termina a noite com a primeira versão funcionando.</p></div></li>
-        <li><span class="numero">Sábado</span><div><h3>Útil, protegida e publicada</h3><small>30/01, das 8h às 12h</small><p>A ferramenta fica útil de verdade e vai para a internet. Você sai com o link para mandar para quem quiser.</p></div></li>
+  <!-- ========== 03 · COMO FUNCIONA ========== -->
+  <section class="faixa faixa--escura" id="como">
+    <div class="conteudo">
+      <div class="marcador"><b>03</b>Como funciona</div>
+      <h2 style="margin-bottom:var(--e-6)">Sexta você começa. Sábado ela está <span class="it">no ar.</span></h2>
+      <ol class="etapas">
+        <li><span class="quando">Antes</span><h3>Tudo pronto em casa</h3><p>Você recebe um passo a passo para deixar tudo preparado. Na sexta, a gente já começa construindo.</p></li>
+        <li><span class="quando">Sexta</span><small>29/01, das 18h às 22h</small><h3>A primeira versão</h3><p>Você corta a ideia até ela caber e termina a noite com a primeira versão funcionando.</p></li>
+        <li><span class="quando">Sábado</span><small>30/01, das 8h às 12h</small><h3>No ar</h3><p>A ferramenta fica útil de verdade, protegida e publicada. Você sai com o link.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- ========== QUEM VAI TE ENSINAR ========== -->
-  <section class="bloco" style="padding-top:0" aria-labelledby="t-sobre">
-    <div class="conteudo sobre">
-      <div class="foto-editorial" role="img" aria-label="Espaço para outra foto da Lorena">Foto da Lorena olhando para a câmera</div>
-      <div class="pilha pilha--g">
-        <span class="sobrelinha">Quem vai te ensinar</span>
-        <h2 id="t-sobre">Eu sou Lorena Bragança.</h2>
-        <p class="texto-2" style="font-size:var(--t-grande)">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
-        <blockquote class="citacao">"Travou aqui? Me mostra que a gente resolve."</blockquote>
+  <!-- ========== 04 · QUEM VAI TE ENSINAR ========== -->
+  <section class="faixa faixa--clara">
+    <div class="conteudo">
+      <div class="marcador"><b>04</b>Quem vai te ensinar</div>
+      <div class="sobre">
+        <div class="foto-sobre" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador</div>
+        <div class="pilha pilha--g">
+          <h2>Eu sou <span class="it">Lorena Bragança.</span></h2>
+          <p class="texto-2" style="font-size:var(--t-grande)">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
+          <blockquote class="citacao">"Travou aqui? Me mostra que a gente resolve."</blockquote>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== DUAS FORMAS ========== -->
-  <section class="bloco" style="padding-top:0" aria-labelledby="t-formas">
-    <div class="conteudo pilha pilha--g">
-      <span class="sobrelinha" id="t-formas">Duas formas de construir comigo</span>
-      <ul class="fios formas">
-        <li id="ferramentaria">
-          <div class="pilha">
-            <h3>Ferramentaria</h3>
-            <p>Dois encontros ao vivo para construir a sua primeira ferramenta. Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h. A gravação fica com você.</p>
-          </div>
-          <div class="lado"><span class="preco">R$ 97</span><a class="botao botao--principal" href="#lista">Entrar na lista</a></div>
-        </li>
-        <li id="mentoria">
-          <div class="pilha">
-            <h3>Mentoria</h3>
-            <p>Para quem quer uma ferramenta feita para o próprio negócio. A gente começa com um diagnóstico e constrói junto.</p>
-          </div>
-          <div class="lado"><span class="preco">R$ 2.997</span><span class="texto-2" style="font-size:var(--t-pequeno)">Aplicações abrem em breve</span></div>
-        </li>
-      </ul>
+  <!-- ========== 05 · DUAS FORMAS ========== -->
+  <section class="faixa faixa--escura">
+    <div class="conteudo">
+      <div class="marcador"><b>05</b>Duas formas de construir comigo</div>
+      <div class="formas">
+        <article class="forma destaque" id="ferramentaria">
+          <span class="nota-cta">Imersão · ao vivo</span>
+          <h3>Ferramentaria</h3>
+          <p>Dois encontros para construir a sua primeira ferramenta. Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h. A gravação fica com você.</p>
+          <span class="preco">R$ 97</span>
+          <a class="botao botao--principal" href="#lista" style="align-self:flex-start">Entrar na lista</a>
+        </article>
+        <article class="forma" id="mentoria">
+          <span class="nota-cta">Individual</span>
+          <h3>Mentoria</h3>
+          <p>Para quem quer uma ferramenta feita para o próprio negócio. A gente começa com um diagnóstico e constrói junto.</p>
+          <span class="preco">R$ 2.997</span>
+          <span class="nota-cta">Aplicações abrem em breve</span>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- ========== TURMA FUNDADORA ========== -->
-  <section class="bloco suave lista" id="lista" aria-labelledby="t-lista">
-    <div class="conteudo">
-      <span class="sobrelinha">Turma Fundadora</span>
-      <h2 id="t-lista" style="margin-top:var(--e-4);max-width:18ch">As primeiras vagas são de quem está na lista.</h2>
+  <!-- ========== LISTA ========== -->
+  <section class="faixa faixa--clara lista" id="lista">
+    <div class="conteudo centro">
+      <div class="marcador" style="text-align:left"><b>06</b>Turma Fundadora</div>
+      <h2 style="max-width:18ch;margin-inline:auto">As primeiras vagas são de <span class="it">quem está na lista</span></h2>
       <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
         <label class="campo" for="nome">Seu nome<input id="nome" name="nome" type="text" autocomplete="given-name" required></label>
@@ -192,9 +296,9 @@
   </section>
 
   <!-- ========== PERGUNTAS ========== -->
-  <section class="bloco" aria-labelledby="t-perguntas">
-    <div class="conteudo pilha pilha--g estreito">
-      <h2 id="t-perguntas">Perguntas frequentes</h2>
+  <section class="faixa">
+    <div class="conteudo pilha pilha--g" style="max-width:760px">
+      <h2>Perguntas frequentes</h2>
       <div class="perguntas">
         <details><summary>Preciso saber programar?</summary><p>Não. Você vai escrever pedidos em português, e eu mostro cada passo.</p></details>
         <details><summary>Preciso pagar mais alguma coisa além do ingresso?</summary><p>Sim: o plano pago do Claude, cobrado por mês. O valor atual aparece no site do Claude. É bom saber antes de comprar.</p></details>
@@ -206,14 +310,30 @@
   </section>
 </main>
 
-<footer class="rodape rodape--claro">
+<footer class="rodape">
   <div class="conteudo">
     <span>© 2026 Lorena Bragança</span>
     <a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a>
   </div>
 </footer>
 
+<nav class="barra-fixa" aria-label="Entrar na lista">
+  <div><span><b>Turma Fundadora</b><br>lista aberta</span><a class="botao" href="#lista">Entrar na lista</a></div>
+</nav>
+
 <script>
+// Telas de exemplo: setas e pontinhos acompanham a rolagem.
+(function () {
+  var trilho = document.getElementById("telas");
+  var pontos = document.querySelectorAll(".pontos i");
+  function atual() { return Math.round(trilho.scrollLeft / trilho.firstElementChild.getBoundingClientRect().width); }
+  function marcar() { var i = atual(); pontos.forEach(function (p, k) { p.classList.toggle("ativo", k === i); }); }
+  function ir(d) { var w = trilho.firstElementChild.getBoundingClientRect().width + 16; trilho.scrollBy({ left: d * w, behavior: "smooth" }); }
+  document.getElementById("ant").addEventListener("click", function () { ir(-1); });
+  document.getElementById("prox").addEventListener("click", function () { ir(1); });
+  trilho.addEventListener("scroll", function () { window.requestAnimationFrame(marcar); });
+})();
+
 // A lista de espera ainda não tem para onde enviar: o banco do site será
 // criado junto com a página de captura. Até lá, o formulário diz isso em
 // vez de fingir que guardou o contato.
