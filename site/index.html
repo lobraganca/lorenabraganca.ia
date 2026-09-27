@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#0B1F3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="/estilos/tokens.css">
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
@@ -28,66 +28,66 @@
     finos (1px) e cantos grandes.
 */
 :root{
-  --escuro:#0B1F3A;
-  --escuro-2:#0E2442;
+  --escuro:#081427;            /* marinho quase preto, como o papel escuro da referência */
+  --escuro-2:#0C1C35;
   --claro:#F3F5F6;
   --tinta-clara:#EAF3F6;
   --suave-escuro:rgba(234,243,246,.66);   /* texto secundário no escuro: 8,4 */
   --fio-escuro:rgba(234,243,246,.14);
-  --acento:#62D7EC;                        /* piscina-300 no escuro: 9,8 */
+  --acento:#9BE7F4;                        /* piscina-200: o tom claro e suave, como o lima da referência; 13 sobre o escuro */
   --acento-claro:#0A6F88;                  /* piscina-700 no claro: 5,6 */
   --suave-claro:#4A5A6B;
   --fio-claro:rgba(11,31,58,.14);
 }
-body{padding-bottom:96px;background:var(--escuro);font-family:var(--letra-texto)}
+body{padding-bottom:96px;background:var(--escuro);font-family:var(--letra-texto);line-height:1.66;-webkit-font-smoothing:antialiased}
 p{max-width:none}
 .centro{text-align:center;margin-inline:auto}
 .centro p{margin-inline:auto}
 
 /* ---------- faixas ---------- */
-.faixa{padding-block:clamp(72px,10vw,128px)}
+.faixa{padding-block:clamp(74px,9vw,138px)}
 .faixa--escura,.faixa--funda{background:var(--escuro);color:var(--tinta-clara);--texto-2:var(--suave-escuro);--linha:var(--fio-escuro)}
 .faixa--funda{background:radial-gradient(90% 60% at 50% 0%,rgba(98,215,236,.10),transparent 70%),var(--escuro)}
 .faixa--clara,.faixa--piscina,.faixa:not([class*="faixa--"]){background:var(--claro);color:var(--marinho);--texto-2:var(--suave-claro);--linha:var(--fio-claro)}
-h2{font-size:clamp(2.6rem,1.6rem + 4.2vw,4.4rem);line-height:1.02}
+h2{font-size:clamp(30px,4.4vw,62px);line-height:1.02;letter-spacing:-0.016em}
 h3{font-family:var(--letra-chamada);font-weight:400}
 .it{font-family:var(--letra-destaque);font-style:italic;font-weight:400}
 .faixa--escura .it,.faixa--funda .it,.topo .it{color:var(--acento)}
 .faixa--clara .it,.faixa--piscina .it,.faixa:not([class*="faixa--"]) .it{color:var(--acento-claro)}
 
 /* rótulo numerado: "01   O QUE DÁ PARA CONSTRUIR  ———" */
-.marcador{display:flex;align-items:center;gap:20px;font-weight:500;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--texto-2);margin-bottom:40px}
-.marcador b{font-weight:600;letter-spacing:.06em;color:var(--acento)}
+.marcador{display:flex;align-items:center;gap:16px;font-weight:500;font-size:11px;line-height:1.1;letter-spacing:.3em;text-transform:uppercase;color:var(--texto-2);margin-bottom:clamp(20px,2.4vw,32px)}
+.marcador b{font-weight:700;letter-spacing:.12em;color:var(--acento);font-variant-numeric:tabular-nums}
 .faixa--clara .marcador b,.faixa--piscina .marcador b,.faixa:not([class*="faixa--"]) .marcador b{color:var(--acento-claro)}
-.marcador::after{content:"";flex:1;height:1px;background:var(--linha)}
+.marcador::after{content:"";flex:1;min-width:24px;height:1px;background:var(--linha);transform-origin:left center;transition:transform 1.3s cubic-bezier(.19,1,.22,1)}
 
 /* marca-texto da referência: a palavra dentro de um bloco da cor de destaque */
-.marca-texto{background:var(--acento);color:var(--escuro);padding:0 .1em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.marca-texto{background:var(--acento);color:var(--escuro);padding:0 .12em;border-radius:1px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 /* ---------- botões ---------- */
 .botao{font-family:var(--letra-texto)}
 .botao--principal,.faixa--escura .botao--principal,.faixa--funda .botao--principal{background:var(--acento);color:var(--escuro)}
 .faixa--clara .botao--principal,.faixa--piscina .botao--principal,.faixa:not([class*="faixa--"]) .botao--principal{background:var(--escuro);color:var(--tinta-clara)}
-.cta-largo,.cta-meio .botao,.ingresso .botao{min-height:64px;text-transform:uppercase;letter-spacing:.16em;font-weight:600;font-size:14px;padding-inline:32px}
+.cta-largo,.cta-meio .botao,.ingresso .botao{min-height:56px;text-transform:uppercase;letter-spacing:.13em;font-weight:700;font-size:13px;padding:20px 32px;line-height:1.15}
 .cta-largo{width:100%;max-width:580px;justify-content:space-between}
 .cta-largo::after,.cta-meio .botao::after,.ingresso .botao::after{content:"→";font-size:1.4em;letter-spacing:0;margin-left:14px;font-weight:400}
 .cta-meio{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:56px;text-align:center}
 .cta-meio span{color:var(--texto-2);font-size:15px}
-@media (max-width:440px){.cta-largo,.cta-meio .botao,.ingresso .botao{letter-spacing:.1em;font-size:13px;padding-inline:24px}}
+@media (max-width:440px){.cta-largo,.cta-meio .botao,.ingresso .botao{letter-spacing:.1em;font-size:12px;padding-inline:22px}}
 
 /* ---------- topo ---------- */
-.topo{padding-block:56px 64px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center}
-.entre-fios{display:flex;align-items:center;gap:18px;width:100%;max-width:560px;font-family:var(--letra-chamada);letter-spacing:.08em;text-transform:uppercase;font-size:18px;color:var(--tinta-clara)}
-.entre-fios::before,.entre-fios::after{content:"";flex:1;height:1px;background:var(--acento);opacity:.55}
+.topo{padding-block:28px 56px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.entre-fios{display:flex;align-items:center;gap:18px;width:100%;max-width:560px;font-family:var(--letra-chamada);letter-spacing:.08em;text-transform:uppercase;font-size:15px;color:var(--tinta-clara)}
+.entre-fios::before,.entre-fios::after{content:"";flex:1;height:1px;background:var(--acento);opacity:.5}
 .nome-produto{font-family:var(--letra-chamada);font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(3.1rem,11vw,7.5rem);margin:0;letter-spacing:.01em;color:var(--tinta-clara)}
 .nome-produto .palavra{display:inline-block;white-space:nowrap;font-size:1em;color:inherit;font-style:normal;text-transform:uppercase;letter-spacing:.01em;margin:0}
 .nome-produto span:not(.palavra){display:block;color:var(--acento);font-style:italic;text-transform:none;letter-spacing:0;font-size:.42em;margin-top:.18em}
-.data{font-family:var(--letra-chamada);text-transform:uppercase;letter-spacing:.05em;font-size:clamp(1.3rem,1rem + 1.2vw,1.8rem);border-top:1px solid rgba(98,215,236,.55);padding-top:18px;width:100%;max-width:560px;color:var(--tinta-clara)}
-.topo h1{font-size:clamp(2.7rem,1.6rem + 5vw,5rem);line-height:1.08;max-width:15ch;font-weight:400}
+.data{font-family:var(--letra-chamada);text-transform:uppercase;letter-spacing:.05em;font-size:clamp(17px,4.4vw,24px);border-top:1px solid rgba(155,231,244,.5);padding-top:10px;width:100%;max-width:560px;color:var(--tinta-clara)}
+.topo h1{font-size:clamp(31px,4.3vw,62px);line-height:1.13;letter-spacing:-0.022em;max-width:16ch;font-weight:400}
 .topo h1 .marca-texto{line-height:1.3}
-.topo .apoio{font-size:clamp(1.1rem,1rem + .5vw,1.35rem);color:var(--suave-escuro);max-width:36ch;line-height:1.55}
+.topo .apoio{font-size:clamp(17px,2.05vw,24px);color:var(--suave-escuro);max-width:36ch;line-height:1.58}
 .nota-cta{font-size:15px;color:var(--suave-escuro)}
-.foto-topo{margin-top:24px;width:100%;max-width:640px;aspect-ratio:4/5;border-radius:28px;position:relative;overflow:hidden;
+.foto-topo{margin-top:24px;width:100%;max-width:640px;aspect-ratio:4/5;border-radius:16px;position:relative;overflow:hidden;
   background:radial-gradient(55% 45% at 50% 40%,rgba(98,215,236,.14),transparent 70%),
     linear-gradient(rgba(234,243,246,.05) 1px,transparent 1px) 0 0/32px 32px,
     linear-gradient(90deg,rgba(234,243,246,.05) 1px,transparent 1px) 0 0/32px 32px,var(--escuro-2);
@@ -97,7 +97,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .dor{max-width:680px;margin-inline:auto;display:flex;flex-direction:column;gap:28px}
 .dor p{font-size:clamp(1.15rem,1rem + .6vw,1.45rem);color:var(--texto-2);line-height:1.6}
 .dor p b{color:var(--acento-claro);font-weight:600}
-.semana{margin-top:64px;background:#fff;border:1px solid var(--fio-claro);border-radius:28px;overflow:hidden}
+.semana{margin-top:64px;background:#fff;border:1px solid var(--fio-claro);border-radius:16px;overflow:hidden}
 .semana-cab{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px 24px;border-bottom:1px solid var(--fio-claro);font-size:15px}
 .semana-cab b{letter-spacing:.28em;text-transform:uppercase;font-size:13px;font-weight:600}
 .semana-cab span{color:var(--suave-claro)}
@@ -113,8 +113,8 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 
 /* ---------- 02 · o que dá para construir ---------- */
 .grande-numero{font-size:clamp(1.15rem,1rem + .7vw,1.5rem);line-height:1.6;color:var(--texto-2);max-width:34ch}
-.grande-numero strong{font-family:var(--letra-chamada);font-weight:400;font-size:4.6em;line-height:.85;color:var(--acento-claro);vertical-align:-.14em;margin-inline:.1em}
-.quadro{border:1px solid var(--fio-claro);background:transparent;border-radius:28px;padding:40px 28px;font-family:var(--letra-chamada);font-weight:400;font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);line-height:1.3;max-width:700px;margin-inline:auto}
+.grande-numero strong{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(66px,9.4vw,138px);letter-spacing:-0.035em;line-height:.85;color:var(--acento-claro);vertical-align:-.14em;margin-inline:.1em}
+.quadro{border:1px solid var(--fio-claro);background:transparent;border-radius:16px;padding:40px 28px;font-family:var(--letra-chamada);font-weight:400;font-size:clamp(20px,2.15vw,28px);line-height:1.3;max-width:700px;margin-inline:auto}
 
 /* ---------- 03 · como fica na tela ---------- */
 .telas{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
@@ -146,17 +146,17 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .pontos{display:flex;gap:14px;margin-left:12px}
 .pontos i{width:8px;height:8px;border-radius:50%;background:rgba(234,243,246,.25)}
 .pontos i.ativo{background:var(--acento)}
-.frase-grande{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.15;max-width:22ch}
+.frase-grande{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(25px,3.6vw,50px);line-height:1.06;max-width:24ch}
 
 /* ---------- 04 · o que você leva ---------- */
 .cartoes-leva{display:grid;gap:20px}
 @media (min-width:900px){.cartoes-leva{grid-template-columns:repeat(2,1fr)}.cartoes-leva > :first-child{grid-column:1 / -1}}
-.leva{border:1px solid var(--fio-escuro);border-radius:28px;overflow:hidden;background:transparent;display:flex;flex-direction:column}
+.leva{border:1px solid var(--fio-escuro);border-radius:16px;overflow:hidden;background:transparent;display:flex;flex-direction:column}
 .leva-tela{background:var(--escuro-2);padding:22px 22px 0;border-bottom:1px solid var(--fio-escuro)}
 .leva-tela .mini{--texto-2:#4A5A6B;--linha:#DCE3E8;background:#fff;color:var(--marinho);border-radius:14px 14px 0 0;padding:16px;min-height:150px;font-size:13px;display:flex;flex-direction:column;gap:8px}
 .leva-corpo{padding:28px;display:flex;flex-direction:column;gap:10px}
 .leva-corpo .rot{color:var(--acento);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:13px}
-.leva-corpo h3{font-size:clamp(1.9rem,1.5rem + 1.2vw,2.4rem);line-height:1.05}
+.leva-corpo h3{font-size:clamp(22px,2.2vw,30px);line-height:1.07}
 .leva-corpo p{color:var(--suave-escuro);font-size:17px}
 .mini .prog{height:4px;border-radius:99px;background:#E2E8EF;overflow:hidden}
 .mini .prog i{display:block;height:100%;width:28%;background:var(--marinho)}
@@ -184,26 +184,26 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .metodo-topo{max-width:760px;margin-inline:auto;display:flex;flex-direction:column;gap:28px;text-align:center}
 .metodo-topo p{margin-inline:auto;color:var(--suave-claro);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);max-width:38ch}
 .metodo-topo p b{color:var(--acento-claro);font-weight:600}
-.planta-desenho{margin:56px auto 0;max-width:760px;border-radius:28px;overflow-x:auto;border:1px solid var(--fio-claro);background:#fff}
+.planta-desenho{margin:56px auto 0;max-width:760px;border-radius:16px;overflow-x:auto;border:1px solid var(--fio-claro);background:#fff}
 .planta-desenho svg{display:block;width:100%;min-width:600px;height:auto}
 .passos-metodo2{list-style:none;margin:80px auto 0;padding:0;max-width:760px;display:flex;flex-direction:column;gap:72px}
 .passos-metodo2 li{display:flex;flex-direction:column;gap:14px}
 .passos-metodo2 .n{display:flex;align-items:center;gap:20px;color:var(--acento-claro);font-weight:600;letter-spacing:.2em;font-size:14px}
 .passos-metodo2 .n::after{content:"";flex:1;height:1px;background:var(--fio-claro)}
-.passos-metodo2 h3{font-size:clamp(2.6rem,2rem + 2vw,3.4rem)}
+.passos-metodo2 h3{font-size:clamp(30px,3.1vw,42px);line-height:1;letter-spacing:-0.015em}
 .passos-metodo2 p{color:var(--suave-claro);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);max-width:36ch}
-.desenho{margin-top:10px;border-radius:28px;border:1px solid var(--fio-claro);overflow:hidden;background:#fff}
+.desenho{margin-top:10px;border-radius:16px;border:1px solid var(--fio-claro);overflow:hidden;background:#fff}
 .desenho svg{display:block;width:100%;height:auto}
 
 /* ---------- 07 · os dois encontros ---------- */
 .encontros-topo{text-align:center;max-width:720px;margin:0 auto 56px;display:flex;flex-direction:column;gap:20px}
 .encontros-topo p{margin-inline:auto;color:var(--suave-escuro);font-size:clamp(1.1rem,1rem + .5vw,1.35rem)}
-.antes{border:1px solid var(--fio-escuro);border-radius:28px;padding:40px 28px;text-align:center;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.antes{border:1px solid var(--fio-escuro);border-radius:16px;padding:40px 28px;text-align:center;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
 .antes .rot,.dia-bloco .rot{color:var(--acento);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:13px}
 .antes b{font-size:20px;font-weight:600}
 .antes p{margin-inline:auto;color:var(--suave-escuro);font-size:17px;max-width:40ch}
 .dia-bloco{max-width:760px;margin:88px auto 0;display:flex;flex-direction:column;gap:12px}
-.dia-num{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(7rem,5rem + 8vw,11rem);line-height:.8;color:var(--tinta-clara)}
+.dia-num{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(72px,8.6vw,132px);line-height:.82;letter-spacing:-0.04em;color:var(--tinta-clara)}
 .dia-bloco .quando2{font-weight:600;font-size:clamp(1.15rem,1rem + .5vw,1.4rem);margin-top:16px}
 .dia-bloco .pronto{margin-top:28px;color:var(--suave-escuro);font-weight:500;letter-spacing:.28em;text-transform:uppercase;font-size:13px}
 .lista-pronto{list-style:none;margin:0;padding:0}
@@ -215,7 +215,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 /* ---------- 08 · o que precisa ter ---------- */
 .requisitos{display:grid;gap:20px;max-width:900px;margin:0 auto}
 @media (min-width:760px){.requisitos{grid-template-columns:1fr 1fr}}
-.requisito{background:transparent;border:1px solid var(--fio-escuro);border-radius:28px;padding:40px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.requisito{background:transparent;border:1px solid var(--fio-escuro);border-radius:16px;padding:40px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
 .requisito .icone{width:80px;height:80px;border-radius:22px;border:1px solid rgba(98,215,236,.4);display:grid;place-items:center;color:var(--acento)}
 .requisito .icone svg{width:36px;height:36px}
 .requisito .rot{color:var(--acento);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:13px}
@@ -224,18 +224,18 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 
 /* ---------- 09 · quem conduz ---------- */
 .conduz{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
-.conduz .foto-grande{aspect-ratio:4/5;border-radius:28px;background:#E3E9EE;display:grid;place-items:center;text-align:center;color:var(--suave-claro);font-size:15px;padding:24px;border:1px solid var(--fio-claro)}
+.conduz .foto-grande{aspect-ratio:4/5;border-radius:16px;background:#E3E9EE;display:grid;place-items:center;text-align:center;color:var(--suave-claro);font-size:15px;padding:24px;border:1px solid var(--fio-claro)}
 @media (min-width:900px){.conduz .foto-grande{aspect-ratio:16/11}}
-.conduz .nome-grande{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(3rem,2rem + 4vw,4.6rem);line-height:1}
+.conduz .nome-grande{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(30px,3.4vw,50px);line-height:1}
 .conduz .bio{color:var(--suave-claro);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.65}
 .citacao{border-left:2px solid var(--acento-claro);font-size:clamp(1.6rem,1.3rem + 1.2vw,2.2rem)}
 
 /* ---------- 10 · duas formas ---------- */
 .formas{display:grid;gap:20px}
 @media (min-width:900px){.formas{grid-template-columns:1fr 1fr}}
-.forma{border:1px solid var(--fio-escuro);border-radius:28px;padding:40px 28px;display:flex;flex-direction:column;gap:14px}
+.forma{border:1px solid var(--fio-escuro);border-radius:16px;padding:40px 28px;display:flex;flex-direction:column;gap:14px}
 .forma.destaque{border-color:rgba(98,215,236,.55)}
-.forma h3{font-size:clamp(2.4rem,2rem + 1.5vw,3rem)}
+.forma h3{font-size:clamp(30px,3.1vw,42px)}
 .forma p{color:var(--suave-escuro);font-size:17px}
 .forma .preco{font-size:2.6rem;margin-top:auto}
 .forma .nota-cta{letter-spacing:.28em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--acento)}
@@ -244,14 +244,14 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .ancora{max-width:760px;margin:0 auto}
 .ancora .rot{display:flex;align-items:center;gap:20px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;font-size:13px;color:var(--suave-claro);margin-bottom:24px}
 .ancora .rot::after{content:"";flex:1;height:1px;background:var(--fio-claro)}
-.ancora p{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(1.8rem,1.3rem + 2vw,2.6rem);line-height:1.2}
-.ingresso{max-width:760px;margin:56px auto 0;background:var(--escuro);color:var(--tinta-clara);border-radius:32px;padding:40px 28px;display:flex;flex-direction:column;gap:20px}
+.ancora p{font-family:var(--letra-chamada);font-weight:400;font-size:clamp(23px,2.55vw,36px);line-height:1.16}
+.ingresso{max-width:760px;margin:56px auto 0;background:var(--escuro);color:var(--tinta-clara);border-radius:20px;padding:40px 28px;display:flex;flex-direction:column;gap:20px}
 @media (min-width:700px){.ingresso{padding:56px}}
 .ingresso .selo-ing{align-self:flex-start;background:var(--claro);color:var(--escuro);border-radius:999px;padding:12px 24px;font-weight:600;letter-spacing:.28em;font-size:13px;text-transform:uppercase}
 .ingresso .quando3{color:var(--suave-escuro);font-size:18px}
 .valor{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
 .valor .rs{font-family:var(--letra-chamada);font-size:2.6rem;margin-top:.35em}
-.valor .num{font-family:var(--letra-chamada);font-size:clamp(7rem,5rem + 6vw,9rem);line-height:.8}
+.valor .num{font-family:var(--letra-chamada);font-size:clamp(80px,11vw,168px);line-height:.8;letter-spacing:-0.04em}
 .valor .forma-pag{color:var(--suave-escuro);align-self:center;line-height:1.4}
 .inclui{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid var(--fio-escuro);display:flex;flex-direction:column;gap:10px}
 .inclui li{display:flex;gap:12px;color:var(--suave-escuro);font-size:17px}
@@ -274,7 +274,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 /* ---------- 14 · perguntas ---------- */
 .perguntas-n details{border-top:1px solid var(--fio-escuro);padding-block:28px}
 .perguntas-n details:last-child{border-bottom:1px solid var(--fio-escuro)}
-.perguntas-n summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:44px 1fr 28px;gap:12px;align-items:baseline;font-family:var(--letra-chamada);font-weight:400;font-size:clamp(1.6rem,1.3rem + 1vw,2.1rem);line-height:1.15}
+.perguntas-n summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:44px 1fr 28px;gap:12px;align-items:baseline;font-family:var(--letra-chamada);font-weight:400;font-size:clamp(20px,2.1vw,29px);line-height:1.12}
 .perguntas-n summary::-webkit-details-marker{display:none}
 .perguntas-n summary .n{font-family:var(--letra-texto);font-weight:600;font-size:14px;color:var(--acento)}
 .perguntas-n summary::after{content:"+";color:var(--acento);font-family:var(--letra-texto);font-weight:300;font-size:2rem;line-height:1;text-align:right}
@@ -301,20 +301,12 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 /* ================= movimento (27/09: "mais dinâmica, com animações") =================
    Tudo aqui só liga quando o JavaScript roda e a pessoa não pediu menos
    movimento no aparelho. Sem isso, a página aparece inteira, parada. */
-.progresso-leitura{position:fixed;top:0;left:0;right:0;height:3px;background:var(--acento);transform-origin:0 50%;transform:scaleX(0);z-index:20;pointer-events:none}
-.anima [data-anima]{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.anima [data-anima].escondido{opacity:0;transform:translateY(32px)}
-/* topo: entra em sequência, e o marca-texto é "pintado" da esquerda para a direita */
-@keyframes sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.anima .topo > *{animation:sobe .9s cubic-bezier(.2,.7,.2,1) both}
-.anima .topo > :nth-child(1){animation-delay:.05s}.anima .topo > :nth-child(2){animation-delay:.15s}
-.anima .topo > :nth-child(3){animation-delay:.25s}.anima .topo > :nth-child(4){animation-delay:.35s}
-.anima .topo > :nth-child(5){animation-delay:.5s}.anima .topo > :nth-child(6){animation-delay:.6s}
-.anima .topo > :nth-child(7){animation-delay:.7s}.anima .topo > :nth-child(8){animation-delay:.8s}
-@keyframes pinta{from{background-size:0% 100%;color:var(--tinta-clara)}to{background-size:100% 100%;color:var(--escuro)}}
-.anima .topo .marca-texto{background:linear-gradient(var(--acento),var(--acento)) no-repeat 0 0 / 0% 100%;color:var(--tinta-clara);animation:pinta .8s cubic-bezier(.6,0,.2,1) forwards}
-.anima .topo .marca-texto:nth-of-type(1){animation-delay:.9s}
-.anima .topo .marca-texto:nth-of-type(2){animation-delay:1.4s}
+.progresso-leitura{position:fixed;top:0;left:0;right:0;height:2px;background:var(--acento);transform-origin:0 50%;transform:scaleX(0);z-index:20;pointer-events:none;opacity:0;transition:transform .12s linear,opacity .4s ease}
+.progresso-leitura.on{opacity:1}
+.anima [data-anima]{transition:opacity 640ms cubic-bezier(.19,1,.22,1),transform 640ms cubic-bezier(.19,1,.22,1)}
+.anima [data-anima].escondido{opacity:0;transform:translate3d(0,20px,0)}
+.anima .marcador.escondido::after{transform:scaleX(0)}
+/* o topo fica inteiro e parado no primeiro quadro, como na referência */
 /* a semana: os blocos caem um a um */
 .anima .semana .tarefa{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 60ms)}
 .anima .semana.escondido .tarefa{opacity:0;transform:translateY(-10px) scale(.96)}
@@ -333,7 +325,8 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 @media (prefers-reduced-motion: reduce){.progresso-leitura{display:none}}
 
 /* ---------- barra fixa ---------- */
-.barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));transition:transform .5s cubic-bezier(.19,1,.22,1),opacity .4s ease}
+.barra-fixa.some{transform:translateY(120%);opacity:0;pointer-events:none}
 .barra-fixa div{max-width:620px;margin:0 auto;background:rgba(8,23,41,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--tinta-clara);border:1px solid var(--fio-escuro);border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 24px;box-shadow:0 12px 32px rgba(0,0,0,.35)}
 .barra-fixa span{font-size:14px;line-height:1.3;color:var(--suave-escuro)}
 .barra-fixa span b{color:var(--tinta-clara);font-weight:600}
@@ -351,7 +344,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       <span class="data">29 e 30 de janeiro · ao vivo</span>
       <h1 id="titulo">Você não precisa <span class="marca-texto">programar</span> para construir a sua <span class="marca-texto">ferramenta</span></h1>
       <p class="apoio">Em dois encontros, você constrói com o Claude Code a ferramenta que imaginou e coloca no ar. Eu fico do seu lado, na mesma tela.</p>
-      <a class="botao botao--principal cta-largo" href="#lista">Quero a minha vaga · R$ 97</a>
+      <a class="botao botao--principal cta-largo" href="#ingresso">Quero a minha vaga · R$ 97</a>
       <span class="nota-cta">Turma Fundadora: de 8 a 15/12, só quem está na lista pode comprar.</span>
       <div class="foto-topo" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena sorrindo, olhando para a câmera</div>
     </div>
@@ -665,7 +658,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
         <li>Não precisa já ter uma ferramenta</li>
       </ul>
       <p class="nota-centro">O vídeo de preparação vem com o ingresso. Você chega na sexta com tudo instalado.</p>
-      <div class="cta-meio"><a class="botao botao--principal" href="#lista">Quero a minha vaga</a></div>
+      <div class="cta-meio"><a class="botao botao--principal" href="#ingresso">Quero a minha vaga</a></div>
     </div>
   </section>
 
@@ -789,7 +782,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       <h2>Na sexta 29 e no sábado 30, a sua semana vai acontecer <span class="it">de qualquer jeito</span></h2>
       <p>A diferença é se, no sábado ao meio-dia, você vai ter respondido mais umas mensagens no WhatsApp, ou vai ter <b>uma ferramenta sua no ar</b>, fazendo esse trabalho por você.</p>
       <span class="fio-vertical" aria-hidden="true"></span>
-      <div class="cta-meio" style="margin-top:0"><a class="botao botao--principal" href="#lista">Quero a minha vaga</a><span>Ingresso R$ 97 · 29 e 30 de janeiro · ao vivo, com gravação</span></div>
+      <div class="cta-meio" style="margin-top:0"><a class="botao botao--principal" href="#ingresso">Quero a minha vaga</a><span>Ingresso R$ 97 · 29 e 30 de janeiro · ao vivo, com gravação</span></div>
     </div>
   </section>
 </main>
@@ -810,8 +803,8 @@ h3{font-family:var(--letra-chamada);font-weight:400}
   </div>
 </footer>
 
-<nav class="barra-fixa" aria-label="Entrar na lista">
-  <div><span><b>Turma Fundadora</b><br>lista aberta</span><a class="botao" href="#lista">Entrar na lista</a></div>
+<nav class="barra-fixa some" aria-label="Garantir a vaga">
+  <div><span><b>Turma Fundadora</b><br>29 e 30 de janeiro</span><a class="botao" href="#ingresso">Quero a minha vaga</a></div>
 </nav>
 
 <script>
@@ -848,6 +841,13 @@ h3{font-family:var(--letra-chamada);font-weight:400}
     var rolavel = document.scrollingElement || raiz;
     var total = rolavel.scrollHeight - window.innerHeight;
     barra.style.transform = "scaleX(" + (total > 0 ? Math.min(1, rolavel.scrollTop / total) : 0) + ")";
+    barra.classList.toggle("on", rolavel.scrollTop > 120);
+    // a barra de baixo aparece depois do topo e some quando o preço ou o fechamento estão na tela
+    var fixa = document.querySelector(".barra-fixa");
+    if (fixa) {
+      var naTela = function (sel) { var e = document.querySelector(sel); if (!e) return false; var r = e.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; };
+      fixa.classList.toggle("some", rolavel.scrollTop < window.innerHeight * 0.88 || naTela("#ingresso") || naTela(".fechamento"));
+    }
   }
   window.addEventListener("scroll", progresso, { passive: true });
   progresso();
@@ -865,7 +865,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
   alvos.forEach(function (el) {
     el.setAttribute("data-anima", "");
     var irmaos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-    el.style.transitionDelay = (Math.min(irmaos, 5) * 90) + "ms";
+    el.style.transitionDelay = (Math.min(irmaos, 4) * 70) + "ms";
     if (el.getBoundingClientRect().top > altura * 0.92) el.classList.add("escondido");
   });
   document.querySelectorAll(".semana .tarefa").forEach(function (t, i) { t.style.setProperty("--i", i); });

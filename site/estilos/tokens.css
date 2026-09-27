@@ -51,7 +51,7 @@
      Figtree, que ela achou ruins. */
   --letra-chamada: "Instrument Serif", Georgia, "Times New Roman", serif;
   --letra-destaque: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --letra-texto: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --letra-texto: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;  /* a da referência (gratuita) */
   --letra-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;   /* 400 · rótulos e comandos */
 
   /* Escala: cada passo cresce ~1,25. Os títulos grandes encolhem no celular. */

@@ -261,6 +261,21 @@ itálico na palavra em destaque; Figtree nos textos e botões. Substituem
 Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2, **também nas
 peças do Instagram**, para site e Instagram ficarem iguais.
 
+**Referência lida de verdade (27/09, com a rede liberada).** O que o
+código de inceptionxp.com/imersao-fl mostra:
+- Letras: **Times New Roman MT Condensed** nos títulos (fonte PAGA, da
+  Monotype; não dá para usar sem comprar licença) e **Hanken Grotesk** nos
+  textos (gratuita, já adotada). Nos títulos seguimos com Instrument Serif,
+  a gratuita mais parecida; se ela quiser a idêntica, é comprar a licença
+  web da Times New Roman MT Condensed.
+- Medidas: títulos 30 a 62px, texto de apoio 17 a 24px, rótulos 11px com
+  espaço de 0,3em, botões 13px, cantos de 16px. Adotadas.
+- Movimento: o topo fica parado; o resto surge ao rolar (20px, 640ms, um
+  depois do outro a cada 70ms); o fio dos rótulos cresce; barra de
+  leitura de 2px que acende depois do topo; barra de baixo que some no
+  preço e no fechamento; todo botão desce até o preço. Adotado.
+- Eles também usam a Assiny no checkout.
+
 **Checkout: Assiny (27/09).** Decisão dela: o pagamento da Ferramentaria
 passa pela Assiny, e não pelo Mercado Pago. Falta: ela criar o produto lá
 e mandar o link do checkout; e combinar como a Assiny avisa o site quando
