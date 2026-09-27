@@ -256,7 +256,13 @@ em diante; as faixas marinho ficam para as peças do Instagram.
 opções (`marca/opcoes-de-letra.html`). Fraunces 600 nos títulos e 500
 itálico na palavra em destaque; Figtree nos textos e botões. Substituem
 Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2, **também nas
-peças do Instagram**, para site e Instagram ficarem iguais. Marca pessoal dura mais que um produto: a mentoria e os
+peças do Instagram**, para site e Instagram ficarem iguais.
+
+**Não falar do app do Ei no site (27/09).** Pedido dela: "não gostaria de
+falar sobre o app". O texto novo da página inicial está em `site/COPY.md`;
+a prova passa a ser o que o aluno constrói e o jeito dela de ensinar. As
+peças do Instagram que usam "Construí um app…" também precisam de texto
+novo. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

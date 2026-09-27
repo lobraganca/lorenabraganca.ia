@@ -41,6 +41,7 @@ O código de cada uma é copiado para este repositório a cada mudança.
 - O site é claro e leve: ela recusou a versão com faixas marinho ("muito carregado").
 - Não usar "Claude" no nome de produto nem em @: é marca de outra empresa.
 - Não afirmar nada sobre ela que ela não confirmou. Ela vê tudo no celular.
+- **Não citar o app do Ei Emprego** nos textos públicos (pedido dela em 27/09).
 
 ## Como a dona trabalha
 
