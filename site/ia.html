@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IA do Zero · Lorena Bragança</title>
+<meta name="description" content="Você não precisa entender de tecnologia para usar inteligência artificial. IA do Zero: imersão ao vivo com Lorena Bragança, do zero e em português claro.">
+<meta property="og:title" content="IA do Zero · você não precisa entender de tecnologia para usar inteligência artificial">
+<meta property="og:description" content="Imersão ao vivo com Lorena Bragança: o que é a IA, como pedir o que você precisa e onde ela erra.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#130E29">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="/estilos/tokens.css">
+<link rel="stylesheet" href="/estilos/componentes.css">
+<link rel="stylesheet" href="/estilos/imersao.css">
+<style>
+/*
+  A página da imersão de introdução à IA (27/09). Pedido dela: "a mesma
+  fonte, mas de cor diferente" da Ferramentaria. Então o desenho e as
+  letras vêm de /estilos/imersao.css, e aqui mora só a paleta e o que é
+  desta página.
+
+  Três paletas em teste, para ela escolher (violeta é a que abre). Os
+  contrastes foram calculados, não olhados:
+    acento sobre o escuro ....... violeta 10,5 · lima 14,2 · coral 10,7
+    escuro sobre o acento (botão)  os mesmos números
+    acento-claro sobre o claro .. violeta 6,0 · lima 5,8 · coral 5,3
+  Depois da escolha, as duas que sobrarem saem daqui.
+
+  --marinho é redefinido de propósito: é a cor do texto nas faixas claras,
+  e o componentes.css a usa com esse nome. Sem isso o texto sairia azul
+  numa página violeta.
+*/
+:root{
+  --escuro:#130E29;
+  --escuro-2:#1B1536;
+  --claro:#F5F3F9;
+  --tinta-clara:#F1EEF9;
+  --suave-escuro:rgba(241,238,249,.66);
+  --fio-escuro:rgba(241,238,249,.14);
+  --acento:#CBB8FF;
+  --acento-claro:#6A3FCB;
+  --suave-claro:#554D69;
+  --fio-claro:rgba(26,18,56,.14);
+  --brilho-rgb:160,130,255;
+  --acento-rgb:203,184,255;
+  --rodape:#0F0B22;
+  --rodape-rgb:15,11,34;
+  --marinho:#1A1238;
+  --foco:#6A3FCB;
+}
+[data-cor="lima"]{
+  --escuro:#0B1A12; --escuro-2:#11241A; --claro:#F4F5EF; --tinta-clara:#EEF4EA;
+  --suave-escuro:rgba(238,244,234,.66); --fio-escuro:rgba(238,244,234,.14);
+  --acento:#D9EF8D; --acento-claro:#3E6A14; --suave-claro:#4C5646; --fio-claro:rgba(16,35,26,.14);
+  --brilho-rgb:190,230,110; --acento-rgb:217,239,141; --rodape:#08140E; --rodape-rgb:8,20,14;
+  --marinho:#10231A; --foco:#3E6A14;
+}
+[data-cor="coral"]{
+  --escuro:#1F100C; --escuro-2:#2A1712; --claro:#F8F3F0; --tinta-clara:#F8EEEA;
+  --suave-escuro:rgba(248,238,234,.66); --fio-escuro:rgba(248,238,234,.14);
+  --acento:#FFB39B; --acento-claro:#B03F26; --suave-claro:#65504A; --fio-claro:rgba(42,21,16,.14);
+  --brilho-rgb:255,150,120; --acento-rgb:255,179,155; --rodape:#180C09; --rodape-rgb:24,12,9;
+  --marinho:#2A1510; --foco:#B03F26;
+}
+
+/* ---------- 01 · o dicionário: as palavras que ninguém explica ---------- */
+.dicionario{margin-top:64px;background:#fff;border:1px solid var(--fio-claro);border-radius:16px;overflow:hidden}
+.verbete{display:grid;gap:6px;padding:22px 24px;border-top:1px solid var(--fio-claro)}
+.verbete:first-of-type{border-top:0}
+.verbete dt{font-family:var(--letra-chamada);font-size:clamp(24px,2.4vw,32px);line-height:1.05}
+.verbete dd{margin:0;color:var(--suave-claro);font-size:17px;line-height:1.55}
+@media (min-width:760px){.verbete{grid-template-columns:240px 1fr;gap:32px;align-items:baseline}}
+
+/* ---------- 02 · os seis conceitos ---------- */
+.conceitos{list-style:none;margin:0;padding:0;max-width:860px;margin-inline:auto}
+.conceitos li{display:grid;grid-template-columns:56px 1fr;gap:8px 20px;padding-block:30px;border-top:1px solid var(--fio-escuro)}
+.conceitos li:last-child{border-bottom:1px solid var(--fio-escuro)}
+.conceitos .n{font-family:var(--letra-chamada);font-size:clamp(34px,3.6vw,48px);line-height:.9;color:var(--acento)}
+.conceitos h3{font-size:clamp(24px,2.4vw,34px);line-height:1.1;margin:0 0 8px}
+.conceitos p{margin:0;color:var(--suave-escuro);font-size:clamp(1.05rem,1rem + .3vw,1.2rem);line-height:1.6}
+
+/* ---------- 03 · dois pedidos ---------- */
+.conversas{display:grid;gap:24px;margin-top:56px}
+@media (min-width:860px){.conversas{grid-template-columns:1fr 1fr}}
+.conversa{background:var(--escuro-2);border:1px solid var(--fio-escuro);border-radius:16px;padding:24px 20px;display:flex;flex-direction:column;gap:14px}
+.conversa .rot{color:var(--acento);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:13px}
+.bolha{max-width:90%;padding:12px 16px;border-radius:18px;font-size:16px;line-height:1.5}
+.bolha.voce{align-self:flex-end;background:var(--acento);color:var(--escuro);border-bottom-right-radius:4px}
+.bolha.ia{align-self:flex-start;background:rgba(var(--acento-rgb),.1);color:var(--tinta-clara);border-bottom-left-radius:4px}
+.conversa.vaga .bolha.ia{color:var(--suave-escuro)}
+.conversa .veredito{margin-top:auto;padding-top:14px;border-top:1px solid var(--fio-escuro);color:var(--suave-escuro);font-size:15px}
+.conversa .veredito b{color:var(--tinta-clara);font-weight:600}
+
+/* ---------- 07 · o caminho: três degraus ---------- */
+.degraus{list-style:none;margin:56px 0 0;padding:0;display:grid;gap:16px}
+.degrau{border:1px solid var(--fio-escuro);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:10px}
+.degrau .n{font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--suave-escuro)}
+.degrau h3{font-size:clamp(30px,3vw,42px);line-height:1}
+.degrau p{margin:0;color:var(--suave-escuro);font-size:17px;line-height:1.55}
+.degrau a{color:var(--acento);font-weight:600;margin-top:4px}
+.degrau.aqui{border-color:rgba(var(--acento-rgb),.6);background:rgba(var(--acento-rgb),.06)}
+.degrau .aqui-selo{align-self:flex-start;background:var(--acento);color:var(--escuro);border-radius:999px;padding:6px 14px;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+/* No computador os degraus sobem mesmo, da esquerda para a direita. */
+@media (min-width:860px){
+  .degraus{grid-template-columns:repeat(3,1fr);align-items:end;gap:20px}
+  .degrau:nth-child(1){min-height:250px}
+  .degrau:nth-child(2){min-height:310px}
+  .degrau:nth-child(3){min-height:370px}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <!-- ========== TOPO ========== -->
+  <section class="faixa--escura">
+    <div class="conteudo topo centro">
+      <span class="entre-fios">Imersão</span>
+      <p class="nome-produto"><span class="palavra">IA do Zero</span><span>com Lorena Bragança</span></p>
+      <span class="data">Data em breve · ao vivo e online</span>
+      <h1 id="titulo">Você não precisa <span class="marca-texto">entender de tecnologia</span> para usar <span class="marca-texto">inteligência artificial</span></h1>
+      <p class="apoio">Ao vivo, do zero e em português claro: o que é a IA, como pedir o que você precisa e onde ela erra. Para você sair usando no seu dia a dia.</p>
+      <a class="botao botao--principal cta-largo" href="#lista">Quero entrar na lista</a>
+      <span class="nota-cta">Data e valor saem primeiro para quem está na lista.</span>
+      <div class="foto-topo" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena sorrindo, olhando para a câmera</div>
+    </div>
+  </section>
+
+  <!-- ========== 01 · ONDE A GENTE TRAVA ========== -->
+  <section class="faixa faixa--clara">
+    <div class="conteudo">
+      <div class="marcador"><b>01</b>Onde a gente trava</div>
+      <div class="dor">
+        <h2 class="centro" style="max-width:20ch">Todo mundo fala de IA, e você ainda não sabe <span class="it">por onde começar</span></h2>
+        <p>Você abriu o ChatGPT, fez uma pergunta e recebeu <b>uma resposta genérica</b>, que não servia para nada.</p>
+        <p>Os vídeos falam em prompt, agente, modelo, token… <b>palavras que ninguém explica</b>.</p>
+        <p>E fica a sensação de que <b>todo mundo já sabe</b>, menos você.</p>
+      </div>
+      <div class="dicionario">
+        <div class="semana-cab"><b>Palavras que você escuta</b><span>traduzidas para o português</span></div>
+        <dl style="margin:0">
+          <div class="verbete"><dt>IA generativa</dt><dd>A IA que escreve, desenha e responde, em vez de só fazer contas.</dd></div>
+          <div class="verbete"><dt>Prompt</dt><dd>O pedido que você escreve para a IA. Quanto mais claro o pedido, melhor a resposta.</dd></div>
+          <div class="verbete"><dt>Modelo</dt><dd>O "cérebro" por trás do aplicativo. ChatGPT, Claude e Gemini usam modelos diferentes.</dd></div>
+          <div class="verbete"><dt>Alucinação</dt><dd>Quando a IA inventa uma resposta com toda a confiança. Acontece, e dá para perceber.</dd></div>
+          <div class="verbete"><dt>Agente</dt><dd>Uma IA que não só responde: ela executa tarefas, uma etapa depois da outra.</dd></div>
+        </dl>
+      </div>
+      <p class="legenda-semana">Na imersão, cada uma dessas palavras vira coisa que você usa.</p>
+    </div>
+  </section>
+
+  <!-- ========== 02 · O QUE VOCÊ VAI ENTENDER ========== -->
+  <section class="faixa faixa--escura">
+    <div class="conteudo">
+      <div class="marcador"><b>02</b>O que você vai entender</div>
+      <h2 class="centro" style="max-width:18ch;margin-bottom:var(--e-7)">Seis coisas que ninguém <span class="it">te explicou direito</span></h2>
+      <ol class="conceitos">
+        <li><span class="n">1</span><div><h3>O que é IA, e o que ela não é</h3><p>Ela não pensa nem sabe tudo: ela prevê a próxima palavra muito bem. Entender isso muda o jeito de usar.</p></div></li>
+        <li><span class="n">2</span><div><h3>Como pedir</h3><p>Um bom pedido tem contexto, tarefa e formato. Você aprende o molde e sai com ele pronto para usar.</p></div></li>
+        <li><span class="n">3</span><div><h3>Qual usar para quê</h3><p>ChatGPT, Claude, Gemini: o que cada um faz melhor, e qual abrir primeiro.</p></div></li>
+        <li><span class="n">4</span><div><h3>Onde ela erra</h3><p>Por que a IA inventa com confiança, e como conferir antes de usar a resposta.</p></div></li>
+        <li><span class="n">5</span><div><h3>O que nunca colar nela</h3><p>Senhas, dados de clientes, documentos pessoais: o cuidado que protege você e quem confia em você.</p></div></li>
+        <li><span class="n">6</span><div><h3>IA no seu dia</h3><p>Mensagens, resumos, planilhas, ideias de post: tarefas de verdade, feitas ao vivo.</p></div></li>
+      </ol>
+      <div class="cta-meio"><a class="botao botao--principal" href="#lista">Quero entrar na lista</a></div>
+    </div>
+  </section>
+
+  <!-- ========== 03 · DOIS PEDIDOS ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo">
+      <div class="marcador"><b>03</b>A diferença de um pedido</div>
+      <h2 class="centro" style="max-width:18ch">O mesmo assunto, <span class="it">dois pedidos</span></h2>
+      <div class="conversas">
+        <figure class="conversa vaga" style="margin:0">
+          <span class="rot">Pedido vago</span>
+          <p class="bolha voce">Faz um texto pro Instagram</p>
+          <p class="bolha ia">Claro! Aqui está: "Novidades chegando! Fique ligado e não perca nada. #instagram #novidades"</p>
+          <figcaption class="veredito"><b>Genérico.</b> Serve para qualquer pessoa, então não serve para você.</figcaption>
+        </figure>
+        <figure class="conversa" style="margin:0">
+          <span class="rot">Pedido claro</span>
+          <p class="bolha voce">Sou manicure em Belo Horizonte. Escreva uma legenda curta avisando que tenho horários livres na sexta à tarde. Tom próximo, sem exagerar nos emojis.</p>
+          <p class="bolha ia">Sexta à tarde ainda tem horário livre por aqui 💅 Se as suas unhas estão pedindo um cuidado antes do fim de semana, me chama no direct que eu te encaixo.</p>
+          <figcaption class="veredito"><b>Específico.</b> Pronto para postar.</figcaption>
+        </figure>
+      </div>
+      <p class="legenda" style="margin-top:16px">Exemplo, com dados fictícios.</p>
+      <div class="pilha pilha--g" style="margin-top:var(--e-8)">
+        <p class="frase-grande">A IA não adivinha o que você quer. Quem aprende a pedir <span class="it">tira dela o que precisa.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 · O QUE FICA COM VOCÊ ========== -->
+  <section class="faixa faixa--escura">
+    <div class="conteudo" style="max-width:860px">
+      <div class="marcador"><b>04</b>O que fica com você</div>
+      <h2 class="centro" style="max-width:16ch;margin-bottom:var(--e-7)">O que você leva <span class="it">para casa</span></h2>
+      <ul class="lista-pronto">
+        <li><span><b>A gravação</b>, para rever no seu tempo.</span></li>
+        <li><span><b>Os moldes de pedido</b>, prontos para copiar e adaptar.</span></li>
+        <li><span><b>O dicionário da IA</b>, em português, para consultar quando aparecer uma palavra nova.</span></li>
+        <li><span><b>A lista do que nunca colar na IA</b>, para usar sem medo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== 05 · PARA QUEM É ========== -->
+  <section class="faixa faixa--escura" style="padding-top:var(--e-6)">
+    <div class="conteudo" style="max-width:860px">
+      <div class="marcador"><b>05</b>Para quem é</div>
+      <h2 class="centro" style="margin-bottom:var(--e-6)">É para você <span class="it">se</span></h2>
+      <ul class="pra-quem">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2.2h5c.1-1 .5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>Você nunca usou IA, ou usou pouco e não entendeu o resultado.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Você sente que está ficando para trás e quer entender de uma vez.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>Você quer usar IA no trabalho: mensagens, textos, organização.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><span>Você prefere que expliquem com calma, em português, sem palavra difícil.</span></li>
+      </ul>
+      <ul class="nao-e">
+        <li>Não é para quem já usa IA todo dia e quer construir ferramentas: para isso existe a Ferramentaria</li>
+        <li>Não é um curso de programação</li>
+        <li>Não é fórmula de dinheiro rápido com IA</li>
+      </ul>
+      <p class="fecho">Você sai entendendo o que é a IA, e usando no que já faz todo dia.</p>
+    </div>
+  </section>
+
+  <!-- ========== 06 · QUEM CONDUZ ========== -->
+  <section class="faixa faixa--clara">
+    <div class="conteudo">
+      <div class="marcador"><b>06</b>Quem conduz</div>
+      <div class="conduz">
+        <h2 class="centro">Quem <span class="it">conduz</span></h2>
+        <div class="foto-grande" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena, de corpo inteiro ou sentada, luz natural</div>
+        <span class="nome-grande">Lorena Bragança.</span>
+        <p class="bio">Construo ferramentas com IA para resolver problemas de verdade, e aprendi errando: cada erro virou uma aula. Meu jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.</p>
+        <blockquote class="citacao">"Não existe pergunta boba sobre IA. Existe pergunta que ninguém respondeu ainda."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 07 · O CAMINHO ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo">
+      <div class="marcador"><b>07</b>O caminho</div>
+      <h2 class="centro" style="max-width:16ch">Um degrau <span class="it">de cada vez</span></h2>
+      <ol class="degraus">
+        <li class="degrau aqui"><span class="aqui-selo">Você está aqui</span><span class="n">Degrau 1</span><h3>IA do Zero</h3><p>Entender a IA e usar no dia a dia.</p></li>
+        <li class="degrau"><span class="n">Degrau 2</span><h3>Ferramentaria</h3><p>Construir a sua própria ferramenta com IA, em dois encontros ao vivo.</p><a href="/">Conhecer a Ferramentaria →</a></li>
+        <li class="degrau"><span class="n">Degrau 3</span><h3>Mentoria</h3><p>Uma ferramenta feita junto comigo para o seu negócio, começando por um diagnóstico.</p></li>
+      </ol>
+      <p class="fecho">Ninguém precisa subir todos. Mas quem começa por aqui chega na Ferramentaria sabendo o que está fazendo.</p>
+    </div>
+  </section>
+
+  <!-- ========== 08 · LISTA ========== -->
+  <section class="faixa faixa--clara lista" id="lista">
+    <div class="conteudo centro">
+      <div class="marcador" style="text-align:left"><b>08</b>Lista de espera</div>
+      <h2 style="max-width:18ch;margin-inline:auto">Data e valor saem <span class="it">primeiro para a lista</span></h2>
+      <p class="texto-2" style="margin-top:var(--e-4)">Deixe seu nome e e-mail. Quando a turma abrir, você fica sabendo antes de todo mundo.</p>
+      <form id="form-lista" novalidate>
+        <label class="campo" for="nome">Seu nome<input id="nome" name="nome" type="text" autocomplete="given-name" required></label>
+        <label class="campo" for="email">Seu e-mail<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></label>
+        <label class="consentimento" for="aceite"><input id="aceite" name="aceite" type="checkbox" required> Aceito receber mensagens sobre a IA do Zero. Posso sair quando quiser.</label>
+        <button class="botao botao--principal" type="submit">Quero entrar na lista</button>
+        <p class="aviso-form" id="aviso-form" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== 09 · PERGUNTAS ========== -->
+  <section class="faixa faixa--escura">
+    <div class="conteudo" style="max-width:860px">
+      <div class="marcador"><b>09</b>Perguntas</div>
+      <h2 class="centro" style="margin-bottom:var(--e-7)">Sua dúvida <span class="it">respondida</span></h2>
+      <div class="perguntas-n">
+        <details open><summary><span class="n">01</span><span>Preciso saber alguma coisa de tecnologia?</span></summary><p>Não. Se você usa o WhatsApp, consegue acompanhar.</p></details>
+        <details><summary><span class="n">02</span><span>Preciso pagar alguma ferramenta de IA?</span></summary><p>Não para começar: dá para acompanhar com as versões gratuitas. Na imersão eu mostro quando vale a pena pagar e quando não vale.</p></details>
+        <details><summary><span class="n">03</span><span>Qual a diferença para a Ferramentaria?</span></summary><p>Aqui você aprende a usar a IA. Na Ferramentaria você constrói uma ferramenta sua com ela. Esta vem antes: é o primeiro degrau.</p></details>
+        <details><summary><span class="n">04</span><span>Fica gravado?</span></summary><p>Sim. A gravação fica com você, para rever no seu tempo.</p></details>
+        <details><summary><span class="n">05</span><span>E se eu não gostar?</span></summary><p>Como em toda compra pela internet, você pode desistir em até 7 dias depois de comprar e receber o dinheiro de volta, sem explicar nada.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FECHAMENTO ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo fechamento">
+      <span class="entre-fios">IA do Zero</span>
+      <h2>A IA já está no seu celular. <span class="it">Falta alguém te apresentar.</span></h2>
+      <p>Ao vivo, com calma e do zero, você sai sabendo <b>o que ela é, como pedir e onde tomar cuidado</b>.</p>
+      <span class="fio-vertical" aria-hidden="true"></span>
+      <div class="cta-meio" style="margin-top:0"><a class="botao botao--principal" href="#lista">Quero entrar na lista</a><span>Data e valor em breve · ao vivo e online</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape-grande">
+  <div class="conteudo">
+    <span class="entre-fios">Imersão</span>
+    <p class="nome-produto"><span class="palavra">IA do Zero</span><span>com Lorena Bragança</span></p>
+    <div class="linhas">
+      <b>IA do Zero: a inteligência artificial explicada do começo</b>
+      <span>Lorena Bragança · <a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a></span>
+      <span>Data em breve · online e ao vivo</span>
+    </div>
+    <div class="legal">
+      <span>Ao comprar o ingresso, você concorda com os termos de uso e a política de privacidade.</span>
+      <span>© 2026 Lorena Bragança</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="barra-fixa some" aria-label="Entrar na lista">
+  <div><span><b>IA do Zero</b><br>Data em breve</span><a class="botao" href="#lista">Entrar na lista</a></div>
+</nav>
+
+<script>
+// O nome ocupa a largura disponível, como na Ferramentaria, sem nunca
+// passar da tela: mede a palavra e ajusta o tamanho da letra.
+(function () {
+  function ajustar() {
+    document.querySelectorAll(".nome-produto").forEach(function (p) {
+      var palavra = p.querySelector(".palavra");
+      var pai = p.parentElement, estilo = getComputedStyle(pai);
+      var util = pai.clientWidth - parseFloat(estilo.paddingLeft) - parseFloat(estilo.paddingRight);
+      var largura = Math.min(util, p.closest("footer") ? 520 : 620);
+      palavra.style.fontSize = "100px";
+      var tamanho = 100 * largura / palavra.getBoundingClientRect().width;
+      palavra.style.fontSize = Math.min(tamanho, 128) + "px";
+    });
+  }
+  ajustar();
+  window.addEventListener("resize", ajustar);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
+})();
+
+// ================= movimento =================
+// O mesmo da Ferramentaria. Nada fica escondido se o JavaScript não rodar,
+// ou se o aparelho pedir menos movimento.
+(function () {
+  var raiz = document.documentElement;
+  var barra = document.createElement("div");
+  barra.className = "progresso-leitura";
+  barra.setAttribute("aria-hidden", "true");
+  document.body.appendChild(barra);
+  function progresso() {
+    var rolavel = document.scrollingElement || raiz;
+    var total = rolavel.scrollHeight - window.innerHeight;
+    barra.style.transform = "scaleX(" + (total > 0 ? Math.min(1, rolavel.scrollTop / total) : 0) + ")";
+    barra.classList.toggle("on", rolavel.scrollTop > 120);
+    // a barra de baixo aparece depois do topo e some quando a lista ou o fechamento estão na tela
+    var fixa = document.querySelector(".barra-fixa");
+    if (fixa) {
+      var naTela = function (sel) { var e = document.querySelector(sel); if (!e) return false; var r = e.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; };
+      fixa.classList.toggle("some", rolavel.scrollTop < window.innerHeight * 0.88 || naTela("#lista") || naTela(".fechamento"));
+    }
+  }
+  window.addEventListener("scroll", progresso, { passive: true });
+  progresso();
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  raiz.classList.add("anima");
+
+  var seletor = ".marcador, main h2:not(.topo h2), .dor p, .dicionario, .verbete, .conceitos li, .conversa, .frase-grande, " +
+    ".lista-pronto li, .pra-quem li, .nao-e li, .fecho, .conduz > *, .degrau, .lista form, .perguntas-n details, " +
+    ".fechamento > *, .cta-meio";
+  var alvos = Array.prototype.filter.call(document.querySelectorAll(seletor), function (el) { return !el.closest(".topo"); });
+  var altura = window.innerHeight;
+  alvos.forEach(function (el) {
+    el.setAttribute("data-anima", "");
+    var irmaos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.style.transitionDelay = (Math.min(irmaos, 4) * 70) + "ms";
+    if (el.getBoundingClientRect().top > altura * 0.92) el.classList.add("escondido");
+  });
+
+  var observador = new IntersectionObserver(function (itens) {
+    itens.forEach(function (item) {
+      if (!item.isIntersecting) return;
+      item.target.classList.remove("escondido");
+      observador.unobserve(item.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  alvos.forEach(function (el) { observador.observe(el); });
+})();
+
+// A lista ainda não tem para onde enviar: o banco do site será criado
+// junto com a página de captura. Até lá, o formulário diz isso em vez de
+// fingir que guardou o contato.
+document.getElementById("form-lista").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("aviso-form").textContent =
+    "A lista ainda não está aberta. Por enquanto, siga @lorenabraganca.ia para saber quando abrir.";
+});
+</script>
+</body>
+</html>

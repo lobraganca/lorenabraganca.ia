@@ -17,6 +17,7 @@ Nunca ligar este site ao Supabase do Ei.
 | `site/estilos/tokens.css` | **a fonte da verdade** de cores, letras e espaços |
 | `site/estilos/componentes.css` | as peças: botões, rótulos, cartões, onda, formulário |
 | `site/design-system.html` | a vitrine do design system |
+| `site/estilos/imersao.css` | o desenho das páginas de imersão, dividido entre a Ferramentaria e a de IA. **Cor não entra aqui**: cada página declara a própria paleta no `:root` |
 | `scripts/gerar-previa.py` | transforma uma página do site em prévia para publicar como Artifact |
 | `marca/` | briefing, identidade e peças do Claude Design (PDFs) |
 | `trilha/`, `cronometro/`, `area-de-membros/planta/` | código das páginas publicadas como Artifact |
@@ -26,7 +27,8 @@ Nunca ligar este site ao Supabase do Ei.
 - Trilha de aceleração (progresso no banco da página): https://claude.ai/artifact/1NhcuyV66r2fBr5yzeGDMq
 - Cronômetro da apresentação: https://claude.ai/artifact/8KmbDVpwgENm1vT7R5N36Z
 - Planta da Ferramenta: https://claude.ai/artifact/UN5HXRpwqWgQJmDXtConty
-- Prévia do site: https://claude.ai/artifact/41M1V1ofufT4nDvu5mWewJ
+- Prévia do site (Ferramentaria): https://claude.ai/artifact/41M1V1ofufT4nDvu5mWewJ
+- Prévia da página de introdução à IA (`site/ia.html`): https://claude.ai/artifact/6JPdFVH3txj78zuPPqE28P
 - Design system: https://claude.ai/artifact/1cNDAfL7WTPay2D1zKsHzC
 
 O código de cada uma é copiado para este repositório a cada mudança.
