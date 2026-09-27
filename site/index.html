@@ -300,6 +300,23 @@ body{padding-bottom:88px}
 .perguntas-n details p{margin:var(--e-4) 0 0 calc(40px + var(--e-3));color:var(--piscina-100);font-size:var(--t-grande)}
 @media (max-width:520px){.perguntas-n details p{margin-left:0}}
 
+/* ---------- fechamento ---------- */
+.fechamento{text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--e-5)}
+.fechamento h2{max-width:20ch;font-size:clamp(2rem,1.4rem + 2.6vw,3.2rem)}
+.fechamento p{max-width:40ch;color:var(--piscina-100);font-size:var(--t-grande)}
+.fechamento p b{color:var(--branco)}
+.fio-vertical{width:1px;height:72px;background:linear-gradient(var(--piscina-500),transparent)}
+
+/* ---------- rodapé grande ---------- */
+.rodape-grande{background:var(--marinho);color:var(--piscina-100);padding-block:var(--e-8) var(--e-6)}
+.rodape-grande .conteudo{display:flex;flex-direction:column;gap:var(--e-5)}
+.rodape-grande .entre-fios{justify-content:flex-start;max-width:320px}
+.rodape-grande .nome-produto{font-size:clamp(2rem,1.2rem + 4vw,3.4rem);text-align:left;color:var(--branco)}
+.rodape-grande .linhas{display:flex;flex-direction:column;gap:var(--e-1)}
+.rodape-grande .linhas b{color:var(--branco);font-weight:600}
+.rodape-grande .legal{border-top:1px solid var(--marinho-borda);padding-top:var(--e-5);font-size:var(--t-pequeno);display:flex;flex-wrap:wrap;gap:var(--e-3) var(--e-6);justify-content:space-between}
+.rodape-grande a{color:var(--piscina-100)}
+
 /* etapas em fundo claro */
 .faixa--clara .etapas .quando{color:var(--piscina-700)}
 .faixa--clara .etapas small{color:var(--piscina-800)}
@@ -755,12 +772,31 @@ body{padding-bottom:88px}
       </div>
     </div>
   </section>
+  <!-- ========== FECHAMENTO ========== -->
+  <section class="faixa faixa--funda">
+    <div class="conteudo fechamento">
+      <span class="entre-fios">29 e 30 de janeiro</span>
+      <h2>Na sexta 29 e no sábado 30, a sua semana vai acontecer <span class="it">de qualquer jeito</span></h2>
+      <p>A diferença é se, no sábado ao meio-dia, você vai ter respondido mais umas mensagens no WhatsApp, ou vai ter <b>uma ferramenta sua no ar</b>, fazendo esse trabalho por você.</p>
+      <span class="fio-vertical" aria-hidden="true"></span>
+      <div class="cta-meio" style="margin-top:0"><a class="botao botao--principal" href="#lista">Quero a minha vaga</a><span>Ingresso R$ 97 · 29 e 30 de janeiro · ao vivo, com gravação</span></div>
+    </div>
+  </section>
 </main>
 
-<footer class="rodape">
+<footer class="rodape-grande">
   <div class="conteudo">
-    <span>© 2026 Lorena Bragança</span>
-    <a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a>
+    <span class="entre-fios">Imersão</span>
+    <p class="nome-produto">Ferramentaria<span>com Lorena Bragança</span></p>
+    <div class="linhas">
+      <b>Ferramentaria: construa a sua ferramenta com IA</b>
+      <span>Lorena Bragança · <a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a></span>
+      <span>29 e 30 de janeiro de 2027 · online e ao vivo</span>
+    </div>
+    <div class="legal">
+      <span>Ao comprar o ingresso, você concorda com os termos de uso e a política de privacidade.</span>
+      <span>© 2026 Lorena Bragança</span>
+    </div>
   </div>
 </footer>
 
