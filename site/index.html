@@ -138,6 +138,50 @@ body{padding-bottom:88px}
 .lista form{display:flex;flex-direction:column;gap:var(--e-4);margin:var(--e-6) auto 0;max-width:480px;text-align:left}
 .aviso-form{font-size:var(--t-pequeno);color:var(--piscina-800);font-weight:700}
 
+/* ---------- 01 · onde a ideia trava ---------- */
+.dor{max-width:680px;margin-inline:auto;display:flex;flex-direction:column;gap:var(--e-5)}
+.dor p{font-size:var(--t-grande);color:var(--texto-2);line-height:1.6}
+.dor p b{color:var(--piscina-700)}
+.semana{margin-top:var(--e-7);background:var(--branco);border:1px solid var(--linha);border-radius:var(--canto-g);overflow:hidden}
+.semana-cab{display:flex;justify-content:space-between;gap:var(--e-3);flex-wrap:wrap;padding:var(--e-4) var(--e-5);border-bottom:1px solid var(--linha);font-size:var(--t-pequeno)}
+.semana-cab b{letter-spacing:.2em;text-transform:uppercase;font-size:var(--t-rotulo)}
+.semana-cab span{color:var(--texto-2)}
+.semana-rolagem{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grade-semana{display:grid;grid-template-columns:44px repeat(5,minmax(150px,1fr));grid-template-rows:36px repeat(20,34px);min-width:800px;position:relative;
+  background-image:linear-gradient(var(--linha) 1px,transparent 1px);background-size:100% 68px;background-position:0 36px}
+.grade-semana .dia{grid-row:1;text-align:center;font-weight:700;letter-spacing:.2em;font-size:var(--t-rotulo);color:var(--texto-2);align-self:center}
+.grade-semana .hora{grid-column:1;font-size:12px;color:var(--texto-2);font-style:italic;padding-left:6px}
+.tarefa{margin:2px 4px;background:#EEF2F6;border-left:3px solid var(--piscina-600);border-radius:8px;padding:4px 8px;font-size:12.5px;line-height:1.25;overflow:hidden;box-shadow:0 1px 2px rgba(11,31,58,.06)}
+.tarefa b{display:block;font-size:11px;letter-spacing:.06em;color:var(--piscina-800)}
+.tarefa.curta b{display:inline;margin-right:4px}
+.legenda-semana{color:var(--texto-2);font-size:var(--t-pequeno);margin-top:var(--e-3)}
+
+/* ---------- 03 · cinco coisas ---------- */
+.cartoes-leva{display:grid;gap:var(--e-4)}
+@media (min-width:900px){.cartoes-leva{grid-template-columns:repeat(2,1fr)}.cartoes-leva > :first-child{grid-column:1 / -1}}
+.leva{border:1px solid var(--marinho-borda);border-radius:var(--canto-g);overflow:hidden;background:#0E2544;display:flex;flex-direction:column}
+.leva-tela{background:#0A1628;padding:var(--e-5) var(--e-5) 0}
+.leva-tela .mini{background:#fff;color:var(--marinho);border-radius:12px 12px 0 0;padding:14px;min-height:150px;font-size:13px;display:flex;flex-direction:column;gap:8px;--texto-2:#3E5068;--linha:#D5DEE8}
+.leva-corpo{padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-2)}
+.leva-corpo .rot{color:var(--piscina-300);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:var(--t-rotulo)}
+.leva-corpo h3{font-size:clamp(1.4rem,1.2rem + .8vw,1.75rem)}
+.leva-corpo p{color:var(--piscina-100)}
+.mini .prog{height:6px;border-radius:99px;background:#E2E8EF;overflow:hidden}
+.mini .prog i{display:block;height:100%;width:28%;background:var(--piscina-500)}
+.mini .campo-mini{border:1.5px solid var(--piscina-300);border-radius:10px;padding:8px 10px;color:var(--texto-2)}
+.mini.terminal{background:#0B1F3A;color:#CAF3FA;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px}
+.mini.terminal .ok{color:#62D7EC}
+.mini .url{border:1px solid var(--linha);border-radius:99px;padding:6px 12px;color:var(--texto-2);font-size:12px}
+.mini .check{display:flex;gap:8px;align-items:baseline}
+.mini .check::before{content:"✓";color:var(--piscina-700);font-weight:700}
+.mini .arquivo{display:flex;justify-content:space-between;border-bottom:1px solid var(--linha);padding:6px 0}
+.mini .arquivo small{color:var(--texto-2)}
+
+/* etapas em fundo claro */
+.faixa--clara .etapas .quando{color:var(--piscina-700)}
+.faixa--clara .etapas small{color:var(--piscina-800)}
+.faixa--clara .etapas li{background:var(--branco)}
+
 /* ---------- barra fixa embaixo ---------- */
 .barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:var(--e-3) var(--e-4) calc(var(--e-3) + env(safe-area-inset-bottom,0px))}
 .barra-fixa div{max-width:620px;margin:0 auto;background:var(--marinho);color:var(--branco);border:1px solid var(--marinho-borda);border-radius:var(--canto-pilula);display:flex;align-items:center;justify-content:space-between;gap:var(--e-3);padding:8px 8px 8px 22px;box-shadow:0 10px 30px rgba(11,31,58,.35)}
@@ -163,10 +207,62 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 01 · O QUE DÁ PARA CONSTRUIR ========== -->
+  <!-- ========== 01 · ONDE A IDEIA TRAVA ========== -->
   <section class="faixa faixa--clara">
     <div class="conteudo">
-      <div class="marcador"><b>01</b>O que dá para construir</div>
+      <div class="marcador"><b>01</b>Onde a ideia trava</div>
+      <div class="dor">
+        <h2 class="centro" style="max-width:20ch">Você sabe o que a ferramenta deveria fazer, mas ela <span class="it">ainda não existe</span></h2>
+        <p>A ideia está pronta há tempo. Ela <b>mora em você</b> e em anotações soltas.</p>
+        <p>Enquanto isso, o dia vai embora <b>respondendo a mesma mensagem</b> no WhatsApp, montando orçamento na mão e atualizando planilha.</p>
+        <p>Contratar um programador custa caro e demora. Tentar com IA por conta própria termina <b>numa tela de erro que ninguém explica</b>.</p>
+      </div>
+      <div class="semana">
+        <div class="semana-cab"><b>A sua semana, hoje</b><span>tudo feito na mão · exemplo</span></div>
+        <div class="semana-rolagem" tabindex="0" aria-label="Exemplo de semana com tarefas feitas na mão">
+          <div class="grade-semana">
+            <span class="dia" style="grid-column:2">seg</span>
+            <span class="dia" style="grid-column:3">ter</span>
+            <span class="dia" style="grid-column:4">qua</span>
+            <span class="dia" style="grid-column:5">qui</span>
+            <span class="dia" style="grid-column:6">sex</span>
+            <span class="hora" style="grid-row:2">8h</span>
+            <span class="hora" style="grid-row:4">9h</span>
+            <span class="hora" style="grid-row:6">10h</span>
+            <span class="hora" style="grid-row:8">11h</span>
+            <span class="hora" style="grid-row:10">12h</span>
+            <span class="hora" style="grid-row:12">13h</span>
+            <span class="hora" style="grid-row:14">14h</span>
+            <span class="hora" style="grid-row:16">15h</span>
+            <span class="hora" style="grid-row:18">16h</span>
+            <span class="hora" style="grid-row:20">17h</span>
+            <div class="tarefa" style="grid-column:2;grid-row:2 / 4"><b>8h</b>Responder horários no WhatsApp</div>
+            <div class="tarefa" style="grid-column:2;grid-row:6 / 8"><b>10h</b>Montar orçamento na mão</div>
+            <div class="tarefa" style="grid-column:2;grid-row:14 / 16"><b>14h</b>Atualizar a planilha</div>
+            <div class="tarefa curta" style="grid-column:2;grid-row:20 / 21"><b>17h</b>Remarcar</div>
+            <div class="tarefa" style="grid-column:3;grid-row:3 / 5"><b>8h30</b>Responder horários</div>
+            <div class="tarefa curta" style="grid-column:3;grid-row:8 / 9"><b>11h</b>Copiar pedido</div>
+            <div class="tarefa" style="grid-column:3;grid-row:16 / 19"><b>15h</b>Orçamento na mão</div>
+            <div class="tarefa curta" style="grid-column:4;grid-row:4 / 5"><b>9h</b>Achar contato</div>
+            <div class="tarefa" style="grid-column:4;grid-row:6 / 8"><b>10h</b>Responder horários</div>
+            <div class="tarefa" style="grid-column:4;grid-row:18 / 20"><b>16h</b>Conferir quem pagou</div>
+            <div class="tarefa" style="grid-column:5;grid-row:2 / 4"><b>8h</b>Responder horários</div>
+            <div class="tarefa" style="grid-column:5;grid-row:12 / 14"><b>13h</b>Montar orçamento na mão</div>
+            <div class="tarefa curta" style="grid-column:5;grid-row:21 / 22"><b>17h30</b>Planilha</div>
+            <div class="tarefa curta" style="grid-column:6;grid-row:4 / 5"><b>9h</b>Remarcar</div>
+            <div class="tarefa" style="grid-column:6;grid-row:8 / 10"><b>11h</b>Responder horários</div>
+            <div class="tarefa" style="grid-column:6;grid-row:16 / 18"><b>15h</b>Conferir quem pagou</div>
+          </div>
+        </div>
+      </div>
+      <p class="legenda-semana">Arraste para ver a semana inteira. Cada bloco desses é trabalho que uma ferramenta pequena pode fazer por você.</p>
+    </div>
+  </section>
+
+  <!-- ========== 02 · O QUE DÁ PARA CONSTRUIR ========== -->
+  <section class="faixa">
+    <div class="conteudo">
+      <div class="marcador"><b>02</b>O que dá para construir</div>
       <div class="centro pilha pilha--g" style="align-items:center">
         <h2 style="max-width:18ch">Ferramentas pequenas que resolvem um problema <span class="it">de verdade</span></h2>
         <p class="grande-numero">Em <strong>8</strong> horas de encontro, a sua ideia sai da cabeça e vai para a internet, com um link que você manda para quem quiser.</p>
@@ -178,7 +274,7 @@ body{padding-bottom:88px}
   <!-- ========== 02 · COMO FICA NA TELA ========== -->
   <section class="faixa faixa--funda">
     <div class="conteudo">
-      <div class="marcador"><b>02</b>Como fica na tela</div>
+      <div class="marcador"><b>03</b>Como fica na tela</div>
       <div class="telas" id="telas" tabindex="0" aria-label="Telas de exemplo">
         <figure class="tela" style="margin:0">
           <div class="navegador"><div class="navegador-barra"><i></i><i></i><i></i></div>
@@ -228,10 +324,64 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 03 · COMO FUNCIONA ========== -->
-  <section class="faixa faixa--escura" id="como">
+  <!-- ========== 04 · CINCO COISAS ========== -->
+  <section class="faixa faixa--escura">
     <div class="conteudo">
-      <div class="marcador"><b>03</b>Como funciona</div>
+      <div class="marcador"><b>04</b>O que você leva</div>
+      <h2 class="centro" style="max-width:18ch;margin-bottom:var(--e-7)">Cinco coisas que você <span class="it">leva da Ferramentaria</span></h2>
+      <div class="cartoes-leva">
+        <article class="leva">
+          <div class="leva-tela"><div class="mini">
+            <span class="sub" style="color:#3E5068;font-size:12px">Planta da Ferramenta · pergunta 7 de 25</span>
+            <div class="prog"><i></i></div>
+            <b style="font-family:var(--letra-chamada);font-size:17px">Que informações a pessoa digita ou envia?</b>
+            <span class="campo-mini">Serviço, dia, horário, nome e telefone.</span>
+          </div></div>
+          <div class="leva-corpo"><span class="rot">A planta</span><h3>Sua ideia vira um pedido claro</h3><p>Cerca de 25 perguntas montam o pedido que o Claude Code entende. Ninguém começa pela tela em branco.</p></div>
+        </article>
+        <article class="leva">
+          <div class="leva-tela"><div class="mini terminal">
+            <span>&gt; crie a tela de escolher horário</span>
+            <span class="ok">✓ tela criada</span>
+            <span class="ok">✓ horários livres aparecem</span>
+            <span>&gt; agora esconda os já marcados</span>
+            <span class="ok">✓ pronto</span>
+          </div></div>
+          <div class="leva-corpo"><span class="rot">Construção</span><h3>Você vê a ferramenta nascer</h3><p>Pede em português, confere na tela, ajusta. Uma parte de cada vez.</p></div>
+        </article>
+        <article class="leva">
+          <div class="leva-tela"><div class="mini">
+            <span class="url">🔒 sua-ferramenta.com.br</span>
+            <b style="font-family:var(--letra-chamada);font-size:18px">Agenda da Bia</b>
+            <span style="color:#3E5068">Abre no celular de qualquer pessoa, sem instalar nada.</span>
+          </div></div>
+          <div class="leva-corpo"><span class="rot">Publicação</span><h3>Um link que funciona</h3><p>No sábado a ferramenta vai para a internet. Você manda o link para quem quiser.</p></div>
+        </article>
+        <article class="leva">
+          <div class="leva-tela"><div class="mini">
+            <span class="check">Só você vê os telefones das clientes</span>
+            <span class="check">Nenhuma senha escondida no código</span>
+            <span class="check">Cada pessoa vê só o que é dela</span>
+          </div></div>
+          <div class="leva-corpo"><span class="rot">Segurança</span><h3>Os dados das pessoas protegidos</h3><p>Uma aula só sobre o erro mais comum de quem começa: deixar dados de clientes à mostra.</p></div>
+        </article>
+        <article class="leva">
+          <div class="leva-tela"><div class="mini">
+            <div class="arquivo"><span>Aula de sexta</span><small>gravação</small></div>
+            <div class="arquivo"><span>Aula de sábado</span><small>gravação</small></div>
+            <div class="arquivo"><span>Pedidos prontos para copiar</span><small>materiais</small></div>
+            <div class="arquivo"><span>Checklist de publicação</span><small>materiais</small></div>
+          </div></div>
+          <div class="leva-corpo"><span class="rot">Depois</span><h3>A gravação e os materiais ficam com você</h3><p>Para continuar construindo depois, no seu ritmo.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 · COMO FUNCIONA ========== -->
+  <section class="faixa faixa--clara" id="como">
+    <div class="conteudo">
+      <div class="marcador"><b>05</b>Como funciona</div>
       <h2 style="margin-bottom:var(--e-6)">Sexta você começa. Sábado ela está <span class="it">no ar.</span></h2>
       <ol class="etapas">
         <li><span class="quando">Antes</span><h3>Tudo pronto em casa</h3><p>Você recebe um passo a passo para deixar tudo preparado. Na sexta, a gente já começa construindo.</p></li>
@@ -241,10 +391,10 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 04 · QUEM VAI TE ENSINAR ========== -->
-  <section class="faixa faixa--clara">
+  <!-- ========== 06 · QUEM VAI TE ENSINAR ========== -->
+  <section class="faixa">
     <div class="conteudo">
-      <div class="marcador"><b>04</b>Quem vai te ensinar</div>
+      <div class="marcador"><b>06</b>Quem vai te ensinar</div>
       <div class="sobre">
         <div class="foto-sobre" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador</div>
         <div class="pilha pilha--g">
@@ -256,10 +406,10 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 05 · DUAS FORMAS ========== -->
+  <!-- ========== 07 · DUAS FORMAS ========== -->
   <section class="faixa faixa--escura">
     <div class="conteudo">
-      <div class="marcador"><b>05</b>Duas formas de construir comigo</div>
+      <div class="marcador"><b>07</b>Duas formas de construir comigo</div>
       <div class="formas">
         <article class="forma destaque" id="ferramentaria">
           <span class="nota-cta">Imersão · ao vivo</span>
@@ -282,7 +432,7 @@ body{padding-bottom:88px}
   <!-- ========== LISTA ========== -->
   <section class="faixa faixa--clara lista" id="lista">
     <div class="conteudo centro">
-      <div class="marcador" style="text-align:left"><b>06</b>Turma Fundadora</div>
+      <div class="marcador" style="text-align:left"><b>08</b>Turma Fundadora</div>
       <h2 style="max-width:18ch;margin-inline:auto">As primeiras vagas são de <span class="it">quem está na lista</span></h2>
       <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
