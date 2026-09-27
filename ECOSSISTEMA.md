@@ -280,7 +280,12 @@ frase, telas de exemplo em moldura de navegador, barra fixa embaixo.
 Claude, R$ 37, setembro). Diferença que precisa aparecer em tudo: lá o
 público são mentores que querem uma ferramenta de acompanhamento; aqui é
 qualquer pessoa com uma ideia, sem saber programar. E não copiamos a
-escassez da barra ("98% vendido"): a nossa diz só o que é verdade. Marca pessoal dura mais que um produto: a mentoria e os
+escassez da barra ("98% vendido"): a nossa diz só o que é verdade.
+
+**Método Planta (proposta de 27/09, a confirmar):** "construir como se
+constrói uma casa: primeiro a planta, depois a obra". Cinco passos: Corte,
+Desenhe, Construa, Proteja, Publique. Liga o método à Planta da
+Ferramenta, que é da Ferramentaria e a concorrente não tem. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

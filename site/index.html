@@ -177,6 +177,36 @@ body{padding-bottom:88px}
 .mini .arquivo{display:flex;justify-content:space-between;border-bottom:1px solid var(--linha);padding:6px 0}
 .mini .arquivo small{color:var(--texto-2)}
 
+/* ---------- botão no meio da página ---------- */
+.cta-meio{display:flex;flex-direction:column;align-items:center;gap:var(--e-3);margin-top:var(--e-7);text-align:center}
+.cta-meio .botao{min-height:60px;padding-inline:var(--e-7);text-transform:uppercase;letter-spacing:.08em}
+.cta-meio .botao::after{content:"→";font-size:1.3em;letter-spacing:0;margin-left:var(--e-3)}
+.cta-meio span{color:var(--texto-2);font-size:var(--t-pequeno)}
+
+/* ---------- pra quem é ---------- */
+.pra-quem{list-style:none;margin:0;padding:0}
+.pra-quem li{display:grid;grid-template-columns:48px 1fr;gap:var(--e-5);align-items:center;padding-block:var(--e-5);border-top:1px solid var(--linha);font-size:var(--t-grande);color:var(--piscina-100)}
+.pra-quem li:last-child{border-bottom:1px solid var(--linha)}
+.pra-quem svg{width:44px;height:44px;color:var(--piscina-300)}
+.nao-e{list-style:none;margin:var(--e-7) 0 0;padding:0;display:flex;flex-direction:column;align-items:center;gap:var(--e-3)}
+.nao-e li{border:1px solid var(--marinho-borda);border-radius:var(--canto-pilula);padding:var(--e-3) var(--e-5);display:flex;gap:var(--e-3);align-items:baseline;color:var(--piscina-100);max-width:100%}
+.nao-e li::before{content:"✕";color:var(--piscina-300);flex:none}
+.fecho{margin:var(--e-7) auto 0;text-align:center;color:var(--piscina-100);font-size:var(--t-grande);max-width:34ch}
+
+/* ---------- o método ---------- */
+.metodo-topo{max-width:720px;margin-inline:auto;display:flex;flex-direction:column;gap:var(--e-5);text-align:center}
+.metodo-topo p{margin-inline:auto;color:var(--texto-2);font-size:var(--t-grande)}
+.metodo-topo p b{color:var(--piscina-700)}
+.planta-desenho{margin:var(--e-7) auto 0;max-width:760px;border-radius:var(--canto-g);overflow:hidden;border:1px solid var(--linha);background:var(--piscina-50)}
+.planta-desenho{overflow-x:auto}
+.planta-desenho svg{display:block;width:100%;min-width:600px;height:auto}
+.passos-metodo{list-style:none;margin:var(--e-7) 0 0;padding:0;display:grid;gap:0}
+@media (min-width:900px){.passos-metodo{grid-template-columns:repeat(5,1fr);column-gap:var(--e-5)}}
+.passos-metodo li{border-top:1px solid var(--linha);padding-block:var(--e-4) var(--e-5);display:flex;flex-direction:column;gap:var(--e-2)}
+.passos-metodo .n{color:var(--piscina-700);font-weight:700;letter-spacing:.2em;font-size:var(--t-rotulo)}
+.passos-metodo h3{font-size:1.9rem}
+.passos-metodo p{color:var(--texto-2)}
+
 /* etapas em fundo claro */
 .faixa--clara .etapas .quando{color:var(--piscina-700)}
 .faixa--clara .etapas small{color:var(--piscina-800)}
@@ -375,13 +405,76 @@ body{padding-bottom:88px}
           <div class="leva-corpo"><span class="rot">Depois</span><h3>A gravação e os materiais ficam com você</h3><p>Para continuar construindo depois, no seu ritmo.</p></div>
         </article>
       </div>
+      <div class="cta-meio">
+        <a class="botao botao--principal" href="#lista">Quero a minha vaga</a>
+        <span>Turma de janeiro · 29 e 30/01, ao vivo</span>
+      </div>
     </div>
   </section>
 
-  <!-- ========== 05 · COMO FUNCIONA ========== -->
-  <section class="faixa faixa--clara" id="como">
+  <!-- ========== 05 · PRA QUEM É ========== -->
+  <section class="faixa faixa--escura" style="padding-top:var(--e-6)">
+    <div class="conteudo" style="max-width:860px">
+      <div class="marcador"><b>05</b>Para quem é</div>
+      <h2 class="centro" style="margin-bottom:var(--e-6)">A Ferramentaria é <span class="it">para você se</span></h2>
+      <ul class="pra-quem">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2.2h5c.1-1 .5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>Você tem uma ideia de ferramenta para o seu trabalho e nunca soube por onde começar.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>Você responde a mesma mensagem dez vezes por dia e sabe que isso podia ser automático.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10l3 2-3 2M12 15h5"/></svg><span>Você já usa IA no dia a dia, mas nunca construiu nada seu com ela.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg><span>Você cansou de organizar o trabalho em planilha, caderno e WhatsApp.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span>Você quer aprender fazendo, e não só assistindo.</span></li>
+      </ul>
+      <ul class="nao-e">
+        <li>Não é para quem quer tudo pronto sem colocar a mão na massa</li>
+        <li>Não é para quem não tem um computador</li>
+        <li>Não é para quem não pode assinar o plano do Claude</li>
+        <li>Não é para quem espera sair no sábado com um sistema gigante</li>
+      </ul>
+      <p class="fecho">Em dois encontros, uma ferramenta que resolve um problema de verdade. Pequena, útil e sua.</p>
+    </div>
+  </section>
+
+  <!-- ========== 06 · O MÉTODO ========== -->
+  <section class="faixa faixa--clara">
     <div class="conteudo">
-      <div class="marcador"><b>05</b>Como funciona</div>
+      <div class="marcador"><b>06</b>O método</div>
+      <div class="metodo-topo">
+        <h2>O Método Planta é construir como se constrói uma casa: <span class="it">primeiro a planta, depois a obra</span></h2>
+        <p>Quem começa pela obra se perde no meio. Aqui, a ideia vira <b>um desenho claro</b> antes da primeira linha de código, e cada parte é construída <b>na ordem certa</b>.</p>
+      </div>
+      <figure class="planta-desenho" style="margin-bottom:0">
+        <svg viewBox="0 0 760 360" role="img" aria-label="Desenho de uma planta, como a de uma casa, com os cômodos nomeados como partes de uma ferramenta">
+          <defs><pattern id="quad" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#CAF3FA" stroke-width="1"/></pattern></defs>
+          <rect width="760" height="360" fill="url(#quad)"/>
+          <g fill="none" stroke="#078CAB" stroke-width="3">
+            <rect x="80" y="50" width="600" height="260" rx="4"/>
+            <path d="M320 50v150M320 250v60M520 50v100M520 200v110M80 200h180M320 150h200"/>
+          </g>
+          <g fill="#0E596D" font-family="Figtree, system-ui, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+            <text x="200" y="130">entrada</text><text x="200" y="152" font-weight="400" font-size="14">o que a pessoa digita</text>
+            <text x="420" y="105">regra</text><text x="420" y="127" font-weight="400" font-size="14">o que a ferramenta faz</text>
+            <text x="600" y="105">saída</text><text x="600" y="127" font-weight="400" font-size="14">o que ela entrega</text>
+            <text x="200" y="262">dados</text><text x="200" y="284" font-weight="400" font-size="14">o que fica guardado</text>
+            <text x="420" y="240">cadeado</text><text x="420" y="262" font-weight="400" font-size="14">quem vê o quê</text>
+            <text x="600" y="262">porta</text><text x="600" y="284" font-weight="400" font-size="14">o link publicado</text>
+          </g>
+        </svg>
+      </figure>
+      <p class="legenda-semana" style="text-align:center">A planta de uma ferramenta: cada cômodo é uma parte que você decide antes de construir.</p>
+      <ol class="passos-metodo">
+        <li><span class="n">01</span><h3>Corte</h3><p>A ideia vira uma frase só. O que não cabe na primeira versão fica anotado para depois.</p></li>
+        <li><span class="n">02</span><h3>Desenhe</h3><p>A Planta da Ferramenta transforma a frase num pedido claro para o Claude Code.</p></li>
+        <li><span class="n">03</span><h3>Construa</h3><p>Uma parte de cada vez, conferindo na tela antes de pedir a próxima.</p></li>
+        <li><span class="n">04</span><h3>Proteja</h3><p>Os dados das pessoas ficam onde devem, e só quem pode vê.</p></li>
+        <li><span class="n">05</span><h3>Publique</h3><p>A ferramenta vai para a internet, com um link que funciona em qualquer celular.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== 07 · COMO FUNCIONA ========== -->
+  <section class="faixa faixa--escura" id="como">
+    <div class="conteudo">
+      <div class="marcador"><b>07</b>Como funciona</div>
       <h2 style="margin-bottom:var(--e-6)">Sexta você começa. Sábado ela está <span class="it">no ar.</span></h2>
       <ol class="etapas">
         <li><span class="quando">Antes</span><h3>Tudo pronto em casa</h3><p>Você recebe um passo a passo para deixar tudo preparado. Na sexta, a gente já começa construindo.</p></li>
@@ -391,10 +484,10 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 06 · QUEM VAI TE ENSINAR ========== -->
+  <!-- ========== 08 · QUEM VAI TE ENSINAR ========== -->
   <section class="faixa">
     <div class="conteudo">
-      <div class="marcador"><b>06</b>Quem vai te ensinar</div>
+      <div class="marcador"><b>08</b>Quem vai te ensinar</div>
       <div class="sobre">
         <div class="foto-sobre" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador</div>
         <div class="pilha pilha--g">
@@ -406,10 +499,10 @@ body{padding-bottom:88px}
     </div>
   </section>
 
-  <!-- ========== 07 · DUAS FORMAS ========== -->
+  <!-- ========== 09 · DUAS FORMAS ========== -->
   <section class="faixa faixa--escura">
     <div class="conteudo">
-      <div class="marcador"><b>07</b>Duas formas de construir comigo</div>
+      <div class="marcador"><b>09</b>Duas formas de construir comigo</div>
       <div class="formas">
         <article class="forma destaque" id="ferramentaria">
           <span class="nota-cta">Imersão · ao vivo</span>
@@ -432,7 +525,7 @@ body{padding-bottom:88px}
   <!-- ========== LISTA ========== -->
   <section class="faixa faixa--clara lista" id="lista">
     <div class="conteudo centro">
-      <div class="marcador" style="text-align:left"><b>08</b>Turma Fundadora</div>
+      <div class="marcador" style="text-align:left"><b>10</b>Turma Fundadora</div>
       <h2 style="max-width:18ch;margin-inline:auto">As primeiras vagas são de <span class="it">quem está na lista</span></h2>
       <p class="texto-2" style="margin-top:var(--e-4)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
