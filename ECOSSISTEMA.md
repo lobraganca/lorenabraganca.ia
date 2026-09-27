@@ -237,6 +237,34 @@ faturamento da mentoria, e o que deve limitar quantas se vendem.
 - **Medição**: pixel (Meta, Google) e links rastreados, para saber de onde
   vem cada venda
 
+## 3B. O site (pedido em 27/09)
+
+Um endereço só. O site público é a vitrine e o funil; a área de membros
+é uma porta dentro dele ("Entrar"). Mesmo design system, mesmo projeto,
+mesma base técnica do Ei (Vercel + Supabase), **com banco novo**.
+
+**Domínio principal: o nome dela** (ex.: lorenabraganca.com.br)
+**[a decidir]**. Marca pessoal dura mais que um produto: a mentoria e os
+próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
+quiser, compra-se também o domínio da Ferramentaria só para apontar para
+ela.
+
+| Página | Para quê | Até |
+|---|---|---|
+| **Início** | quem ela é em uma frase, a prova (Ei Emprego), as duas portas: Ferramentaria e mentoria | 15/11 |
+| **Aula grátis / isca** | a página de captura | 15/11 |
+| **Sobre** | a história, com fotos reais | 15/11 |
+| **Termos e privacidade** | obrigatórios antes do primeiro contato coletado | 15/11 |
+| **Ferramentaria** | lista de espera; a partir de 6/12, página de vendas | 6/12 |
+| **Mentoria** | explicação e formulário de aplicação | 22/1 |
+| **Ferramentas** | vitrine: o Ei agora, as dos alunos depois da turma | fev |
+| **Entrar** | a porta da área de membros | 29/1 |
+
+Ideia para a isca **[a decidir]**: uma **Planta da Ferramenta em versão
+curta**, com umas 10 perguntas, aberta a todos em troca do contato. Dá um
+resultado na hora, é do mesmo assunto da imersão, e quem usa já está a
+meio caminho de comprar.
+
 ## 4. Plataforma dos alunos (área de membros)
 
 - Entrada por e-mail ou telefone
