@@ -52,6 +52,7 @@
   --letra-chamada: "Instrument Serif", Georgia, "Times New Roman", serif;
   --letra-destaque: "Instrument Serif", Georgia, "Times New Roman", serif;
   --letra-texto: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;  /* a da referência (gratuita) */
+  --letra-nome: "Dancing Script", "Brush Script MT", cursive;   /* 600 · só o nome Ferramentaria (27/09) */
   --letra-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;   /* 400 · rótulos e comandos */
 
   /* Escala: cada passo cresce ~1,25. Os títulos grandes encolhem no celular. */

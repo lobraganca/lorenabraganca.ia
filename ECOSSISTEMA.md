@@ -252,6 +252,13 @@ piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
 em diante; as faixas marinho ficam para as peças do Instagram.
 
+**A letra do nome (27/09): Dancing Script 600**, cursiva, escolhida por
+ela (A12 em `marca/letra-cursiva.html`) depois de gostar da Poiret One
+(8 em `marca/letra-do-nome.html`) e pedir cursivas. Vale só para a palavra
+"Ferramentaria", no topo e no rodapé, e em caixa baixa: cursiva em
+maiúsculas não liga as letras. O texto do site passou a ser Hanken Grotesk,
+a da referência, no lugar da Instrument Sans.
+
 **Letras, de novo (27/09): Instrument Serif + Instrument Sans**, as da
 referência, identificadas pelos prints (o site dela é bloqueado aqui). Ela
 achou Fraunces + Figtree ruins. Registro anterior, para o histórico:

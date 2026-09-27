@@ -36,9 +36,11 @@ O código de cada uma é copiado para este repositório a cada mudança.
 - **Texto branco sobre o azul-piscina é proibido** (contraste 2,6). O botão
   principal é piscina-500 com texto marinho (6,3).
 - Toda cor nova entra em `tokens.css` com o contraste **calculado**.
-- Letras: Instrument Serif (títulos, itálico no destaque) e Instrument Sans
-  (texto, rótulos, botões). Já foram recusadas: Kalnia, Ms Madi, Bricolage,
-  Atkinson, Fraunces e Figtree.
+- Letras: Instrument Serif (títulos, itálico no destaque), Hanken Grotesk
+  (texto, rótulos, botões; é a da referência) e **Dancing Script 600 só no
+  nome "Ferramentaria"**, em caixa baixa (escolha dela, A12 de
+  `marca/letra-cursiva.html`). Já foram recusadas: Kalnia, Ms Madi,
+  Bricolage, Atkinson, Fraunces, Figtree e Instrument Sans.
 - O visual segue a referência dela (`marca/referencias/`): escuro e claro
   alternados, UMA cor de destaque, só fios finos. Ela já recusou versões
   "carregadas" (faixas coloridas, caixas) e "básicas" (só texto).

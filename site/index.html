@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#0B1F3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="/estilos/tokens.css">
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
@@ -80,7 +80,10 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .entre-fios{display:flex;align-items:center;gap:18px;width:100%;max-width:560px;font-family:var(--letra-chamada);letter-spacing:.08em;text-transform:uppercase;font-size:15px;color:var(--tinta-clara)}
 .entre-fios::before,.entre-fios::after{content:"";flex:1;height:1px;background:var(--acento);opacity:.5}
 .nome-produto{font-family:var(--letra-chamada);font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(3.1rem,11vw,7.5rem);margin:0;letter-spacing:.01em;color:var(--tinta-clara)}
-.nome-produto .palavra{display:inline-block;white-space:nowrap;font-size:1em;color:inherit;font-style:normal;text-transform:uppercase;letter-spacing:.01em;margin:0}
+/* O nome em cursiva (Dancing Script 600), escolhida por ela em 27/09 (A12
+   da comparação em marca/letra-cursiva.html). Cursiva não vai em maiúsculas:
+   em caixa alta as letras não se ligam e a palavra fica ilegível. */
+.nome-produto .palavra{display:inline-block;white-space:nowrap;font-size:1em;color:inherit;font-family:var(--letra-nome);font-weight:600;font-style:normal;text-transform:none;letter-spacing:0;line-height:1.05;margin:0}
 .nome-produto span:not(.palavra){display:block;color:var(--acento);font-style:italic;text-transform:none;letter-spacing:0;font-size:.42em;margin-top:.18em}
 .data{font-family:var(--letra-chamada);text-transform:uppercase;letter-spacing:.05em;font-size:clamp(17px,4.4vw,24px);border-top:1px solid rgba(155,231,244,.5);padding-top:10px;width:100%;max-width:560px;color:var(--tinta-clara)}
 .topo h1{font-size:clamp(31px,4.3vw,62px);line-height:1.13;letter-spacing:-0.022em;max-width:16ch;font-weight:400}
@@ -808,7 +811,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 </nav>
 
 <script>
-// O nome "FERRAMENTARIA" ocupa a largura disponível, como na referência,
+// O nome "Ferramentaria" ocupa a largura disponível, como na referência,
 // sem nunca passar da tela: mede a palavra e ajusta o tamanho da letra.
 (function () {
   function ajustar() {
