@@ -44,12 +44,14 @@
   --foco: var(--piscina-600);
 
   /* ---------- letras ---------- */
-  /* Letras escolhidas por Lorena em 27/09 (opção D): Fraunces + Figtree.
-     Substituem Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2,
-     que ela achou carregadas. */
-  --letra-chamada: "Fraunces", Georgia, "Times New Roman", serif;   /* 600 · títulos e preço */
-  --letra-destaque: "Fraunces", Georgia, "Times New Roman", serif;  /* 500 itálico · a palavra em destaque */
-  --letra-texto: "Figtree", "Segoe UI", system-ui, sans-serif;      /* 400/600/700 · textos e botões, >= 17px */
+  /* Letras (27/09, terceira escolha): as da referência que ela mandou,
+     identificadas pelos prints, porque o site dela é bloqueado aqui.
+     Instrument Serif: alta, estreita, só no peso 400 (com itálico).
+     Instrument Sans: textos, rótulos e botões. Substituem Fraunces +
+     Figtree, que ela achou ruins. */
+  --letra-chamada: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --letra-destaque: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --letra-texto: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --letra-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;   /* 400 · rótulos e comandos */
 
   /* Escala: cada passo cresce ~1,25. Os títulos grandes encolhem no celular. */

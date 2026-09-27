@@ -252,11 +252,29 @@ piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
 em diante; as faixas marinho ficam para as peças do Instagram.
 
+**Letras, de novo (27/09): Instrument Serif + Instrument Sans**, as da
+referência, identificadas pelos prints (o site dela é bloqueado aqui). Ela
+achou Fraunces + Figtree ruins. Registro anterior, para o histórico:
 **Letras (27/09): Fraunces + Figtree**, escolhidas por Lorena entre cinco
 opções (`marca/opcoes-de-letra.html`). Fraunces 600 nos títulos e 500
 itálico na palavra em destaque; Figtree nos textos e botões. Substituem
 Bricolage, Kalnia, Ms Madi e Atkinson da identidade v0.2, **também nas
 peças do Instagram**, para site e Instagram ficarem iguais.
+
+**Checkout: Assiny (27/09).** Decisão dela: o pagamento da Ferramentaria
+passa pela Assiny, e não pelo Mercado Pago. Falta: ela criar o produto lá
+e mandar o link do checkout; e combinar como a Assiny avisa o site quando
+alguém paga, para liberar o acesso sozinho.
+
+**Duas imersões (27/09).** Decisão dela: uma para ensinar o que é IA, e a
+Ferramentaria. Faltam nome, preço, data e formato da primeira, e se ela
+vem antes da Ferramentaria (escada: entender IA → construir a ferramenta
+→ mentoria). Com duas imersões, a página atual vira a página da
+Ferramentaria, e a página inicial passa a ser sobre ela, com as portas.
+
+**Visual da página, versão 5 (27/09):** "clean, criativo, igual à
+referência". Fundo escuro e claro alternados, uma cor de destaque só,
+títulos grandes em Instrument Serif, só fios finos, sem caixas coloridas.
 
 **Não falar do app do Ei no site (27/09).** Pedido dela: "não gostaria de
 falar sobre o app". O texto novo da página inicial está em `site/COPY.md`;

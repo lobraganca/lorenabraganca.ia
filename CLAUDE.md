@@ -36,8 +36,13 @@ O código de cada uma é copiado para este repositório a cada mudança.
 - **Texto branco sobre o azul-piscina é proibido** (contraste 2,6). O botão
   principal é piscina-500 com texto marinho (6,3).
 - Toda cor nova entra em `tokens.css` com o contraste **calculado**.
-- Letras: Fraunces (títulos; itálico só na palavra em destaque) e Figtree
-  (texto e botões). Kalnia, Ms Madi, Bricolage e Atkinson saíram em 27/09.
+- Letras: Instrument Serif (títulos, itálico no destaque) e Instrument Sans
+  (texto, rótulos, botões). Já foram recusadas: Kalnia, Ms Madi, Bricolage,
+  Atkinson, Fraunces e Figtree.
+- O visual segue a referência dela (`marca/referencias/`): escuro e claro
+  alternados, UMA cor de destaque, só fios finos. Ela já recusou versões
+  "carregadas" (faixas coloridas, caixas) e "básicas" (só texto).
+- Checkout: Assiny. Duas imersões (introdução à IA e Ferramentaria).
 - O site é claro e leve: ela recusou a versão com faixas marinho ("muito carregado").
 - Não usar "Claude" no nome de produto nem em @: é marca de outra empresa.
 - Não afirmar nada sobre ela que ela não confirmou. Ela vê tudo no celular.

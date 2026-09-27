@@ -15,7 +15,7 @@ body{
 }
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{margin:0;font-family:var(--letra-chamada);font-weight:600;letter-spacing:-0.015em;line-height:1.08;text-wrap:balance;font-optical-sizing:auto}
+h1,h2,h3{margin:0;font-family:var(--letra-chamada);font-weight:400;letter-spacing:-0.01em;line-height:1.02;text-wrap:balance}
 h1{font-size:var(--t-h1)}
 h2{font-size:var(--t-h2)}
 h3{font-size:var(--t-h3);letter-spacing:-0.01em;line-height:1.15}
@@ -62,9 +62,9 @@ p{margin:0;max-width:var(--largura-texto)}
 /* A palavra que carrega o sentimento do título ("Pelo celular.") vai em
    itálico, na cor piscina. Uma por título, nunca a frase inteira.
    .nome é o mesmo tratamento em tamanho grande, para um nome sozinho. */
-.italico{font-family:var(--letra-destaque);font-style:italic;font-weight:500}
+.italico{font-family:var(--letra-destaque);font-style:italic;font-weight:400}
 .nome{
-  font-family:var(--letra-destaque);font-style:italic;font-weight:500;font-size:var(--t-nome);
+  font-family:var(--letra-destaque);font-style:italic;font-weight:400;font-size:var(--t-nome);
   line-height:1;letter-spacing:-0.02em;
 }
 .secao--marinho .nome .destaque,.nome--claro .destaque{color:var(--destaque-escuro)}
@@ -75,7 +75,7 @@ p{margin:0;max-width:var(--largura-texto)}
 .botao{
   display:inline-flex;align-items:center;justify-content:center;gap:var(--e-2);
   min-height:52px;padding:0 var(--e-5);border-radius:var(--canto-pilula);
-  font-family:var(--letra-texto);font-weight:700;font-size:var(--t-texto);
+  font-family:var(--letra-texto);font-weight:600;font-size:var(--t-texto);
   text-decoration:none;border:2px solid transparent;cursor:pointer;
   transition:transform .15s ease, background-color .15s ease;
 }
@@ -90,7 +90,7 @@ p{margin:0;max-width:var(--largura-texto)}
 .botao--texto{background:none;padding:0;min-height:44px;color:var(--destaque-claro);text-decoration:underline;text-underline-offset:4px;font-family:var(--letra-texto);font-weight:700}
 .secao--marinho .botao--texto{color:var(--destaque-escuro)}
 .acoes{display:flex;flex-wrap:wrap;gap:var(--e-3);align-items:center}
-.preco{font-family:var(--letra-chamada);font-weight:600;font-size:var(--t-h3)}
+.preco{font-family:var(--letra-chamada);font-weight:400;font-size:var(--t-h3)}
 
 /* ---------- cartões ---------- */
 .cartao{
@@ -139,7 +139,7 @@ p{margin:0;max-width:var(--largura-texto)}
 .rodape.rodape--claro{background:var(--branco);color:var(--texto-2);border-top:1px solid var(--linha)}
 .rodape.rodape--claro a{color:var(--texto-2)}
 .cabecalho .conteudo{display:flex;align-items:center;justify-content:space-between;gap:var(--e-4);min-height:68px}
-.marca{font-family:var(--letra-chamada);font-weight:600;font-size:1.375rem;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap}
+.marca{font-family:var(--letra-chamada);font-weight:400;font-size:1.375rem;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap}
 .menu{display:flex;gap:var(--e-5);align-items:center;font-size:var(--t-pequeno)}
 .menu a{text-decoration:none;color:var(--piscina-100)}
 .menu a:hover{color:var(--branco)}
@@ -155,15 +155,15 @@ p{margin:0;max-width:var(--largura-texto)}
 .sobrelinha{display:flex;align-items:center;gap:var(--e-3);font-size:var(--t-pequeno);font-weight:700;color:var(--destaque-claro)}
 .sobrelinha::before{content:"";width:32px;height:2px;background:var(--piscina-500);flex:none}
 /* Número em itálico, grande: marca itens de uma lista ou passos. */
-.numero{font-family:var(--letra-destaque);font-style:italic;font-weight:500;font-size:clamp(2.5rem,2rem + 2vw,3.5rem);line-height:1;color:var(--piscina-600)}
+.numero{font-family:var(--letra-destaque);font-style:italic;font-weight:400;font-size:clamp(2.5rem,2rem + 2vw,3.5rem);line-height:1;color:var(--piscina-600)}
 /* Citação: uma frase dela, em itálico, com um fio piscina ao lado. */
-.citacao{margin:0;font-family:var(--letra-destaque);font-style:italic;font-weight:500;font-size:clamp(1.375rem,1.1rem + 1.2vw,1.875rem);line-height:1.25;border-left:3px solid var(--piscina-500);padding-left:var(--e-4);max-width:32ch}
+.citacao{margin:0;font-family:var(--letra-destaque);font-style:italic;font-weight:400;font-size:clamp(1.375rem,1.1rem + 1.2vw,1.875rem);line-height:1.25;border-left:3px solid var(--piscina-500);padding-left:var(--e-4);max-width:32ch}
 /* Foto grande com um selo branco por cima. Enquanto a foto não chega, o
    espaço mostra o que vai ali. */
 .foto-editorial{position:relative;aspect-ratio:4/5;border-radius:var(--canto-g);overflow:hidden;background:linear-gradient(180deg,var(--piscina-50),var(--piscina-100));color:var(--piscina-800);display:grid;place-items:center;text-align:center;padding:var(--e-5);font-size:var(--t-pequeno)}
 .foto-editorial img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .selo{position:absolute;left:var(--e-4);bottom:var(--e-4);background:var(--branco);color:var(--marinho);border-radius:var(--canto-m);padding:var(--e-3) var(--e-4);box-shadow:0 6px 18px rgba(11,31,58,.12);text-align:left;font-size:var(--t-pequeno);line-height:1.3}
-.selo b{display:block;font-family:var(--letra-chamada);font-weight:600;font-size:var(--t-grande)}
+.selo b{display:block;font-family:var(--letra-chamada);font-weight:400;font-size:var(--t-grande)}
 /* Lista separada por fios, sem cartões. */
 .fios{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
 .fios > li{padding-block:var(--e-5);border-top:1px solid var(--linha)}
@@ -171,7 +171,7 @@ p{margin:0;max-width:var(--largura-texto)}
 /* Perguntas frequentes. */
 .perguntas details{border-top:1px solid var(--linha);padding-block:var(--e-4)}
 .perguntas details:last-child{border-bottom:1px solid var(--linha)}
-.perguntas summary{cursor:pointer;font-family:var(--letra-chamada);font-weight:600;font-size:var(--t-grande);list-style:none;display:flex;justify-content:space-between;gap:var(--e-4)}
+.perguntas summary{cursor:pointer;font-family:var(--letra-chamada);font-weight:400;font-size:var(--t-grande);list-style:none;display:flex;justify-content:space-between;gap:var(--e-4)}
 .perguntas summary::-webkit-details-marker{display:none}
 .perguntas summary::after{content:"+";color:var(--piscina-600);font-family:var(--letra-texto);font-weight:700}
 .perguntas details[open] summary::after{content:"–"}
