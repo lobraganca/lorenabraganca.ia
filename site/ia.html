@@ -9,7 +9,7 @@
 <meta property="og:description" content="Imersão ao vivo com Lorena Bragança, a partir de R$ 57: o que é a IA, como pedir o que você precisa e onde ela erra.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="theme-color" content="#130E29">
+<meta name="theme-color" content="#1F100C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
@@ -23,48 +23,32 @@
   letras vêm de /estilos/imersao.css, e aqui mora só a paleta e o que é
   desta página.
 
-  Três paletas em teste, para ela escolher (violeta é a que abre). Os
-  contrastes foram calculados, não olhados:
-    acento sobre o escuro ....... violeta 10,5 · lima 14,2 · coral 10,7
-    escuro sobre o acento (botão)  os mesmos números
-    acento-claro sobre o claro .. violeta 6,0 · lima 5,8 · coral 5,3
-  Depois da escolha, as duas que sobrarem saem daqui.
+  A cor é a coral, escolhida por ela em 27/09 entre violeta, lima e coral.
+  Os contrastes foram calculados, não olhados: acento sobre o escuro 10,7
+  (e o mesmo para o texto escuro no botão); acento-claro sobre o claro 5,3;
+  texto secundário 6,8 no claro e 7,1 no escuro.
 
   --marinho é redefinido de propósito: é a cor do texto nas faixas claras,
   e o componentes.css a usa com esse nome. Sem isso o texto sairia azul
-  numa página violeta.
+  numa página coral.
 */
 :root{
-  --escuro:#130E29;
-  --escuro-2:#1B1536;
-  --claro:#F5F3F9;
-  --tinta-clara:#F1EEF9;
-  --suave-escuro:rgba(241,238,249,.66);
-  --fio-escuro:rgba(241,238,249,.14);
-  --acento:#CBB8FF;
-  --acento-claro:#6A3FCB;
-  --suave-claro:#554D69;
-  --fio-claro:rgba(26,18,56,.14);
-  --brilho-rgb:160,130,255;
-  --acento-rgb:203,184,255;
-  --rodape:#0F0B22;
-  --rodape-rgb:15,11,34;
-  --marinho:#1A1238;
-  --foco:#6A3FCB;
-}
-[data-cor="lima"]{
-  --escuro:#0B1A12; --escuro-2:#11241A; --claro:#F4F5EF; --tinta-clara:#EEF4EA;
-  --suave-escuro:rgba(238,244,234,.66); --fio-escuro:rgba(238,244,234,.14);
-  --acento:#D9EF8D; --acento-claro:#3E6A14; --suave-claro:#4C5646; --fio-claro:rgba(16,35,26,.14);
-  --brilho-rgb:190,230,110; --acento-rgb:217,239,141; --rodape:#08140E; --rodape-rgb:8,20,14;
-  --marinho:#10231A; --foco:#3E6A14;
-}
-[data-cor="coral"]{
-  --escuro:#1F100C; --escuro-2:#2A1712; --claro:#F8F3F0; --tinta-clara:#F8EEEA;
-  --suave-escuro:rgba(248,238,234,.66); --fio-escuro:rgba(248,238,234,.14);
-  --acento:#FFB39B; --acento-claro:#B03F26; --suave-claro:#65504A; --fio-claro:rgba(42,21,16,.14);
-  --brilho-rgb:255,150,120; --acento-rgb:255,179,155; --rodape:#180C09; --rodape-rgb:24,12,9;
-  --marinho:#2A1510; --foco:#B03F26;
+  --escuro:#1F100C;
+  --escuro-2:#2A1712;
+  --claro:#F8F3F0;
+  --tinta-clara:#F8EEEA;
+  --suave-escuro:rgba(248,238,234,.66);
+  --fio-escuro:rgba(248,238,234,.14);
+  --acento:#FFB39B;
+  --acento-claro:#B03F26;
+  --suave-claro:#65504A;
+  --fio-claro:rgba(42,21,16,.14);
+  --brilho-rgb:255,150,120;
+  --acento-rgb:255,179,155;
+  --rodape:#180C09;
+  --rodape-rgb:24,12,9;
+  --marinho:#2A1510;
+  --foco:#B03F26;
 }
 
 /* ---------- 01 · o dicionário: as palavras que ninguém explica ---------- */
@@ -203,7 +187,7 @@
       <div class="marcador"><b>04</b>O que fica com você</div>
       <h2 class="centro" style="max-width:16ch;margin-bottom:var(--e-7)">O que você leva <span class="it">para casa</span></h2>
       <ul class="lista-pronto">
-        <li><span><b>A gravação</b>, no ingresso VIP, disponível por 15 dias.</span></li>
+        <li><span><b>A gravação</b>, no ingresso VIP, disponível por 15 dias depois da imersão.</span></li>
         <li><span><b>Os moldes de pedido</b>, prontos para copiar e adaptar.</span></li>
         <li><span><b>O dicionário da IA</b>, em português, para consultar quando aparecer uma palavra nova.</span></li>
         <li><span><b>A lista do que nunca colar na IA</b>, para usar sem medo.</span></li>
@@ -282,7 +266,7 @@
           <div class="valor"><span class="rs">R$</span><span class="num" data-conta="87">87</span><span class="forma-pag">à vista no Pix<br>ou no cartão</span></div>
           <ul class="inclui">
             <li><span><b>Tudo do ingresso</b>: a imersão ao vivo e os materiais</span></li>
-            <li><span><b>A gravação</b>, disponível por 15 dias</span></li>
+            <li><span><b>A gravação</b>, disponível por 15 dias depois da imersão</span></li>
           </ul>
           <a class="botao" href="#lista">Quero o VIP</a>
         </div>
@@ -300,7 +284,7 @@
         <details open><summary><span class="n">01</span><span>Preciso saber alguma coisa de tecnologia?</span></summary><p>Não. Se você usa o WhatsApp, consegue acompanhar.</p></details>
         <details><summary><span class="n">02</span><span>Preciso pagar alguma ferramenta de IA?</span></summary><p>Não para começar: dá para acompanhar com as versões gratuitas. Na imersão eu mostro quando vale a pena pagar e quando não vale.</p></details>
         <details><summary><span class="n">03</span><span>Qual a diferença para a Ferramentaria?</span></summary><p>Aqui você aprende a usar a IA. Na Ferramentaria você constrói uma ferramenta sua com ela. Esta vem antes: é o primeiro degrau.</p></details>
-        <details><summary><span class="n">04</span><span>Fica gravado?</span></summary><p>No ingresso VIP, sim: a gravação fica disponível por 15 dias. O ingresso de R$ 57 é só ao vivo.</p></details>
+        <details><summary><span class="n">04</span><span>Fica gravado?</span></summary><p>No ingresso VIP, sim: a gravação fica disponível por 15 dias depois da imersão. O ingresso de R$ 57 é só ao vivo.</p></details>
         <details><summary><span class="n">05</span><span>E se eu não gostar?</span></summary><p>Como em toda compra pela internet, você pode desistir em até 7 dias depois de comprar e receber o dinheiro de volta, sem explicar nada.</p></details>
       </div>
     </div>
@@ -351,7 +335,7 @@
 </footer>
 
 <nav class="barra-fixa some" aria-label="Garantir a vaga">
-  <div><span><b>IA sem Complicação</b><br>A partir de R$ 57</span><a class="botao" href="#ingresso">Quero a minha vaga</a></div>
+  <div><span><b>IA sem Complicação</b><br>A partir de R$&nbsp;57</span><a class="botao" href="#ingresso">Quero a minha vaga</a></div>
 </nav>
 
 <script>

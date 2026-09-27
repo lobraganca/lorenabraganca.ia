@@ -262,9 +262,8 @@ em diante; as faixas marinho ficam para as peças do Instagram.
 
 Isso desfaz "a gravação vem no ingresso": a gravação agora é do VIP. As
 duas páginas mostram os dois ingressos lado a lado, e o normal diz com
-todas as letras "sem a gravação". **A conferir com ela:** os 15 dias
-contam a partir de quando (do fim da imersão, ou de quando a gravação é
-publicada)? Na Assiny serão quatro produtos (normal e VIP de cada
+todas as letras "sem a gravação". Os 15 dias contam **do fim da
+imersão** (decisão dela, 27/09). Na Assiny serão quatro produtos (normal e VIP de cada
 imersão), e a área de membros precisa tirar a gravação do ar no 16º dia.
 
 **A segunda página: IA sem Complicação (27/09).** O nome é dela, e o
@@ -272,8 +271,8 @@ nome aparece na mesma cursiva da Ferramentaria (Dancing Script 600). Pedido dela
 fonte, mas de cor diferente". Está em `site/ia.html`, prévia em
 https://claude.ai/artifact/6JPdFVH3txj78zuPPqE28P. O desenho saiu do
 index.html para `site/estilos/imersao.css`, e cada página só declara a
-paleta. Três cores em teste (violeta, lima, coral), com o contraste
-calculado; **falta ela escolher**. Também falta, e por isso a página não
+paleta. A cor é **coral**, escolhida por ela entre violeta, lima
+e coral, com o contraste calculado. Também falta, e por isso a página não
 mostra preço nem data e todos os botões levam à lista: o preço, a data e o formato. Coisas que a página
 supõe e ela precisa confirmar: que dá para acompanhar
 com as versões gratuitas das IAs, e o que o aluno leva (moldes de pedido,

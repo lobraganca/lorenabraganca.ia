@@ -58,7 +58,7 @@ jeito de ensinar é sentar do lado, olhar a mesma tela e resolver junto.
 **Ferramentaria** · R$ 97, ou R$ 147 no VIP
 Dois encontros ao vivo para construir a sua primeira ferramenta.
 Sexta 29/01, das 18h às 22h · sábado 30/01, das 8h às 12h.
-O VIP inclui a gravação dos dois encontros, disponível por 15 dias.
+O VIP inclui a gravação dos dois encontros, disponível por 15 dias depois da imersão.
 
 **Mentoria** · R$ 2.997
 Três meses de acompanhamento para construir uma ferramenta feita para o
@@ -84,7 +84,7 @@ do Claude. É bom saber antes de comprar.
 A imersão é feita no computador. Você precisa de um computador com internet.
 
 **E se eu não puder ir ao vivo?**
-No ingresso VIP, a gravação fica disponível por 15 dias.
+No ingresso VIP, a gravação fica disponível por 15 dias depois da imersão.
 
 **E se eu não gostar?**
 Você tem 7 dias para pedir o dinheiro de volta, sem precisar explicar.

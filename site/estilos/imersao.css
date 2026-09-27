@@ -325,3 +325,11 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .barra-fixa span{font-size:14px;line-height:1.3;color:var(--suave-escuro)}
 .barra-fixa span b{color:var(--tinta-clara);font-weight:600}
 .barra-fixa .botao{min-height:52px;background:var(--acento);color:var(--escuro);text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;white-space:nowrap;padding-inline:22px}
+/* Em celular pequeno (320 a 400px) o botão passava da borda e ficava
+   cortado: a barra é fixa, então não cria rolagem, só esconde o fim. */
+.barra-fixa span{min-width:0}
+@media (max-width:400px){
+  .barra-fixa div{padding-left:18px;gap:8px}
+  .barra-fixa span{font-size:13px}
+  .barra-fixa .botao{letter-spacing:.06em;font-size:12px;padding-inline:14px}
+}
