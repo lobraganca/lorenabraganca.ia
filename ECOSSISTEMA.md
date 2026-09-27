@@ -252,14 +252,14 @@ piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
 em diante; as faixas marinho ficam para as peças do Instagram.
 
-**A segunda página: introdução à IA (27/09).** Pedido dela: "a mesma
+**A segunda página: IA sem Complicação (27/09).** O nome é dela, e o
+nome aparece na mesma cursiva da Ferramentaria (Dancing Script 600). Pedido dela: "a mesma
 fonte, mas de cor diferente". Está em `site/ia.html`, prévia em
 https://claude.ai/artifact/6JPdFVH3txj78zuPPqE28P. O desenho saiu do
 index.html para `site/estilos/imersao.css`, e cada página só declara a
 paleta. Três cores em teste (violeta, lima, coral), com o contraste
 calculado; **falta ela escolher**. Também falta, e por isso a página não
-mostra preço nem data e todos os botões levam à lista: o nome (**"IA do
-Zero" é provisório**), o preço, a data e o formato. Coisas que a página
+mostra preço nem data e todos os botões levam à lista: o preço, a data e o formato. Coisas que a página
 supõe e ela precisa confirmar: que há gravação, que dá para acompanhar
 com as versões gratuitas das IAs, e o que o aluno leva (moldes de pedido,
 dicionário, lista do que não colar na IA). Não tem garantia: a da
