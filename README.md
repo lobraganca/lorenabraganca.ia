@@ -20,3 +20,8 @@ https://claude.ai/artifact/UN5HXRpwqWgQJmDXtConty — código em
 As três direções de marca (etapa 1 do branding) estão em
 https://claude.ai/artifact/4dwqu2L1UsMyLF4RDYGXQq — código em
 [marca/direcoes.html](marca/direcoes.html).
+
+O site (lorenabraganca.com.br) está em [site/](site/), com o design system
+em [site/estilos/](site/estilos/). Prévia:
+https://claude.ai/artifact/41M1V1ofufT4nDvu5mWewJ — design system:
+https://claude.ai/artifact/1cNDAfL7WTPay2D1zKsHzC

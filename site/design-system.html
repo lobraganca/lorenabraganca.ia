@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design System Lorena Bragança</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@400&family=Kalnia:wght@200&family=Ms+Madi&display=swap">
+<link rel="stylesheet" href="/estilos/tokens.css">
+<link rel="stylesheet" href="/estilos/componentes.css">
+<style>
+.ds-cab{padding-block:var(--e-7) var(--e-6)}
+.ds-bloco{display:flex;flex-direction:column;gap:var(--e-5);padding-block:var(--e-7);border-top:1px solid var(--linha)}
+.escala{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--e-2)}
+@media (min-width:800px){.escala{grid-template-columns:repeat(10,minmax(0,1fr))}}
+.amostra{display:flex;flex-direction:column;gap:var(--e-1);font-family:var(--letra-mono);font-size:12px;min-width:0}
+.amostra i{display:block;aspect-ratio:1;border-radius:var(--canto-m);border:1px solid var(--linha)}
+.amostra b{font-family:var(--letra-texto);font-size:13px}
+.base{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--e-3)}
+.base .amostra i{aspect-ratio:2/1}
+.contrastes{display:grid;gap:var(--e-3)}
+@media (min-width:800px){.contrastes{grid-template-columns:repeat(4,1fr)}}
+.contraste{border-radius:var(--canto-m);padding:var(--e-4);display:flex;flex-direction:column;gap:var(--e-2);border:1px solid var(--linha)}
+.contraste strong{font-family:var(--letra-chamada);font-size:2rem;line-height:1}
+.contraste.proibido{outline:3px solid #B3261E;outline-offset:-3px}
+.tipos{display:grid;gap:var(--e-5)}
+.tipo{display:grid;gap:var(--e-2);padding-bottom:var(--e-5);border-bottom:1px solid var(--linha)}
+.tipo small{font-family:var(--letra-mono);font-size:12px;color:var(--texto-2)}
+.vitrine{display:flex;flex-wrap:wrap;gap:var(--e-3);align-items:center;padding:var(--e-5);border-radius:var(--canto-g)}
+.vitrine--clara{background:var(--nevoa)}
+.vitrine--marinho{background:var(--marinho)}
+.proibido-botao{background:var(--piscina-500);color:#fff}
+</style>
+</head>
+<body>
+<header class="cabecalho">
+  <div class="conteudo">
+    <span class="marca"><span class="inicial">L</span>orena Bragança</span>
+    <span class="rotulo" style="color:var(--piscina-200)">design system · v1</span>
+  </div>
+</header>
+<main class="conteudo">
+  <div class="ds-cab pilha">
+    <span class="rotulo">lorenabraganca.com.br</span>
+    <h1>Design system</h1>
+    <p class="texto-2">As cores, letras e peças do site e da área de membros. Tudo sai da identidade aprovada: nenhuma página inventa cor ou letra fora daqui.</p>
+  </div>
+
+  <section class="ds-bloco" aria-labelledby="t-cores">
+    <h2 id="t-cores">Cores</h2>
+    <div class="base">
+      <div class="amostra"><i style="background:var(--marinho)"></i><b>Marinho · principal</b>#0B1F3A</div>
+      <div class="amostra"><i style="background:var(--branco)"></i><b>Branco</b>#FFFFFF</div>
+      <div class="amostra"><i style="background:var(--nevoa)"></i><b>Névoa</b>#F3F7FA</div>
+    </div>
+    <h3>Escala piscina · do raso ao fundo</h3>
+    <div class="escala">
+      <div class="amostra"><i style="background:var(--piscina-50)"></i><b>50</b>#EAFBFE</div>
+      <div class="amostra"><i style="background:var(--piscina-100)"></i><b>100</b>#CAF3FA</div>
+      <div class="amostra"><i style="background:var(--piscina-200)"></i><b>200</b>#9BE7F4</div>
+      <div class="amostra"><i style="background:var(--piscina-300)"></i><b>300</b>#62D7EC</div>
+      <div class="amostra"><i style="background:var(--piscina-400)"></i><b>400</b>#2EC4E0</div>
+      <div class="amostra"><i style="background:var(--piscina-500)"></i><b>500 · principal</b>#0AAFD0</div>
+      <div class="amostra"><i style="background:var(--piscina-600)"></i><b>600</b>#078CAB</div>
+      <div class="amostra"><i style="background:var(--piscina-700)"></i><b>700</b>#0A6F88</div>
+      <div class="amostra"><i style="background:var(--piscina-800)"></i><b>800</b>#0E596D</div>
+      <div class="amostra"><i style="background:var(--piscina-900)"></i><b>900</b>#103F4F</div>
+    </div>
+    <p class="texto-2">50 a 200: fundos suaves e cartões. 100 a 500: textos e destaques sobre o marinho. 600 a 900: detalhes sobre fundo claro; texto em piscina sobre fundo claro só do 700 para cima.</p>
+    <h3>Contraste, calculado</h3>
+    <div class="contrastes">
+      <div class="contraste" style="background:var(--branco);color:var(--marinho)"><strong>16,5</strong>Marinho sobre branco. O texto comum.</div>
+      <div class="contraste" style="background:var(--marinho);color:var(--piscina-500)"><strong>6,3</strong>Piscina-500 sobre marinho. O destaque.</div>
+      <div class="contraste" style="background:var(--branco);color:var(--piscina-700)"><strong>5,8</strong>Piscina-700 sobre branco. O mais claro permitido.</div>
+      <div class="contraste proibido" style="background:var(--piscina-500);color:#fff"><strong>2,6</strong>Branco sobre piscina-500. Proibido: não se lê.</div>
+    </div>
+  </section>
+
+  <section class="ds-bloco" aria-labelledby="t-letras">
+    <h2 id="t-letras">Letras</h2>
+    <div class="tipos">
+      <div class="tipo"><span class="nome"><span class="inicial">F</span>erramentaria</span><small>Kalnia 200 · nome e destaque · nunca abaixo de 72px · inicial em Ms Madi, só a primeira letra</small></div>
+      <div class="tipo"><h2 style="font-size:2.5rem">Construí um app. Pelo celular.</h2><small>Bricolage Grotesque 800 · chamadas, títulos e botões</small></div>
+      <div class="tipo"><p>Você não precisa saber programar. Precisa ter uma ideia e vontade de colocar a mão na massa. Eu mostro cada passo, na sua tela, e você constrói junto.</p><small>Atkinson Hyperlegible 400/700 · textos · mínimo 17px, entrelinha 1,5</small></div>
+      <div class="tipo"><div class="linha-espacada"><span>Dá</span><span>trabalho,</span><span>e</span><span>dá</span><span>para</span><span>fazer.</span></div><small>JetBrains Mono 400 · rótulos, linha espaçada e comandos</small></div>
+    </div>
+  </section>
+
+  <section class="ds-bloco" aria-labelledby="t-botoes">
+    <h2 id="t-botoes">Botões</h2>
+    <div class="vitrine vitrine--clara">
+      <a class="botao botao--principal" href="#t-botoes">Quero minha vaga</a>
+      <a class="botao botao--secundario" href="#t-botoes">Ver programação</a>
+      <a class="botao botao--texto" href="#t-botoes">Saber mais</a>
+      <span class="preco">R$ 97</span>
+    </div>
+    <div class="vitrine vitrine--marinho secao--marinho">
+      <a class="botao botao--principal" href="#t-botoes">Quero minha vaga</a>
+      <a class="botao botao--secundario" href="#t-botoes">Ver programação</a>
+      <a class="botao botao--texto" href="#t-botoes">Saber mais</a>
+    </div>
+    <p class="texto-2">Principal: piscina-500 com texto marinho. Secundário: marinho com texto branco; sobre o marinho, vira branco com texto marinho. Nunca texto branco no piscina.</p>
+  </section>
+
+  <section class="ds-bloco" aria-labelledby="t-rotulos">
+    <h2 id="t-rotulos">Rótulos e cartões</h2>
+    <div class="vitrine vitrine--clara">
+      <span class="rotulo">imersão · online e ao vivo</span>
+      <span class="chip">sex 29/01 · 18h</span>
+      <span class="chip">sáb 30/01 · 8h</span>
+    </div>
+    <div class="grade-2">
+      <div class="cartao"><span class="rotulo">Cartão claro</span><h3>Ferramentaria</h3><p class="texto-2">Para conteúdo sobre fundo claro.</p></div>
+      <div class="cartao cartao--marinho"><span class="rotulo">Cartão marinho</span><h3>Mentoria</h3><p class="texto-2">Para dar peso a uma escolha.</p></div>
+    </div>
+  </section>
+
+  <section class="ds-bloco" aria-labelledby="t-onda">
+    <h2 id="t-onda">A onda</h2>
+    <div class="secao--marinho" style="border-radius:var(--canto-g);overflow:hidden">
+      <div style="padding:var(--e-6)"><p>Uma faixa marinho termina numa onda. A onda fica só na borda, nunca no meio.</p></div>
+      <svg class="onda" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+        <path class="fundo" d="M0 26 C 240 6 480 6 720 22 S 1200 44 1440 18 V56 H0 Z"/>
+        <path class="frente" d="M0 38 C 260 20 520 22 760 34 S 1220 52 1440 32 V56 H0 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="ds-bloco" aria-labelledby="t-form">
+    <h2 id="t-form">Formulário</h2>
+    <form class="pilha" style="max-width:420px" onsubmit="event.preventDefault()">
+      <label class="campo" for="ds-nome">Seu nome<input id="ds-nome" type="text" value="Maria"></label>
+      <label class="consentimento" for="ds-ok"><input id="ds-ok" type="checkbox" checked> Aceito receber mensagens. Posso sair quando quiser.</label>
+      <button class="botao botao--principal" type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
+<footer class="rodape"><div class="conteudo"><span>Design system v1 · 27/09/2026</span><span>Fonte da verdade: site/estilos/tokens.css</span></div></footer>
+</body>
+</html>

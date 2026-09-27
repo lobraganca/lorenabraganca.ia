@@ -1,0 +1,141 @@
+/*
+  Design system de lorenabraganca.com.br: as peças.
+
+  Depende de tokens.css. O site tem um visual só, claro com faixas
+  marinho, de propósito: é a identidade. Não há modo escuro.
+*/
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--fundo);color:var(--texto);
+  font-family:var(--letra-texto);font-size:var(--t-texto);line-height:1.5;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--letra-chamada);font-weight:800;letter-spacing:-0.02em;line-height:1.05;text-wrap:balance}
+h1{font-size:var(--t-h1)}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);letter-spacing:-0.01em;line-height:1.15}
+p{margin:0;max-width:var(--largura-texto)}
+:focus-visible{outline:3px solid var(--foco);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- estrutura ---------- */
+.conteudo{max-width:var(--largura-pagina);margin-inline:auto;padding-inline:var(--e-4)}
+@media (min-width:700px){.conteudo{padding-inline:var(--e-6)}}
+.secao{padding-block:var(--e-8)}
+@media (min-width:900px){.secao{padding-block:var(--e-9)}}
+.secao--suave{background:var(--fundo-suave)}
+.secao--marinho{background:var(--marinho);color:var(--branco);--texto-2:var(--piscina-100);--linha:var(--marinho-borda)}
+.pilha{display:flex;flex-direction:column;gap:var(--e-4)}
+.pilha--g{gap:var(--e-6)}
+
+/* ---------- rótulos ---------- */
+/* Linha espaçada da identidade: palavras distribuídas na largura, em mono. */
+.linha-espacada{
+  display:flex;justify-content:space-between;gap:var(--e-2);
+  font-family:var(--letra-mono);font-size:var(--t-rotulo);letter-spacing:0.08em;text-transform:uppercase;
+}
+.rotulo{
+  font-family:var(--letra-mono);font-size:var(--t-rotulo);letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--destaque-claro);
+}
+.secao--marinho .rotulo{color:var(--destaque-escuro)}
+.chip{
+  display:inline-flex;align-items:center;gap:var(--e-2);
+  font-family:var(--letra-mono);font-size:var(--t-rotulo);
+  padding:var(--e-1) var(--e-3);border-radius:var(--canto-pilula);
+  background:var(--piscina-50);color:var(--piscina-800);
+}
+.secao--marinho .chip{background:var(--marinho-claro);color:var(--piscina-200)}
+
+/* ---------- nome em Kalnia com a inicial em assinatura ---------- */
+/* Regra da identidade: Kalnia fina, sempre grande; só a PRIMEIRA letra em
+   Ms Madi, invadindo a linha de cima. Nunca a palavra inteira. */
+.nome{
+  font-family:var(--letra-nome);font-weight:200;font-size:var(--t-nome);
+  line-height:.95;letter-spacing:-0.01em;
+}
+.nome .inicial{
+  font-family:var(--letra-assinatura);font-weight:400;font-size:1.25em;
+  line-height:0;margin-right:-0.06em;position:relative;top:0.08em;
+}
+.secao--marinho .nome .destaque,.nome--claro .destaque{color:var(--destaque-escuro)}
+.nome .destaque{color:var(--destaque-claro)}
+
+/* ---------- botões ---------- */
+/* Principal: piscina-500 com texto MARINHO (6,3). Texto branco no piscina é proibido (2,6). */
+.botao{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--e-2);
+  min-height:52px;padding:0 var(--e-5);border-radius:var(--canto-pilula);
+  font-family:var(--letra-chamada);font-weight:800;font-size:var(--t-texto);letter-spacing:-0.005em;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:transform .15s ease, background-color .15s ease;
+}
+.botao:hover{transform:translateY(-1px)}
+.botao--principal{background:var(--piscina-500);color:var(--marinho)}
+.botao--principal:hover{background:var(--piscina-400)}
+.botao--secundario{background:var(--marinho);color:var(--branco)}
+.botao--secundario:hover{background:var(--marinho-claro)}
+/* Sobre o marinho, o secundário vira branco com texto marinho. */
+.secao--marinho .botao--secundario{background:var(--branco);color:var(--marinho)}
+.secao--marinho .botao--secundario:hover{background:var(--piscina-50)}
+.botao--texto{background:none;padding:0;min-height:44px;color:var(--destaque-claro);text-decoration:underline;text-underline-offset:4px;font-family:var(--letra-texto);font-weight:700}
+.secao--marinho .botao--texto{color:var(--destaque-escuro)}
+.acoes{display:flex;flex-wrap:wrap;gap:var(--e-3);align-items:center}
+.preco{font-family:var(--letra-chamada);font-weight:800;font-size:var(--t-h3)}
+
+/* ---------- cartões ---------- */
+.cartao{
+  background:var(--branco);border:1px solid var(--linha);border-radius:var(--canto-g);
+  padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-3);
+}
+@media (min-width:700px){.cartao{padding:var(--e-6)}}
+.cartao--marinho{background:var(--marinho);color:var(--branco);border-color:var(--marinho);--texto-2:var(--piscina-100)}
+.cartao--marinho .rotulo{color:var(--destaque-escuro)}
+.texto-2{color:var(--texto-2)}
+.grade-2{display:grid;gap:var(--e-4)}
+@media (min-width:800px){.grade-2{grid-template-columns:1fr 1fr;gap:var(--e-5)}}
+.grade-3{display:grid;gap:var(--e-4)}
+@media (min-width:800px){.grade-3{grid-template-columns:repeat(3,1fr);gap:var(--e-5)}}
+
+/* ---------- a onda ---------- */
+/* "Ondas só na borda": a onda fecha uma faixa marinho, nunca decora o meio. */
+.onda{display:block;width:100%;height:clamp(28px,5vw,56px)}
+.onda path.fundo{fill:var(--piscina-600)}
+.onda path.frente{fill:var(--piscina-500)}
+
+/* ---------- espaço de foto (enquanto as fotos reais não chegam) ---------- */
+.foto-vaga{
+  aspect-ratio:4/5;border-radius:var(--canto-g);border:2px dashed var(--marinho-borda);
+  background:var(--marinho-claro);color:var(--piscina-100);
+  display:grid;place-items:center;text-align:center;padding:var(--e-5);font-size:var(--t-pequeno);
+}
+
+/* ---------- formulário ---------- */
+.campo{display:flex;flex-direction:column;gap:var(--e-2);font-weight:700;font-size:var(--t-pequeno)}
+.campo input{
+  min-height:52px;border-radius:var(--canto-m);border:2px solid var(--linha);background:var(--branco);
+  color:var(--marinho);font:inherit;font-weight:400;font-size:var(--t-texto);padding:0 var(--e-4);
+}
+.campo input:focus-visible{border-color:var(--foco);outline:none;box-shadow:0 0 0 3px var(--piscina-100)}
+.consentimento{display:flex;gap:var(--e-3);align-items:flex-start;font-size:var(--t-pequeno);font-weight:400}
+.consentimento input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:var(--piscina-700)}
+
+/* ---------- cabeçalho e rodapé ---------- */
+.cabecalho{background:var(--marinho);color:var(--branco)}
+.cabecalho .conteudo{display:flex;align-items:center;justify-content:space-between;gap:var(--e-4);min-height:68px}
+.marca{font-family:var(--letra-nome);font-weight:200;font-size:1.625rem;text-decoration:none;white-space:nowrap}
+.marca .inicial{font-family:var(--letra-assinatura);font-size:1.3em;line-height:0;margin-right:-0.04em}
+.menu{display:flex;gap:var(--e-5);align-items:center;font-size:var(--t-pequeno)}
+.menu a{text-decoration:none;color:var(--piscina-100)}
+.menu a:hover{color:var(--branco)}
+.menu .entrar{border:1.5px solid var(--marinho-borda);border-radius:var(--canto-pilula);padding:var(--e-2) var(--e-4);color:var(--branco)}
+@media (max-width:760px){.menu .opcional{display:none}}
+@media (max-width:480px){.menu .opcional-p{display:none}.menu{gap:var(--e-3)}.marca{font-size:1.375rem}}
+.rodape{background:var(--marinho);color:var(--piscina-100);font-size:var(--t-pequeno)}
+.rodape .conteudo{display:flex;flex-wrap:wrap;gap:var(--e-4) var(--e-6);justify-content:space-between;padding-block:var(--e-6)}
+.rodape a{color:var(--piscina-100)}

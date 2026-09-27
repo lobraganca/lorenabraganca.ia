@@ -1,0 +1,77 @@
+/*
+  Design system de lorenabraganca.com.br: os valores.
+
+  Tudo aqui sai da identidade aprovada (marca/identidade-v0.2.pdf) e do
+  briefing (marca/briefing-claude-design.md). Nenhuma cor nova nasce numa
+  página: se precisar de uma, ela entra aqui primeiro, com o contraste
+  conferido por cálculo, não a olho.
+
+  Os contrastes (WCAG) que decidem as regras de uso:
+    marinho sobre branco ........ 16,5  texto comum
+    piscina-100 sobre marinho ... 13,9
+    piscina-500 sobre marinho ...  6,3  destaque; e texto marinho no botão piscina
+    piscina-700 sobre branco ....  5,8  o piscina mais claro permitido em texto sobre fundo claro
+    branco sobre piscina-500 ....  2,6  PROIBIDO: não se lê
+*/
+:root{
+  /* ---------- cores da marca ---------- */
+  --marinho: #0B1F3A;
+  --piscina-50:  #EAFBFE;
+  --piscina-100: #CAF3FA;
+  --piscina-200: #9BE7F4;
+  --piscina-300: #62D7EC;
+  --piscina-400: #2EC4E0;
+  --piscina-500: #0AAFD0;
+  --piscina-600: #078CAB;
+  --piscina-700: #0A6F88;
+  --piscina-800: #0E596D;
+  --piscina-900: #103F4F;
+  --branco: #FFFFFF;
+  --nevoa: #F3F7FA;
+
+  /* Tons derivados do marinho, só para bordas e fundos de apoio sobre ele. */
+  --marinho-claro: #15305A;
+  --marinho-borda: #24406B;
+
+  /* ---------- papéis (use estes nas páginas, não as cores cruas) ---------- */
+  --fundo: var(--branco);
+  --fundo-suave: var(--nevoa);
+  --texto: var(--marinho);
+  --texto-2: #3E5068;            /* 8,2 sobre branco; 7,6 sobre a névoa */
+  --linha: #D5DEE8;
+  --destaque-claro: var(--piscina-700);   /* texto piscina sobre fundo claro */
+  --destaque-escuro: var(--piscina-500);  /* texto piscina sobre marinho */
+  --foco: var(--piscina-600);
+
+  /* ---------- letras ---------- */
+  --letra-chamada: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;  /* 800 · chamadas, títulos, botões */
+  --letra-nome: "Kalnia", Georgia, "Times New Roman", serif;                  /* 200 · nome e destaque, sempre >= 72px */
+  --letra-assinatura: "Ms Madi", "Brush Script MT", cursive;                  /* só a letra inicial */
+  --letra-texto: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;  /* 400/700 · textos, >= 17px */
+  --letra-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;   /* 400 · rótulos e comandos */
+
+  /* Escala: cada passo cresce ~1,25. Os títulos grandes encolhem no celular. */
+  --t-rotulo: 0.8125rem;   /* 13px */
+  --t-pequeno: 0.9375rem;  /* 15px */
+  --t-texto: 1.0625rem;    /* 17px, o mínimo da identidade */
+  --t-grande: 1.25rem;     /* 20px */
+  --t-h3: 1.5rem;          /* 24px */
+  --t-h2: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem);
+  --t-h1: clamp(2.25rem, 1.4rem + 4vw, 4rem);
+  /* Kalnia. A identidade diz "nunca abaixo de 72px", regra pensada para as
+     peças de 1080px do Instagram. Num celular de 360px, "Ferramentaria" a
+     72px não cabe na tela: aqui o nome acompanha a largura (12vw), o que
+     mantém a mesma proporção grande da peça. */
+  --t-nome: clamp(2.75rem, 12vw, 7rem);
+
+  /* ---------- espaço, cantos, sombras ---------- */
+  --e-1: 4px;  --e-2: 8px;  --e-3: 12px; --e-4: 16px; --e-5: 24px;
+  --e-6: 32px; --e-7: 48px; --e-8: 64px; --e-9: 96px;
+  --canto-p: 8px;
+  --canto-m: 14px;
+  --canto-g: 22px;
+  --canto-pilula: 999px;
+  --largura-texto: 62ch;
+  --largura-pagina: 1120px;
+  --sombra-cartao: 0 1px 2px rgba(11,31,58,.06), 0 8px 24px rgba(11,31,58,.06);
+}

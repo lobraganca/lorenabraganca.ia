@@ -243,8 +243,7 @@ Um endereço só. O site público é a vitrine e o funil; a área de membros
 é uma porta dentro dele ("Entrar"). Mesmo design system, mesmo projeto,
 mesma base técnica do Ei (Vercel + Supabase), **com banco novo**.
 
-**Domínio principal: o nome dela** (ex.: lorenabraganca.com.br)
-**[a decidir]**. Marca pessoal dura mais que um produto: a mentoria e os
+**Domínio principal: lorenabraganca.com.br. Decidido (27/09).** Falta comprar. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

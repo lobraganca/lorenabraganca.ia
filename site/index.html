@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lorena Bragança · construa sua ferramenta com IA</title>
+<meta name="description" content="Construí um app que está na Play Store, pelo celular, com o Claude Code. Agora ensino você a construir a sua ferramenta. Ferramentaria: 29 e 30 de janeiro, online e ao vivo.">
+<meta property="og:title" content="Lorena Bragança · construa sua ferramenta com IA">
+<meta property="og:description" content="Ferramentaria: em dois encontros, você constrói a sua ferramenta com o Claude Code e coloca no ar.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@400&family=Kalnia:wght@200&family=Ms+Madi&display=swap">
+<link rel="stylesheet" href="/estilos/tokens.css">
+<link rel="stylesheet" href="/estilos/componentes.css">
+<style>
+/* Só o que é desta página. O resto vem do design system. */
+.heroi{padding-block:var(--e-7) 0}
+.heroi .conteudo{display:grid;gap:var(--e-7);align-items:end}
+@media (min-width:900px){.heroi .conteudo{grid-template-columns:1.25fr .75fr;gap:var(--e-8)}}
+.heroi-texto{display:flex;flex-direction:column;gap:var(--e-5);padding-bottom:var(--e-7)}
+.heroi h1{font-size:clamp(2.4rem,1.5rem + 4.4vw,4.4rem)}
+.heroi h1 .nome{display:block;font-size:1.3em;margin-top:.1em;color:var(--destaque-escuro)}
+.heroi .linha-espacada{color:var(--piscina-200);max-width:520px}
+.heroi .foto-vaga{margin-bottom:calc(-1 * var(--e-4));max-width:min(420px,80vw);width:100%;justify-self:center}
+
+.prova{display:grid;gap:var(--e-6);align-items:center}
+@media (min-width:900px){.prova{grid-template-columns:1fr 1fr}}
+.prova-fatos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--e-3)}
+.prova-fatos li{display:flex;gap:var(--e-3);align-items:baseline}
+.prova-fatos li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--piscina-500);transform:translateY(-1px)}
+
+.porta{justify-content:space-between;min-height:100%}
+.porta .topo-porta{display:flex;flex-direction:column;gap:var(--e-3)}
+.porta ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:var(--e-1)}
+.porta .rodape-porta{display:flex;flex-wrap:wrap;gap:var(--e-4);align-items:center;justify-content:space-between;padding-top:var(--e-4);border-top:1px solid var(--linha)}
+
+.passo-num{font-family:var(--letra-nome);font-weight:200;font-size:4.5rem;line-height:.9;color:var(--destaque-claro)}
+.voz blockquote{margin:0;font-family:var(--letra-chamada);font-weight:800;font-size:var(--t-grande);line-height:1.25}
+
+.lista-espera{display:grid;gap:var(--e-6)}
+@media (min-width:900px){.lista-espera{grid-template-columns:1fr 1fr;align-items:start}}
+.lista-espera form{background:var(--branco);color:var(--marinho);border-radius:var(--canto-g);padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-4)}
+.lista-espera form .botao{width:100%}
+.aviso-form{font-size:var(--t-pequeno);color:var(--piscina-800);font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="conteudo">
+    <a class="marca" href="/" aria-label="Lorena Bragança, início"><span class="inicial">L</span>orena Bragança</a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#ferramentaria" class="opcional-p">Ferramentaria</a>
+      <a href="#mentoria" class="opcional">Mentoria</a>
+      <a href="#sobre" class="opcional">Sobre</a>
+      <a href="#" class="entrar" aria-disabled="true" title="A área de membros abre para a primeira turma">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ========== HERÓI ========== -->
+  <section class="secao--marinho heroi" aria-labelledby="titulo">
+    <div class="conteudo">
+      <div class="heroi-texto">
+        <div class="linha-espacada" aria-hidden="true"><span>Dá</span><span>trabalho,</span><span>e</span><span>dá</span><span>para</span><span>fazer.</span></div>
+        <h1 id="titulo">Construí um app que está na Play Store. <span class="nome"><span class="inicial">P</span>elo celular.</span></h1>
+        <p class="texto-2" style="font-size:var(--t-grande)">Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar, mesmo sem saber programar.</p>
+        <div class="acoes">
+          <a class="botao botao--principal" href="#ferramentaria">Conhecer a Ferramentaria</a>
+          <a class="botao botao--secundario" href="#lista">Entrar na lista de espera</a>
+        </div>
+      </div>
+      <div class="foto-vaga" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador, sorrindo, luz natural</div>
+    </div>
+    <svg class="onda" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+      <path class="fundo" d="M0 26 C 240 6 480 6 720 22 S 1200 44 1440 18 V56 H0 Z"/>
+      <path class="frente" d="M0 38 C 260 20 520 22 760 34 S 1220 52 1440 32 V56 H0 Z"/>
+    </svg>
+  </section>
+
+  <!-- ========== PROVA ========== -->
+  <section class="secao" aria-labelledby="t-prova">
+    <div class="conteudo prova">
+      <div class="pilha">
+        <span class="rotulo">A prova</span>
+        <h2 id="t-prova">O Ei Emprego está na Play Store. E eu construí pelo celular.</h2>
+        <p class="texto-2">Um app de vagas de emprego para Itabirito, em Minas: quem procura trabalho encontra vagas, e quem contrata encontra gente. Construído com o Claude Code, uma parte de cada vez.</p>
+      </div>
+      <ul class="prova-fatos">
+        <li>Publicado na Play Store, como app de verdade</li>
+        <li>Site no ar em empregoitabirito.com.br</li>
+        <li>Construído com o Claude Code, pelo celular</li>
+        <li>Com os erros que viraram aula, como proteger os dados das pessoas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== AS DUAS PORTAS ========== -->
+  <section class="secao secao--suave" aria-labelledby="t-portas">
+    <div class="conteudo pilha pilha--g">
+      <div class="pilha">
+        <span class="rotulo">Por onde começar</span>
+        <h2 id="t-portas">Duas portas. Escolha a sua.</h2>
+      </div>
+      <div class="grade-2">
+        <article class="cartao porta" id="ferramentaria">
+          <div class="topo-porta">
+            <span class="rotulo">Imersão · online e ao vivo</span>
+            <h3>Ferramentaria</h3>
+            <p class="texto-2">Em dois encontros, você constrói a sua primeira ferramenta com o Claude Code e coloca no ar. Você chega com a ideia; eu mostro cada passo, na sua tela.</p>
+            <ul>
+              <li>Sexta, 29/01, das 18h às 22h</li>
+              <li>Sábado, 30/01, das 8h às 12h</li>
+              <li>A gravação fica com você</li>
+            </ul>
+          </div>
+          <div class="rodape-porta">
+            <span class="preco">R$ 97</span>
+            <a class="botao botao--principal" href="#lista">Entrar na lista de espera</a>
+          </div>
+        </article>
+        <article class="cartao cartao--marinho porta" id="mentoria">
+          <div class="topo-porta">
+            <span class="rotulo">Individual · vagas limitadas</span>
+            <h3>Mentoria</h3>
+            <p class="texto-2">Para quem quer uma ferramenta feita para o próprio negócio. Começa com um diagnóstico, e construímos juntos a ferramenta que você precisa.</p>
+            <ul>
+              <li>Diagnóstico do seu negócio</li>
+              <li>Ferramenta sob medida, construída junto</li>
+              <li>Aplicação e conversa antes de fechar</li>
+            </ul>
+          </div>
+          <div class="rodape-porta">
+            <span class="preco">R$ 2.997</span>
+            <span class="chip">aplicações em breve</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMO FUNCIONA ========== -->
+  <section class="secao" aria-labelledby="t-como">
+    <div class="conteudo pilha pilha--g">
+      <div class="pilha">
+        <span class="rotulo">Como funciona a Ferramentaria</span>
+        <h2 id="t-como">Sexta você começa. Sábado ela está no ar.</h2>
+      </div>
+      <div class="grade-3">
+        <div class="pilha">
+          <span class="passo-num">01</span>
+          <h3>Antes</h3>
+          <p class="texto-2">Um vídeo curto para deixar tudo pronto: conta, instalação e o plano do Claude. Ninguém perde a primeira noite com isso.</p>
+        </div>
+        <div class="pilha">
+          <span class="passo-num">02</span>
+          <h3>Sexta à noite</h3>
+          <p class="texto-2">Você corta a ideia até ela caber e termina a noite com a primeira versão funcionando.</p>
+        </div>
+        <div class="pilha">
+          <span class="passo-num">03</span>
+          <h3>Sábado de manhã</h3>
+          <p class="texto-2">Deixamos a ferramenta útil de verdade, segura com os dados das pessoas, e publicada na internet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMO EU ENSINO ========== -->
+  <section class="secao secao--suave voz" id="sobre" aria-labelledby="t-voz">
+    <div class="conteudo pilha pilha--g">
+      <div class="pilha">
+        <span class="rotulo">Como eu ensino</span>
+        <h2 id="t-voz">Quem senta do lado e ajuda a colocar no ar.</h2>
+      </div>
+      <div class="grade-3">
+        <div class="cartao"><span class="rotulo">Direta</span><blockquote>"Dois dias, oito horas, R$ 97."</blockquote><p class="texto-2">O que é, quanto custa e quanto tempo leva. Sem suspense.</p></div>
+        <div class="cartao"><span class="rotulo">Próxima</span><blockquote>"Travou aqui? Me mostra que a gente resolve."</blockquote><p class="texto-2">Do lado, na mesma tela.</p></div>
+        <div class="cartao"><span class="rotulo">Prática</span><blockquote>"Hoje: escreva em três linhas o que sua ferramenta faz."</blockquote><p class="texto-2">Todo conteúdo termina com algo que dá para fazer no mesmo dia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LISTA DE ESPERA ========== -->
+  <section class="secao secao--marinho" id="lista" aria-labelledby="t-lista">
+    <div class="conteudo lista-espera">
+      <div class="pilha">
+        <span class="rotulo">Turma Fundadora</span>
+        <h2 id="t-lista">Entre na lista e compre antes de todo mundo.</h2>
+        <p class="texto-2">De 8 a 15 de dezembro, só quem está na lista pode garantir a vaga, com um presente para a primeira turma. Depois disso, as vendas abrem para todos em 5 de janeiro.</p>
+      </div>
+      <form id="form-lista" novalidate>
+        <label class="campo" for="nome">Seu nome<input id="nome" name="nome" type="text" autocomplete="given-name" required></label>
+        <label class="campo" for="email">Seu e-mail<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></label>
+        <label class="campo" for="whatsapp">Seu WhatsApp<input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999"></label>
+        <label class="consentimento" for="aceite"><input id="aceite" name="aceite" type="checkbox" required> Aceito receber mensagens sobre a Ferramentaria. Posso sair da lista quando quiser.</label>
+        <button class="botao botao--principal" type="submit">Quero entrar na lista</button>
+        <p class="aviso-form" id="aviso-form" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    <span>© 2026 Lorena Bragança</span>
+    <span><a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a></span>
+    <span>Termos de uso e privacidade: em breve</span>
+  </div>
+</footer>
+
+<script>
+// A lista de espera ainda não tem para onde enviar: o banco do site será
+// criado junto com a página de captura. Até lá, o formulário diz isso em
+// vez de fingir que guardou o contato.
+document.getElementById("form-lista").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("aviso-form").textContent =
+    "A lista abre em novembro. Por enquanto, siga @lorenabraganca.ia para saber quando.";
+});
+</script>
+</body>
+</html>
