@@ -389,10 +389,17 @@ meio caminho de comprar.
 
 ## 4. Plataforma dos alunos (área de membros)
 
-**Duas visões (27/09).** Decisão dela: a área de membros tem uma visão
-para cada imersão, a de introdução à IA e a Ferramentaria. Quem comprou
-uma vê só a sua; quem comprou as duas vê as duas. A Planta da Ferramenta
-fica na visão da Ferramentaria.
+**Três áreas (27/09).** Decisão dela: a área de membros tem uma área
+para cada produto:
+
+| Área | O que tem |
+|---|---|
+| **Conceitos básicos de IA** | aulas, gravação, moldes de pedido, dicionário da IA |
+| **Ferramentaria** | aulas, gravações, a Planta da Ferramenta, materiais |
+| **Mentoria** | o diagnóstico, os encontros marcados, as gravações de cada encontro e a ferramenta do cliente em construção (sugestão, a confirmar) |
+
+Cada pessoa vê só a área do que comprou; quem comprou mais de um vê
+todas as suas. Uma entrada só, uma conta só.
 
 - Entrada por e-mail ou telefone
 - **Acesso liberado sozinho** quando o pagamento aprova
