@@ -252,6 +252,11 @@ piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
 (o destaque do título e a inicial do nome). Essa é a direção do site daqui
 em diante; as faixas marinho ficam para as peças do Instagram.
 
+**Sem "Turma Fundadora" (27/09).** Ela não quer o nome em lugar
+nenhum. A pré-venda para a lista, de 8 a 15/12, continua; só não tem
+nome próprio. No site, a seção 13 virou "Lista de espera" e a barra fixa
+mostra "Ferramentaria".
+
 **A letra do nome (27/09): Dancing Script 600**, cursiva, escolhida por
 ela (A12 em `marca/letra-cursiva.html`) depois de gostar da Poiret One
 (8 em `marca/letra-do-nome.html`) e pedir cursivas. Vale só para a palavra
@@ -330,7 +335,7 @@ Ferramenta, que é da Ferramentaria e a concorrente não tem.
 **Da quinta leva de referências (27/09), o que NÃO entrou e por quê:**
 - **Depoimentos ("Quem já construiu comigo"):** ainda não existem, e
   depoimento inventado é propaganda enganosa. A parte entra depois da
-  Turma Fundadora, com alunos de verdade: pedir vídeo curto no fim do
+  primeira turma, com alunos de verdade: pedir vídeo curto no fim do
   sábado.
 - **"Lote 1 esgotado", "98% vendido":** escassez que não existe. Nunca.
 - **Gravação cobrada à parte (VIP):** lá a gravação é vendida separada;
@@ -547,7 +552,7 @@ semanas **depois** das festas.
 | **15/11** | Isca pronta e página de captura no ar: a lista começa a crescer |
 | **30/11** | CNPJ, conta da empresa e Mercado Pago funcionando; programa da imersão fechado |
 | **6/12** | Página de vendas, pagamento, acesso automático e mensagens, tudo testado com uma compra de verdade. Tem de estar pronto antes da pré-venda. |
-| **8 a 15/12** | **Pré-venda só para a lista: a Turma Fundadora.** R$ 97 com um bônus para quem entrar primeiro. É quando cai o 13º salário. **Decidido (26/09).** Bônus **[a decidir]**; sugestão: um encontro extra de 1 hora, uma semana depois da imersão, para destravar quem não terminou. Custa pouco, aumenta quem termina e é mais uma conversa antes da mentoria. |
+| **8 a 15/12** | **Pré-venda só para a lista.** R$ 97 com um bônus para quem entrar primeiro. É quando cai o 13º salário. **Decidido (26/09).** Bônus **[a decidir]**; sugestão: um encontro extra de 1 hora, uma semana depois da imersão, para destravar quem não terminou. Custa pouco, aumenta quem termina e é mais uma conversa antes da mentoria. |
 | **20/12 a 4/1** | Recesso de vendas: conteúdo leve, programado antes |
 | **5/1** (terça) | Vendas abertas para todo mundo |
 | **22/1** (sexta) | Lembrete da preparação: plano do Claude assinado, tudo instalado |

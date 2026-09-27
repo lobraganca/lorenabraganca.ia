@@ -63,7 +63,7 @@ Sexta 29/01, das 18h às 22h · sábado 30/01, das 8h às 12h · a gravação fi
 Para quem quer uma ferramenta feita para o próprio negócio. A gente
 começa com um diagnóstico e constrói junto.
 
-## Turma Fundadora
+## Lista de espera
 
 **As primeiras vagas são de quem está na lista.**
 De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente
