@@ -243,7 +243,14 @@ Um endereço só. O site público é a vitrine e o funil; a área de membros
 é uma porta dentro dele ("Entrar"). Mesmo design system, mesmo projeto,
 mesma base técnica do Ei (Vercel + Supabase), **com banco novo**.
 
-**Domínio principal: lorenabraganca.com.br. Decidido (27/09).** Falta comprar. Marca pessoal dura mais que um produto: a mentoria e os
+**Domínio principal: lorenabraganca.com.br. Decidido (27/09).** Falta comprar.
+
+**Visual do site (27/09):** a primeira versão, com faixas marinho, rótulos
+em mono e muitos cartões, foi julgada "muito carregada". A versão 2 é
+clara: fundo branco, uma coluna, muito espaço, o marinho só no texto e o
+piscina só no destaque e no botão. Kalnia e Ms Madi aparecem uma vez cada
+(o destaque do título e a inicial do nome). Essa é a direção do site daqui
+em diante; as faixas marinho ficam para as peças do Instagram. Marca pessoal dura mais que um produto: a mentoria e os
 próximos produtos cabem debaixo dele. A Ferramentaria vira uma página; se
 quiser, compra-se também o domínio da Ferramentaria só para apontar para
 ela.

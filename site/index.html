@@ -4,212 +4,145 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lorena Bragança · construa sua ferramenta com IA</title>
-<meta name="description" content="Construí um app que está na Play Store, pelo celular, com o Claude Code. Agora ensino você a construir a sua ferramenta. Ferramentaria: 29 e 30 de janeiro, online e ao vivo.">
+<meta name="description" content="Construí um app pelo celular, com o Claude Code. Agora ensino você a construir a sua ferramenta. Ferramentaria: 29 e 30 de janeiro, online e ao vivo.">
 <meta property="og:title" content="Lorena Bragança · construa sua ferramenta com IA">
 <meta property="og:description" content="Ferramentaria: em dois encontros, você constrói a sua ferramenta com o Claude Code e coloca no ar.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="theme-color" content="#0B1F3A">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@400&family=Kalnia:wght@200&family=Ms+Madi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Kalnia:wght@200&family=Ms+Madi&display=swap">
 <link rel="stylesheet" href="/estilos/tokens.css">
 <link rel="stylesheet" href="/estilos/componentes.css">
 <style>
-/* Só o que é desta página. O resto vem do design system. */
-.heroi{padding-block:var(--e-7) 0}
-.heroi .conteudo{display:grid;gap:var(--e-7);align-items:end}
-@media (min-width:900px){.heroi .conteudo{grid-template-columns:1.25fr .75fr;gap:var(--e-8)}}
-.heroi-texto{display:flex;flex-direction:column;gap:var(--e-5);padding-bottom:var(--e-7)}
-.heroi h1{font-size:clamp(2.4rem,1.5rem + 4.4vw,4.4rem)}
-.heroi h1 .nome{display:block;font-size:1.3em;margin-top:.1em;color:var(--destaque-escuro)}
-.heroi .linha-espacada{color:var(--piscina-200);max-width:520px}
-.heroi .foto-vaga{margin-bottom:calc(-1 * var(--e-4));max-width:min(420px,80vw);width:100%;justify-self:center}
+/*
+  Versão 2 (27/09): a primeira ficou "muito carregada". Esta é clara, com
+  uma coluna, muito espaço e só um ponto de cor forte por tela. O marinho
+  ficou para o texto; o piscina, para o destaque e o botão.
+*/
+.coluna{max-width:760px;margin-inline:auto;padding-inline:var(--e-4)}
+@media (min-width:700px){.coluna{padding-inline:var(--e-6)}}
+.bloco{padding-block:var(--e-8)}
+@media (min-width:900px){.bloco{padding-block:var(--e-9)}}
+.bloco + .bloco{border-top:1px solid var(--linha)}
 
-.prova{display:grid;gap:var(--e-6);align-items:center}
-@media (min-width:900px){.prova{grid-template-columns:1fr 1fr}}
-.prova-fatos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--e-3)}
-.prova-fatos li{display:flex;gap:var(--e-3);align-items:baseline}
-.prova-fatos li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--piscina-500);transform:translateY(-1px)}
+.heroi{padding-block:var(--e-8) var(--e-7);display:flex;flex-direction:column;gap:var(--e-5)}
+.heroi h1{font-size:clamp(2.4rem,1.6rem + 3.6vw,4rem)}
+.heroi h1 .nome{display:block;font-size:1.25em;margin-top:.12em}
+.heroi p{font-size:var(--t-grande);color:var(--texto-2)}
+.onda-leve{display:block;width:100%;height:36px}
+.onda-leve path{fill:var(--piscina-50)}
+.faixa-leve{background:var(--piscina-50)}
 
-.porta{justify-content:space-between;min-height:100%}
-.porta .topo-porta{display:flex;flex-direction:column;gap:var(--e-3)}
-.porta ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:var(--e-1)}
-.porta .rodape-porta{display:flex;flex-wrap:wrap;gap:var(--e-4);align-items:center;justify-content:space-between;padding-top:var(--e-4);border-top:1px solid var(--linha)}
+.duas{display:grid;gap:var(--e-6)}
+@media (min-width:760px){.duas{grid-template-columns:1fr 1fr;gap:var(--e-7)}}
+.porta{display:flex;flex-direction:column;gap:var(--e-3)}
+.porta .preco{font-size:var(--t-grande)}
+.porta .detalhe{color:var(--texto-2)}
 
-.passo-num{font-family:var(--letra-nome);font-weight:200;font-size:4.5rem;line-height:.9;color:var(--destaque-claro)}
-.voz blockquote{margin:0;font-family:var(--letra-chamada);font-weight:800;font-size:var(--t-grande);line-height:1.25}
+.passos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--e-5);counter-reset:passo}
+.passos li{display:grid;grid-template-columns:40px 1fr;gap:var(--e-3);counter-increment:passo}
+.passos li::before{
+  content:counter(passo);width:32px;height:32px;border-radius:50%;
+  background:var(--piscina-50);color:var(--piscina-800);font-weight:700;
+  display:grid;place-items:center;font-size:var(--t-pequeno);margin-top:2px;
+}
+.passos b{display:block}
+.passos span{color:var(--texto-2)}
 
-.lista-espera{display:grid;gap:var(--e-6)}
-@media (min-width:900px){.lista-espera{grid-template-columns:1fr 1fr;align-items:start}}
-.lista-espera form{background:var(--branco);color:var(--marinho);border-radius:var(--canto-g);padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-4)}
-.lista-espera form .botao{width:100%}
+.lista form{display:flex;flex-direction:column;gap:var(--e-4);margin-top:var(--e-5)}
+.lista form .botao{align-self:flex-start}
 .aviso-form{font-size:var(--t-pequeno);color:var(--piscina-800);font-weight:700}
 </style>
 </head>
 <body>
 
-<header class="cabecalho">
+<header class="cabecalho cabecalho--claro">
   <div class="conteudo">
     <a class="marca" href="/" aria-label="Lorena Bragança, início"><span class="inicial">L</span>orena Bragança</a>
     <nav class="menu" aria-label="Principal">
       <a href="#ferramentaria" class="opcional-p">Ferramentaria</a>
       <a href="#mentoria" class="opcional">Mentoria</a>
-      <a href="#sobre" class="opcional">Sobre</a>
       <a href="#" class="entrar" aria-disabled="true" title="A área de membros abre para a primeira turma">Entrar</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- ========== HERÓI ========== -->
-  <section class="secao--marinho heroi" aria-labelledby="titulo">
-    <div class="conteudo">
-      <div class="heroi-texto">
-        <div class="linha-espacada" aria-hidden="true"><span>Dá</span><span>trabalho,</span><span>e</span><span>dá</span><span>para</span><span>fazer.</span></div>
-        <h1 id="titulo">Construí um app que está na Play Store. <span class="nome"><span class="inicial">P</span>elo celular.</span></h1>
-        <p class="texto-2" style="font-size:var(--t-grande)">Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar, mesmo sem saber programar.</p>
-        <div class="acoes">
-          <a class="botao botao--principal" href="#ferramentaria">Conhecer a Ferramentaria</a>
-          <a class="botao botao--secundario" href="#lista">Entrar na lista de espera</a>
-        </div>
-      </div>
-      <div class="foto-vaga" role="img" aria-label="Espaço para a foto da Lorena">Foto da Lorena trabalhando no computador, sorrindo, luz natural</div>
+  <section class="coluna heroi" aria-labelledby="titulo">
+    <h1 id="titulo">Construí um app que está na Play Store. <span class="nome"><span class="destaque"><span class="inicial">P</span>elo celular.</span></span></h1>
+    <p>Agora eu ensino você a construir a sua própria ferramenta com o Claude Code e colocar no ar, mesmo sem saber programar.</p>
+    <div class="acoes">
+      <a class="botao botao--principal" href="#ferramentaria">Conhecer a Ferramentaria</a>
+      <a class="botao botao--texto" href="#lista">Entrar na lista de espera</a>
     </div>
-    <svg class="onda" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
-      <path class="fundo" d="M0 26 C 240 6 480 6 720 22 S 1200 44 1440 18 V56 H0 Z"/>
-      <path class="frente" d="M0 38 C 260 20 520 22 760 34 S 1220 52 1440 32 V56 H0 Z"/>
-    </svg>
   </section>
 
-  <!-- ========== PROVA ========== -->
-  <section class="secao" aria-labelledby="t-prova">
-    <div class="conteudo prova">
+  <svg class="onda-leve" viewBox="0 0 1440 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 300 4 620 6 900 18 S 1300 34 1440 16 V36 H0 Z"/></svg>
+  <div class="faixa-leve">
+    <section class="coluna bloco" aria-labelledby="t-prova">
       <div class="pilha">
         <span class="rotulo">A prova</span>
-        <h2 id="t-prova">O Ei Emprego está na Play Store. E eu construí pelo celular.</h2>
-        <p class="texto-2">Um app de vagas de emprego para Itabirito, em Minas: quem procura trabalho encontra vagas, e quem contrata encontra gente. Construído com o Claude Code, uma parte de cada vez.</p>
+        <h2 id="t-prova">O Ei Emprego: um app de vagas para Itabirito, feito com o Claude Code.</h2>
+        <p class="texto-2">Quem procura trabalho encontra vagas, e quem contrata encontra gente. Construí uma parte de cada vez, pelo celular, e aprendi com cada erro. É isso que eu ensino.</p>
       </div>
-      <ul class="prova-fatos">
-        <li>Publicado na Play Store, como app de verdade</li>
-        <li>Site no ar em empregoitabirito.com.br</li>
-        <li>Construído com o Claude Code, pelo celular</li>
-        <li>Com os erros que viraram aula, como proteger os dados das pessoas</li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- ========== AS DUAS PORTAS ========== -->
-  <section class="secao secao--suave" aria-labelledby="t-portas">
-    <div class="conteudo pilha pilha--g">
-      <div class="pilha">
-        <span class="rotulo">Por onde começar</span>
-        <h2 id="t-portas">Duas portas. Escolha a sua.</h2>
-      </div>
-      <div class="grade-2">
-        <article class="cartao porta" id="ferramentaria">
-          <div class="topo-porta">
-            <span class="rotulo">Imersão · online e ao vivo</span>
-            <h3>Ferramentaria</h3>
-            <p class="texto-2">Em dois encontros, você constrói a sua primeira ferramenta com o Claude Code e coloca no ar. Você chega com a ideia; eu mostro cada passo, na sua tela.</p>
-            <ul>
-              <li>Sexta, 29/01, das 18h às 22h</li>
-              <li>Sábado, 30/01, das 8h às 12h</li>
-              <li>A gravação fica com você</li>
-            </ul>
-          </div>
-          <div class="rodape-porta">
-            <span class="preco">R$ 97</span>
-            <a class="botao botao--principal" href="#lista">Entrar na lista de espera</a>
-          </div>
+  <section class="coluna bloco" aria-labelledby="t-portas">
+    <div class="pilha pilha--g">
+      <h2 id="t-portas">Duas formas de construir comigo</h2>
+      <div class="duas">
+        <article class="porta" id="ferramentaria">
+          <span class="rotulo">Imersão online e ao vivo</span>
+          <h3>Ferramentaria</h3>
+          <p class="detalhe">Em dois encontros, você constrói a sua primeira ferramenta e coloca no ar. Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h. A gravação fica com você.</p>
+          <span class="preco">R$ 97</span>
+          <a class="botao botao--principal" href="#lista" style="align-self:flex-start">Entrar na lista de espera</a>
         </article>
-        <article class="cartao cartao--marinho porta" id="mentoria">
-          <div class="topo-porta">
-            <span class="rotulo">Individual · vagas limitadas</span>
-            <h3>Mentoria</h3>
-            <p class="texto-2">Para quem quer uma ferramenta feita para o próprio negócio. Começa com um diagnóstico, e construímos juntos a ferramenta que você precisa.</p>
-            <ul>
-              <li>Diagnóstico do seu negócio</li>
-              <li>Ferramenta sob medida, construída junto</li>
-              <li>Aplicação e conversa antes de fechar</li>
-            </ul>
-          </div>
-          <div class="rodape-porta">
-            <span class="preco">R$ 2.997</span>
-            <span class="chip">aplicações em breve</span>
-          </div>
+        <article class="porta" id="mentoria">
+          <span class="rotulo">Individual</span>
+          <h3>Mentoria</h3>
+          <p class="detalhe">Para quem quer uma ferramenta feita para o próprio negócio. Começa com um diagnóstico, e construímos juntos.</p>
+          <span class="preco">R$ 2.997</span>
+          <span class="texto-2" style="font-size:var(--t-pequeno)">Aplicações abrem em breve.</span>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ========== COMO FUNCIONA ========== -->
-  <section class="secao" aria-labelledby="t-como">
-    <div class="conteudo pilha pilha--g">
-      <div class="pilha">
-        <span class="rotulo">Como funciona a Ferramentaria</span>
-        <h2 id="t-como">Sexta você começa. Sábado ela está no ar.</h2>
-      </div>
-      <div class="grade-3">
-        <div class="pilha">
-          <span class="passo-num">01</span>
-          <h3>Antes</h3>
-          <p class="texto-2">Um vídeo curto para deixar tudo pronto: conta, instalação e o plano do Claude. Ninguém perde a primeira noite com isso.</p>
-        </div>
-        <div class="pilha">
-          <span class="passo-num">02</span>
-          <h3>Sexta à noite</h3>
-          <p class="texto-2">Você corta a ideia até ela caber e termina a noite com a primeira versão funcionando.</p>
-        </div>
-        <div class="pilha">
-          <span class="passo-num">03</span>
-          <h3>Sábado de manhã</h3>
-          <p class="texto-2">Deixamos a ferramenta útil de verdade, segura com os dados das pessoas, e publicada na internet.</p>
-        </div>
-      </div>
+  <section class="coluna bloco" aria-labelledby="t-como">
+    <div class="pilha pilha--g">
+      <h2 id="t-como">Sexta você começa. Sábado ela está no ar.</h2>
+      <ol class="passos">
+        <li><div><b>Antes</b><span>Um vídeo curto para deixar tudo pronto. Ninguém perde a primeira noite com instalação.</span></div></li>
+        <li><div><b>Sexta à noite</b><span>Você corta a ideia até ela caber e termina com a primeira versão funcionando.</span></div></li>
+        <li><div><b>Sábado de manhã</b><span>A ferramenta fica útil de verdade, segura com os dados das pessoas e publicada.</span></div></li>
+      </ol>
     </div>
   </section>
 
-  <!-- ========== COMO EU ENSINO ========== -->
-  <section class="secao secao--suave voz" id="sobre" aria-labelledby="t-voz">
-    <div class="conteudo pilha pilha--g">
-      <div class="pilha">
-        <span class="rotulo">Como eu ensino</span>
-        <h2 id="t-voz">Quem senta do lado e ajuda a colocar no ar.</h2>
-      </div>
-      <div class="grade-3">
-        <div class="cartao"><span class="rotulo">Direta</span><blockquote>"Dois dias, oito horas, R$ 97."</blockquote><p class="texto-2">O que é, quanto custa e quanto tempo leva. Sem suspense.</p></div>
-        <div class="cartao"><span class="rotulo">Próxima</span><blockquote>"Travou aqui? Me mostra que a gente resolve."</blockquote><p class="texto-2">Do lado, na mesma tela.</p></div>
-        <div class="cartao"><span class="rotulo">Prática</span><blockquote>"Hoje: escreva em três linhas o que sua ferramenta faz."</blockquote><p class="texto-2">Todo conteúdo termina com algo que dá para fazer no mesmo dia.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== LISTA DE ESPERA ========== -->
-  <section class="secao secao--marinho" id="lista" aria-labelledby="t-lista">
-    <div class="conteudo lista-espera">
-      <div class="pilha">
-        <span class="rotulo">Turma Fundadora</span>
-        <h2 id="t-lista">Entre na lista e compre antes de todo mundo.</h2>
-        <p class="texto-2">De 8 a 15 de dezembro, só quem está na lista pode garantir a vaga, com um presente para a primeira turma. Depois disso, as vendas abrem para todos em 5 de janeiro.</p>
-      </div>
+  <div class="faixa-leve">
+    <section class="coluna bloco lista" id="lista" aria-labelledby="t-lista">
+      <span class="rotulo">Turma Fundadora</span>
+      <h2 id="t-lista" style="margin-top:var(--e-3)">Entre na lista e garanta sua vaga antes.</h2>
+      <p class="texto-2" style="margin-top:var(--e-3)">De 8 a 15 de dezembro, só quem está na lista pode comprar, com um presente para a primeira turma.</p>
       <form id="form-lista" novalidate>
         <label class="campo" for="nome">Seu nome<input id="nome" name="nome" type="text" autocomplete="given-name" required></label>
         <label class="campo" for="email">Seu e-mail<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></label>
-        <label class="campo" for="whatsapp">Seu WhatsApp<input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999"></label>
-        <label class="consentimento" for="aceite"><input id="aceite" name="aceite" type="checkbox" required> Aceito receber mensagens sobre a Ferramentaria. Posso sair da lista quando quiser.</label>
+        <label class="consentimento" for="aceite"><input id="aceite" name="aceite" type="checkbox" required> Aceito receber mensagens sobre a Ferramentaria. Posso sair quando quiser.</label>
         <button class="botao botao--principal" type="submit">Quero entrar na lista</button>
         <p class="aviso-form" id="aviso-form" role="status"></p>
       </form>
-    </div>
-  </section>
+    </section>
+  </div>
 </main>
 
-<footer class="rodape">
+<footer class="rodape rodape--claro">
   <div class="conteudo">
     <span>© 2026 Lorena Bragança</span>
-    <span><a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a></span>
-    <span>Termos de uso e privacidade: em breve</span>
+    <a href="https://www.instagram.com/lorenabraganca.ia/">@lorenabraganca.ia</a>
   </div>
 </footer>
 
