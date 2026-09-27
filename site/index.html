@@ -297,6 +297,41 @@ h3{font-family:var(--letra-chamada);font-weight:400}
 .rodape-grande .legal{border-top:1px solid var(--fio-escuro);padding-top:24px;font-size:14px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 .rodape-grande a{color:var(--suave-escuro)}
 
+
+/* ================= movimento (27/09: "mais dinâmica, com animações") =================
+   Tudo aqui só liga quando o JavaScript roda e a pessoa não pediu menos
+   movimento no aparelho. Sem isso, a página aparece inteira, parada. */
+.progresso-leitura{position:fixed;top:0;left:0;right:0;height:3px;background:var(--acento);transform-origin:0 50%;transform:scaleX(0);z-index:20;pointer-events:none}
+.anima [data-anima]{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.anima [data-anima].escondido{opacity:0;transform:translateY(32px)}
+/* topo: entra em sequência, e o marca-texto é "pintado" da esquerda para a direita */
+@keyframes sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.anima .topo > *{animation:sobe .9s cubic-bezier(.2,.7,.2,1) both}
+.anima .topo > :nth-child(1){animation-delay:.05s}.anima .topo > :nth-child(2){animation-delay:.15s}
+.anima .topo > :nth-child(3){animation-delay:.25s}.anima .topo > :nth-child(4){animation-delay:.35s}
+.anima .topo > :nth-child(5){animation-delay:.5s}.anima .topo > :nth-child(6){animation-delay:.6s}
+.anima .topo > :nth-child(7){animation-delay:.7s}.anima .topo > :nth-child(8){animation-delay:.8s}
+@keyframes pinta{from{background-size:0% 100%;color:var(--tinta-clara)}to{background-size:100% 100%;color:var(--escuro)}}
+.anima .topo .marca-texto{background:linear-gradient(var(--acento),var(--acento)) no-repeat 0 0 / 0% 100%;color:var(--tinta-clara);animation:pinta .8s cubic-bezier(.6,0,.2,1) forwards}
+.anima .topo .marca-texto:nth-of-type(1){animation-delay:.9s}
+.anima .topo .marca-texto:nth-of-type(2){animation-delay:1.4s}
+/* a semana: os blocos caem um a um */
+.anima .semana .tarefa{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 60ms)}
+.anima .semana.escondido .tarefa{opacity:0;transform:translateY(-10px) scale(.96)}
+/* o terminal "digita" linha a linha */
+.anima .terminal span{transition:opacity .25s ease;transition-delay:calc(var(--i,0) * 420ms + 300ms)}
+.anima .leva.escondido .terminal span{opacity:0}
+/* a planta se desenha */
+.anima .planta-desenho g[stroke] > *{stroke-dasharray:1500;stroke-dashoffset:0;transition:stroke-dashoffset 2.2s cubic-bezier(.4,0,.2,1) .2s}
+.anima .planta-desenho.escondido g[stroke] > *{stroke-dashoffset:1500}
+/* o selo gira devagar */
+@keyframes gira{to{transform:rotate(360deg)}}
+.anima .selo-garantia .gira{transform-box:view-box;transform-origin:110px 110px;animation:gira 30s linear infinite}
+/* botões: a seta anda um pouco */
+.cta-largo::after,.cta-meio .botao::after,.ingresso .botao::after{transition:transform .25s ease}
+.cta-largo:hover::after,.cta-meio .botao:hover::after,.ingresso .botao:hover::after{transform:translateX(5px)}
+@media (prefers-reduced-motion: reduce){.progresso-leitura{display:none}}
+
 /* ---------- barra fixa ---------- */
 .barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
 .barra-fixa div{max-width:620px;margin:0 auto;background:rgba(8,23,41,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--tinta-clara);border:1px solid var(--fio-escuro);border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 24px;box-shadow:0 12px 32px rgba(0,0,0,.35)}
@@ -380,7 +415,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       <div class="marcador"><b>02</b>O que dá para construir</div>
       <div class="centro pilha pilha--g" style="align-items:center">
         <h2 style="max-width:18ch">Ferramentas pequenas que resolvem um problema <span class="it">de verdade</span></h2>
-        <p class="grande-numero">Em <strong>8</strong> horas de encontro, a sua ideia sai da cabeça e vai para a internet, com um link que você manda para quem quiser.</p>
+        <p class="grande-numero">Em <strong data-conta="8">8</strong> horas de encontro, a sua ideia sai da cabeça e vai para a internet, com um link que você manda para quem quiser.</p>
         <p class="quadro">Na sexta e no sábado eu conduzo a construção da sua, ao vivo: uma agenda onde a cliente <span class="it">marca sozinha</span>, um orçamento que <span class="it">se monta com três perguntas</span>, um cadastro de clientes que você abre no celular. São exemplos: a ideia é sua.</p>
       </div>
     </div>
@@ -589,7 +624,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       </div>
       <div class="dia-bloco">
         <span class="rot">Onde ela ganha forma</span>
-        <span class="dia-num">29</span>
+        <span class="dia-num" data-conta="29">29</span>
         <span class="quando2">Sexta 29/01, das 18h às 22h</span>
         <span class="pronto">O que fica pronto</span>
         <ul class="lista-pronto">
@@ -600,7 +635,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       </div>
       <div class="dia-bloco">
         <span class="rot">Onde ela vai para o ar</span>
-        <span class="dia-num">30</span>
+        <span class="dia-num" data-conta="30">30</span>
         <span class="quando2">Sábado 30/01, das 8h às 12h</span>
         <span class="pronto">O que fica pronto</span>
         <ul class="lista-pronto">
@@ -683,7 +718,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
       <div class="ingresso">
         <span class="selo-ing">Ingresso</span>
         <span class="quando3">Sexta 29/01, das 18h às 22h, e sábado 30/01, das 8h às 12h</span>
-        <div class="valor"><span class="rs">R$</span><span class="num">97</span><span class="forma-pag">à vista no Pix<br>ou no cartão</span></div>
+        <div class="valor"><span class="rs">R$</span><span class="num" data-conta="97">97</span><span class="forma-pag">à vista no Pix<br>ou no cartão</span></div>
         <ul class="inclui">
           <li><span><b>Os dois encontros ao vivo</b></span></li>
           <li><span><b>A gravação</b>, já inclusa, sem pagar nada a mais</span></li>
@@ -706,7 +741,7 @@ h3{font-family:var(--letra-chamada);font-weight:400}
           <defs><path id="circulo" d="M110 110 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0"/></defs>
           <circle cx="110" cy="110" r="104" fill="none" stroke="currentColor" stroke-opacity=".45"/>
           <circle cx="110" cy="110" r="64" fill="none" stroke="currentColor" stroke-opacity=".45"/>
-          <text font-family="Figtree, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="currentColor"><textPath href="#circulo" textLength="528" lengthAdjust="spacingAndGlyphs">REEMBOLSO DE 100% · ATÉ 7 DIAS APÓS O EVENTO ·</textPath></text>
+          <g class="gira"><text font-family="Instrument Sans, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="currentColor"><textPath href="#circulo" textLength="528" lengthAdjust="spacingAndGlyphs">REEMBOLSO DE 100% · ATÉ 7 DIAS APÓS O EVENTO ·</textPath></text></g>
           <path d="M84 112l18 18 36-40" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <p>Participe dos dois encontros. Se não sair com a ferramenta publicada, me escreva em até 7 dias depois do evento e eu devolvo 100%. E, como em toda compra pela internet, você também pode desistir em até 7 dias depois de comprar, sem explicar nada.</p>
@@ -797,6 +832,83 @@ h3{font-family:var(--letra-chamada);font-weight:400}
   ajustar();
   window.addEventListener("resize", ajustar);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
+})();
+
+
+// ================= movimento =================
+// Nada fica escondido se o JavaScript não rodar, ou se o aparelho pedir
+// menos movimento: aí a página aparece inteira e parada.
+(function () {
+  var raiz = document.documentElement;
+  var barra = document.createElement("div");
+  barra.className = "progresso-leitura";
+  barra.setAttribute("aria-hidden", "true");
+  document.body.appendChild(barra);
+  function progresso() {
+    var rolavel = document.scrollingElement || raiz;
+    var total = rolavel.scrollHeight - window.innerHeight;
+    barra.style.transform = "scaleX(" + (total > 0 ? Math.min(1, rolavel.scrollTop / total) : 0) + ")";
+  }
+  window.addEventListener("scroll", progresso, { passive: true });
+  progresso();
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  raiz.classList.add("anima");
+
+  // o que surge ao rolar; irmãos entram um pouco depois do outro
+  var seletor = ".marcador, main h2:not(.topo h2), .dor p, .semana, .grande-numero, .quadro, .telas, .frase-grande, .leva, " +
+    ".pra-quem li, .nao-e li, .nao-precisa li, .fecho, .metodo-topo p, .planta-desenho, .passos-metodo2 li, .antes, " +
+    ".dia-bloco, .lista-pronto li, .requisito, .nota-centro, .conduz > *, .forma, .ancora, .ingresso, .garantia > *, " +
+    ".lista form, .perguntas-n details, .fechamento > *, .cta-meio, .fecho-dias";
+  var alvos = Array.prototype.filter.call(document.querySelectorAll(seletor), function (el) { return !el.closest(".topo"); });
+  var altura = window.innerHeight;
+  alvos.forEach(function (el) {
+    el.setAttribute("data-anima", "");
+    var irmaos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.style.transitionDelay = (Math.min(irmaos, 5) * 90) + "ms";
+    if (el.getBoundingClientRect().top > altura * 0.92) el.classList.add("escondido");
+  });
+  document.querySelectorAll(".semana .tarefa").forEach(function (t, i) { t.style.setProperty("--i", i); });
+  document.querySelectorAll(".terminal span").forEach(function (t, i) { t.style.setProperty("--i", i); });
+
+  // números que sobem até o valor certo
+  function conta(el) {
+    var fim = parseInt(el.getAttribute("data-conta"), 10), t0 = null;
+    function passo(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / 1200);
+      el.textContent = Math.round(fim * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(passo);
+    }
+    requestAnimationFrame(passo);
+  }
+  var numeros = document.querySelectorAll("[data-conta]");
+
+  var observador = new IntersectionObserver(function (itens) {
+    itens.forEach(function (item) {
+      if (!item.isIntersecting) return;
+      item.target.classList.remove("escondido");
+      item.target.querySelectorAll("[data-conta]").forEach(function (n) { if (!n.dataset.contou) { n.dataset.contou = "1"; conta(n); } });
+      if (item.target.hasAttribute("data-conta") && !item.target.dataset.contou) { item.target.dataset.contou = "1"; conta(item.target); }
+      observador.unobserve(item.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  alvos.forEach(function (el) { observador.observe(el); });
+  numeros.forEach(function (n) { if (!n.closest("[data-anima]")) observador.observe(n); });
+
+  // as telas de exemplo passam sozinhas, até a pessoa mexer nelas
+  var trilho = document.getElementById("telas"), mexeu = false;
+  if (trilho) {
+    ["pointerdown", "wheel", "touchstart", "keydown"].forEach(function (e) { trilho.addEventListener(e, function () { mexeu = true; }, { passive: true }); });
+    ["ant", "prox"].forEach(function (id) { var b = document.getElementById(id); if (b) b.addEventListener("click", function () { mexeu = true; }); });
+    setInterval(function () {
+      if (mexeu || document.hidden) return;
+      var r = trilho.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      var fim = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 4;
+      trilho.scrollTo({ left: fim ? 0 : trilho.scrollLeft + trilho.firstElementChild.getBoundingClientRect().width + 16, behavior: "smooth" });
+    }, 4500);
+  }
 })();
 
 // Telas de exemplo: setas e pontinhos acompanham a rolagem.
